@@ -1,6 +1,10 @@
 # KORA · La memoria de las estrellas
 
-Boceto jugable completo para **Godot 4.7.2 / GDScript**: menú → prólogo → 12 secciones → epílogo → menú. Escenarios geométricos, narrativa editable y sprites del explorador conservados para usar esta base como lienzo de producción.
+![Vista previa del menú de KORA](docs/images/menu-preview.png)
+
+**Godot 4.7.2 · GDScript · Plataformas y combate · 1920 × 1080**
+
+Boceto jugable completo: menú → prólogo → 12 secciones → epílogo → menú. Escenarios geométricos, narrativa editable y sprites del explorador conservados para usar esta base como lienzo de producción.
 
 La campaña ahora tiene dificultad alta por defecto: **37 cruces con dash, 49 enemigos, 40 peligros y dos jefes con ataques encadenados**. Consulta [RETO_EXIGENTE.md](docs/RETO_EXIGENTE.md) para parámetros y criterios de prueba.
 
@@ -69,7 +73,7 @@ Consulta [el mapa completo y la guía de producción](docs/BOCETO_JUGABLE.md), [
 
 Ejecuta **VERIFICAR_PROYECTO.bat**. Importa los recursos y ejecuta seis comprobaciones:
 
-1. `tests/smoke_test.gd`: 74 fotogramas actuales, carrera, salto, combos y galería.
+1. `tests/smoke_test.gd`: 84 fotogramas actuales, carrera, dash, salto, combos y galería.
 2. `tests/campaign_test.gd`: 12 secciones, dependencias, checkpoints, puzle, daño a jefes, fases, puertas persistentes, 20 eventos principales y regreso del epílogo al menú.
 3. `tests/traversal_test.gd`: 175 comprobaciones con física real; incluye los 37 cruces con dash, sus intentos sin dash, descenso, embarque y desembarque.
 4. `tests/lab_parity_test.gd`: 8 escenarios / 960 fotogramas de movimiento comparados con el HTML. El combate actual usa hojas de nueve celdas y ya no se compara con los ataques antiguos.
@@ -86,4 +90,4 @@ La aventura está conectada de principio a fin como boceto. El personaje incorpo
 
 Sprites del paquete suministrado: **Ozzbit Games**. Su licencia de uso personal no comercial y crédito obligatorio se conserva en `assets/licenses/`. Los originales del escritorio no se han modificado. El guion y el encargo originales están en `docs/references/`.
 
-Existe una copia de la base previa a la aventura en `.local/antes-aventura-*`. `.local/`, `.godot/` y exportaciones están excluidos por `.gitignore`. No se han publicado cambios ni subido archivos a GitHub.
+Existe una copia de la base previa a la aventura en `.local/antes-aventura-*`. `.local/`, `.godot/`, bytecode de Python y exportaciones están excluidos por `.gitignore`.
