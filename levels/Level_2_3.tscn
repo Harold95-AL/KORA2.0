@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3]
+[gd_scene load_steps=20 format=3]
 
 [ext_resource type="Script" path="res://scripts/world/section.gd" id="Level"]
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="Player"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" path="res://scenes/entities/EnergyDoor.tscn" id="EnergyDoor"]
 [ext_resource type="PackedScene" path="res://scenes/entities/InteractiveTerminal.tscn" id="InteractiveTerminal"]
 [ext_resource type="PackedScene" path="res://scenes/entities/LevelExit.tscn" id="LevelExit"]
-[ext_resource type="Script" path="res://scripts/world/swamp_forest_art.gd" id="SwampForestArt"]
 
 [sub_resource type="RectangleShape2D" id="Shape0"]
 size = Vector2(200, 48)
@@ -50,9 +49,6 @@ entry_story = ""
 entry_hint = ""
 
 [node name="BackgroundArt" type="Node2D" parent="."]
-
-[node name="SwampForestArt" type="Node2D" parent="BackgroundArt"]
-script = ExtResource("SwampForestArt")
 
 [node name="Geometry" type="Node2D" parent="."]
 

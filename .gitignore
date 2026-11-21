@@ -2,7 +2,6 @@
 .godot/
 # Configuración local del editor y exportaciones.
 .local/
-assets/external/forest-nature-fantasy-tileset-free/
 builds/
 export_credentials.cfg
 *.tmp
