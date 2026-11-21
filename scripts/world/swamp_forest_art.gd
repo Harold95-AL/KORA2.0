@@ -10,16 +10,16 @@ const PROPS_TILE_COUNT := 680
 const PROPS_OFFSET := Vector2(768, 0)
 
 const BACKGROUNDS := [
-	{"name": "Sky", "file": "BG_3/BG_3.png", "scroll": Vector2(0.03, 0.0), "z": -30},
-	{"name": "DistantForest", "file": "BG_2/BG_2.png", "scroll": Vector2(0.16, 0.0), "z": -20},
-	{"name": "ForestCanopy", "file": "BG_1/BG_1.png", "scroll": Vector2(0.38, 0.0), "z": -10},
+	{"name": "Sky", "file": "BG_3/BG_3.png", "scroll": Vector2(0.03, 0.0)},
+	{"name": "DistantForest", "file": "BG_2/BG_2.png", "scroll": Vector2(0.16, 0.0)},
+	{"name": "ForestCanopy", "file": "BG_1/BG_1.png", "scroll": Vector2(0.38, 0.0)},
 ]
 
 var _props_texture: Texture2D
 var _world_art: Node2D
 
 func _ready() -> void:
-	_world_art = get_parent().get_node_or_null("WorldArt") as Node2D
+	_world_art = get_parent().get_parent().get_node_or_null("WorldArt") as Node2D
 	for layer in BACKGROUNDS:
 		_add_parallax(layer)
 	_add_sample_props()
@@ -36,7 +36,8 @@ func _add_parallax(layer: Dictionary) -> void:
 	parallax.scroll_scale = layer["scroll"]
 	parallax.repeat_size = Vector2(texture.get_width(), 0)
 	parallax.repeat_times = 4
-	parallax.z_index = layer["z"]
+	# Queda por delante del _draw del nivel, pero detrás de Geometry y WorldArt.
+	parallax.z_index = 0
 	var image := Sprite2D.new()
 	image.name = "Layer"
 	image.texture = texture
@@ -65,7 +66,9 @@ func _add_sample_props() -> void:
 	var chunk_width := 0
 	while parser.read() == OK:
 		var node_type := parser.get_node_type()
-		var node_name := parser.get_node_name()
+		var node_name := ""
+		if node_type == XMLParser.NODE_ELEMENT or node_type == XMLParser.NODE_ELEMENT_END:
+			node_name = parser.get_node_name()
 		if node_type == XMLParser.NODE_ELEMENT:
 			var attributes := _read_attributes(parser)
 			if node_name == "layer":
