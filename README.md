@@ -65,6 +65,8 @@ Abre cualquier `levels/Level_X_Y.tscn`. Cada escena contiene geometría y entida
 
 Los objetivos y orden de escenas están en `data/sections.json`; los diálogos, eventos, registros y cinemáticas en `data/narrative.json`. La historia usa **STORY_01–STORY_20** y los registros canónicos **REG_01–REG_06**, además de tres fragmentos opcionales.
 
+La sección 2.3 puede activar localmente el bioma **Fantasy Swamp Forest**. Consulta [la nota de instalación y licencia](docs/PAQUETE_FORESTAL_EXTERNO.md); el paquete no se distribuye en este repositorio.
+
 Consulta [el mapa completo y la guía de producción](docs/BOCETO_JUGABLE.md), [la guía de sprites](docs/GUIA_SPRITES.md) y [la comparación con el HTML](docs/CONTROL_LABORATORIO.md).
 
 `tools/build_campaign.py` fue la herramienta de autoría inicial. **No es necesaria para jugar**. Volver a ejecutarla reemplaza los niveles, entidades y JSON generados: guarda tus ediciones manuales antes de regenerar.
