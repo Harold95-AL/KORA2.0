@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://pawl4dgsefs3"]
+
+[ext_resource type="Script" uid="uid://7x2d8hgqlalb" path="res://scripts/player/player.gd" id="1"]
+[ext_resource type="SpriteFrames" path="res://resources/player/player_frames.tres" id="2"]
+
+[sub_resource type="RectangleShape2D" id="Body"]
+size = Vector2(26, 38)
+
+[node name="Player" type="CharacterBody2D" unique_id=1192896522 groups=["player"]]
+collision_layer = 2
+floor_snap_length = 0.0
+script = ExtResource("1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=823516630]
+texture_filter = 1
+position = Vector2(0, -16)
+sprite_frames = ExtResource("2")
+animation = &"idle"
+frame = 0
+frame_progress = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1090044199]
+position = Vector2(0, -19)
+shape = SubResource("Body")

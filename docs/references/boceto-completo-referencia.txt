@@ -1,0 +1,93 @@
+Quiero que construyas **el boceto jugable completo y conectado de todos los niveles de KORA ("La Memoria de las Estrellas") en Godot 4 (GDScript)**, trabajando directamente sobre los archivos del proyecto (`project.godot`, scripts `.gd` y escenas `.tscn`).
+
+Este encargo es para dejar **toda la jugabilidad base, la estructura narrativa y las conexiones de principio a fin** (Prólogo, 4 niveles con 12 secciones jugables en total y Epílogo), usando bloqueos/marcadores provisionales limpios donde aún no haya arte o contenido final, para que **más adelante podamos ir incorporando progresivamente texturas, sprites, fondos, iluminación, diálogos y audio** sin romper la jugabilidad.
+
+**Trabaja directamente sobre los archivos del proyecto. No te limites a dar explicaciones teóricas ni documentos de diseño.**
+
+---
+
+### 1. Inspección del proyecto, físicas y animaciones existentes
+
+1. **Audita el proyecto actual:** Revisa carpetas, escenas y scripts existentes, así como los sprites/animaciones del personaje principal ya integrados (tamaño en píxeles, fotogramas, estados disponibles y parámetros de movimiento/físicas).
+2. **Configuración Pixel Art:** Verifica o ajusta `project.godot` para conservar píxeles nítidos (filtro `Nearest` por defecto, escalado limpio en ventana/viewport 2D) y un `Input Map` claro (`move_left`, `move_right`, `jump`, `attack`, `shoot` si aplica, `interact`, `pause`).
+3. **Respeto a físicas y animaciones del jugador:**
+   - Conserva y reutiliza las físicas y animaciones del personaje principal ya logradas.
+   - No alteres la velocidad, altura de salto, gravedad ni dimensiones del jugador para compensar el diseño de los niveles: **dimensiona cada salto, distancia, plataforma y arena según las capacidades reales del personaje**.
+
+---
+
+### 2. Boceto jugable escalable y reglas del lore
+
+* **Extensión real y ritmo por sección:** Evita niveles miniatura o pasillos vacíos de pocos segundos. Cada una de las **12 secciones** debe tener extensión suficiente, ritmo progresivo y varias zonas o momentos internos (lectura del espacio, desafíos/variantes, checkpoints, cierre/transición), adaptados a la física real del jugador.
+* **No depender de posiciones fijas:** No te amarres a coordenadas o porcentajes exactos del guion; adáptalos libremente a la geometría real y al ritmo de cada escena en Godot 4.
+* **Preparado para capas posteriores:** Estructura las escenas y sistemas para ir enchufando después texturas/`TileMapLayer` finales, sprites de enemigos y escenarios, fondos parallax, iluminación, partículas y audio.
+* **Legibilidad en el boceto:** Distingue claramente (por forma, etiqueta/marcador o estructura) suelos/plataformas transitables, peligros, interactuables, checkpoints, enemigos, registros opcionales y salidas.
+
+---
+
+### 3. Núcleo narrativo y personajes clave (Canon)
+
+Integra el lore como hilo conductor coherente y editable (sin bloquear el avance por registros opcionales ni repetir diálogos largos al reaparecer en checkpoints):
+* **KORA y la Resonancia:** Red cristalina planetaria que transporta energía e información/huellas de vida.
+* **Los Eshar, el Proyecto Vigilia y la Fractura:** Civilización antigua que intentó preservar conciencias en el Proyecto Vigilia (impulsado por científicos como **Ayen**, quien advirtió el peligro), provocando una sobrecarga energética (**la Fractura**) que agotó el ecosistema y atrapó ecos/fragmentos de memoria.
+* **Saren (El Guardián Fracturado):** Ingeniero Eshar que sacrificó su conciencia para contener la Fractura; tras siglos de deterioro, defiende el núcleo de forma rígida y trágica.
+* **ORÚ:** Construcción defensiva del santuario (minijefe del Nivel 2) con protocolos antiguos y parcialmente alterados.
+* **SIL:** Pequeña criatura bioluminiscente nativa que se comunica con sonidos y pulsaciones luminosas; representa la vida actual del planeta y el vínculo emocional con el ecosistema.
+* **LUMA:** IA de asistencia de la nave con voz serena y humor seco ocasional.
+* **El Explorador:** Protagonista curioso, observador y decidido.
+* **Eco de Fase y la señal:** Fenómeno por el cual la señal recibida al inicio proviene del propio protagonista en el desenlace, y el accidente ocurrió por la descarga defensiva automática al aproximarse. El motivo rítmico recurrente es **tres pulsaciones: corta, larga, corta**.
+
+---
+
+### 4. Sistemas compartidos reutilizables
+
+Organiza el proyecto en carpetas limpias (`autoload/`, `scenes/`, `scripts/`, `levels/`, `ui/`, `data/`) reutilizando lo existente:
+* **GameManager / NarrativeManager (Autoload):** Controla salud, checkpoints activos, progreso de niveles, flags narrativos (`STORY_01` a `STORY_20` y registros encontrados), estado de mecanismos/puertas y transiciones suaves entre escenas. Separa estados narrativos de estados temporales de combate y evita que reaparecer en un checkpoint bloquee puertas o repita diálogos largos.
+* **Sistema de diálogos y registros (editable):** Gestor único de diálogos breves en movimiento, conversaciones con avance manual, registros examinables opcionales (abribles/cerrables y releeíbles) y textos fáciles de modificar sin reprogramar las escenas.
+* **Entidades base reutilizables (`.tscn`):**
+  - `Checkpoint.tscn`
+  - `Hazard.tscn` (peligros fijos y cíclicos: *aviso -> activo -> reposo*)
+  - `MovingPlatform.tscn` (plataformas móviles e inestables que transporten bien al jugador)
+  - `InteractiveTerminal.tscn` / `CrystalSwitch.tscn` (terminales, interruptores cristalinos, resonadores con orden y registros)
+  - `EnergyDoor.tscn` / `LevelExit.tscn`
+  - `BaseEnemy.tscn`
+* **UI y herramienta de pruebas:**
+  - HUD básico (vida, objetivo principal de la sección, cuadro de diálogo/registro).
+  - Menú principal, pausa y **Selector de Secciones para desarrollo** (ej. tecla `F1` o acceso en pausa) para saltar directo a cualquiera de las 12 secciones al probar.
+
+---
+
+### 5. Estructura completa de la aventura (Prólogo, 12 Secciones y Epílogo)
+
+Conecta todo el flujo jugable y narrativo respetando las capacidades del jugador y los objetivos de cada sección:
+
+* **Prólogo (`Prologue.tscn` — La señal):** Secuencia breve (patrón corta-larga-corta, transmisión con marca temporal anómala, aproximación, descarga/interferencia y caída/impacto), con opción de avanzar/omitir y enlace directo a `Level_1_1.tscn`.
+* **Nivel 1 — Ecos del impacto** (*Objetivo general:* investigar el accidente y buscar energía):
+  - `Level_1_1.tscn` (*La nave destruida* — *"Inspecciona los restos de la nave"*): Cráter inicial seguro, restos de la nave, terminal con telemetría de la descarga, célula/compartimento de energía, fragmento cristalino opcional con el patrón de pulsos, mirador y salida.
+  - `Level_1_2.tscn` (*El primer contacto* — *"Explora los alrededores del accidente"*): Sendero con desniveles, fauna ambiental, primer encuentro con **SIL**, cristal de memoria opcional, checkpoint, primer enemigo territorial con espacio para probar combate y detección de la señal subterránea.
+  - `Level_1_3.tscn` (*La grieta luminosa* — *"Encuentra una fuente de energía"*): Descenso hacia una gran fractura cristalina, introducción segura a plataformas móviles/inestables, pilar de resonancia, checkpoint, obtención limitada de fuente energética (sin dañar el ecosistema) y cierre hacia la estructura lejana.
+* **Nivel 2 — El bosque resonante** (*Objetivo general:* investigar la Resonancia y avanzar hacia las estructuras Eshar):
+  - `Level_2_1.tscn` (*Jardines de cristal* — *"Investiga la Resonancia"*): Bosque bioluminiscente con zonas apagadas/debilitadas, regreso de **SIL**, desvío opcional con registro de los Eshar, mecanismo de resonadores para restaurar energía local y acceso al santuario.
+  - `Level_2_2.tscn` (*El santuario silencioso* — *"Activa los mecanismos del santuario"*): Ruinas geométricas Eshar, puzle de **3 resonadores** en orden con pistas claras (sin castigo injusto al reintentar), archivo de **Ayen** (mención del nombre KORA), registro lateral opcional y apertura hacia el guardián.
+  - `Level_2_3.tscn` (*El guardián del bosque* — *"Supera las defensas del santuario"*): Aproximación, checkpoint previo y arena cerrada contra **ORÚ** (minijefe con ataques cuerpo a cuerpo/pulsos, ventanas de vulnerabilidad y segunda fase más rápida), autorización final y descenso.
+* **Nivel 3 — Las profundidades olvidadas** (*Objetivo general:* descubrir el origen de la Fractura):
+  - `Level_3_1.tscn` (*Cavernas de resonancia* — *"Atraviesa las cavernas"*): Plataformas exigentes dentro del salto real combinadas con peligros cíclicos (*aviso -> activo -> reposo*), criatura debilitada liberables, inscripción opcional, regulador y acceso al complejo.
+  - `Level_3_2.tscn` (*El complejo abandonado* — *"Investiga el Proyecto Vigilia"*): Laboratorios y cámaras de memorias, terminales y registros (Proyecto Vigilia, advertencia de **Ayen**, archivo de **Saren**, historial de transmisiones y registros opcionales) + redirección energética para abrir salida.
+  - `Level_3_3.tscn` (*El descenso* — *"Alcanza el núcleo profundo"*): Estructura vertical con ascensores/plataformas descendentes, fallos estructurales, descansos seguros, eco de transmisión con voz parecida a la del protagonista y límites de cámara adaptados a la verticalidad (sin caídas a ciegas).
+* **Nivel 4 — El corazón de KORA** (*Objetivo general:* detener la extracción y restaurar la Resonancia):
+  - `Level_4_1.tscn` (*La zona corrompida* — *"Restablece los estabilizadores"*): Terreno alterado con cristales fracturados, peligros cíclicos, plataformas fracturadas, enemigos exigentes, conducto y estabilizadores para abrir la cámara.
+  - `Level_4_2.tscn` (*La cámara del núcleo* — *"Descubre cómo liberar la Resonancia"*): Sala monumental con el núcleo visible, galería de ecos, última grabación de **Ayen**, consola del núcleo, revelación del transmisor de fase/Eco de Fase y último checkpoint antes del jefe.
+  - `Level_4_3.tscn` (*El corazón fracturado* — *"Detén a Saren y restaura el núcleo"*): Arena del jefe final (**Saren / El Guardián Fracturado**) con barra de vida, **Fase 1** y **Fase 2** con ataques legibles y evitables, resolución trágica, liberación de memorias, envío de la señal temporal y estabilización del núcleo.
+* **Epílogo (`Epilogue.tscn` — El último pulso):** Transición tras estabilizar el núcleo, recuperación del ecosistema, despedida de **SIL**, reparación/despegue de la nave, segunda señal distante con el mismo patrón rítmico, créditos provisionales y botón para volver al menú principal.
+
+---
+
+### 6. Verificación y entrega final
+
+1. Verifica que las escenas abran sin errores de sintaxis ni rutas rotas, que todos los saltos sean posibles, que la cámara anticipe el recorrido y que morir/reaparecer en checkpoints no trabe puertas ni repita diálogos largos.
+2. No subas cambios a GitHub sin autorización.
+3. Al terminar, entrégame un resumen con:
+   - Estado de Prólogo, las 12 secciones y Epílogo, indicando su extensión y estructura jugable.
+   - Sistemas y archivos creados/modificados (incluyendo el gestor narrativo y los IDs `STORY_...` / registros integrados).
+   - Controles y cómo abrir el selector de secciones de desarrollo.
+   - Qué capas quedan pendientes por sección para ir añadiendo después (texturas/`TileMapLayer`, sprites de enemigos/escenarios, retratos/arte narrativo, fondos parallax, iluminación, partículas y audio).

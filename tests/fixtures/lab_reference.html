@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sprite Testing Lab - Male Hero</title>
+  <style>
+    :root {
+      --bg-dark: #0f111a;
+      --panel-bg: rgba(22, 26, 40, 0.90);
+      --panel-border: #2a3350;
+      --accent: #3b82f6;
+      --accent-glow: #60a5fa;
+      --accent-green: #10b981;
+      --accent-red: #ef4444;
+      --accent-gold: #f59e0b;
+      --text-main: #f1f5f9;
+      --text-dim: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
+
+    body {
+      background: var(--bg-dark);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Top Bar */
+    header {
+      background: rgba(15, 17, 26, 0.96);
+      border-bottom: 1px solid var(--panel-border);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand h1 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      background: linear-gradient(135deg, #60a5fa, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #1e293b;
+      color: var(--text-dim);
+      border: 1px solid #334155;
+    }
+
+    .badge.connected {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border-color: rgba(16, 185, 129, 0.4);
+    }
+
+    .badge.disconnected {
+      background: rgba(239, 68, 68, 0.15);
+      color: #f87171;
+      border-color: rgba(239, 68, 68, 0.4);
+    }
+
+    /* Main Canvas Container */
+    #viewport {
+      flex: 1;
+      position: relative;
+      background: radial-gradient(circle at center, #1b2238 0%, #090b12 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    canvas#gameCanvas {
+      display: block;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: -webkit-crisp-edges;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+      border: 1px solid #1e263d;
+      background: #121624;
+    }
+
+    /* Floating UI Panels */
+    .hud-overlay {
+      position: absolute;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    /* Top Left: Live State Info */
+    .hud-state {
+      top: 15px;
+      left: 15px;
+      background: var(--panel-bg);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--panel-border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-family: monospace;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: var(--text-main);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    .hud-state span.highlight {
+      color: #38bdf8;
+      font-weight: bold;
+    }
+
+    /* Bottom Left: Live Gamepad Visualizer */
+    .hud-gamepad {
+      bottom: 15px;
+      left: 15px;
+      background: var(--panel-bg);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--panel-border);
+      border-radius: 8px;
+      padding: 12px;
+      width: 250px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+
+    .gp-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-dim);
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .gp-diagram {
+      display: grid;
+      grid-template-columns: 75px 1fr 85px;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .stick-box {
+      width: 65px;
+      height: 65px;
+      background: #141a29;
+      border: 1px solid #2d3856;
+      border-radius: 50%;
+      position: relative;
+      margin: 0 auto;
+    }
+
+    .stick-dot {
+      width: 22px;
+      height: 22px;
+      background: #3b82f6;
+      border: 2px solid #93c5fd;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: transform 0.04s ease-out;
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+    }
+
+    .buttons-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5px;
+    }
+
+    .gp-btn {
+      background: #192136;
+      border: 1px solid #2d3856;
+      border-radius: 6px;
+      font-size: 0.68rem;
+      padding: 5px 2px;
+      text-align: center;
+      color: var(--text-dim);
+      font-weight: bold;
+      transition: all 0.1s;
+    }
+
+    .gp-btn.active {
+      background: #3b82f6;
+      color: #fff;
+      border-color: #60a5fa;
+      box-shadow: 0 0 8px #3b82f6;
+      transform: scale(0.95);
+    }
+
+    /* Right Side: Lab Controls Panel */
+    .hud-controls-panel {
+      top: 15px;
+      right: 15px;
+      width: 280px;
+      max-height: calc(100vh - 120px);
+      overflow-y: auto;
+      background: var(--panel-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--panel-border);
+      border-radius: 8px;
+      padding: 16px;
+      pointer-events: auto;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    }
+
+    .panel-section {
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .panel-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .section-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #7dd3fc;
+      margin-bottom: 10px;
+    }
+
+    .control-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 0.8rem;
+    }
+
+    .control-row label {
+      color: var(--text-dim);
+    }
+
+    .control-row span.val {
+      color: #38bdf8;
+      font-family: monospace;
+      font-weight: bold;
+    }
+
+    input[type=range] {
+      width: 100%;
+      height: 4px;
+      background: #1e293b;
+      border-radius: 2px;
+      outline: none;
+      -webkit-appearance: none;
+      margin: 4px 0 10px 0;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #38bdf8;
+      cursor: pointer;
+      box-shadow: 0 0 6px rgba(56, 189, 248, 0.7);
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 6px 10px;
+      background: #1e293b;
+      border: 1px solid #334155;
+      color: var(--text-main);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.15s;
+    }
+
+    .btn:hover {
+      background: #283548;
+      border-color: #475569;
+    }
+
+    .btn.active {
+      background: #2563eb;
+      border-color: #3b82f6;
+      color: #fff;
+    }
+
+    .toggle-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 0.8rem;
+    }
+
+    /* Bottom Bar Controls Help */
+    footer {
+      background: rgba(15, 17, 26, 0.96);
+      border-top: 1px solid var(--panel-border);
+      padding: 8px 20px;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .keys-guide {
+      display: flex;
+      gap: 16px;
+    }
+
+    .key-badge {
+      display: inline-block;
+      padding: 2px 6px;
+      background: #1e293b;
+      border: 1px solid #475569;
+      border-radius: 4px;
+      color: #e2e8f0;
+      font-family: monospace;
+      font-weight: bold;
+      margin-right: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <h1>HOODED PHANTOM - UNKNOWN PLANET LAB</h1>
+      <span class="badge" id="gamepadBadge">Mando: Buscando...</span>
+      <span class="badge" id="fpsBadge">60 FPS</span>
+    </div>
+    <div style="display:flex; gap:8px; align-items:center;">
+      <button class="btn" id="btnCombo1" style="background:#4338ca; border-color:#6366f1; color:#fff; font-weight:bold;">⚔️ Combo 1 (X / J)</button>
+      <button class="btn" id="btnCombo2" style="background:#7c3aed; border-color:#a855f7; color:#fff; font-weight:bold;">⚔️ Combo 2 (X / J)</button>
+      <button class="btn" id="btnCombo3" style="background:#dc2626; border-color:#ef4444; color:#fff; font-weight:bold; box-shadow:0 0 10px rgba(239,68,68,0.4);">💥 Combo 3 Fuerte (Y / I / Der)</button>
+      <button class="btn" id="btnDash" style="background:#0284c7; border-color:#38bdf8; color:#fff; font-weight:bold; box-shadow:0 0 10px rgba(56,189,248,0.4);">⚡ Dash Astral (B / K)</button>
+      <button class="btn" id="btnResetPos">Reiniciar (R)</button>
+      <button class="btn" id="btnSpawnDummy">Sonda (B)</button>
+    </div>
+  </header>
+
+  <div id="viewport">
+    <canvas id="gameCanvas" width="960" height="540"></canvas>
+
+    <!-- State HUD -->
+    <div class="hud-overlay hud-state">
+      <div>Estado: <span class="highlight" id="hudState">IDLE</span></div>
+      <div>Frame: <span class="highlight" id="hudFrame">0 / 10</span></div>
+      <div>Combo Espada: <span class="highlight" id="hudCombo">Listo (Pulsa X / Click)</span></div>
+      <div>Dash Astral: <span class="highlight" id="hudDash">Listo (B / K)</span></div>
+      <div>Velocidad: <span id="hudVel">X: 0.0, Y: 0.0</span></div>
+      <div>En el Suelo: <span class="highlight" id="hudGrounded">Si</span></div>
+    </div>
+
+    <!-- Live Gamepad Visualizer -->
+    <div class="hud-overlay hud-gamepad">
+      <div class="gp-title">
+        <span>Controller HUD</span>
+        <span id="gpType">Detectando...</span>
+      </div>
+      <div class="gp-diagram">
+        <div class="stick-box">
+          <div class="stick-dot" id="gpStick"></div>
+        </div>
+        <div style="font-size:0.65rem; color:#64748b; text-align:center;">
+          <div><b id="gpStickVal">0.0, 0.0</b></div>
+          <div style="margin-top:6px;">Stick / D-Pad</div>
+        </div>
+        <div class="buttons-grid">
+          <div class="gp-btn" id="gpBtnX">X (Atk)</div>
+          <div class="gp-btn" id="gpBtnY">Y (Fuerte)</div>
+          <div class="gp-btn" id="gpBtnA">A (Salto)</div>
+          <div class="gp-btn" id="gpBtnB">B (Run)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Control Tuning Drawer -->
+    <div class="hud-controls-panel">
+      <!-- Rendering & Scale -->
+      <div class="panel-section">
+        <div class="section-title">Vista & Zoom Pixel-Art</div>
+        <div class="btn-group">
+          <button class="btn" data-scale="2">2x</button>
+          <button class="btn active" data-scale="3">3x</button>
+          <button class="btn" data-scale="4">4x</button>
+        </div>
+      </div>
+
+      <!-- Debug Overlays -->
+      <div class="panel-section">
+        <div class="section-title">Visualizacion Debug</div>
+        <div class="toggle-row">
+          <label>Hitbox & Hurtbox (C)</label>
+          <input type="checkbox" id="chkHitbox" checked>
+        </div>
+        <div class="toggle-row">
+          <label>Caja Sprite 128x128</label>
+          <input type="checkbox" id="chkSpriteBox">
+        </div>
+        <div class="toggle-row">
+          <label>Regla de Salto (Pixeles)</label>
+          <input type="checkbox" id="chkRuler" checked>
+        </div>
+      </div>
+
+      <!-- Freeze / Frame Stepper -->
+      <div class="panel-section">
+        <div class="section-title">Pausa & Frame a Frame</div>
+        <div class="btn-group">
+          <button class="btn" id="btnPauseToggle">Pausa (P)</button>
+          <button class="btn" id="btnFrameStep">Paso &gt;</button>
+        </div>
+        <div style="margin-top: 10px;">
+          <label style="font-size:0.75rem; color:var(--text-dim);">Forzar Estado:</label>
+          <select id="selForceState" style="width:100%; background:#1e293b; color:#fff; border:1px solid #334155; padding:4px; border-radius:4px; margin-top:4px;">
+            <option value="none">-- Modo Gameplay Normal --</option>
+            <option value="combo_1">⚔️ Combo 1 (Tajo Horizontal - 3 frames)</option>
+            <option value="combo_2">⚔️ Combo 2 (Tajo Ascendente - 3 frames)</option>
+            <option value="combo_3">💥 Combo 3 (Golpe Contundente - 4 frames)</option>
+            <option value="combo_1_end">⚔️ Envaine de Espada (4 frames)</option>
+            <option value="run">⚡ Dash / Run (10 frames)</option>
+            <option value="idle">Idle (10 frames)</option>
+            <option value="walk">Walk (10 frames)</option>
+            <option value="jump">Jump (6 frames)</option>
+            <option value="fall">Fall (4 frames)</option>
+            <option value="fall_loop">Fall Loop (3 frames)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Animation Speeds -->
+      <div class="panel-section">
+        <div class="section-title">Velocidad de Animacion (FPS)</div>
+        <div class="control-row">
+          <label>Idle FPS</label>
+          <span class="val" id="valFpsIdle">8</span>
+        </div>
+        <input type="range" id="rngFpsIdle" min="2" max="24" value="8">
+
+        <div class="control-row">
+          <label>Walk FPS</label>
+          <span class="val" id="valFpsWalk">10</span>
+        </div>
+        <input type="range" id="rngFpsWalk" min="2" max="24" value="10">
+
+        <div class="control-row">
+          <label>Run FPS</label>
+          <span class="val" id="valFpsRun">14</span>
+        </div>
+        <input type="range" id="rngFpsRun" min="4" max="30" value="14">
+
+        <div class="control-row">
+          <label>Combo Attack FPS</label>
+          <span class="val" id="valFpsAtk">12</span>
+        </div>
+        <input type="range" id="rngFpsAtk" min="4" max="24" value="12">
+      </div>
+
+      <!-- Physics Tuning -->
+      <div class="panel-section">
+        <div class="section-title">Fisicas del Heroe</div>
+        <div class="control-row">
+          <label>Velocidad Caminar</label>
+          <span class="val" id="valSpeedWalk">110</span>
+        </div>
+        <input type="range" id="rngSpeedWalk" min="50" max="250" value="110">
+
+        <div class="control-row">
+          <label>Velocidad Correr</label>
+          <span class="val" id="valSpeedRun">210</span>
+        </div>
+        <input type="range" id="rngSpeedRun" min="120" max="400" value="210">
+
+        <div class="control-row">
+          <label>Fuerza Salto</label>
+          <span class="val" id="valJump">380</span>
+        </div>
+        <input type="range" id="rngJump" min="200" max="600" value="380">
+
+        <div class="control-row">
+          <label>Gravedad</label>
+          <span class="val" id="valGravity">950</span>
+        </div>
+        <input type="range" id="rngGravity" min="400" max="1800" value="950">
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="keys-guide">
+      <div><span class="key-badge">Mando</span> Stick: Mover | <span class="key-badge">A</span> Saltar | <span class="key-badge">X</span> Combo Espada | <span class="key-badge">Y</span> Golpe Contundente | <span class="key-badge">B / RB</span> Dash Astral</div>
+      <div><span class="key-badge">Teclado / Ratón</span> <span class="key-badge">A/D</span> Mover | <span class="key-badge">Espacio</span> Saltar | <span class="key-badge">J / Click Izq</span> Combo Espada | <span class="key-badge">I / U / Click Der</span> Golpe Contundente (Solo o 3er Golpe) | <span class="key-badge">K / E</span> Dash Astral</div>
+    </div>
+    <div>Presiona cualquier boton de tu mando para activarlo</div>
+  </footer>
+
+  <script>
+    // --- 1. CONFIG & ASSET LOADER ---
+    const SPRITE_SIZE = 128;
+    // Feet anchor inside the 128x128 sprite:
+    const ANCHOR_X = 64;
+    const ANCHOR_Y = 80;
+
+    // Sprite definitions matching individual_sheets
+    const SPRITE_DATA = {
+      idle:         { path: 'individual_sheets/male_hero-idle.png',         frames: 10, fps: 8,  loop: true },
+      walk:         { path: 'individual_sheets/male_hero-walk.png',         frames: 10, fps: 10, loop: true },
+      run:          { path: 'individual_sheets/male_hero-run.png',          frames: 10, fps: 14, loop: true },
+      jump:         { path: 'individual_sheets/male_hero-jump.png',         frames: 6,  fps: 12, loop: false },
+      fall:         { path: 'individual_sheets/male_hero-fall.png',         frames: 4,  fps: 12, loop: false },
+      fall_loop:    { path: 'individual_sheets/male_hero-fall_loop.png',    frames: 3,  fps: 10, loop: true },
+      combo_1:      { path: 'individual_sheets/male_hero-combo_1.png',      frames: 3,  fps: 10, loop: false },
+      combo_2:      { path: 'individual_sheets/male_hero-combo_2.png',      frames: 3,  fps: 10, loop: false },
+      combo_3:      { path: 'individual_sheets/male_hero-combo_3.png',      frames: 4,  fps: 11, loop: false },
+      combo_1_end:  { path: 'individual_sheets/male_hero-combo_1_end.png',  frames: 4,  fps: 10, loop: false },
+    };
+
+    const images = {};
+    let loadedCount = 0;
+    const totalAssets = Object.keys(SPRITE_DATA).length;
+
+    Object.entries(SPRITE_DATA).forEach(([key, data]) => {
+      const img = new Image();
+      img.src = data.path + '?v=' + Date.now();
+      img.onload = () => {
+        loadedCount++;
+      };
+      img.onerror = () => {
+        console.warn('No se pudo cargar relativa:', data.path);
+      };
+      images[key] = img;
+    });
+
+    // --- 2. CANVAS & VIEWPORT ---
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+    let scale = 3;
+
+    function resizeCanvas() {
+      const parent = document.getElementById('viewport');
+      canvas.width = parent.clientWidth;
+      canvas.height = parent.clientHeight;
+      ctx.imageSmoothingEnabled = false;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    // --- 3. PHYSICS & CONFIG SETTINGS ---
+    const config = {
+      walkSpeed: 110,
+      runSpeed: 210,
+      jumpForce: 380,
+      gravity: 950,
+      coyoteTimeMax: 0.1,
+      jumpBufferMax: 0.12,
+      showHitbox: true,
+      showSpriteBox: false,
+      showRuler: true,
+      paused: false,
+      stepFrame: false,
+      forceState: 'none',
+      fps: {
+        idle: 8,
+        walk: 10,
+        run: 14,
+        combo: 12
+      }
+    };
+
+    // --- 4. GAME OBJECTS: PLATFORMS & DUMMY ---
+    const groundY = 400;
+    const platforms = [
+      // Main floor
+      { x: -1000, y: groundY, w: 3000, h: 200, type: 'ground' },
+      // Tier 1 platforms
+      { x: 100, y: 310, w: 140, h: 18, type: 'plat' },
+      { x: 320, y: 230, w: 140, h: 18, type: 'plat' },
+      // High jump challenge
+      { x: 540, y: 150, w: 160, h: 18, type: 'plat' },
+      // Floating stepping stones
+      { x: -160, y: 280, w: 100, h: 18, type: 'plat' },
+      { x: -320, y: 200, w: 110, h: 18, type: 'plat' },
+    ];
+
+    // Dummy Sandbag
+    const dummy = {
+      x: 250,
+      y: groundY,
+      w: 24,
+      h: 45,
+      flashTimer: 0,
+      wobbleAngle: 0,
+      wobbleVel: 0,
+      hp: 100,
+      maxHp: 100,
+      damageNumbers: [],
+      hit(damage, dir) {
+        this.flashTimer = 0.18;
+        this.wobbleVel = dir * 18;
+        this.hp = Math.max(0, this.hp - damage);
+        if (this.hp === 0) this.hp = this.maxHp;
+        this.damageNumbers.push({
+          x: this.x + (Math.random() * 20 - 10),
+          y: this.y - 45,
+          text: damage,
+          alpha: 1.0,
+          vy: -80
+        });
+        spawnHitSparks(this.x, this.y - 25);
+        rumbleGamepad(80, 0.4, 0.8);
+      },
+      update(dt) {
+        if (this.flashTimer > 0) this.flashTimer -= dt;
+        // Spring physics for wobble
+        const spring = 80;
+        const damping = 6;
+        const force = -spring * this.wobbleAngle;
+        this.wobbleVel += force * dt;
+        this.wobbleVel *= Math.max(0, 1 - damping * dt);
+        this.wobbleAngle += this.wobbleVel * dt;
+
+        // Damage numbers update
+        for (let i = this.damageNumbers.length - 1; i >= 0; i--) {
+          const dn = this.damageNumbers[i];
+          dn.y += dn.vy * dt;
+          dn.alpha -= dt * 1.5;
+          if (dn.alpha <= 0) this.damageNumbers.splice(i, 1);
+        }
+      },
+      draw(ctx) {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.wobbleAngle * Math.PI / 180);
+
+        // Flash red/white on hit
+        ctx.fillStyle = this.flashTimer > 0 ? '#ffffff' : '#b91c1c';
+        ctx.strokeStyle = '#f87171';
+        ctx.lineWidth = 2;
+
+        // Draw punching bag body
+        ctx.beginPath();
+        ctx.roundRect(-this.w/2, -this.h, this.w, this.h, [8, 8, 4, 4]);
+        ctx.fill();
+        ctx.stroke();
+
+        // Eye / target marks
+        ctx.fillStyle = '#fee2e2';
+        ctx.fillRect(-6, -this.h + 12, 12, 4);
+        ctx.fillRect(-2, -this.h + 8, 4, 12);
+
+        // Base stand
+        ctx.fillStyle = '#475569';
+        ctx.fillRect(-16, -3, 32, 6);
+
+        ctx.restore();
+
+        // Draw floating damage numbers
+        for (const dn of this.damageNumbers) {
+          ctx.save();
+          ctx.globalAlpha = Math.max(0, dn.alpha);
+          ctx.fillStyle = '#fbbf24';
+          ctx.strokeStyle = '#000000';
+          ctx.lineWidth = 2;
+          ctx.font = 'bold 16px monospace';
+          ctx.strokeText(`-${dn.text}`, dn.x, dn.y);
+          ctx.fillText(`-${dn.text}`, dn.x, dn.y);
+          ctx.restore();
+        }
+      }
+    };
+
+    // Cosmic Starlight Particles
+    const particles = [];
+    function spawnHitSparks(x, y) {
+      for (let i = 0; i < 14; i++) {
+        const angle = Math.random() * Math.PI * 2;
+        const spd = 70 + Math.random() * 150;
+        particles.push({
+          x, y,
+          vx: Math.cos(angle) * spd,
+          vy: Math.sin(angle) * spd,
+          color: ['#00f0ff', '#c084fc', '#fef08a', '#38bdf8', '#ffffff'][Math.floor(Math.random() * 5)],
+          size: 2 + Math.random() * 3,
+          life: 0.3
+        });
+      }
+    }
+
+    function spawnDust(x, y) {
+      for (let i = 0; i < 5; i++) {
+        particles.push({
+          x: x + (Math.random() * 16 - 8),
+          y: y,
+          vx: (Math.random() * 40 - 20),
+          vy: -Math.random() * 25,
+          color: ['#38bdf8', '#c084fc', '#818cf8', '#e2e8f0'][Math.floor(Math.random() * 4)],
+          size: 1.5 + Math.random() * 2.5,
+          life: 0.35
+        });
+      }
+    }
+
+    // Astral Ghosts (Dash Afterimages)
+    const ghosts = [];
+    function spawnGhost(p) {
+      const img = images[p.state];
+      if (!img || !img.complete) return;
+      ghosts.push({
+        x: p.x,
+        y: p.y,
+        facing: p.facing,
+        img: img,
+        frameIndex: p.frameIndex,
+        alpha: 0.75
+      });
+    }
+
+    function updateGhosts(dt) {
+      for (let i = ghosts.length - 1; i >= 0; i--) {
+        const g = ghosts[i];
+        g.alpha -= dt * 3.5;
+        if (g.alpha <= 0) ghosts.splice(i, 1);
+      }
+    }
+
+    function drawGhosts(ctx) {
+      for (const g of ghosts) {
+        ctx.save();
+        ctx.translate(Math.round(g.x), Math.round(g.y));
+        ctx.scale(g.facing, 1);
+        ctx.globalAlpha = Math.max(0, g.alpha * 0.6);
+        ctx.drawImage(
+          g.img,
+          g.frameIndex * SPRITE_SIZE, 0, SPRITE_SIZE, SPRITE_SIZE,
+          -ANCHOR_X, -ANCHOR_Y, SPRITE_SIZE, SPRITE_SIZE
+        );
+        ctx.restore();
+      }
+    }
+
+    // --- AUDIO SYSTEM (Web Audio API) ---
+    let audioCtx = null;
+    function initAudio() {
+      if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (AudioContext) audioCtx = new AudioContext();
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+    window.addEventListener('keydown', initAudio, { once: true });
+    window.addEventListener('mousedown', initAudio, { once: true });
+
+    function playSlashSound(pitch = 1.0) {
+      initAudio();
+      if (!audioCtx) return;
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        const filter = audioCtx.createBiquadFilter();
+
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(520 * pitch, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(100, audioCtx.currentTime + 0.14);
+
+        filter.type = 'lowpass';
+        filter.frequency.setValueAtTime(1600, audioCtx.currentTime);
+        filter.frequency.linearRampToValueAtTime(300, audioCtx.currentTime + 0.14);
+
+        gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.14);
+
+        osc.connect(filter);
+        filter.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.14);
+      } catch (e) {}
+    }
+
+    function playDashSound() {
+      initAudio();
+      if (!audioCtx) return;
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        const filter = audioCtx.createBiquadFilter();
+
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(420, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(140, audioCtx.currentTime + 0.18);
+
+        filter.type = 'bandpass';
+        filter.frequency.setValueAtTime(900, audioCtx.currentTime);
+        filter.frequency.linearRampToValueAtTime(250, audioCtx.currentTime + 0.18);
+
+        gain.gain.setValueAtTime(0.35, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.18);
+
+        osc.connect(filter);
+        filter.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.18);
+      } catch (e) {}
+    }
+
+    function playHeavySlamSound() {
+      initAudio();
+      if (!audioCtx) return;
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(140, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(30, audioCtx.currentTime + 0.28);
+        gain.gain.setValueAtTime(0.45, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.28);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.28);
+
+        const sub = audioCtx.createOscillator();
+        const subGain = audioCtx.createGain();
+        sub.type = 'sine';
+        sub.frequency.setValueAtTime(90, audioCtx.currentTime);
+        sub.frequency.exponentialRampToValueAtTime(25, audioCtx.currentTime + 0.35);
+        subGain.gain.setValueAtTime(0.55, audioCtx.currentTime);
+        subGain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.35);
+        sub.connect(subGain);
+        subGain.connect(audioCtx.destination);
+        sub.start();
+        sub.stop(audioCtx.currentTime + 0.35);
+      } catch (e) {}
+    }
+
+    function playHitSound() {
+      initAudio();
+      if (!audioCtx) return;
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'square';
+        osc.frequency.setValueAtTime(220, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(50, audioCtx.currentTime + 0.1);
+        gain.gain.setValueAtTime(0.35, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.1);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.1);
+      } catch (e) {}
+    }
+
+    function playJumpSound() {
+      initAudio();
+      if (!audioCtx) return;
+      try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(180, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(360, audioCtx.currentTime + 0.1);
+        gain.gain.setValueAtTime(0.18, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.1);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.1);
+      } catch (e) {}
+    }
+
+    // --- 5. PLAYER STATE & ANIMATION MACHINE ---
+    const player = {
+      x: 0,
+      y: groundY,
+      vx: 0,
+      vy: 0,
+      facing: 1, // 1: right, -1: left
+      isGrounded: false,
+      state: 'idle', // idle, walk, run, jump, fall, fall_loop, combo_1, combo_1_end
+      frameIndex: 0,
+      animTimer: 0,
+      coyoteTimer: 0,
+      jumpBufferTimer: 0,
+      attackBuffered: false,
+      combo2Buffered: false,
+      combo3Buffered: false,
+      comboHitDone: false,
+      isDashing: false,
+      dashTimer: 0,
+      dashCooldown: 0,
+      comboPrompt: "",
+      comboPromptTimer: 0,
+
+      // Hitbox dimensions relative to player foot origin
+      bodyWidth: 26,
+      bodyHeight: 38,
+
+      setState(newState) {
+        if (this.state === newState) return;
+        // Si salimos del combo sin activar el siguiente golpe, limpiar buffers
+        if (this.state === 'combo_1' && newState !== 'combo_2' && newState !== 'combo_3') {
+          this.combo2Buffered = false;
+          this.combo3Buffered = false;
+        }
+        if (this.state === 'combo_2' && newState !== 'combo_3') {
+          this.combo3Buffered = false;
+          this.attackBuffered = false;
+        }
+        this.state = newState;
+        this.frameIndex = 0;
+        this.animTimer = 0;
+        this.comboHitDone = false;
+      },
+
+      dash() {
+        if (this.dashCooldown > 0 || this.isDashing) return;
+        this.isDashing = true;
+        this.dashTimer = 0.22;
+        this.dashCooldown = 0.40;
+        this.vx = this.facing * 520;
+        this.vy = 0;
+        this.setState('run');
+        this.comboPrompt = "⚡ DASH ASTRAL";
+        this.comboPromptTimer = 0.45;
+        playDashSound();
+        spawnDust(this.x, this.y);
+        spawnGhost(this);
+        rumbleGamepad(60, 0.4, 0.8);
+      },
+
+      attack() {
+        if (this.state === 'combo_1') {
+          this.combo2Buffered = true;
+          this.comboPrompt = "⚔️ ¡SEGUNDO GOLPE PREPARADO! (Tajo 2)";
+          this.comboPromptTimer = 0.75;
+        } else if (this.state === 'combo_2') {
+          this.combo3Buffered = true;
+          this.comboPrompt = "💥 ¡3ER GOLPE PREPARADO! (Remate)";
+          this.comboPromptTimer = 0.75;
+        } else if (this.state !== 'combo_3' && this.state !== 'combo_1_end') {
+          this.setState('combo_1');
+          this.vx = this.facing * 120;
+          this.comboPrompt = "⚔️ COMBO 1 (Pulsa X para Tajo 2 | Y para Golpe Contundente)";
+          this.comboPromptTimer = 0.75;
+          playSlashSound(1.0);
+          rumbleGamepad(50, 0.4, 0.7);
+        }
+      },
+
+      heavyAttack() {
+        if (this.state === 'combo_1' || this.state === 'combo_2') {
+          // Encadenar como 3er golpe del combo
+          this.combo3Buffered = true;
+          this.comboPrompt = "💥 ¡3ER GOLPE CONTUNDENTE PREPARADO!";
+          this.comboPromptTimer = 0.85;
+          rumbleGamepad(60, 0.5, 0.8);
+        } else if (this.state !== 'combo_3' && this.state !== 'combo_1_end') {
+          // Ejecutar solo de forma independiente
+          this.setState('combo_3');
+          this.vx = this.facing * 180;
+          this.comboPrompt = "💥 ¡GOLPE CONTUNDENTE ASTRAL!";
+          this.comboPromptTimer = 0.85;
+          playSlashSound(0.85);
+          rumbleGamepad(80, 0.5, 0.9);
+        }
+      },
+
+      forceCombo1() {
+        this.setState('combo_1');
+        this.vx = this.facing * 120;
+        this.comboPrompt = "⚔️ COMBO 1: TAJO HORIZONTAL";
+        this.comboPromptTimer = 0.7;
+        playSlashSound(1.0);
+      },
+
+      forceCombo2() {
+        this.setState('combo_2');
+        this.vx = this.facing * 160;
+        this.comboPrompt = "⚔️ COMBO 2: TAJO ASCENDENTE";
+        this.comboPromptTimer = 0.8;
+        playSlashSound(1.35);
+      },
+
+      forceCombo3() {
+        this.setState('combo_3');
+        this.vx = this.facing * 180;
+        this.comboPrompt = "💥 COMBO 3: IMPACTO DEMOLEDOR";
+        this.comboPromptTimer = 0.9;
+        playSlashSound(0.85);
+        camera.shake(0.25, 6);
+      },
+
+      forceComboEnd() {
+        this.setState('combo_1_end');
+        this.vx = this.facing * 140;
+        this.comboPrompt = "⚔️ ENVAINE DE ESPADA";
+        this.comboPromptTimer = 0.8;
+        playSlashSound(1.1);
+      },
+
+      update(dt, input) {
+        if (this.comboPromptTimer > 0) {
+          this.comboPromptTimer -= dt;
+          if (this.comboPromptTimer <= 0) this.comboPrompt = "";
+        }
+
+        // --- 0. Handle Dash Input ---
+        if (this.dashCooldown > 0) this.dashCooldown -= dt;
+        if (input.dashPressed) {
+          this.dash();
+        }
+
+        if (this.isDashing) {
+          this.dashTimer -= dt;
+          this.vx = this.facing * 520;
+          this.vy = 0;
+          if (Math.random() < 0.75) spawnGhost(this);
+          if (this.dashTimer <= 0) {
+            this.isDashing = false;
+          }
+        }
+
+        // --- 1. Handle Attack Inputs ---
+        if (input.attackPressed) {
+          this.attack();
+        }
+        if (input.heavyAttackPressed) {
+          this.heavyAttack();
+        }
+
+        const isAttacking = (this.state === 'combo_1' || this.state === 'combo_2' || this.state === 'combo_3' || this.state === 'combo_1_end');
+
+        // --- 2. Horizontal Movement ---
+        if (!isAttacking && !this.isDashing) {
+          let targetVx = 0;
+          if (Math.abs(input.moveX) > 0.05) {
+            this.facing = input.moveX > 0 ? 1 : -1;
+            const isRun = input.isRunning || Math.abs(input.moveX) >= 0.75;
+            const maxSpd = isRun ? config.runSpeed : config.walkSpeed;
+            targetVx = input.moveX * maxSpd;
+          }
+          const accel = this.isGrounded ? 22 : 12;
+          this.vx += (targetVx - this.vx) * Math.min(1, accel * dt);
+        } else if (!this.isDashing) {
+          this.vx += (0 - this.vx) * 6 * dt;
+        }
+
+        // --- 3. Gravity & Jump Physics ---
+        if (!this.isGrounded && !this.isDashing) {
+          const currentGrav = isAttacking ? config.gravity * 0.45 : config.gravity;
+          this.vy += currentGrav * dt;
+          this.coyoteTimer -= dt;
+        } else if (this.isGrounded) {
+          this.coyoteTimer = config.coyoteTimeMax;
+        }
+
+        // Jump buffering
+        if (input.jumpPressed && !isAttacking) {
+          this.jumpBufferTimer = config.jumpBufferMax;
+        } else if (this.jumpBufferTimer > 0) {
+          this.jumpBufferTimer -= dt;
+        }
+
+        // Execute Jump if buffered and allowed
+        if (this.jumpBufferTimer > 0 && (this.isGrounded || this.coyoteTimer > 0) && !isAttacking) {
+          this.vy = -config.jumpForce;
+          this.isGrounded = false;
+          this.coyoteTimer = 0;
+          this.jumpBufferTimer = 0;
+          this.setState('jump');
+          spawnDust(this.x, this.y);
+          playJumpSound();
+          rumbleGamepad(50, 0.2, 0.4);
+        }
+
+        // Variable Jump Cut
+        if (!input.jumpHeld && this.vy < -120) {
+          this.vy += 650 * dt;
+        }
+
+        // --- 4. Position Integration & Collisions ---
+        this.x += this.vx * dt;
+        this.y += this.vy * dt;
+
+        // Ground / Platform collision resolution
+        let onGroundThisFrame = false;
+        for (const p of platforms) {
+          const prevY = this.y - this.vy * dt;
+          if (this.x >= p.x && this.x <= p.x + p.w) {
+            if (prevY <= p.y + 2 && this.y >= p.y && this.vy >= 0) {
+              this.y = p.y;
+              this.vy = 0;
+              onGroundThisFrame = true;
+            }
+          }
+        }
+
+        const justLanded = !this.isGrounded && onGroundThisFrame;
+        this.isGrounded = onGroundThisFrame;
+        if (justLanded) {
+          spawnDust(this.x, this.y);
+        }
+
+        // --- 5. State Machine Transition Logic ---
+        if (config.forceState !== 'none') {
+          this.state = config.forceState;
+        } else if (isAttacking) {
+          if (!this.comboHitDone) {
+            const hitFrame = (this.state === 'combo_1' && (this.frameIndex === 0 || this.frameIndex === 1)) ||
+                             (this.state === 'combo_2' && (this.frameIndex === 1 || this.frameIndex === 2)) ||
+                             (this.state === 'combo_3' && (this.frameIndex === 1 || this.frameIndex === 2)) ||
+                             (this.state === 'combo_1_end' && (this.frameIndex === 0 || this.frameIndex === 1));
+            if (hitFrame) {
+              const swordReach = this.state === 'combo_3' ? 70 : (this.state === 'combo_2' ? 62 : 55);
+              const swordHitbox = {
+                x: this.facing === 1 ? this.x : this.x - swordReach,
+                y: this.state === 'combo_3' ? this.y - 45 : (this.state === 'combo_2' ? this.y - 50 : this.y - 42),
+                w: swordReach,
+                h: this.state === 'combo_3' ? 52 : (this.state === 'combo_2' ? 48 : 38)
+              };
+              if (swordHitbox.x < dummy.x + dummy.w/2 &&
+                  swordHitbox.x + swordHitbox.w > dummy.x - dummy.w/2 &&
+                  swordHitbox.y < dummy.y &&
+                  swordHitbox.y + swordHitbox.h > dummy.y - dummy.h) {
+                const damage = this.state === 'combo_3' ? 60 : (this.state === 'combo_2' ? 45 : (this.state === 'combo_1' ? 25 : 15));
+                dummy.hit(damage, this.facing);
+                if (this.state === 'combo_3') {
+                  playHeavySlamSound();
+                  camera.shake(0.28, 7);
+                  rumbleGamepad(120, 0.7, 1.0);
+                  for (let k = 0; k < 12; k++) {
+                    particles.push({
+                      x: dummy.x + (Math.random() - 0.5) * 16,
+                      y: dummy.y - 4,
+                      vx: (Math.random() - 0.5) * 220,
+                      vy: -Math.random() * 200 - 40,
+                      life: 0.45,
+                      size: Math.random() * 3 + 2,
+                      color: Math.random() < 0.5 ? '#f59e0b' : '#00f0ff'
+                    });
+                  }
+                } else {
+                  playHitSound();
+                }
+                this.comboHitDone = true;
+              }
+            }
+          }
+        } else if (this.isDashing) {
+          this.setState('run');
+        } else if (!this.isGrounded) {
+          if (this.vy < 30) {
+            this.setState('jump');
+          } else {
+            if (this.state !== 'fall' && this.state !== 'fall_loop') {
+              this.setState('fall');
+            }
+          }
+        } else {
+          if (Math.abs(this.vx) > 30) {
+            if (Math.abs(this.vx) > config.walkSpeed + 15 || input.isRunning) {
+              this.setState('run');
+            } else {
+              this.setState('walk');
+            }
+          } else {
+            this.setState('idle');
+          }
+        }
+
+        // --- 6. Sprite Frame Animation Timing ---
+        let currentFps = 10;
+        if (this.state === 'idle') currentFps = config.fps.idle;
+        else if (this.state === 'walk') currentFps = config.fps.walk;
+        else if (this.state === 'run') currentFps = this.isDashing ? 18 : config.fps.run;
+        else if (this.state === 'combo_1') currentFps = 10;
+        else if (this.state === 'combo_2') currentFps = 10; // 3 frames exactos sincronizados
+        else if (this.state === 'combo_3') currentFps = 11; // 4 frames impacto contundente
+        else if (this.state === 'combo_1_end') currentFps = 10;
+        else if (SPRITE_DATA[this.state]) currentFps = SPRITE_DATA[this.state].fps;
+
+        const frameDuration = 1.0 / Math.max(1, currentFps);
+        this.animTimer += dt;
+
+        if (this.animTimer >= frameDuration) {
+          this.animTimer -= frameDuration;
+          const maxFrames = SPRITE_DATA[this.state] ? SPRITE_DATA[this.state].frames : 1;
+
+          if (this.frameIndex + 1 < maxFrames) {
+            this.frameIndex++;
+          } else {
+            if (config.forceState === this.state) {
+              this.frameIndex = 0;
+            } else if (this.state === 'combo_1') {
+              if (this.combo3Buffered) {
+                this.combo3Buffered = false;
+                this.combo2Buffered = false;
+                this.setState('combo_3');
+                this.vx = this.facing * 180;
+                this.comboPrompt = "💥 ¡3ER GOLPE DEMOLEDOR!";
+                this.comboPromptTimer = 0.85;
+                playSlashSound(0.85);
+              } else if (this.combo2Buffered) {
+                this.combo2Buffered = false;
+                this.setState('combo_2');
+                this.vx = this.facing * 160; // powerful rising lunge!
+                this.comboPrompt = "⚔️ ¡COMBO 2: CORTE ASCENDENTE!";
+                this.comboPromptTimer = 0.75;
+                playSlashSound(1.35);
+              } else {
+                this.setState('combo_1_end');
+              }
+            } else if (this.state === 'combo_2') {
+              if (this.combo3Buffered || this.attackBuffered) {
+                this.combo3Buffered = false;
+                this.attackBuffered = false;
+                this.setState('combo_3');
+                this.vx = this.facing * 200; // Impulso contundente demoledor
+                this.comboPrompt = "💥 ¡COMBO 3: REMATE DEMOLEDOR!";
+                this.comboPromptTimer = 0.9;
+                playSlashSound(0.8);
+              } else {
+                this.setState('combo_1_end');
+              }
+            } else if (this.state === 'combo_3') {
+              this.setState('combo_1_end');
+            } else if (this.state === 'combo_1_end') {
+              this.setState(this.isGrounded ? 'idle' : 'fall');
+            } else if (this.state === 'fall') {
+              this.setState('fall_loop');
+            } else if (SPRITE_DATA[this.state] && SPRITE_DATA[this.state].loop) {
+              this.frameIndex = 0;
+            }
+          }
+        }
+      },
+
+      draw(ctx) {
+        const img = images[this.state];
+        const sData = SPRITE_DATA[this.state];
+
+        ctx.save();
+        ctx.translate(Math.round(this.x), Math.round(this.y));
+        ctx.scale(this.facing, 1);
+
+        // Character shadow
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+        ctx.beginPath();
+        ctx.ellipse(0, 0, 16, 5, 0, 0, Math.PI * 2);
+        ctx.fill();
+
+        if (img && img.complete && img.naturalWidth > 0) {
+          const sx = this.frameIndex * SPRITE_SIZE;
+          const sy = 0;
+          ctx.drawImage(
+            img,
+            sx, sy, SPRITE_SIZE, SPRITE_SIZE,
+            -ANCHOR_X, -ANCHOR_Y, SPRITE_SIZE, SPRITE_SIZE
+          );
+        } else {
+          ctx.fillStyle = '#60a5fa';
+          ctx.fillRect(-12, -36, 24, 36);
+        }
+
+        // Sword slash energy trail
+        if (this.state === 'combo_1' && this.frameIndex === 1) {
+          // Horizontal crescent slash
+          ctx.save();
+          ctx.strokeStyle = 'rgba(0, 240, 255, 0.9)';
+          ctx.lineWidth = 3.5;
+          ctx.beginPath();
+          ctx.arc(15, -28, 36, -Math.PI * 0.35, Math.PI * 0.4);
+          ctx.stroke();
+
+          ctx.strokeStyle = 'rgba(192, 132, 252, 0.7)';
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.arc(15, -28, 42, -Math.PI * 0.3, Math.PI * 0.35);
+          ctx.stroke();
+          ctx.restore();
+        } else if (this.state === 'combo_2' && (this.frameIndex === 1 || this.frameIndex === 2)) {
+          // RISING UPPERCUT DIAGONAL CRESCENT SLASH
+          ctx.save();
+          ctx.strokeStyle = 'rgba(0, 240, 255, 0.95)';
+          ctx.lineWidth = 4.5;
+          ctx.beginPath();
+          ctx.arc(18, -32, 45, Math.PI * 0.2, -Math.PI * 0.45, true);
+          ctx.stroke();
+
+          ctx.strokeStyle = 'rgba(192, 132, 252, 0.85)';
+          ctx.lineWidth = 2.5;
+          ctx.beginPath();
+          ctx.arc(18, -32, 52, Math.PI * 0.25, -Math.PI * 0.4, true);
+          ctx.stroke();
+
+          // Rising sparks
+          ctx.fillStyle = '#ffffff';
+          ctx.fillRect(48, -42, 3, 3);
+          ctx.fillRect(40, -56, 2, 2);
+          ctx.restore();
+        } else if (this.state === 'combo_3') {
+          // HEAVY SLAM ASTRAL IMPACT
+          if (this.frameIndex === 1) {
+            // Descending Brutal Arc
+            ctx.save();
+            ctx.strokeStyle = 'rgba(239, 68, 68, 0.95)';
+            ctx.lineWidth = 5;
+            ctx.beginPath();
+            ctx.arc(20, -24, 52, -Math.PI * 0.5, Math.PI * 0.25);
+            ctx.stroke();
+
+            ctx.strokeStyle = 'rgba(245, 158, 11, 0.9)';
+            ctx.lineWidth = 2.5;
+            ctx.beginPath();
+            ctx.arc(20, -24, 58, -Math.PI * 0.45, Math.PI * 0.2);
+            ctx.stroke();
+            ctx.restore();
+          } else if (this.frameIndex === 2) {
+            // Ground Shockwave & Astral Rift
+            ctx.save();
+            ctx.fillStyle = 'rgba(245, 158, 11, 0.45)';
+            ctx.strokeStyle = '#00f0ff';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.ellipse(30, 0, 36, 8, 0, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.stroke();
+
+            // Ground fracture lines
+            ctx.strokeStyle = '#ffffff';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(12, 0); ctx.lineTo(52, 0);
+            ctx.moveTo(28, -2); ctx.lineTo(38, 4);
+            ctx.stroke();
+
+            // Flying sparks
+            ctx.fillStyle = '#fef08a';
+            ctx.fillRect(24, -16, 4, 4);
+            ctx.fillRect(40, -22, 3, 3);
+            ctx.fillRect(46, -10, 3, 3);
+            ctx.restore();
+          }
+        }
+
+        // Dash speed lines
+        if (this.isDashing) {
+          ctx.save();
+          ctx.strokeStyle = '#00f0ff';
+          ctx.lineWidth = 1.5;
+          for (let l = 0; l < 4; l++) {
+            const ly = -32 + l * 8;
+            ctx.beginPath();
+            ctx.moveTo(-25, ly);
+            ctx.lineTo(-45 - Math.random() * 20, ly);
+            ctx.stroke();
+          }
+          ctx.restore();
+        }
+
+        // Floating Combo Notification
+        if (this.comboPrompt) {
+          ctx.save();
+          ctx.scale(this.facing, 1); // unflip text
+          ctx.fillStyle = '#facc15';
+          ctx.strokeStyle = '#000000';
+          ctx.lineWidth = 3;
+          ctx.font = 'bold 11px monospace';
+          ctx.textAlign = 'center';
+          ctx.strokeText(this.comboPrompt, 0, -48);
+          ctx.fillText(this.comboPrompt, 0, -48);
+          ctx.restore();
+        }
+
+        // Debug: 128x128 Sprite Box
+        if (config.showSpriteBox) {
+          ctx.strokeStyle = 'rgba(255, 255, 0, 0.4)';
+          ctx.lineWidth = 1;
+          ctx.strokeRect(-ANCHOR_X, -ANCHOR_Y, SPRITE_SIZE, SPRITE_SIZE);
+        }
+
+        // Debug: Hitbox & Hurtbox
+        if (config.showHitbox) {
+          ctx.strokeStyle = '#22c55e';
+          ctx.lineWidth = 1.5;
+          ctx.strokeRect(-this.bodyWidth/2, -this.bodyHeight, this.bodyWidth, this.bodyHeight);
+
+          if (this.state === 'combo_1' || this.state === 'combo_1_end') {
+            ctx.fillStyle = 'rgba(239, 68, 68, 0.35)';
+            ctx.strokeStyle = '#ef4444';
+            ctx.fillRect(0, -42, 55, 38);
+            ctx.strokeRect(0, -42, 55, 38);
+          } else if (this.state === 'combo_2') {
+            ctx.fillStyle = 'rgba(168, 85, 247, 0.35)';
+            ctx.strokeStyle = '#a855f7';
+            ctx.fillRect(0, -50, 62, 48);
+            ctx.strokeRect(0, -50, 62, 48);
+          } else if (this.state === 'combo_3') {
+            ctx.fillStyle = 'rgba(239, 68, 68, 0.45)';
+            ctx.strokeStyle = '#f59e0b';
+            ctx.fillRect(0, -45, 70, 52);
+            ctx.strokeRect(0, -45, 70, 52);
+          }
+
+          ctx.fillStyle = '#38bdf8';
+          ctx.beginPath();
+          ctx.arc(0, 0, 3, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        ctx.restore();
+      }
+    };
+
+    // --- 6. CONTROLLER & INPUT MANAGER ---
+    const keys = {};
+    let mouseAttack = false;
+    let mouseHeavyAttack = false;
+
+    canvas.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+    });
+
+    canvas.addEventListener('mousedown', (e) => {
+      if (e.button === 0) mouseAttack = true;
+      if (e.button === 2) mouseHeavyAttack = true;
+    });
+
+    window.addEventListener('gamepadconnected', (e) => {
+      console.log('Gamepad connected:', e.gamepad.id);
+      rumbleGamepad(100, 0.5, 0.8);
+    });
+
+    window.addEventListener('gamepaddisconnected', (e) => {
+      console.log('Gamepad disconnected');
+    });
+
+    window.addEventListener('keydown', (e) => {
+      keys[e.code] = true;
+      if (['Space', 'ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(e.code)) {
+        e.preventDefault();
+      }
+      if (e.code === 'KeyC') {
+        config.showHitbox = !config.showHitbox;
+        document.getElementById('chkHitbox').checked = config.showHitbox;
+      }
+      if (e.code === 'KeyR') {
+        player.x = 0; player.y = groundY; player.vx = 0; player.vy = 0;
+      }
+      if (e.code === 'KeyB') {
+        dummy.x = player.x + 180 * player.facing;
+        dummy.y = groundY;
+        dummy.hp = dummy.maxHp;
+      }
+      if (e.code === 'KeyP') {
+        config.paused = !config.paused;
+      }
+    });
+
+    window.addEventListener('keyup', (e) => {
+      keys[e.code] = false;
+    });
+
+    // Gamepad vibration helper
+    function rumbleGamepad(duration = 60, weak = 0.3, strong = 0.5) {
+      const gp = getActiveGamepad();
+      if (gp && gp.vibrationActuator && gp.vibrationActuator.playEffect) {
+        gp.vibrationActuator.playEffect('dual-rumble', {
+          startDelay: 0,
+          duration: duration,
+          weakMagnitude: weak,
+          strongMagnitude: strong
+        }).catch(() => {});
+      }
+    }
+
+    function getActiveGamepad() {
+      const gamepads = navigator.getGamepads ? navigator.getGamepads() : [];
+      for (const gp of gamepads) {
+        if (gp && gp.connected) return gp;
+      }
+      return null;
+    }
+
+    // Previous input states for edge detection (press vs hold)
+    let prevGpButtons = [];
+    let prevKeys = {};
+
+    function pollInput() {
+      const input = {
+        moveX: 0,
+        moveY: 0,
+        isRunning: false,
+        jumpPressed: false,
+        jumpHeld: false,
+        attackPressed: false,
+        heavyAttackPressed: false,
+        dashPressed: false
+      };
+
+      const gp = getActiveGamepad();
+      const gpBadge = document.getElementById('gamepadBadge');
+
+      if (gp) {
+        gpBadge.textContent = 'Mando: ' + (gp.id.includes('Xbox') ? 'Xbox' : gp.id.includes('Dual') ? 'PlayStation' : 'Conectado');
+        gpBadge.className = 'badge connected';
+        document.getElementById('gpType').textContent = gp.id.slice(0, 14);
+
+        // Analog stick with deadzone
+        let stickX = gp.axes[0] || 0;
+        let stickY = gp.axes[1] || 0;
+        const deadzone = 0.15;
+        if (Math.abs(stickX) < deadzone) stickX = 0;
+        if (Math.abs(stickY) < deadzone) stickY = 0;
+
+        // D-Pad override
+        if (gp.buttons[14] && gp.buttons[14].pressed) stickX = -1;
+        if (gp.buttons[15] && gp.buttons[15].pressed) stickX = 1;
+        if (gp.buttons[12] && gp.buttons[12].pressed) stickY = -1;
+        if (gp.buttons[13] && gp.buttons[13].pressed) stickY = 1;
+
+        input.moveX = stickX;
+        input.moveY = stickY;
+
+        // Update Controller HUD elements
+        const stickDot = document.getElementById('gpStick');
+        stickDot.style.transform = `translate(calc(-50% + ${stickX * 20}px), calc(-50% + ${stickY * 20}px))`;
+        document.getElementById('gpStickVal').textContent = `${stickX.toFixed(2)}, ${stickY.toFixed(2)}`;
+
+        // Buttons
+        const btnA = gp.buttons[0] && gp.buttons[0].pressed; // Jump
+        const btnB = gp.buttons[1] && gp.buttons[1].pressed; // Run
+        const btnX = gp.buttons[2] && gp.buttons[2].pressed; // Attack
+        const btnY = gp.buttons[3] && gp.buttons[3].pressed; // Heavy Attack (Golpe Contundente)
+        const btnLB = gp.buttons[4] && gp.buttons[4].pressed;
+        const btnRB = gp.buttons[5] && gp.buttons[5].pressed;
+
+        document.getElementById('gpBtnA').className = 'gp-btn' + (btnA ? ' active' : '');
+        document.getElementById('gpBtnB').className = 'gp-btn' + (btnB ? ' active' : '');
+        document.getElementById('gpBtnX').className = 'gp-btn' + (btnX ? ' active' : '');
+        document.getElementById('gpBtnY').className = 'gp-btn' + (btnY ? ' active' : '');
+
+        // Jump
+        input.jumpHeld = btnA;
+        if (btnA && !prevGpButtons[0]) input.jumpPressed = true;
+
+        // Attack (Combo 1 -> Combo 2)
+        if (btnX && !prevGpButtons[2]) input.attackPressed = true;
+
+        // Heavy Attack / Tercer Golpe Contundente (Button Y)
+        if (btnY && !prevGpButtons[3]) input.heavyAttackPressed = true;
+
+        // Dash (Button B or RB or RT)
+        const btnDash = btnB || btnRB || (gp.buttons[7] && gp.buttons[7].pressed);
+        if (btnDash && !prevGpButtons[1] && !prevGpButtons[5] && !prevGpButtons[7]) input.dashPressed = true;
+
+        // Run modifier
+        input.isRunning = btnLB;
+
+        // Store prev
+        prevGpButtons = gp.buttons.map(b => b ? b.pressed : false);
+      } else {
+        gpBadge.textContent = 'Mando: Desconectado';
+        gpBadge.className = 'badge disconnected';
+        document.getElementById('gpStick').style.transform = 'translate(-50%, -50%)';
+        document.getElementById('gpStickVal').textContent = '0.0, 0.0';
+      }
+
+      // Keyboard Fallbacks
+      if (keys['KeyA'] || keys['ArrowLeft']) input.moveX = -1;
+      if (keys['KeyD'] || keys['ArrowRight']) input.moveX = 1;
+      if (keys['ShiftLeft'] || keys['ShiftRight']) input.isRunning = true;
+
+      const keyJump = keys['Space'] || keys['KeyW'] || keys['ArrowUp'];
+      input.jumpHeld = input.jumpHeld || keyJump;
+      if (keyJump && !prevKeys['jump']) input.jumpPressed = true;
+      prevKeys['jump'] = keyJump;
+
+      const keyAtk = keys['KeyJ'] || mouseAttack;
+      mouseAttack = false;
+      if (keyAtk && !prevKeys['atk']) input.attackPressed = true;
+      prevKeys['atk'] = keyAtk;
+
+      // Heavy Attack / 3er golpe contundente (Key I, Key U, Key Y o Click Derecho)
+      const keyHeavy = keys['KeyI'] || keys['KeyU'] || keys['KeyY'] || mouseHeavyAttack;
+      mouseHeavyAttack = false;
+      if (keyHeavy && !prevKeys['heavy']) input.heavyAttackPressed = true;
+      prevKeys['heavy'] = keyHeavy;
+
+      const keyDash = keys['KeyK'] || keys['KeyE'] || keys['KeyX'];
+      if (keyDash && !prevKeys['dash']) input.dashPressed = true;
+      prevKeys['dash'] = keyDash;
+
+      return input;
+    }
+
+    // --- 7. CAMERA SYSTEM ---
+    const camera = {
+      x: 0,
+      y: 0,
+      shakeTimer: 0,
+      shakeIntensity: 0,
+      shake(duration = 0.25, intensity = 5) {
+        this.shakeTimer = duration;
+        this.shakeIntensity = intensity;
+      },
+      update(target, canvasWidth, canvasHeight, currentScale) {
+        const destX = target.x - (canvasWidth / (2 * currentScale));
+        const destY = target.y - 40 - (canvasHeight / (2 * currentScale));
+        // Smooth camera lerp
+        this.x += (destX - this.x) * 0.12;
+        this.y += (destY - this.y) * 0.12;
+
+        if (this.shakeTimer > 0) {
+          this.shakeTimer -= 0.016;
+          this.x += (Math.random() - 0.5) * this.shakeIntensity * 2;
+          this.y += (Math.random() - 0.5) * this.shakeIntensity * 2;
+        }
+      }
+    };
+
+    // --- 8. PARTICLES UPDATE & DRAW ---
+    function updateParticles(dt) {
+      for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i];
+        p.x += p.vx * dt;
+        p.y += p.vy * dt;
+        p.life -= dt;
+        if (p.life <= 0) particles.splice(i, 1);
+      }
+    }
+
+    function drawParticles(ctx) {
+      for (const p of particles) {
+        ctx.fillStyle = p.color;
+        ctx.fillRect(Math.round(p.x), Math.round(p.y), p.size, p.size);
+      }
+    }
+
+    // Cosmic Starfield for the Unknown Alien Planet
+    const stars = [];
+    for (let i = 0; i < 90; i++) {
+      stars.push({
+        x: ((i * 137.5) % 2400) - 1000,
+        y: ((i * 79.3) % 600) - 200,
+        size: (i % 3 === 0 ? 2 : 1),
+        alpha: 0.4 + (i % 5) * 0.12,
+        color: i % 4 === 0 ? '#38bdf8' : (i % 4 === 1 ? '#c084fc' : '#ffffff')
+      });
+    }
+
+    // --- 9. ARENA BACKGROUND & RULER ---
+    function drawArena(ctx) {
+      // 1. Distant Starfield
+      for (const star of stars) {
+        ctx.fillStyle = star.color;
+        ctx.globalAlpha = star.alpha;
+        ctx.fillRect(Math.round(star.x), Math.round(star.y), star.size, star.size);
+      }
+      ctx.globalAlpha = 1.0;
+
+      // 2. Giant Alien Ringed Planet in the Sky
+      const planetX = 180;
+      const planetY = 110;
+      const planetR = 48;
+
+      ctx.save();
+      const pGrad = ctx.createRadialGradient(planetX - 15, planetY - 15, 6, planetX, planetY, planetR);
+      pGrad.addColorStop(0, '#6366f1');
+      pGrad.addColorStop(0.65, '#312e81');
+      pGrad.addColorStop(1, '#0f0e26');
+      ctx.fillStyle = pGrad;
+      ctx.beginPath();
+      ctx.arc(planetX, planetY, planetR, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Atmospheric limb glow
+      ctx.strokeStyle = 'rgba(56, 189, 248, 0.45)';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // Planetary Rings
+      ctx.save();
+      ctx.translate(planetX, planetY);
+      ctx.rotate(-0.35);
+      ctx.scale(1, 0.28);
+      ctx.strokeStyle = 'rgba(192, 132, 252, 0.6)';
+      ctx.lineWidth = 5;
+      ctx.beginPath();
+      ctx.arc(0, 0, planetR * 1.6, 0, Math.PI * 2);
+      ctx.stroke();
+
+      ctx.strokeStyle = 'rgba(56, 189, 248, 0.4)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.arc(0, 0, planetR * 1.85, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.restore();
+      ctx.restore();
+
+      // 3. Cosmic grid
+      ctx.strokeStyle = 'rgba(49, 46, 129, 0.35)';
+      ctx.lineWidth = 1;
+      const gridSize = 32;
+      const startX = Math.floor((camera.x - 200) / gridSize) * gridSize;
+      const endX = startX + canvas.width / scale + 400;
+      const startY = Math.floor((camera.y - 200) / gridSize) * gridSize;
+      const endY = startY + canvas.height / scale + 400;
+
+      for (let x = startX; x < endX; x += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(x, startY);
+        ctx.lineTo(x, endY);
+        ctx.stroke();
+      }
+      for (let y = startY; y < endY; y += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(startX, y);
+        ctx.lineTo(endX, y);
+        ctx.stroke();
+      }
+
+      // Height Measurement Ruler (Shows jump apex in pixels)
+      if (config.showRuler) {
+        const rulerX = -60;
+        ctx.strokeStyle = 'rgba(129, 140, 248, 0.4)';
+        ctx.fillStyle = '#818cf8';
+        ctx.font = '9px monospace';
+        ctx.lineWidth = 1;
+
+        ctx.beginPath();
+        ctx.moveTo(rulerX, groundY);
+        ctx.lineTo(rulerX, groundY - 300);
+        ctx.stroke();
+
+        for (let h = 0; h <= 300; h += 25) {
+          const tickY = groundY - h;
+          ctx.beginPath();
+          ctx.moveTo(rulerX - 5, tickY);
+          ctx.lineTo(rulerX + 5, tickY);
+          ctx.stroke();
+          if (h % 50 === 0) {
+            ctx.fillText(`${h}px`, rulerX - 35, tickY + 3);
+          }
+        }
+      }
+
+      // 4. Alien Planet Platforms & Bioluminescent Surface
+      for (const p of platforms) {
+        if (p.type === 'ground') {
+          // Deep Alien Ground Crust
+          ctx.fillStyle = '#0f1026';
+          ctx.fillRect(p.x, p.y, p.w, p.h);
+
+          // Glowing Bioluminescent Crystal Edge
+          ctx.fillStyle = '#1e1b4b';
+          ctx.fillRect(p.x, p.y, p.w, 4);
+
+          ctx.strokeStyle = '#00f0ff';
+          ctx.lineWidth = 1.5;
+          ctx.strokeRect(p.x, p.y, p.w, 2);
+
+          // Crystal sprouts along surface
+          ctx.fillStyle = '#a855f7';
+          for (let cx = Math.floor(p.x / 48) * 48; cx < p.x + p.w; cx += 56) {
+            ctx.fillRect(cx, p.y - 3, 3, 3);
+            ctx.fillRect(cx + 8, p.y - 5, 2, 5);
+          }
+        } else {
+          // Floating Alien Monoliths
+          ctx.fillStyle = '#171938';
+          ctx.fillRect(p.x, p.y, p.w, p.h);
+
+          // Bioluminescent Neon Rim
+          ctx.strokeStyle = '#38bdf8';
+          ctx.lineWidth = 1;
+          ctx.strokeRect(p.x, p.y, p.w, p.h);
+
+          // Top Crystal Energy Line
+          ctx.fillStyle = '#00f0ff';
+          ctx.fillRect(p.x + 2, p.y, p.w - 4, 2);
+
+          // Rune indicator
+          ctx.fillStyle = '#c084fc';
+          ctx.fillRect(p.x + p.w/2 - 6, p.y + 7, 12, 3);
+        }
+      }
+    }
+
+    // --- 10. MAIN GAME LOOP ---
+    let lastTime = performance.now();
+    let frameCounter = 0;
+    let fpsTimer = 0;
+
+    function gameLoop(now) {
+      requestAnimationFrame(gameLoop);
+      const dt = Math.min(0.1, (now - lastTime) / 1000);
+      lastTime = now;
+
+      // FPS Counter
+      frameCounter++;
+      fpsTimer += dt;
+      if (fpsTimer >= 1.0) {
+        document.getElementById('fpsBadge').textContent = `${frameCounter} FPS`;
+        frameCounter = 0;
+        fpsTimer = 0;
+      }
+
+      const input = pollInput();
+
+      if (!config.paused || config.stepFrame) {
+        config.stepFrame = false;
+        player.update(dt, input);
+        dummy.update(dt);
+        updateParticles(dt);
+        updateGhosts(dt);
+      }
+
+      // Update Camera
+      camera.update(player, canvas.width, canvas.height, scale);
+
+      // Render Everything
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      ctx.save();
+      ctx.scale(scale, scale);
+      ctx.translate(-Math.round(camera.x), -Math.round(camera.y));
+
+      drawArena(ctx);
+      drawGhosts(ctx);
+      dummy.draw(ctx);
+      player.draw(ctx);
+      drawParticles(ctx);
+
+      ctx.restore();
+
+      // Update HUD state values
+      document.getElementById('hudState').textContent = player.state.toUpperCase();
+      const maxF = SPRITE_DATA[player.state] ? SPRITE_DATA[player.state].frames : 1;
+      document.getElementById('hudFrame').textContent = `${player.frameIndex + 1} / ${maxF}`;
+      document.getElementById('hudVel').textContent = `X: ${player.vx.toFixed(1)}, Y: ${player.vy.toFixed(1)}`;
+      document.getElementById('hudGrounded').textContent = player.isGrounded ? 'Si' : 'Aire';
+
+      let comboText = 'Listo (X: Combo / Y: Fuerte)';
+      if (player.state === 'combo_1') comboText = '⚔️ Combo 1 (X: Tajo 2 | Y: Remate Fuerte)';
+      else if (player.state === 'combo_2') comboText = '⚔️ Combo 2 (Y / X: Remate Fuerte)';
+      else if (player.state === 'combo_3') comboText = '💥 Combo 3: Golpe Contundente Astral';
+      else if (player.state === 'combo_1_end') comboText = '⚔️ Envaine de Espada';
+      document.getElementById('hudCombo').textContent = comboText;
+
+      document.getElementById('hudDash').textContent = player.isDashing ? '⚡ ¡DASH EN PROGRESO!' : (player.dashCooldown > 0 ? `Recargando (${player.dashCooldown.toFixed(1)}s)` : 'Listo (B / K)');
+    }
+    requestAnimationFrame(gameLoop);
+
+    // --- 11. UI CONTROLS WIRING ---
+    // Scale buttons
+    document.querySelectorAll('[data-scale]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('[data-scale]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        scale = parseInt(btn.dataset.scale);
+      });
+    });
+
+    // Checkboxes
+    document.getElementById('chkHitbox').addEventListener('change', (e) => config.showHitbox = e.target.checked);
+    document.getElementById('chkSpriteBox').addEventListener('change', (e) => config.showSpriteBox = e.target.checked);
+    document.getElementById('chkRuler').addEventListener('change', (e) => config.showRuler = e.target.checked);
+
+    // Pause & Step
+    const btnPause = document.getElementById('btnPauseToggle');
+    btnPause.addEventListener('click', () => {
+      config.paused = !config.paused;
+      btnPause.classList.toggle('active', config.paused);
+      btnPause.textContent = config.paused ? 'Reanudar (P)' : 'Pausa (P)';
+    });
+    document.getElementById('btnFrameStep').addEventListener('click', () => {
+      config.paused = true;
+      config.stepFrame = true;
+      btnPause.classList.add('active');
+      btnPause.textContent = 'Reanudar (P)';
+    });
+
+    // Force state dropdown
+    document.getElementById('selForceState').addEventListener('change', (e) => {
+      config.forceState = e.target.value;
+      if (config.forceState !== 'none') {
+        player.setState(config.forceState);
+      }
+    });
+
+    // Action Buttons Wiring
+    const btnC1 = document.getElementById('btnCombo1');
+    if (btnC1) btnC1.addEventListener('click', () => player.forceCombo1());
+
+    const btnC2 = document.getElementById('btnCombo2');
+    if (btnC2) btnC2.addEventListener('click', () => player.forceCombo2());
+
+    const btnC3 = document.getElementById('btnCombo3');
+    if (btnC3) btnC3.addEventListener('click', () => player.forceCombo3());
+
+    const btnDsh = document.getElementById('btnDash');
+    if (btnDsh) btnDsh.addEventListener('click', () => player.dash());
+
+    // Reset & Respawn
+    document.getElementById('btnResetPos').addEventListener('click', () => {
+      player.x = 0; player.y = groundY; player.vx = 0; player.vy = 0;
+    });
+    document.getElementById('btnSpawnDummy').addEventListener('click', () => {
+      dummy.x = player.x + 180 * player.facing;
+      dummy.y = groundY;
+      dummy.hp = dummy.maxHp;
+    });
+
+    // Animation FPS sliders
+    function bindSlider(id, targetObj, key, labelId) {
+      const slider = document.getElementById(id);
+      const label = document.getElementById(labelId);
+      slider.addEventListener('input', (e) => {
+        const val = parseInt(e.target.value);
+        targetObj[key] = val;
+        label.textContent = val;
+      });
+    }
+
+    bindSlider('rngFpsIdle', config.fps, 'idle', 'valFpsIdle');
+    bindSlider('rngFpsWalk', config.fps, 'walk', 'valFpsWalk');
+    bindSlider('rngFpsRun', config.fps, 'run', 'valFpsRun');
+    bindSlider('rngFpsAtk', config.fps, 'combo', 'valFpsAtk');
+
+    bindSlider('rngSpeedWalk', config, 'walkSpeed', 'valSpeedWalk');
+    bindSlider('rngSpeedRun', config, 'runSpeed', 'valSpeedRun');
+    bindSlider('rngJump', config, 'jumpForce', 'valJump');
+    bindSlider('rngGravity', config, 'gravity', 'valGravity');
+
+  </script>
+</body>
+</html>

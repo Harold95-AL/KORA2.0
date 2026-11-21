@@ -1,0 +1,390 @@
+[gd_resource type="SpriteFrames" load_steps=97 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/player/male_hero-idle.png" id="1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/male_hero-walk.png" id="2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/male_hero-run.png" id="3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/male_hero-dash.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/male_hero-design.png" id="5"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/male_hero-jump.png" id="6"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/male_hero-fall.png" id="7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/male_hero-fall_loop.png" id="8"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/male_hero-combo_1.png" id="9"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/male_hero-combo_2.png" id="10"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/male_hero-combo_3.png" id="11"]
+[ext_resource type="Texture2D" path="res://assets/sprites/player/male_hero-combo_1_end.png" id="12"]
+
+[sub_resource type="AtlasTexture" id="idle_0"]
+atlas = ExtResource("1")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="idle_1"]
+atlas = ExtResource("1")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="idle_2"]
+atlas = ExtResource("1")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="idle_3"]
+atlas = ExtResource("1")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="idle_4"]
+atlas = ExtResource("1")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="idle_5"]
+atlas = ExtResource("1")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="idle_6"]
+atlas = ExtResource("1")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="idle_7"]
+atlas = ExtResource("1")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="idle_8"]
+atlas = ExtResource("1")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="idle_9"]
+atlas = ExtResource("1")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="walk_0"]
+atlas = ExtResource("2")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="walk_1"]
+atlas = ExtResource("2")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="walk_2"]
+atlas = ExtResource("2")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="walk_3"]
+atlas = ExtResource("2")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="walk_4"]
+atlas = ExtResource("2")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="walk_5"]
+atlas = ExtResource("2")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="walk_6"]
+atlas = ExtResource("2")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="walk_7"]
+atlas = ExtResource("2")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="walk_8"]
+atlas = ExtResource("2")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="walk_9"]
+atlas = ExtResource("2")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="run_0"]
+atlas = ExtResource("3")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="run_1"]
+atlas = ExtResource("3")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="run_2"]
+atlas = ExtResource("3")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="run_3"]
+atlas = ExtResource("3")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="run_4"]
+atlas = ExtResource("3")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="run_5"]
+atlas = ExtResource("3")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="run_6"]
+atlas = ExtResource("3")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="run_7"]
+atlas = ExtResource("3")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="run_8"]
+atlas = ExtResource("3")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="run_9"]
+atlas = ExtResource("3")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="dash_0"]
+atlas = ExtResource("4")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="dash_1"]
+atlas = ExtResource("4")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="dash_2"]
+atlas = ExtResource("4")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="dash_3"]
+atlas = ExtResource("4")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="dash_4"]
+atlas = ExtResource("4")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="dash_5"]
+atlas = ExtResource("4")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="dash_6"]
+atlas = ExtResource("4")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="dash_7"]
+atlas = ExtResource("4")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="dash_8"]
+atlas = ExtResource("4")
+region = Rect2(256, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="design_0"]
+atlas = ExtResource("5")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="jump_0"]
+atlas = ExtResource("6")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="jump_1"]
+atlas = ExtResource("6")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="jump_2"]
+atlas = ExtResource("6")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="jump_3"]
+atlas = ExtResource("6")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="jump_4"]
+atlas = ExtResource("6")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="jump_5"]
+atlas = ExtResource("6")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="fall_0"]
+atlas = ExtResource("7")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="fall_1"]
+atlas = ExtResource("7")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="fall_2"]
+atlas = ExtResource("7")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="fall_3"]
+atlas = ExtResource("7")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="fall_loop_0"]
+atlas = ExtResource("8")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="fall_loop_1"]
+atlas = ExtResource("8")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="fall_loop_2"]
+atlas = ExtResource("8")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_1_0"]
+atlas = ExtResource("9")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_1_1"]
+atlas = ExtResource("9")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_1_2"]
+atlas = ExtResource("9")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_1_3"]
+atlas = ExtResource("9")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_1_4"]
+atlas = ExtResource("9")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_1_5"]
+atlas = ExtResource("9")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_1_6"]
+atlas = ExtResource("9")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_1_7"]
+atlas = ExtResource("9")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_1_8"]
+atlas = ExtResource("9")
+region = Rect2(256, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_2_0"]
+atlas = ExtResource("10")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_2_1"]
+atlas = ExtResource("10")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_2_2"]
+atlas = ExtResource("10")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_2_3"]
+atlas = ExtResource("10")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_2_4"]
+atlas = ExtResource("10")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_2_5"]
+atlas = ExtResource("10")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_2_6"]
+atlas = ExtResource("10")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_2_7"]
+atlas = ExtResource("10")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_2_8"]
+atlas = ExtResource("10")
+region = Rect2(256, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_3_0"]
+atlas = ExtResource("11")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_3_1"]
+atlas = ExtResource("11")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_3_2"]
+atlas = ExtResource("11")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_3_3"]
+atlas = ExtResource("11")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_3_4"]
+atlas = ExtResource("11")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_3_5"]
+atlas = ExtResource("11")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_3_6"]
+atlas = ExtResource("11")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_3_7"]
+atlas = ExtResource("11")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_3_8"]
+atlas = ExtResource("11")
+region = Rect2(256, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_1_end_0"]
+atlas = ExtResource("12")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_1_end_1"]
+atlas = ExtResource("12")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_1_end_2"]
+atlas = ExtResource("12")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="combo_1_end_3"]
+atlas = ExtResource("12")
+region = Rect2(384, 0, 128, 128)
+
+[resource]
+animations = [
+{"frames": [{"duration": 1.0, "texture": SubResource("idle_0")}, {"duration": 1.0, "texture": SubResource("idle_1")}, {"duration": 1.0, "texture": SubResource("idle_2")}, {"duration": 1.0, "texture": SubResource("idle_3")}, {"duration": 1.0, "texture": SubResource("idle_4")}, {"duration": 1.0, "texture": SubResource("idle_5")}, {"duration": 1.0, "texture": SubResource("idle_6")}, {"duration": 1.0, "texture": SubResource("idle_7")}, {"duration": 1.0, "texture": SubResource("idle_8")}, {"duration": 1.0, "texture": SubResource("idle_9")}],
+"loop": true,
+"name": &"idle", "speed": 8.0},
+{"frames": [{"duration": 1.0, "texture": SubResource("walk_0")}, {"duration": 1.0, "texture": SubResource("walk_1")}, {"duration": 1.0, "texture": SubResource("walk_2")}, {"duration": 1.0, "texture": SubResource("walk_3")}, {"duration": 1.0, "texture": SubResource("walk_4")}, {"duration": 1.0, "texture": SubResource("walk_5")}, {"duration": 1.0, "texture": SubResource("walk_6")}, {"duration": 1.0, "texture": SubResource("walk_7")}, {"duration": 1.0, "texture": SubResource("walk_8")}, {"duration": 1.0, "texture": SubResource("walk_9")}],
+"loop": true,
+"name": &"walk", "speed": 10.0},
+{"frames": [{"duration": 1.0, "texture": SubResource("run_0")}, {"duration": 1.0, "texture": SubResource("run_1")}, {"duration": 1.0, "texture": SubResource("run_2")}, {"duration": 1.0, "texture": SubResource("run_3")}, {"duration": 1.0, "texture": SubResource("run_4")}, {"duration": 1.0, "texture": SubResource("run_5")}, {"duration": 1.0, "texture": SubResource("run_6")}, {"duration": 1.0, "texture": SubResource("run_7")}, {"duration": 1.0, "texture": SubResource("run_8")}, {"duration": 1.0, "texture": SubResource("run_9")}],
+"loop": true,
+"name": &"run", "speed": 14.0},
+{"frames": [{"duration": 1.0, "texture": SubResource("dash_0")}, {"duration": 1.0, "texture": SubResource("dash_1")}, {"duration": 1.0, "texture": SubResource("dash_2")}, {"duration": 1.0, "texture": SubResource("dash_3")}, {"duration": 1.0, "texture": SubResource("dash_4")}, {"duration": 1.0, "texture": SubResource("dash_5")}, {"duration": 1.0, "texture": SubResource("dash_6")}, {"duration": 1.0, "texture": SubResource("dash_7")}, {"duration": 1.0, "texture": SubResource("dash_8")}],
+"loop": false,
+"name": &"dash", "speed": 18.0},
+{"frames": [{"duration": 1.0, "texture": SubResource("design_0")}],
+"loop": true,
+"name": &"design", "speed": 1.0},
+{"frames": [{"duration": 1.0, "texture": SubResource("jump_0")}, {"duration": 1.0, "texture": SubResource("jump_1")}, {"duration": 1.0, "texture": SubResource("jump_2")}, {"duration": 1.0, "texture": SubResource("jump_3")}, {"duration": 1.0, "texture": SubResource("jump_4")}, {"duration": 1.0, "texture": SubResource("jump_5")}],
+"loop": false,
+"name": &"jump", "speed": 12.0},
+{"frames": [{"duration": 1.0, "texture": SubResource("fall_0")}, {"duration": 1.0, "texture": SubResource("fall_1")}, {"duration": 1.0, "texture": SubResource("fall_2")}, {"duration": 1.0, "texture": SubResource("fall_3")}],
+"loop": false,
+"name": &"fall", "speed": 12.0},
+{"frames": [{"duration": 1.0, "texture": SubResource("fall_loop_0")}, {"duration": 1.0, "texture": SubResource("fall_loop_1")}, {"duration": 1.0, "texture": SubResource("fall_loop_2")}],
+"loop": true,
+"name": &"fall_loop", "speed": 10.0},
+{"frames": [{"duration": 1.0, "texture": SubResource("combo_1_0")}, {"duration": 1.0, "texture": SubResource("combo_1_1")}, {"duration": 1.0, "texture": SubResource("combo_1_2")}, {"duration": 1.0, "texture": SubResource("combo_1_3")}, {"duration": 1.0, "texture": SubResource("combo_1_4")}, {"duration": 1.0, "texture": SubResource("combo_1_5")}, {"duration": 1.0, "texture": SubResource("combo_1_6")}, {"duration": 1.0, "texture": SubResource("combo_1_7")}, {"duration": 1.0, "texture": SubResource("combo_1_8")}],
+"loop": false,
+"name": &"combo_1", "speed": 22.0},
+{"frames": [{"duration": 1.0, "texture": SubResource("combo_2_0")}, {"duration": 1.0, "texture": SubResource("combo_2_1")}, {"duration": 1.0, "texture": SubResource("combo_2_2")}, {"duration": 1.0, "texture": SubResource("combo_2_3")}, {"duration": 1.0, "texture": SubResource("combo_2_4")}, {"duration": 1.0, "texture": SubResource("combo_2_5")}, {"duration": 1.0, "texture": SubResource("combo_2_6")}, {"duration": 1.0, "texture": SubResource("combo_2_7")}, {"duration": 1.0, "texture": SubResource("combo_2_8")}],
+"loop": false,
+"name": &"combo_2", "speed": 22.0},
+{"frames": [{"duration": 1.0, "texture": SubResource("combo_3_0")}, {"duration": 1.0, "texture": SubResource("combo_3_1")}, {"duration": 1.0, "texture": SubResource("combo_3_2")}, {"duration": 1.0, "texture": SubResource("combo_3_3")}, {"duration": 1.0, "texture": SubResource("combo_3_4")}, {"duration": 1.0, "texture": SubResource("combo_3_5")}, {"duration": 1.0, "texture": SubResource("combo_3_6")}, {"duration": 1.0, "texture": SubResource("combo_3_7")}, {"duration": 1.0, "texture": SubResource("combo_3_8")}],
+"loop": false,
+"name": &"combo_3", "speed": 20.0},
+{"frames": [{"duration": 1.0, "texture": SubResource("combo_1_end_0")}, {"duration": 1.0, "texture": SubResource("combo_1_end_1")}, {"duration": 1.0, "texture": SubResource("combo_1_end_2")}, {"duration": 1.0, "texture": SubResource("combo_1_end_3")}],
+"loop": false,
+"name": &"combo_1_end", "speed": 12.0}
+]

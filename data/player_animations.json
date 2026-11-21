@@ -1,0 +1,84 @@
+{
+  "frame_size": [
+	128,
+	128
+  ],
+  "feet_anchor": [
+	64,
+	80
+  ],
+  "animations": [
+	{
+	  "name": "idle",
+	  "frames": 10,
+	  "fps": 8,
+	  "loop": true
+	},
+	{
+	  "name": "walk",
+	  "frames": 10,
+	  "fps": 10,
+	  "loop": true
+	},
+	{
+	  "name": "run",
+	  "frames": 10,
+	  "fps": 14,
+	  "loop": true
+	},
+	{
+	  "name": "dash",
+	  "frames": 9,
+	  "fps": 18,
+	  "loop": false
+	},
+	{
+	  "name": "design",
+	  "frames": 1,
+	  "fps": 1,
+	  "loop": true
+	},
+	{
+	  "name": "jump",
+	  "frames": 6,
+	  "fps": 12,
+	  "loop": false
+	},
+	{
+	  "name": "fall",
+	  "frames": 4,
+	  "fps": 12,
+	  "loop": false
+	},
+	{
+	  "name": "fall_loop",
+	  "frames": 3,
+	  "fps": 10,
+	  "loop": true
+	},
+	{
+	  "name": "combo_1",
+	  "frames": 9,
+	  "fps": 22,
+	  "loop": false
+	},
+	{
+	  "name": "combo_2",
+	  "frames": 9,
+	  "fps": 22,
+	  "loop": false
+	},
+	{
+	  "name": "combo_3",
+	  "frames": 9,
+	  "fps": 20,
+	  "loop": false
+	},
+	{
+	  "name": "combo_1_end",
+	  "frames": 4,
+	  "fps": 12,
+	  "loop": false
+	}
+  ]
+}

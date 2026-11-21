@@ -1,0 +1,370 @@
+[
+  {
+    "id": "1.1",
+    "title": "La nave destruida",
+    "objective": "Inspecciona los restos de la nave",
+    "scene": "res://levels/Level_1_1.tscn",
+    "width": 4800,
+    "height": 720,
+    "route_length": 4800,
+    "zones": [
+      "01 / CRÁTER",
+      "02 / RESTOS",
+      "03 / RESERVA",
+      "04 / MIRADOR",
+      "05 / SALIDA DEL CRÁTER"
+    ],
+    "tasks": [
+      {
+        "key": "telemetry",
+        "label": "Recupera la telemetría"
+      },
+      {
+        "key": "cell",
+        "label": "Recupera la célula"
+      },
+      {
+        "key": "lookout",
+        "label": "Examina el mirador"
+      }
+    ],
+    "checkpoints": 3
+  },
+  {
+    "id": "1.2",
+    "title": "El primer contacto",
+    "objective": "Explora los alrededores del accidente",
+    "scene": "res://levels/Level_1_2.tscn",
+    "width": 5200,
+    "height": 720,
+    "route_length": 5200,
+    "zones": [
+      "01 / VIDA DESCONOCIDA",
+      "02 / SENDERO ALTO",
+      "03 / TERRITORIO",
+      "04 / ECO PROFUNDO"
+    ],
+    "tasks": [
+      {
+        "key": "sil",
+        "label": "Acércate a SIL"
+      },
+      {
+        "key": "scan",
+        "label": "Analiza la señal subterránea"
+      }
+    ],
+    "checkpoints": 3
+  },
+  {
+    "id": "1.3",
+    "title": "La grieta luminosa",
+    "objective": "Encuentra una fuente de energía",
+    "scene": "res://levels/Level_1_3.tscn",
+    "width": 5000,
+    "height": 920,
+    "route_length": 5000,
+    "zones": [
+      "01 / BORDE DE LA GRIETA",
+      "02 / PLATAFORMA MÓVIL",
+      "03 / PASO INESTABLE",
+      "04 / FUENTE ENERGÉTICA",
+      "05 / EL SANTUARIO LEJANO"
+    ],
+    "tasks": [
+      {
+        "key": "pillar",
+        "label": "Sintoniza el pilar"
+      },
+      {
+        "key": "sample",
+        "label": "Extrae una muestra limitada"
+      }
+    ],
+    "checkpoints": 4
+  },
+  {
+    "id": "2.1",
+    "title": "Jardines de cristal",
+    "objective": "Investiga la Resonancia",
+    "scene": "res://levels/Level_2_1.tscn",
+    "width": 5600,
+    "height": 720,
+    "route_length": 5600,
+    "zones": [
+      "01 / SIL REGRESA",
+      "02 / JARDÍN OESTE",
+      "03 / CAUCE RESONANTE",
+      "04 / JARDÍN ESTE",
+      "05 / UMBRAL ESHAR"
+    ],
+    "tasks": [
+      {
+        "key": "sil",
+        "label": "Sigue a SIL"
+      },
+      {
+        "key": "garden_a",
+        "label": "Activa el jardín oeste"
+      },
+      {
+        "key": "garden_b",
+        "label": "Activa el jardín este"
+      },
+      {
+        "key": "sanctuary",
+        "label": "Abre el santuario"
+      }
+    ],
+    "checkpoints": 3
+  },
+  {
+    "id": "2.2",
+    "title": "El santuario silencioso",
+    "objective": "Activa los mecanismos del santuario",
+    "scene": "res://levels/Level_2_2.tscn",
+    "width": 5000,
+    "height": 720,
+    "route_length": 5000,
+    "zones": [
+      "01 / RUINAS GEOMÉTRICAS",
+      "02 / LA INSCRIPCIÓN",
+      "03 / CÁMARA DE RESONADORES",
+      "04 / ARCHIVO DE AYEN",
+      "05 / DEFENSAS ANTIGUAS"
+    ],
+    "tasks": [
+      {
+        "key": "clue",
+        "label": "Lee la inscripción"
+      },
+      {
+        "key": "sequence",
+        "label": "Sintoniza I → III → II"
+      },
+      {
+        "key": "ayen",
+        "label": "Consulta el archivo de Ayen"
+      }
+    ],
+    "checkpoints": 3
+  },
+  {
+    "id": "2.3",
+    "title": "El guardián del bosque",
+    "objective": "Supera las defensas del santuario",
+    "scene": "res://levels/Level_2_3.tscn",
+    "width": 4400,
+    "height": 720,
+    "route_length": 4400,
+    "zones": [
+      "01 / APROXIMACIÓN",
+      "02 / DEFENSAS",
+      "03 / PREPARACIÓN",
+      "04 / ORÚ",
+      "05 / AUTORIZACIÓN"
+    ],
+    "tasks": [
+      {
+        "key": "boss",
+        "label": "Supera a ORÚ"
+      },
+      {
+        "key": "permit",
+        "label": "Recoge la autorización"
+      }
+    ],
+    "checkpoints": 2
+  },
+  {
+    "id": "3.1",
+    "title": "Cavernas de resonancia",
+    "objective": "Atraviesa las cavernas",
+    "scene": "res://levels/Level_3_1.tscn",
+    "width": 5600,
+    "height": 840,
+    "route_length": 5600,
+    "zones": [
+      "01 / PULSACIONES",
+      "02 / SALTOS EN CICLO",
+      "03 / UNA CRIATURA ATRAPADA",
+      "04 / SOBRECARGA",
+      "05 / REGULADOR"
+    ],
+    "tasks": [
+      {
+        "key": "regulator",
+        "label": "Activa el regulador"
+      }
+    ],
+    "checkpoints": 3
+  },
+  {
+    "id": "3.2",
+    "title": "El complejo abandonado",
+    "objective": "Investiga el Proyecto Vigilia",
+    "scene": "res://levels/Level_3_2.tscn",
+    "width": 6200,
+    "height": 720,
+    "route_length": 6200,
+    "zones": [
+      "01 / PROYECTO VIGILIA",
+      "02 / LAS CÁMARAS",
+      "03 / CONTENCIÓN",
+      "04 / REGISTROS IMPOSIBLES",
+      "05 / ENERGÍA DE EMERGENCIA"
+    ],
+    "tasks": [
+      {
+        "key": "vigilia",
+        "label": "Consulta Proyecto Vigilia"
+      },
+      {
+        "key": "warning",
+        "label": "Escucha la advertencia"
+      },
+      {
+        "key": "saren",
+        "label": "Abre el archivo de Saren"
+      },
+      {
+        "key": "transmissions",
+        "label": "Revisa las transmisiones"
+      },
+      {
+        "key": "redirect",
+        "label": "Redirige la energía"
+      }
+    ],
+    "checkpoints": 3
+  },
+  {
+    "id": "3.3",
+    "title": "El descenso",
+    "objective": "Alcanza el núcleo profundo",
+    "scene": "res://levels/Level_3_3.tscn",
+    "width": 1500,
+    "height": 2520,
+    "route_length": 8300,
+    "zones": [
+      "DESCENSO / 40 m",
+      "DESCENSO / 100 m",
+      "DESCENSO / 200 m",
+      "DESCENSO / 300 m",
+      "DESCENSO / 360 m"
+    ],
+    "tasks": [
+      {
+        "key": "conduit",
+        "label": "Examina el conducto"
+      },
+      {
+        "key": "echo",
+        "label": "Escucha el eco de tu voz"
+      }
+    ],
+    "checkpoints": 5
+  },
+  {
+    "id": "4.1",
+    "title": "La zona corrompida",
+    "objective": "Restablece los estabilizadores",
+    "scene": "res://levels/Level_4_1.tscn",
+    "width": 6200,
+    "height": 800,
+    "route_length": 6200,
+    "zones": [
+      "01 / FRACTURA",
+      "02 / ESTABILIZADOR A",
+      "03 / ESTABILIZADOR B",
+      "04 / ÚLTIMO AVANCE",
+      "05 / ESTABILIZADOR C"
+    ],
+    "tasks": [
+      {
+        "key": "conduit",
+        "label": "Abre el conducto de emergencia"
+      },
+      {
+        "key": "stabilizer_a",
+        "label": "Activa estabilizador A"
+      },
+      {
+        "key": "stabilizer_b",
+        "label": "Activa estabilizador B"
+      },
+      {
+        "key": "stabilizer_c",
+        "label": "Activa estabilizador C"
+      }
+    ],
+    "checkpoints": 3
+  },
+  {
+    "id": "4.2",
+    "title": "La cámara del núcleo",
+    "objective": "Descubre cómo liberar la Resonancia",
+    "scene": "res://levels/Level_4_2.tscn",
+    "width": 5000,
+    "height": 720,
+    "route_length": 5000,
+    "zones": [
+      "01 / GALERÍA DE ECOS",
+      "02 / AYEN",
+      "03 / LA DECISIÓN",
+      "04 / ECO DE FASE",
+      "05 / ÚLTIMO DESCANSO"
+    ],
+    "tasks": [
+      {
+        "key": "ayen_last",
+        "label": "Escucha la última grabación"
+      },
+      {
+        "key": "console",
+        "label": "Examina la consola del núcleo"
+      },
+      {
+        "key": "phase",
+        "label": "Investiga el transmisor de fase"
+      }
+    ],
+    "checkpoints": 3
+  },
+  {
+    "id": "4.3",
+    "title": "El corazón fracturado",
+    "objective": "Detén a Saren y restaura el núcleo",
+    "scene": "res://levels/Level_4_3.tscn",
+    "width": 5400,
+    "height": 720,
+    "route_length": 5400,
+    "zones": [
+      "01 / LA ÚLTIMA PUERTA",
+      "02 / PREPARACIÓN",
+      "03 / SAREN",
+      "04 / LIBERACIÓN",
+      "05 / LA SEÑAL",
+      "06 / EL SILENCIO"
+    ],
+    "tasks": [
+      {
+        "key": "boss",
+        "label": "Detén a Saren"
+      },
+      {
+        "key": "release",
+        "label": "Libera las memorias"
+      },
+      {
+        "key": "signal",
+        "label": "Envía la señal al pasado"
+      },
+      {
+        "key": "restore",
+        "label": "Estabiliza el núcleo"
+      }
+    ],
+    "checkpoints": 2
+  }
+]

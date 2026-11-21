@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3]
+[ext_resource type="Script" path="res://scripts/lab/reference_lab.gd" id="Lab"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="Player"]
+[ext_resource type="Script" path="res://scripts/lab/reference_dummy.gd" id="Dummy"]
+[node name="ReferenceLab" type="Node2D"]
+script = ExtResource("Lab")
+[node name="Geometry" type="Node2D" parent="."]
+
+[node name="Platform0" type="Polygon2D" parent="Geometry"]
+position = Vector2(-1000,400)
+polygon = PackedVector2Array(0,0,3000,0,3000,200,0,200)
+color = Color(0.15,0.26,0.34,1)
+
+[node name="Platform1" type="Polygon2D" parent="Geometry"]
+position = Vector2(100,310)
+polygon = PackedVector2Array(0,0,140,0,140,18,0,18)
+color = Color(0.15,0.26,0.34,1)
+
+[node name="Platform2" type="Polygon2D" parent="Geometry"]
+position = Vector2(320,230)
+polygon = PackedVector2Array(0,0,140,0,140,18,0,18)
+color = Color(0.15,0.26,0.34,1)
+
+[node name="Platform3" type="Polygon2D" parent="Geometry"]
+position = Vector2(540,150)
+polygon = PackedVector2Array(0,0,160,0,160,18,0,18)
+color = Color(0.15,0.26,0.34,1)
+
+[node name="Platform4" type="Polygon2D" parent="Geometry"]
+position = Vector2(-160,280)
+polygon = PackedVector2Array(0,0,100,0,100,18,0,18)
+color = Color(0.15,0.26,0.34,1)
+
+[node name="Platform5" type="Polygon2D" parent="Geometry"]
+position = Vector2(-320,200)
+polygon = PackedVector2Array(0,0,110,0,110,18,0,18)
+color = Color(0.15,0.26,0.34,1)
+
+[node name="Dummy" type="Node2D" parent="."]
+position = Vector2(250,400)
+script = ExtResource("Dummy")
+
+[node name="Player" parent="." instance=ExtResource("Player")]
+position = Vector2(0,400)
+reference_collisions = true
+respawn_y = 1200.0
+reference_platforms = Array[Dictionary]([{"x": -1000, "y": 400, "w": 3000, "h": 200}, {"x": 100, "y": 310, "w": 140, "h": 18}, {"x": 320, "y": 230, "w": 140, "h": 18}, {"x": 540, "y": 150, "w": 160, "h": 18}, {"x": -160, "y": 280, "w": 100, "h": 18}, {"x": -320, "y": 200, "w": 110, "h": 18}])
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(0,-40)

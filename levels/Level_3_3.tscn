@@ -1,0 +1,1188 @@
+[gd_scene load_steps=44 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/section.gd" id="Level"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="Player"]
+[ext_resource type="PackedScene" path="res://scenes/entities/BaseEnemy.tscn" id="BaseEnemy"]
+[ext_resource type="PackedScene" path="res://scenes/entities/Checkpoint.tscn" id="Checkpoint"]
+[ext_resource type="PackedScene" path="res://scenes/entities/Decoration.tscn" id="Decoration"]
+[ext_resource type="PackedScene" path="res://scenes/entities/Hazard.tscn" id="Hazard"]
+[ext_resource type="PackedScene" path="res://scenes/entities/InteractiveTerminal.tscn" id="InteractiveTerminal"]
+[ext_resource type="PackedScene" path="res://scenes/entities/LevelExit.tscn" id="LevelExit"]
+[ext_resource type="PackedScene" path="res://scenes/entities/MovingPlatform.tscn" id="MovingPlatform"]
+
+[sub_resource type="RectangleShape2D" id="Shape0"]
+size = Vector2(520, 48)
+
+[sub_resource type="RectangleShape2D" id="Shape1"]
+size = Vector2(740, 48)
+
+[sub_resource type="RectangleShape2D" id="Shape2"]
+size = Vector2(540, 48)
+
+[sub_resource type="RectangleShape2D" id="Shape3"]
+size = Vector2(560, 48)
+
+[sub_resource type="RectangleShape2D" id="Shape4"]
+size = Vector2(540, 48)
+
+[sub_resource type="RectangleShape2D" id="Shape5"]
+size = Vector2(560, 48)
+
+[sub_resource type="RectangleShape2D" id="Shape6"]
+size = Vector2(540, 48)
+
+[sub_resource type="RectangleShape2D" id="Shape7"]
+size = Vector2(560, 48)
+
+[sub_resource type="RectangleShape2D" id="Shape8"]
+size = Vector2(540, 48)
+
+[sub_resource type="RectangleShape2D" id="Shape9"]
+size = Vector2(560, 48)
+
+[sub_resource type="RectangleShape2D" id="Shape10"]
+size = Vector2(540, 48)
+
+[sub_resource type="RectangleShape2D" id="Shape11"]
+size = Vector2(560, 48)
+
+[sub_resource type="RectangleShape2D" id="Shape12"]
+size = Vector2(540, 48)
+
+[sub_resource type="RectangleShape2D" id="Shape13"]
+size = Vector2(560, 48)
+
+[sub_resource type="RectangleShape2D" id="Shape14"]
+size = Vector2(540, 48)
+
+[sub_resource type="RectangleShape2D" id="Shape15"]
+size = Vector2(560, 48)
+
+[sub_resource type="RectangleShape2D" id="Shape16"]
+size = Vector2(1220, 48)
+
+[sub_resource type="RectangleShape2D" id="Shape17"]
+size = Vector2(64, 12)
+
+[sub_resource type="RectangleShape2D" id="Shape18"]
+size = Vector2(64, 12)
+
+[sub_resource type="RectangleShape2D" id="Shape19"]
+size = Vector2(64, 12)
+
+[sub_resource type="RectangleShape2D" id="Shape20"]
+size = Vector2(64, 12)
+
+[sub_resource type="RectangleShape2D" id="Shape21"]
+size = Vector2(64, 12)
+
+[sub_resource type="RectangleShape2D" id="Shape22"]
+size = Vector2(64, 12)
+
+[sub_resource type="RectangleShape2D" id="Shape23"]
+size = Vector2(64, 12)
+
+[sub_resource type="RectangleShape2D" id="Shape24"]
+size = Vector2(64, 12)
+
+[sub_resource type="RectangleShape2D" id="Shape25"]
+size = Vector2(64, 12)
+
+[sub_resource type="RectangleShape2D" id="Shape26"]
+size = Vector2(64, 12)
+
+[sub_resource type="RectangleShape2D" id="Shape27"]
+size = Vector2(64, 12)
+
+[sub_resource type="RectangleShape2D" id="Shape28"]
+size = Vector2(64, 12)
+
+[sub_resource type="RectangleShape2D" id="Shape29"]
+size = Vector2(64, 12)
+
+[sub_resource type="RectangleShape2D" id="Shape30"]
+size = Vector2(64, 12)
+
+[sub_resource type="RectangleShape2D" id="Shape31"]
+size = Vector2(64, 12)
+
+[sub_resource type="RectangleShape2D" id="Shape32"]
+size = Vector2(24, 2620)
+
+[sub_resource type="RectangleShape2D" id="Shape33"]
+size = Vector2(24, 2620)
+
+[node name="Level_3_3" type="Node2D"]
+script = ExtResource("Level")
+section_index = 8
+bounds = Rect2(0, 0, 1500, 2520)
+palette = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+entry_story = "DESCENT"
+entry_hint = ""
+
+[node name="BackgroundArt" type="Node2D" parent="."]
+
+[node name="Geometry" type="Node2D" parent="."]
+
+[node name="WorldArt" type="Node2D" parent="."]
+
+[node name="Entities" type="Node2D" parent="."]
+
+[node name="Labels" type="Node2D" parent="."]
+
+[node name="ForegroundArt" type="Node2D" parent="."]
+z_index = 5
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="Block0" type="StaticBody2D" parent="Geometry"]
+position = Vector2(0, 240)
+collision_layer = 1
+collision_mask = 2
+metadata/route_surface = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block0"]
+position = Vector2(260.0, 24.0)
+shape = SubResource("Shape0")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block0"]
+polygon = PackedVector2Array(0, 0, 520, 0, 520, 48, 0, 48)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block0"]
+points = PackedVector2Array(0, 0, 520, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block1" type="StaticBody2D" parent="Geometry"]
+position = Vector2(620, 360)
+collision_layer = 1
+collision_mask = 2
+metadata/route_surface = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block1"]
+position = Vector2(370.0, 24.0)
+shape = SubResource("Shape1")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block1"]
+polygon = PackedVector2Array(0, 0, 740, 0, 740, 48, 0, 48)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block1"]
+points = PackedVector2Array(0, 0, 740, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block2" type="StaticBody2D" parent="Geometry"]
+position = Vector2(140, 480)
+collision_layer = 1
+collision_mask = 2
+metadata/route_surface = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block2"]
+position = Vector2(270.0, 24.0)
+shape = SubResource("Shape2")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block2"]
+polygon = PackedVector2Array(0, 0, 540, 0, 540, 48, 0, 48)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block2"]
+points = PackedVector2Array(0, 0, 540, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block3" type="StaticBody2D" parent="Geometry"]
+position = Vector2(800, 600)
+collision_layer = 1
+collision_mask = 2
+metadata/route_surface = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block3"]
+position = Vector2(280.0, 24.0)
+shape = SubResource("Shape3")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block3"]
+polygon = PackedVector2Array(0, 0, 560, 0, 560, 48, 0, 48)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block3"]
+points = PackedVector2Array(0, 0, 560, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block4" type="StaticBody2D" parent="Geometry"]
+position = Vector2(140, 720)
+collision_layer = 1
+collision_mask = 2
+metadata/route_surface = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block4"]
+position = Vector2(270.0, 24.0)
+shape = SubResource("Shape4")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block4"]
+polygon = PackedVector2Array(0, 0, 540, 0, 540, 48, 0, 48)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block4"]
+points = PackedVector2Array(0, 0, 540, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block5" type="StaticBody2D" parent="Geometry"]
+position = Vector2(800, 840)
+collision_layer = 1
+collision_mask = 2
+metadata/route_surface = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block5"]
+position = Vector2(280.0, 24.0)
+shape = SubResource("Shape5")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block5"]
+polygon = PackedVector2Array(0, 0, 560, 0, 560, 48, 0, 48)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block5"]
+points = PackedVector2Array(0, 0, 560, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block6" type="StaticBody2D" parent="Geometry"]
+position = Vector2(140, 960)
+collision_layer = 1
+collision_mask = 2
+metadata/route_surface = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block6"]
+position = Vector2(270.0, 24.0)
+shape = SubResource("Shape6")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block6"]
+polygon = PackedVector2Array(0, 0, 540, 0, 540, 48, 0, 48)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block6"]
+points = PackedVector2Array(0, 0, 540, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block7" type="StaticBody2D" parent="Geometry"]
+position = Vector2(800, 1080)
+collision_layer = 1
+collision_mask = 2
+metadata/route_surface = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block7"]
+position = Vector2(280.0, 24.0)
+shape = SubResource("Shape7")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block7"]
+polygon = PackedVector2Array(0, 0, 560, 0, 560, 48, 0, 48)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block7"]
+points = PackedVector2Array(0, 0, 560, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block8" type="StaticBody2D" parent="Geometry"]
+position = Vector2(140, 1200)
+collision_layer = 1
+collision_mask = 2
+metadata/route_surface = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block8"]
+position = Vector2(270.0, 24.0)
+shape = SubResource("Shape8")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block8"]
+polygon = PackedVector2Array(0, 0, 540, 0, 540, 48, 0, 48)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block8"]
+points = PackedVector2Array(0, 0, 540, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block9" type="StaticBody2D" parent="Geometry"]
+position = Vector2(800, 1320)
+collision_layer = 1
+collision_mask = 2
+metadata/route_surface = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block9"]
+position = Vector2(280.0, 24.0)
+shape = SubResource("Shape9")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block9"]
+polygon = PackedVector2Array(0, 0, 560, 0, 560, 48, 0, 48)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block9"]
+points = PackedVector2Array(0, 0, 560, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block10" type="StaticBody2D" parent="Geometry"]
+position = Vector2(140, 1440)
+collision_layer = 1
+collision_mask = 2
+metadata/route_surface = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block10"]
+position = Vector2(270.0, 24.0)
+shape = SubResource("Shape10")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block10"]
+polygon = PackedVector2Array(0, 0, 540, 0, 540, 48, 0, 48)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block10"]
+points = PackedVector2Array(0, 0, 540, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block11" type="StaticBody2D" parent="Geometry"]
+position = Vector2(800, 1560)
+collision_layer = 1
+collision_mask = 2
+metadata/route_surface = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block11"]
+position = Vector2(280.0, 24.0)
+shape = SubResource("Shape11")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block11"]
+polygon = PackedVector2Array(0, 0, 560, 0, 560, 48, 0, 48)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block11"]
+points = PackedVector2Array(0, 0, 560, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block12" type="StaticBody2D" parent="Geometry"]
+position = Vector2(140, 1680)
+collision_layer = 1
+collision_mask = 2
+metadata/route_surface = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block12"]
+position = Vector2(270.0, 24.0)
+shape = SubResource("Shape12")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block12"]
+polygon = PackedVector2Array(0, 0, 540, 0, 540, 48, 0, 48)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block12"]
+points = PackedVector2Array(0, 0, 540, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block13" type="StaticBody2D" parent="Geometry"]
+position = Vector2(800, 1800)
+collision_layer = 1
+collision_mask = 2
+metadata/route_surface = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block13"]
+position = Vector2(280.0, 24.0)
+shape = SubResource("Shape13")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block13"]
+polygon = PackedVector2Array(0, 0, 560, 0, 560, 48, 0, 48)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block13"]
+points = PackedVector2Array(0, 0, 560, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block14" type="StaticBody2D" parent="Geometry"]
+position = Vector2(140, 1920)
+collision_layer = 1
+collision_mask = 2
+metadata/route_surface = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block14"]
+position = Vector2(270.0, 24.0)
+shape = SubResource("Shape14")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block14"]
+polygon = PackedVector2Array(0, 0, 540, 0, 540, 48, 0, 48)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block14"]
+points = PackedVector2Array(0, 0, 540, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block15" type="StaticBody2D" parent="Geometry"]
+position = Vector2(800, 2040)
+collision_layer = 1
+collision_mask = 2
+metadata/route_surface = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block15"]
+position = Vector2(280.0, 24.0)
+shape = SubResource("Shape15")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block15"]
+polygon = PackedVector2Array(0, 0, 560, 0, 560, 48, 0, 48)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block15"]
+points = PackedVector2Array(0, 0, 560, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block16" type="StaticBody2D" parent="Geometry"]
+position = Vector2(140, 2160)
+collision_layer = 1
+collision_mask = 2
+metadata/route_surface = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block16"]
+position = Vector2(610.0, 24.0)
+shape = SubResource("Shape16")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block16"]
+polygon = PackedVector2Array(0, 0, 1220, 0, 1220, 48, 0, 48)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block16"]
+points = PackedVector2Array(0, 0, 1220, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block17" type="StaticBody2D" parent="Geometry"]
+position = Vector2(708, 420)
+collision_layer = 1
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block17"]
+position = Vector2(32.0, 6.0)
+shape = SubResource("Shape17")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block17"]
+polygon = PackedVector2Array(0, 0, 64, 0, 64, 12, 0, 12)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block17"]
+points = PackedVector2Array(0, 0, 64, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block18" type="StaticBody2D" parent="Geometry"]
+position = Vector2(708, 660)
+collision_layer = 1
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block18"]
+position = Vector2(32.0, 6.0)
+shape = SubResource("Shape18")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block18"]
+polygon = PackedVector2Array(0, 0, 64, 0, 64, 12, 0, 12)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block18"]
+points = PackedVector2Array(0, 0, 64, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block19" type="StaticBody2D" parent="Geometry"]
+position = Vector2(708, 900)
+collision_layer = 1
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block19"]
+position = Vector2(32.0, 6.0)
+shape = SubResource("Shape19")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block19"]
+polygon = PackedVector2Array(0, 0, 64, 0, 64, 12, 0, 12)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block19"]
+points = PackedVector2Array(0, 0, 64, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block20" type="StaticBody2D" parent="Geometry"]
+position = Vector2(708, 1140)
+collision_layer = 1
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block20"]
+position = Vector2(32.0, 6.0)
+shape = SubResource("Shape20")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block20"]
+polygon = PackedVector2Array(0, 0, 64, 0, 64, 12, 0, 12)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block20"]
+points = PackedVector2Array(0, 0, 64, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block21" type="StaticBody2D" parent="Geometry"]
+position = Vector2(708, 1380)
+collision_layer = 1
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block21"]
+position = Vector2(32.0, 6.0)
+shape = SubResource("Shape21")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block21"]
+polygon = PackedVector2Array(0, 0, 64, 0, 64, 12, 0, 12)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block21"]
+points = PackedVector2Array(0, 0, 64, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block22" type="StaticBody2D" parent="Geometry"]
+position = Vector2(708, 1620)
+collision_layer = 1
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block22"]
+position = Vector2(32.0, 6.0)
+shape = SubResource("Shape22")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block22"]
+polygon = PackedVector2Array(0, 0, 64, 0, 64, 12, 0, 12)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block22"]
+points = PackedVector2Array(0, 0, 64, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block23" type="StaticBody2D" parent="Geometry"]
+position = Vector2(708, 1860)
+collision_layer = 1
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block23"]
+position = Vector2(32.0, 6.0)
+shape = SubResource("Shape23")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block23"]
+polygon = PackedVector2Array(0, 0, 64, 0, 64, 12, 0, 12)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block23"]
+points = PackedVector2Array(0, 0, 64, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block24" type="StaticBody2D" parent="Geometry"]
+position = Vector2(708, 2100)
+collision_layer = 1
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block24"]
+position = Vector2(32.0, 6.0)
+shape = SubResource("Shape24")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block24"]
+polygon = PackedVector2Array(0, 0, 64, 0, 64, 12, 0, 12)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block24"]
+points = PackedVector2Array(0, 0, 64, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block25" type="StaticBody2D" parent="Geometry"]
+position = Vector2(708, 540)
+collision_layer = 1
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block25"]
+position = Vector2(32.0, 6.0)
+shape = SubResource("Shape25")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block25"]
+polygon = PackedVector2Array(0, 0, 64, 0, 64, 12, 0, 12)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block25"]
+points = PackedVector2Array(0, 0, 64, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block26" type="StaticBody2D" parent="Geometry"]
+position = Vector2(708, 780)
+collision_layer = 1
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block26"]
+position = Vector2(32.0, 6.0)
+shape = SubResource("Shape26")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block26"]
+polygon = PackedVector2Array(0, 0, 64, 0, 64, 12, 0, 12)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block26"]
+points = PackedVector2Array(0, 0, 64, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block27" type="StaticBody2D" parent="Geometry"]
+position = Vector2(708, 1020)
+collision_layer = 1
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block27"]
+position = Vector2(32.0, 6.0)
+shape = SubResource("Shape27")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block27"]
+polygon = PackedVector2Array(0, 0, 64, 0, 64, 12, 0, 12)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block27"]
+points = PackedVector2Array(0, 0, 64, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block28" type="StaticBody2D" parent="Geometry"]
+position = Vector2(708, 1260)
+collision_layer = 1
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block28"]
+position = Vector2(32.0, 6.0)
+shape = SubResource("Shape28")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block28"]
+polygon = PackedVector2Array(0, 0, 64, 0, 64, 12, 0, 12)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block28"]
+points = PackedVector2Array(0, 0, 64, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block29" type="StaticBody2D" parent="Geometry"]
+position = Vector2(708, 1500)
+collision_layer = 1
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block29"]
+position = Vector2(32.0, 6.0)
+shape = SubResource("Shape29")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block29"]
+polygon = PackedVector2Array(0, 0, 64, 0, 64, 12, 0, 12)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block29"]
+points = PackedVector2Array(0, 0, 64, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block30" type="StaticBody2D" parent="Geometry"]
+position = Vector2(708, 1740)
+collision_layer = 1
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block30"]
+position = Vector2(32.0, 6.0)
+shape = SubResource("Shape30")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block30"]
+polygon = PackedVector2Array(0, 0, 64, 0, 64, 12, 0, 12)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block30"]
+points = PackedVector2Array(0, 0, 64, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block31" type="StaticBody2D" parent="Geometry"]
+position = Vector2(708, 1980)
+collision_layer = 1
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block31"]
+position = Vector2(32.0, 6.0)
+shape = SubResource("Shape31")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block31"]
+polygon = PackedVector2Array(0, 0, 64, 0, 64, 12, 0, 12)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block31"]
+points = PackedVector2Array(0, 0, 64, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block32" type="StaticBody2D" parent="Geometry"]
+position = Vector2(-24, 0)
+collision_layer = 1
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block32"]
+position = Vector2(12.0, 1310.0)
+shape = SubResource("Shape32")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block32"]
+polygon = PackedVector2Array(0, 0, 24, 0, 24, 2620, 0, 2620)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block32"]
+points = PackedVector2Array(0, 0, 24, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Block33" type="StaticBody2D" parent="Geometry"]
+position = Vector2(1500, 0)
+collision_layer = 1
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block33"]
+position = Vector2(12.0, 1310.0)
+shape = SubResource("Shape33")
+
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block33"]
+polygon = PackedVector2Array(0, 0, 24, 0, 24, 2620, 0, 2620)
+color = Color(0.13, 0.22, 0.29, 1)
+
+[node name="Surface" type="Line2D" parent="Geometry/Block33"]
+points = PackedVector2Array(0, 0, 24, 0)
+width = 2.0
+default_color = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="MovingPlatform0" parent="Entities" instance=ExtResource("MovingPlatform")]
+position = Vector2(30, 480)
+travel = Vector2(0, 480)
+width = 56.0
+duration = 5.2
+unstable = false
+collapse_delay = 0.27
+return_delay = 2.4
+
+[node name="MovingPlatform1" parent="Entities" instance=ExtResource("MovingPlatform")]
+position = Vector2(1370, 1200)
+travel = Vector2(0, 600)
+width = 56.0
+duration = 6.5
+unstable = false
+collapse_delay = 0.27
+return_delay = 2.4
+
+[node name="Checkpoint2" parent="Entities" instance=ExtResource("Checkpoint")]
+position = Vector2(140, 240)
+
+[node name="Checkpoint3" parent="Entities" instance=ExtResource("Checkpoint")]
+position = Vector2(1040, 600)
+
+[node name="Checkpoint4" parent="Entities" instance=ExtResource("Checkpoint")]
+position = Vector2(340, 1200)
+
+[node name="Checkpoint5" parent="Entities" instance=ExtResource("Checkpoint")]
+position = Vector2(1030, 1800)
+
+[node name="Checkpoint6" parent="Entities" instance=ExtResource("Checkpoint")]
+position = Vector2(340, 2160)
+
+[node name="InteractiveTerminal7" parent="Entities" instance=ExtResource("InteractiveTerminal")]
+position = Vector2(1120, 840)
+title = "Examina el conducto"
+state_key = "conduit"
+story_id = "CONDUIT"
+required_keys = PackedStringArray()
+locked_hint = "Activa primero el mecanismo anterior."
+
+[node name="InteractiveTerminal8" parent="Entities" instance=ExtResource("InteractiveTerminal")]
+position = Vector2(350, 1680)
+title = "Escucha el eco de tu voz"
+state_key = "echo"
+story_id = "STORY_13"
+required_keys = PackedStringArray("conduit")
+locked_hint = "Activa primero el mecanismo anterior."
+
+[node name="InteractiveTerminal9" parent="Entities" instance=ExtResource("InteractiveTerminal")]
+position = Vector2(390, 1440)
+title = "Memoria opcional"
+record_id = "REG_05"
+
+[node name="MovingPlatform10" parent="Entities" instance=ExtResource("MovingPlatform")]
+position = Vector2(1020, 1038)
+travel = Vector2(0, 0)
+width = 56.0
+duration = 2.6
+unstable = true
+collapse_delay = 0.27
+return_delay = 2.4
+
+[node name="Hazard11" parent="Entities" instance=ExtResource("Hazard")]
+position = Vector2(360, 960)
+width = 69.6
+cycle = true
+phase_offset = 0.0
+disabled_by = ""
+rest_time = 0.5399999999999999
+warning_time = 0.41
+active_time = 1.81
+damage = 2
+
+[node name="Hazard12" parent="Entities" instance=ExtResource("Hazard")]
+position = Vector2(1080, 1560)
+width = 69.6
+cycle = true
+phase_offset = 1.0
+disabled_by = ""
+rest_time = 0.5399999999999999
+warning_time = 0.41
+active_time = 1.81
+damage = 2
+
+[node name="Hazard13" parent="Entities" instance=ExtResource("Hazard")]
+position = Vector2(600, 2160)
+width = 75.39999999999999
+cycle = true
+phase_offset = 0.0
+disabled_by = ""
+rest_time = 0.5399999999999999
+warning_time = 0.41
+active_time = 1.81
+damage = 2
+
+[node name="BaseEnemy14" parent="Entities" instance=ExtResource("BaseEnemy")]
+position = Vector2(322.4, 240)
+max_health = 125
+patrol_distance = 42.0
+speed = 94.0
+attack_style = "ranged"
+combo_strikes = 2
+
+[node name="BaseEnemy15" parent="Entities" instance=ExtResource("BaseEnemy")]
+position = Vector2(1078.8, 360)
+max_health = 125
+patrol_distance = 42.0
+speed = 94.0
+attack_style = "duelist"
+combo_strikes = 2
+
+[node name="BaseEnemy16" parent="Entities" instance=ExtResource("BaseEnemy")]
+position = Vector2(474.8, 480)
+max_health = 125
+patrol_distance = 42.0
+speed = 94.0
+attack_style = "ranged"
+combo_strikes = 2
+
+[node name="BaseEnemy17" parent="Entities" instance=ExtResource("BaseEnemy")]
+position = Vector2(474.8, 720)
+max_health = 125
+patrol_distance = 42.0
+speed = 94.0
+attack_style = "duelist"
+combo_strikes = 2
+
+[node name="BaseEnemy18" parent="Entities" instance=ExtResource("BaseEnemy")]
+position = Vector2(474.8, 960)
+max_health = 125
+patrol_distance = 42.0
+speed = 94.0
+attack_style = "ranged"
+combo_strikes = 2
+
+[node name="BaseEnemy19" parent="Entities" instance=ExtResource("BaseEnemy")]
+position = Vector2(1147.2, 1080)
+max_health = 125
+patrol_distance = 42.0
+speed = 94.0
+attack_style = "duelist"
+combo_strikes = 2
+
+[node name="BaseEnemy20" parent="Entities" instance=ExtResource("BaseEnemy")]
+position = Vector2(1147.2, 1320)
+max_health = 125
+patrol_distance = 42.0
+speed = 94.0
+attack_style = "ranged"
+combo_strikes = 2
+
+[node name="BaseEnemy21" parent="Entities" instance=ExtResource("BaseEnemy")]
+position = Vector2(1147.2, 1560)
+max_health = 125
+patrol_distance = 42.0
+speed = 94.0
+attack_style = "duelist"
+combo_strikes = 2
+
+[node name="BaseEnemy22" parent="Entities" instance=ExtResource("BaseEnemy")]
+position = Vector2(474.8, 1920)
+max_health = 125
+patrol_distance = 42.0
+speed = 94.0
+attack_style = "ranged"
+combo_strikes = 2
+
+[node name="BaseEnemy23" parent="Entities" instance=ExtResource("BaseEnemy")]
+position = Vector2(1147.2, 2040)
+max_health = 125
+patrol_distance = 42.0
+speed = 94.0
+attack_style = "duelist"
+combo_strikes = 2
+
+[node name="BaseEnemy24" parent="Entities" instance=ExtResource("BaseEnemy")]
+position = Vector2(896.4, 2160)
+max_health = 125
+patrol_distance = 42.0
+speed = 94.0
+attack_style = "ranged"
+combo_strikes = 2
+
+[node name="Hazard25" parent="Entities" instance=ExtResource("Hazard")]
+position = Vector2(360, 240)
+width = 100.0
+cycle = true
+phase_offset = 0.0
+rest_time = 0.51
+warning_time = 0.45
+active_time = 2.0
+damage = 2
+
+[node name="Hazard26" parent="Entities" instance=ExtResource("Hazard")]
+position = Vector2(1200, 360)
+width = 100.0
+cycle = true
+phase_offset = 0.68
+rest_time = 0.51
+warning_time = 0.45
+active_time = 2.0
+damage = 2
+
+[node name="Hazard27" parent="Entities" instance=ExtResource("Hazard")]
+position = Vector2(520, 480)
+width = 100.0
+cycle = true
+phase_offset = 0.0
+rest_time = 0.51
+warning_time = 0.45
+active_time = 2.0
+damage = 2
+
+[node name="Hazard28" parent="Entities" instance=ExtResource("Hazard")]
+position = Vector2(1200, 600)
+width = 100.0
+cycle = true
+phase_offset = 0.34
+rest_time = 0.51
+warning_time = 0.45
+active_time = 2.0
+damage = 2
+
+[node name="Hazard29" parent="Entities" instance=ExtResource("Hazard")]
+position = Vector2(520, 720)
+width = 100.0
+cycle = true
+phase_offset = 0.0
+rest_time = 0.51
+warning_time = 0.45
+active_time = 2.0
+damage = 2
+
+[node name="Hazard30" parent="Entities" instance=ExtResource("Hazard")]
+position = Vector2(1200, 1080)
+width = 100.0
+cycle = true
+phase_offset = 0.34
+rest_time = 0.51
+warning_time = 0.45
+active_time = 2.0
+damage = 2
+
+[node name="Hazard31" parent="Entities" instance=ExtResource("Hazard")]
+position = Vector2(520, 1200)
+width = 100.0
+cycle = true
+phase_offset = 0.0
+rest_time = 0.51
+warning_time = 0.45
+active_time = 2.0
+damage = 2
+
+[node name="Hazard32" parent="Entities" instance=ExtResource("Hazard")]
+position = Vector2(1200, 1320)
+width = 100.0
+cycle = true
+phase_offset = 0.34
+rest_time = 0.51
+warning_time = 0.45
+active_time = 2.0
+damage = 2
+
+[node name="Hazard33" parent="Entities" instance=ExtResource("Hazard")]
+position = Vector2(520, 1680)
+width = 100.0
+cycle = true
+phase_offset = 0.0
+rest_time = 0.51
+warning_time = 0.45
+active_time = 2.0
+damage = 2
+
+[node name="Hazard34" parent="Entities" instance=ExtResource("Hazard")]
+position = Vector2(1200, 1800)
+width = 100.0
+cycle = true
+phase_offset = 0.34
+rest_time = 0.51
+warning_time = 0.45
+active_time = 2.0
+damage = 2
+
+[node name="Hazard35" parent="Entities" instance=ExtResource("Hazard")]
+position = Vector2(520, 1920)
+width = 100.0
+cycle = true
+phase_offset = 0.0
+rest_time = 0.51
+warning_time = 0.45
+active_time = 2.0
+damage = 2
+
+[node name="Hazard36" parent="Entities" instance=ExtResource("Hazard")]
+position = Vector2(1200, 2040)
+width = 100.0
+cycle = true
+phase_offset = 0.34
+rest_time = 0.51
+warning_time = 0.45
+active_time = 2.0
+damage = 2
+
+[node name="Hazard37" parent="Entities" instance=ExtResource("Hazard")]
+position = Vector2(930, 600)
+width = 84.0
+cycle = true
+phase_offset = 1.2
+rest_time = 0.45
+warning_time = 0.45
+active_time = 1.9
+damage = 2
+
+[node name="Hazard38" parent="Entities" instance=ExtResource("Hazard")]
+position = Vector2(440, 1200)
+width = 84.0
+cycle = true
+phase_offset = 2.4
+rest_time = 0.45
+warning_time = 0.45
+active_time = 1.9
+damage = 2
+
+[node name="Hazard39" parent="Entities" instance=ExtResource("Hazard")]
+position = Vector2(930, 1800)
+width = 84.0
+cycle = true
+phase_offset = 3.6
+rest_time = 0.45
+warning_time = 0.45
+active_time = 1.9
+damage = 2
+
+[node name="Prop0" parent="WorldArt" instance=ExtResource("Decoration")]
+position = Vector2(740, 2000)
+kind = "core"
+size = Vector2(180, 380)
+tint = Color(0.4, 0.48627450980392156, 0.6705882352941176, 1)
+
+[node name="Sign0" type="Label" parent="Labels"]
+offset_left = 200.0
+offset_top = 80.0
+offset_right = 550.0
+offset_bottom = 142.0
+text = "DESCENSO / 40 m\nMira la repisa inferior antes de dejarte caer"
+theme_override_font_sizes/font_size = 12
+
+[node name="Sign1" type="Label" parent="Labels"]
+offset_left = 870.0
+offset_top = 440.0
+offset_right = 1220.0
+offset_bottom = 502.0
+text = "DESCENSO / 100 m\nMira la repisa inferior antes de dejarte caer"
+theme_override_font_sizes/font_size = 12
+
+[node name="Sign2" type="Label" parent="Labels"]
+offset_left = 190.0
+offset_top = 1040.0
+offset_right = 540.0
+offset_bottom = 1102.0
+text = "DESCENSO / 200 m\nMira la repisa inferior antes de dejarte caer"
+theme_override_font_sizes/font_size = 12
+
+[node name="Sign3" type="Label" parent="Labels"]
+offset_left = 880.0
+offset_top = 1640.0
+offset_right = 1230.0
+offset_bottom = 1702.0
+text = "DESCENSO / 300 m\nMira la repisa inferior antes de dejarte caer"
+theme_override_font_sizes/font_size = 12
+
+[node name="Sign4" type="Label" parent="Labels"]
+offset_left = 240.0
+offset_top = 2000.0
+offset_right = 590.0
+offset_bottom = 2062.0
+text = "DESCENSO / 360 m\nMira la repisa inferior antes de dejarte caer"
+theme_override_font_sizes/font_size = 12
+
+[node name="Sign5" type="Label" parent="Labels"]
+offset_left = 670.0
+offset_top = 285.0
+offset_right = 1020.0
+offset_bottom = 347.0
+text = "↓"
+theme_override_font_sizes/font_size = 12
+
+[node name="Sign6" type="Label" parent="Labels"]
+offset_left = 710.0
+offset_top = 525.0
+offset_right = 1060.0
+offset_bottom = 587.0
+text = "↓"
+theme_override_font_sizes/font_size = 12
+
+[node name="Sign7" type="Label" parent="Labels"]
+offset_left = 710.0
+offset_top = 1005.0
+offset_right = 1060.0
+offset_bottom = 1067.0
+text = "↓"
+theme_override_font_sizes/font_size = 12
+
+[node name="Sign8" type="Label" parent="Labels"]
+offset_left = 710.0
+offset_top = 1485.0
+offset_right = 1060.0
+offset_bottom = 1547.0
+text = "↓"
+theme_override_font_sizes/font_size = 12
+
+[node name="Exit" parent="Entities" instance=ExtResource("LevelExit")]
+position = Vector2(1220, 2160)
+required_keys = PackedStringArray("conduit", "echo")
+
+[node name="Player" parent="." instance=ExtResource("Player")]
+position = Vector2(140, 240)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(35, -70)
+position_smoothing_enabled = false

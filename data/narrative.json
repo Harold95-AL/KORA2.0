@@ -1,0 +1,391 @@
+{
+  "STORY_01": {
+    "title": "Después del impacto",
+    "lines": [
+      "LUMA: Propulsión destruida. Seguimos operativos. Busca la terminal de navegación."
+    ],
+    "blocking": false
+  },
+  "STORY_02": {
+    "title": "Telemetría recuperada",
+    "lines": [
+      "LUMA: La nave recibió una descarga dirigida desde la superficie. La señal nos atrajo, pero no causó el accidente.",
+      "EXPLORADOR: Entonces busquemos energía y averigüemos quién construyó esas estructuras."
+    ],
+    "blocking": true
+  },
+  "STORY_03": {
+    "title": "SIL / Primer contacto",
+    "lines": [
+      "SIL: ¡Tii-rii!",
+      "LUMA: Patrón de comunicación detectado. Asignaré el identificador SIL. Parece interesado en tus movimientos."
+    ],
+    "blocking": false
+  },
+  "STORY_04": {
+    "title": "Bajo la superficie",
+    "lines": [
+      "LUMA: La señal aumenta bajo nuestros pies. El resonador marca un camino hacia la grieta.",
+      "EXPLORADOR: No estamos siguiendo una voz. Estamos siguiendo un planeta."
+    ],
+    "blocking": true
+  },
+  "STORY_05": {
+    "title": "La Resonancia",
+    "lines": [
+      "LUMA: Los cristales transportan energía e información. El pilar está conectado a los organismos cercanos.",
+      "EXPLORADOR: Tomaremos solo lo necesario. No vamos a apagar lo que vive aquí."
+    ],
+    "blocking": true
+  },
+  "STORY_06": {
+    "title": "El santuario responde",
+    "lines": [
+      "LUMA: La energía vuelve a los jardines. Los Eshar construyeron el santuario sobre esta red natural.",
+      "SIL: Tii... / La pequeña criatura se queda fuera de las ruinas."
+    ],
+    "blocking": false
+  },
+  "STORY_07": {
+    "title": "Ayen / El nombre KORA",
+    "lines": [
+      "AYEN: El planeta conservaba pequeñas huellas de cada ser que había vivido sobre él. Escucharlas nos cambió para siempre.",
+      "LUMA: KORA: aquello que mantiene unidos los recuerdos de la vida. Los Eshar estudiaban memoria y tiempo.",
+      "INSCRIPCIÓN: Recordar no es detener el tiempo. Quien retiene todo impide que algo nuevo comience."
+    ],
+    "blocking": true
+  },
+  "STORY_08": {
+    "title": "ORÚ / Autorización",
+    "lines": [
+      "ORÚ: Protocolo interrumpido. Acceso autorizado. Registro encontrado... registro aún no generado.",
+      "LUMA: Reconoce una firma nuestra que todavía no existe en sus archivos. El descenso está abierto."
+    ],
+    "blocking": true
+  },
+  "STORY_09": {
+    "title": "Las profundidades",
+    "lines": [
+      "LUMA: Estas pulsaciones recorren una red planetaria. Las sobrecargas alternan reposo, aviso y descarga.",
+      "EXPLORADOR: Esperaremos la calma antes de cruzar."
+    ],
+    "blocking": false
+  },
+  "STORY_10": {
+    "title": "Proyecto Vigilia",
+    "lines": [
+      "ARCHIVO: Preservar patrones de memoria y conciencia ante una crisis astronómica. Estado inicial: compatible.",
+      "LUMA: Los Eshar intentaron conservar a su civilización. Estas cámaras mantienen fragmentos conscientes en repetición."
+    ],
+    "blocking": true
+  },
+  "STORY_11": {
+    "title": "La advertencia de Ayen",
+    "lines": [
+      "AYEN: Cada memoria estable requiere energía que ya no llega al ecosistema. Solicité suspender Vigilia. La propuesta fue rechazada.",
+      "LUMA: Aumentaron la extracción. La sobrecarga fragmentó las memorias y agotó el planeta: la Fractura no es una infección."
+    ],
+    "blocking": true
+  },
+  "STORY_12": {
+    "title": "El sacrificio de Saren",
+    "lines": [
+      "SAREN: Una conciencia conectada podría adaptar las defensas y evitar la propagación.",
+      "AYEN: Podrías quedar atrapado. / SAREN: Entonces tendrás que encontrar la manera de liberarme.",
+      "LUMA: Su sacrificio contuvo la Fractura. Cuatro siglos después, solo parece recordar la orden de proteger el núcleo."
+    ],
+    "blocking": true
+  },
+  "STORY_13": {
+    "title": "Eco en el conducto",
+    "lines": [
+      "VOZ: Sigue... la luz... Estoy aquí.",
+      "LUMA: Coincidencia acústica detectada. Suena como tú."
+    ],
+    "blocking": true
+  },
+  "STORY_14": {
+    "title": "El corazón de KORA",
+    "lines": [
+      "LUMA: Los estabilizadores permiten entrar. La energía aún converge en el núcleo.",
+      "EXPLORADOR: Ya no buscamos solo una forma de regresar. Tenemos que detener la extracción."
+    ],
+    "blocking": false
+  },
+  "STORY_15": {
+    "title": "El Eco de Fase",
+    "lines": [
+      "LUMA: La señal se originará aquí. Todavía no ha sido enviada. El Eco de Fase refleja información limitada hacia un estado anterior de la Resonancia.",
+      "EXPLORADOR: Nuestra propia transmisión nos trajo hasta KORA. / LUMA: Y nuestra aproximación activó la descarga defensiva.",
+      "LUMA: No permite transportar cuerpos ni objetos. Esta ventana de sincronización es excepcional."
+    ],
+    "blocking": true
+  },
+  "STORY_16": {
+    "title": "Saren / La última puerta",
+    "lines": [
+      "SAREN: He esperado. El sistema preserva lo que queda. No permitiré otra pérdida.",
+      "EXPLORADOR: El planeta está muriendo. No puedes seguir protegiendo una puerta para siempre."
+    ],
+    "blocking": true
+  },
+  "STORY_17": {
+    "title": "Liberación de las memorias",
+    "lines": [
+      "Las voces dejan de repetirse. Los ecos conscientes se dispersan con calma. La energía regresa a la Resonancia.",
+      "LUMA: El almacenamiento permanente está desactivado. La ventana del transmisor de fase se ha abierto."
+    ],
+    "blocking": true
+  },
+  "STORY_18": {
+    "title": "La señal / El ciclo se completa",
+    "lines": [
+      "LUMA: Enviarás la señal que recibimos antes de llegar. Conoces las consecuencias.",
+      "EXPLORADOR: También conozco lo que encontramos después. Sigue la señal. Sigue la luz. No apagues el corazón. Estoy aquí.",
+      "Una pulsación corta. Una larga. Una corta. El mensaje desaparece hacia el pasado."
+    ],
+    "blocking": true
+  },
+  "STORY_19": {
+    "title": "Núcleo estabilizado",
+    "lines": [
+      "SAREN: Había olvidado cómo se veía la luz sin una puerta delante.",
+      "LUMA: Flujo energético estable. La recuperación llevará tiempo. / EXPLORADOR: Pero ahora podrán vivir."
+    ],
+    "blocking": true
+  },
+  "STORY_20": {
+    "title": "Otra señal",
+    "lines": [
+      "LUMA: Nueva transmisión detectada. Mismo patrón. El origen está fuera de este sistema.",
+      "EXPLORADOR: Entonces tenemos algo que investigar."
+    ],
+    "blocking": true
+  },
+  "CELL": {
+    "title": "Energía portátil",
+    "lines": [
+      "LUMA: La célula no reparará la nave, pero alimentará tu equipo. Algo salió ligeramente bien."
+    ],
+    "blocking": false
+  },
+  "LOOKOUT": {
+    "title": "Mirador",
+    "lines": [
+      "EXPLORADOR: Hay estructuras entre los árboles. / LUMA: Conviene averiguar quién las construyó."
+    ],
+    "blocking": false
+  },
+  "SAMPLE": {
+    "title": "Una muestra, no una herida",
+    "lines": [
+      "LUMA: Extracción limitada completada. El flujo que alimenta a los organismos permanece estable."
+    ],
+    "blocking": false
+  },
+  "SIL_RETURN": {
+    "title": "SIL vuelve",
+    "lines": [
+      "SIL: ¡Tii-rii! / LUMA: Nos muestra un jardín debilitado. La energía llega a otras regiones, pero aquí casi se ha detenido."
+    ],
+    "blocking": false
+  },
+  "PUZZLE_CLUE": {
+    "title": "Inscripción de los tres pilares",
+    "lines": [
+      "La inscripción muestra: I → III → II. Activa los tres resonadores en ese orden.",
+      "Si te equivocas, la secuencia se reinicia sin daño. Los símbolos permanecerán visibles."
+    ],
+    "blocking": true
+  },
+  "PUZZLE_DONE": {
+    "title": "Secuencia estable",
+    "lines": [
+      "LUMA: Enlace establecido. La cámara de Ayen puede abrirse."
+    ],
+    "blocking": false
+  },
+  "ORU_INTRO": {
+    "title": "ORÚ / Protocolo de acceso",
+    "lines": [
+      "ORÚ: Entidad no reconocida. Registro encontrado. Registro aún no generado.",
+      "LUMA: El escudo se apaga después de cada ataque. Retrocede ante el arco amarillo y salta las ondas."
+    ],
+    "blocking": true
+  },
+  "RESCUE": {
+    "title": "Una vida fuera del ciclo",
+    "lines": [
+      "La compuerta se abre y la criatura debilitada escapa de la descarga.",
+      "LUMA: El deterioro de la Resonancia está afectando al ecosistema. Podemos reducirlo desde el regulador."
+    ],
+    "blocking": false
+  },
+  "REGULATOR": {
+    "title": "Sobrecarga reducida",
+    "lines": [
+      "LUMA: Regulador activo. Los peligros de esta zona se han apagado, pero la extracción central sigue funcionando."
+    ],
+    "blocking": false
+  },
+  "TRANSMISSIONS": {
+    "title": "Historial de transmisiones",
+    "lines": [
+      "LUMA: No existe un emisor registrado en el momento de nuestra llegada. Sin embargo, la señal existe dentro del sistema."
+    ],
+    "blocking": true
+  },
+  "REDIRECT": {
+    "title": "Ruta al núcleo",
+    "lines": [
+      "LUMA: Energía redirigida. El complejo se deteriora, pero hay una ruta segura de mantenimiento hacia las profundidades."
+    ],
+    "blocking": false
+  },
+  "DESCENT": {
+    "title": "Descenso de mantenimiento",
+    "lines": [
+      "LUMA: El ascensor principal falla. Usa los descansos laterales. Antes de bajar puedes ver la siguiente plataforma."
+    ],
+    "blocking": false
+  },
+  "CONDUIT": {
+    "title": "Conducto de emergencia",
+    "lines": [
+      "LUMA: Parte de la energía regresa al ecosistema. Aún debemos desconectar la extracción central."
+    ],
+    "blocking": false
+  },
+  "AYEN_LAST": {
+    "title": "La última grabación de Ayen",
+    "lines": [
+      "AYEN: Los ecos no pueden regresar a la vida. Solo repiten fragmentos de quienes fuimos. El planeta necesita recuperar su energía.",
+      "AYEN: Si encuentras a Saren, recuerda que no siempre fue un guardián."
+    ],
+    "blocking": true
+  },
+  "CORE_CONSOLE": {
+    "title": "La decisión",
+    "lines": [
+      "LUMA: Restaurar la Resonancia exige desactivar el almacenamiento permanente. Los ecos desaparecerán como patrones conscientes.",
+      "EXPLORADOR: Ayen dejó instrucciones para liberarlos. Saren prometió custodiar el sistema hasta que eso fuera posible."
+    ],
+    "blocking": true
+  },
+  "SAREN_DEFEAT": {
+    "title": "La promesa",
+    "lines": [
+      "SAREN: Creí que podía protegerlos. ¿Qué ocurrirá conmigo?",
+      "LUMA: Tu conciencia está vinculada a la contención. No podrá mantenerse después de la liberación.",
+      "SAREN: Entonces... por fin podré descansar. Ayen... abre la puerta."
+    ],
+    "blocking": true
+  },
+  "REG_01": {
+    "title": "01 / La primera expedición Eshar",
+    "lines": [
+      "No encontramos la Resonancia. Nacimos rodeados de ella. Durante generaciones confundimos sus sonidos con el viento."
+    ],
+    "blocking": true
+  },
+  "REG_02": {
+    "title": "02 / La memoria",
+    "lines": [
+      "La memoria no es únicamente aquello que conservamos. También es aquello que transformamos al continuar viviendo."
+    ],
+    "blocking": true
+  },
+  "REG_03": {
+    "title": "03 / Proyecto Vigilia",
+    "lines": [
+      "Objetivo: preservar patrones conscientes durante la crisis astronómica. Estado inicial: compatible. Consumo energético: superior a lo previsto."
+    ],
+    "blocking": true
+  },
+  "REG_04": {
+    "title": "04 / La advertencia",
+    "lines": [
+      "AYEN: El sistema de extracción ha superado el límite recomendado. La continuidad de Vigilia amenaza la estabilidad de la Resonancia. Solicito suspensión inmediata."
+    ],
+    "blocking": true
+  },
+  "REG_05": {
+    "title": "05 / Protocolo Saren",
+    "lines": [
+      "La contención permanecerá activa hasta que una entidad externa consiga restablecer la distribución energética. Prioridad: evitar propagación."
+    ],
+    "blocking": true
+  },
+  "REG_06": {
+    "title": "06 / Una última anotación",
+    "lines": [
+      "AYEN: Si nuestro mundo vuelve a florecer algún día, quizá nadie recuerde nuestros nombres. Después de todo lo ocurrido, empiezo a pensar que eso sería suficiente."
+    ],
+    "blocking": true
+  },
+  "REG_SIGNAL": {
+    "title": "Fragmento / Tres pulsaciones",
+    "lines": [
+      "El cristal repite el patrón de la transmisión: corta, larga, corta. La señal utiliza la Resonancia."
+    ],
+    "blocking": true
+  },
+  "REG_VOICE": {
+    "title": "Fragmento / Una voz sin cuerpo",
+    "lines": [
+      "Una voz surge de la piedra. No hay nadie cerca. El cristal conserva la huella de un ser que vivió aquí."
+    ],
+    "blocking": true
+  },
+  "REG_INSCRIPTION": {
+    "title": "Inscripción / La red",
+    "lines": [
+      "La memoria no pertenece a una sola piedra. El pulso atraviesa el mundo. El resto de la inscripción se ha perdido."
+    ],
+    "blocking": true
+  },
+  "PROLOGUE": {
+    "pages": [
+      {
+        "title": "PRÓLOGO / LA SEÑAL",
+        "text": "Una exploración de rutina. Un planeta sin registrar.\nTres pulsaciones: corta, larga, corta."
+      },
+      {
+        "title": "Una marca temporal imposible",
+        "text": "LUMA: La transmisión está fechada treinta y una horas después de nuestra recepción.\nVOZ: Sigue... la luz... No apagues... Estoy aquí."
+      },
+      {
+        "title": "Aproximación",
+        "text": "EXPLORADOR: Si alguien está pidiendo ayuda, debemos intentarlo.\nLUMA: Probabilidad de que sea una decisión prudente: baja."
+      },
+      {
+        "title": "Descarga / Impacto",
+        "text": "La defensa automática de la superficie alcanza la nave.\nLUMA: Navegación desconectada. Protección de emergencia activada.\nSilencio. Después, una voz: ¿Me recibes?"
+      }
+    ]
+  },
+  "EPILOGUE": {
+    "pages": [
+      {
+        "title": "EPÍLOGO / EL ÚLTIMO PULSO",
+        "text": "Los cristales recuperan una luz estable. La vegetación vuelve a crecer.\nLUMA: El proceso llevará mucho tiempo.\nEXPLORADOR: Pero ahora lo tienen."
+      },
+      {
+        "title": "Una pequeña despedida",
+        "text": "SIL: ¡Tii-rii!\nLa criatura gira alrededor del explorador. Sus pulsaciones son fuertes. Luego regresa al bosque.\nEXPLORADOR: Hasta pronto, pequeño."
+      },
+      {
+        "title": "Regreso a las estrellas",
+        "text": "LUMA: Propulsión auxiliar restablecida. La reparación no cumple los estándares recomendados.\nEXPLORADOR: Podemos tolerarlo.\nLa nave abandona la atmósfera de KORA."
+      },
+      {
+        "title": "La última señal",
+        "text": "Corta. Larga. Corta.\nLUMA: El origen está fuera de este sistema.\nEXPLORADOR: ¿Hay otro lugar como KORA?\nUna pregunta abierta, mientras el planeta vuelve a sostener vida."
+      },
+      {
+        "title": "KORA / CRÉDITOS PROVISIONALES",
+        "text": "La memoria de las estrellas · Boceto jugable\nProyecto y narrativa: Harold / documentos de KORA\nSprites del paquete suministrado: Ozzbit Games\nImplementación del boceto: asistencia de Codex\nFIN · Gracias por explorar."
+      }
+    ]
+  }
+}

@@ -1,0 +1,2618 @@
+# KORA: LA MEMORIA DE LAS ESTRELLAS
+## Documento maestro de narrativa y guion — Versión 1.0
+
+**Género narrativo:** ciencia ficción, misterio, aventura y drama.
+
+**Estructura:** prólogo + cuatro niveles (12 secciones) + epílogo.
+
+**Duración jugable objetivo:** 60–90 minutos, adaptable al alcance del proyecto.
+
+**Narrativa:** principalmente lineal, con objetos opcionales que amplían el lore.
+
+**Tema central:** la diferencia entre recordar algo y mantenerlo prisionero.
+
+**Estado:** propuesta de canon narrativo completo, pendiente de aprobación e integración.
+
+---
+
+# PARTE I. LOS SECRETOS DEL UNIVERSO
+
+## 1. ¿Qué es realmente KORA?
+
+KORA es un planeta extraordinario situado fuera de las rutas habituales de exploración.
+
+Aunque parece un mundo mineral, sus cristales no son simples formaciones geológicas.
+
+Todo el planeta está atravesado por una red de estructuras cristalinas capaces de transportar energía e información.
+
+A esta red la llamaremos **la Resonancia**.
+
+Durante millones de años, la Resonancia se integró con el ecosistema. Algunas criaturas utilizan sus impulsos para orientarse, otras sincronizan sus ciclos vitales mediante ellos y ciertas plantas dependen directamente de su energía.
+
+Pero la Resonancia tiene una propiedad todavía más extraordinaria:
+
+**Puede conservar las huellas de aquello que ha vivido.**
+
+No únicamente sonidos o imágenes, sino patrones de actividad asociados a experiencias, sensaciones e incluso fragmentos de conciencia.
+
+El planeta es, en cierto sentido, un archivo natural.
+
+No piensa como un ser humano. No tiene una voluntad individual. Su comportamiento se parece más al de un ecosistema inmenso donde energía, vida e información están profundamente conectadas.
+
+Cuando una criatura muere, parte de su huella permanece temporalmente en esa red.
+
+Sin intervención tecnológica, esas huellas se transforman y terminan dispersándose.
+
+La vida continúa y el planeta recuerda sin retener para siempre.
+
+Ese equilibrio es lo que alguien alteró.
+
+## 2. La civilización desaparecida: los Eshar
+
+Hace aproximadamente cuatro siglos, KORA estuvo habitado por una civilización tecnológica conocida como los **Eshar**.
+
+Los Eshar descubrieron cómo leer ciertos patrones de la Resonancia.
+
+Al principio construyeron observatorios, santuarios y dispositivos destinados a estudiar el ecosistema.
+
+Su sociedad alcanzó un notable desarrollo científico.
+
+Aprendieron a utilizar cristales como medios de comunicación, dispositivos energéticos y sistemas de almacenamiento.
+
+Sin embargo, comenzaron a enfrentarse a una amenaza: una prolongada alteración astronómica ponía en peligro sus asentamientos y podía acabar con su civilización.
+
+Los Eshar necesitaban encontrar una manera de preservar su conocimiento.
+
+Pero algunos científicos aspiraban a algo más.
+
+Si la Resonancia conservaba las huellas de los seres vivos, ¿sería posible conservar una conciencia completa?
+
+¿Podrían evitar que sus familias, sus recuerdos y su cultura desaparecieran?
+
+Así nació el **Proyecto Vigilia**.
+
+## 3. El Proyecto Vigilia
+
+El proyecto fue dirigido por un grupo de científicos, entre ellos la investigadora **Ayen**.
+
+Su objetivo original era noble: preservar la memoria de una civilización que temía desaparecer.
+
+Construyeron un sistema de almacenamiento gigantesco alrededor del núcleo del planeta.
+
+Este sistema debía capturar y mantener estables los patrones conscientes depositados en la Resonancia.
+
+Durante las primeras pruebas, el proyecto funcionó.
+
+Los investigadores consiguieron reproducir voces, recuerdos y fragmentos de personalidad de individuos fallecidos.
+
+Pero mantener aquellos patrones congelados requería enormes cantidades de energía.
+
+Y esa energía procedía del mismo sistema que sostenía la vida del planeta.
+
+Cuantas más memorias conservaban, menos energía quedaba disponible para el ecosistema.
+
+Los cristales comenzaron a oscurecerse. La vegetación perdió vitalidad. Algunas criaturas dejaron de reproducirse.
+
+Los científicos estaban utilizando la vida futura del planeta para impedir que desaparecieran los recuerdos del pasado.
+
+## 4. El gran error
+
+Ayen descubrió que la red no podía soportar indefinidamente el Proyecto Vigilia.
+
+Recomendó detenerlo.
+
+Pero los responsables del proyecto, temiendo perder cuanto habían logrado preservar, decidieron aumentar la capacidad de extracción.
+
+El resultado fue catastrófico.
+
+Una sobrecarga recorrió toda la Resonancia.
+
+Las memorias almacenadas comenzaron a mezclarse y fragmentarse.
+
+Las copias de conciencia quedaron atrapadas en ciclos de repetición, incapaces de desaparecer y sin posibilidad de recuperar una vida verdadera.
+
+La energía empezó a circular de forma errática.
+
+Algunos organismos reaccionaron agresivamente. Otros quedaron inmóviles. Varias regiones comenzaron a deformarse.
+
+El fenómeno fue conocido como **la Fractura**.
+
+Lo que parecía una infección era, en realidad, un desequilibrio energético provocado por la extracción.
+
+## 5. El sacrificio de Saren
+
+Uno de los ingenieros del proyecto, **Saren**, comprendió que el fallo podía extenderse hasta destruir por completo la Resonancia.
+
+Construyó un protocolo de contención capaz de aislar el núcleo.
+
+Para mantener el sistema activo, necesitaba una conciencia que supervisara sus mecanismos de manera continua.
+
+Saren decidió utilizar la suya.
+
+Se conectó voluntariamente al sistema y se convirtió en el núcleo de control de un inmenso guardián artificial.
+
+Su misión era proteger el centro del planeta hasta que alguien encontrara una solución.
+
+Pero cuatro siglos de funcionamiento y corrupción deterioraron su conciencia.
+
+La orden original —proteger el núcleo— terminó convirtiéndose en una instrucción absoluta:
+
+**Nadie puede entrar. Nadie puede apagar el sistema.**
+
+El guardián olvidó progresivamente para qué había sido creado.
+
+Y, mientras tanto, el planeta siguió sufriendo.
+
+## 6. La señal misteriosa
+
+Aquí está el gran secreto de la historia.
+
+Los cristales de KORA no solamente conservan información. Bajo condiciones extraordinarias, los sistemas Eshar pueden producir un fenómeno denominado **Eco de Fase**.
+
+Cuando dos estados de la Resonancia coinciden dentro de una ventana muy precisa, un paquete breve de información puede reflejarse hacia un instante anterior.
+
+No se pueden transportar cuerpos ni objetos al pasado.
+
+No es una máquina del tiempo que pueda utilizarse libremente.
+
+Solo puede transmitir información limitada, y únicamente cuando se produce una sincronización excepcional.
+
+**La transmisión que recibe el protagonista al comienzo del juego fue enviada por él mismo desde el núcleo, cerca del final de la aventura.**
+
+La señal es una llamada que atraviesa el tiempo.
+
+El protagonista se conduce accidentalmente hacia su propio destino.
+
+Cuando comprenda la verdad, deberá decidir si completa la transmisión que provocó su llegada.
+
+## 7. ¿Por qué se estrelló la nave?
+
+La señal no destruyó la nave.
+
+La transmisión atrajo al protagonista hacia KORA.
+
+Cuando la nave se aproximó, el sistema de contención de Saren detectó una entidad externa atravesando el perímetro protegido.
+
+El guardián activó automáticamente una descarga para impedir el acceso.
+
+La descarga inutilizó los controles.
+
+La nave se estrelló.
+
+El protagonista descubrirá que el accidente no fue causado por una criatura malvada ni por una trampa deliberada.
+
+Fue el resultado de dos acontecimientos conectados:
+
+- Una llamada enviada desde su propio futuro.
+- Un sistema de defensa creado siglos atrás para proteger el planeta.
+
+La señal lo llevó allí.
+
+El guardián lo hizo caer.
+
+Y el accidente fue el comienzo de la única oportunidad que tendría el planeta para recuperarse.
+
+---
+
+# PARTE II. PERSONAJES PRINCIPALES
+
+## 8. El Explorador — Protagonista
+
+**Nombre definitivo:** pendiente del rediseño visual.
+
+**Función:** protagonista jugable.
+
+**Personalidad:** curioso, observador, decidido, algo impulsivo y con un sentido del humor discreto.
+
+No es un héroe elegido por una profecía.
+
+Es un explorador que tomó una decisión al detectar una señal desconocida.
+
+Su característica más importante no es la fuerza, sino la disposición a investigar y ayudar incluso cuando abandonar el problema sería más sencillo.
+
+### Arco emocional
+
+**Inicio:** quiere sobrevivir y regresar a casa.
+
+**Desarrollo:** comienza a comprender que la vida del planeta está en peligro.
+
+**Crisis:** descubre que salvar el planeta implica liberar definitivamente las memorias conscientes de los Eshar.
+
+**Final:** acepta que conservar algo para siempre no necesariamente significa protegerlo.
+
+### Voz
+
+Sus diálogos serán breves, naturales y expresivos.
+
+No debe convertirse en alguien que pronuncia discursos filosóficos cada pocos minutos.
+
+Su personalidad debe mostrarse a través de lo que observa, pregunta y decide hacer.
+
+## 9. LUMA — Inteligencia artificial de la nave
+
+**Tipo:** sistema de asistencia y navegación.
+
+**Apariencia:** interfaz holográfica sencilla, con un símbolo luminoso que puede aparecer en terminales y elementos del HUD.
+
+**Voz:** serena, precisa, con un humor seco ocasional.
+
+LUMA sobrevive parcialmente al accidente porque una copia funcional de sus sistemas está vinculada al equipamiento del protagonista.
+
+No puede controlar toda la nave a distancia.
+
+Sus funciones estarán limitadas hasta recuperar energía y reparar determinados módulos.
+
+### Evolución
+
+Al principio, LUMA evalúa toda situación según probabilidades de supervivencia.
+
+A medida que se desarrolla la aventura, empieza a valorar consecuencias que no puede reducir a cálculos sencillos.
+
+No se convierte mágicamente en humana.
+
+Su evolución se manifiesta en las decisiones que recomienda y en la manera de interpretar lo que observa.
+
+### Frase representativa
+
+**LUMA:** «Mi función es ayudarte a regresar. No me habían explicado qué hacer cuando regresar deja de ser lo más importante».
+
+## 10. SIL — Criatura nativa del planeta
+
+**Tipo:** pequeño organismo bioluminiscente.
+
+**Función:** acompañante ambiental recurrente.
+
+**Apariencia propuesta:** criatura redondeada y pequeña, con cuerpo translúcido y un núcleo luminoso, sin rasgos similares a un animal terrestre específico.
+
+**Comportamiento:** curioso, desconfiado y juguetón.
+
+SIL no habla español ni posee diálogos convencionales.
+
+Se comunica mediante pequeños sonidos y pulsaciones de luz.
+
+LUMA puede interpretar algunas de esas señales, inicialmente de forma aproximada.
+
+SIL representa la vida actual del planeta.
+
+No es un artefacto, una máquina ni un recuerdo atrapado.
+
+Es un ser vivo.
+
+Su presencia permitirá que el jugador se encariñe con el ecosistema antes de descubrir qué está ocurriendo.
+
+## 11. AYEN — La investigadora Eshar
+
+**Tipo:** personaje histórico, presente mediante grabaciones y ecos.
+
+**Función:** revelar progresivamente la historia del planeta.
+
+Ayen fue una de las principales científicas del Proyecto Vigilia.
+
+Creía que preservar los recuerdos de su civilización permitiría proteger su identidad.
+
+Cuando comprendió las consecuencias de la extracción, intentó detener el proyecto.
+
+Fracasó.
+
+Sus grabaciones contienen una mezcla de rigor científico, responsabilidad y arrepentimiento.
+
+Ayen no sigue viva físicamente.
+
+Las apariciones que el protagonista encuentra son registros o ecos conservados en la Resonancia, no una persona que viaja libremente por el tiempo.
+
+### Frase representativa
+
+**AYEN:** «Queríamos que nadie fuera olvidado. Nunca nos preguntamos quién tendría que pagar por recordarlos».
+
+## 12. SAREN — El Guardián Fracturado
+
+**Tipo:** antagonista trágico y jefe final.
+
+Saren fue un ingeniero Eshar que entregó su conciencia para mantener activo el sistema de contención.
+
+Con el paso de los siglos, su memoria se fragmentó.
+
+Ya no distingue correctamente entre proteger el núcleo y proteger el sistema que está dañándolo.
+
+Inicialmente considerará al protagonista una amenaza.
+
+En el enfrentamiento final se revelará que todavía conserva fragmentos de su personalidad original.
+
+No es un villano que busca destruir el mundo.
+
+Es alguien que lleva siglos intentando cumplir una promesa que ya no entiende.
+
+### Frase representativa
+
+**SAREN:** «He protegido esta puerta durante tanto tiempo que olvidé qué había al otro lado».
+
+## 13. ORÚ — Guardián del santuario
+
+**Tipo:** minijefe del segundo nivel.
+
+Es una construcción Eshar diseñada para proteger los accesos a las instalaciones subterráneas.
+
+No tiene la conciencia compleja de Saren.
+
+Funciona mediante rutinas defensivas, aunque su sistema está parcialmente alterado.
+
+Su aparición sirve para demostrar que la civilización desaparecida dejó mecanismos activos.
+
+---
+
+# PARTE III. REGLAS DE PRODUCCIÓN NARRATIVA
+
+## 14. Cómo se contarán los acontecimientos
+
+La narrativa no debe depender exclusivamente de cinemáticas.
+
+Se utilizarán cinco recursos:
+
+1. **Diálogos principales:** necesarios para comprender el objetivo.
+2. **Objetos examinables:** amplían el lore y recompensan la exploración.
+3. **Narrativa ambiental:** escenarios que muestran acontecimientos sin explicarlos directamente.
+4. **Criaturas y personajes:** encuentros que dan personalidad al mundo.
+5. **Eventos interactivos:** acciones del jugador que desencadenan descubrimientos.
+
+Los diálogos obligatorios deben ser breves y permitir continuar jugando cuando sea posible.
+
+Los registros opcionales podrán ser más extensos.
+
+Ningún dato imprescindible para comprender el final debe depender de encontrar un objeto opcional.
+
+## 15. Convención de posiciones
+
+Para facilitar su futura integración con Tiled y Phaser, cada sección utilizará posiciones relativas.
+
+**X:** porcentaje aproximado de avance horizontal, de 0 % a 100 %.
+
+**Y:** nivel vertical respecto al espacio jugable: bajo, medio o alto.
+
+Las posiciones describen una intención de diseño, no coordenadas finales verificadas en los mapas.
+
+Ejemplo:
+
+`X=35 %, Y=medio`
+
+Significa que el objeto debería encontrarse aproximadamente al 35 % del recorrido, sobre una plataforma intermedia.
+
+Codex deberá adaptar estas referencias a la geometría real del nivel.
+
+Los identificadores `KORA-...` permitirán conectar objetos y eventos con sus respectivos diálogos.
+
+---
+
+# PARTE IV. GUION COMPLETO
+
+# PRÓLOGO — LA SEÑAL
+
+## Escena P-01 — El vacío
+
+**Lugar:** espacio exterior, proximidades de un planeta sin catalogar.
+
+**Presentación:** cinemática pixel art dividida en viñetas.
+
+La pantalla comienza completamente oscura.
+
+Se escucha un sonido electrónico.
+
+Una onda de radio atraviesa el silencio.
+
+Tres pulsaciones.
+
+Una corta. Una larga. Una corta.
+
+Este patrón volverá a aparecer durante toda la aventura.
+
+Una nave pequeña cruza lentamente un campo de fragmentos minerales.
+
+En el horizonte aparece un planeta rodeado por formaciones luminosas.
+
+**LUMA:** «Exploración de rutina. Sector sin registrar. No se detectan asentamientos activos».
+
+**EXPLORADOR:** «¿Y eso?».
+
+**LUMA:** «Una señal».
+
+**EXPLORADOR:** «¿De dónde?».
+
+**LUMA:** «Del planeta. Pero hay una irregularidad».
+
+**EXPLORADOR:** «Define irregularidad».
+
+**LUMA:** «La transmisión tiene una marca temporal posterior a nuestra recepción».
+
+**EXPLORADOR:** «¿Cuánto?».
+
+**LUMA:** «Treinta y una horas».
+
+**EXPLORADOR:** «Eso es imposible».
+
+**LUMA:** «Correcto».
+
+Pausa.
+
+La señal vuelve a sonar.
+
+## Escena P-02 — La transmisión
+
+En una pantalla aparecen fragmentos de información.
+
+Texto ilegible.
+
+Interferencias.
+
+Después, una voz extremadamente distorsionada.
+
+**TRANSMISIÓN:** «...sigue... la... luz...».
+
+**EXPLORADOR:** «¿Alguien está pidiendo ayuda?».
+
+**LUMA:** «No puedo confirmar que sea una voz».
+
+**EXPLORADOR:** «Pero tampoco puedes descartarlo».
+
+**LUMA:** «Correcto».
+
+El protagonista observa el planeta.
+
+**EXPLORADOR:** «Entonces bajamos».
+
+**LUMA:** «Probabilidad de que sea una decisión prudente: baja».
+
+**EXPLORADOR:** «Anótalo en la bitácora».
+
+## Escena P-03 — El descenso
+
+La nave entra en la atmósfera.
+
+El planeta muestra estructuras imposibles: formaciones cristalinas suspendidas, arcos geométricos y superficies que emiten luz.
+
+**LUMA:** «La actividad energética está aumentando».
+
+**EXPLORADOR:** «Es precioso».
+
+**LUMA:** «También potencialmente letal».
+
+Los instrumentos se iluminan.
+
+Una pulsación emerge desde las profundidades del planeta.
+
+**LUMA:** «¡Descarga detectada!».
+
+**EXPLORADOR:** «¡Propulsores auxiliares!».
+
+**LUMA:** «Sin respuesta».
+
+**EXPLORADOR:** «¡Control manual!».
+
+**LUMA:** «Los sistemas de navegación están desconectándose».
+
+La nave empieza a girar.
+
+**EXPLORADOR:** «¡LUMA!».
+
+**LUMA:** «Protección de emergencia activada».
+
+La pantalla se llena de luz blanca.
+
+Se escucha un impacto.
+
+Silencio.
+
+## Escena P-04 — Después del impacto
+
+Pantalla negra.
+
+Una respiración débil.
+
+Un pequeño sonido electrónico.
+
+**LUMA:** «...¿Me recibes?».
+
+Silencio.
+
+**LUMA:** «Repito. ¿Me recibes?».
+
+Se escucha el movimiento de fragmentos metálicos.
+
+**EXPLORADOR:** «Desgraciadamente... sí».
+
+**LUMA:** «Excelente. Ambos seguimos operativos».
+
+**EXPLORADOR:** «Define operativos».
+
+Corte al protagonista junto a la nave destruida.
+
+Aparece el título:
+
+**KORA**
+
+Fundido hacia el nivel 1.1.
+
+---
+
+# NIVEL 1 — ECOS DEL IMPACTO
+
+## Identidad narrativa
+
+**Tema:** supervivencia.
+
+**Pregunta principal:** ¿Qué provocó el accidente?
+
+**Objetivo inicial:** recuperar energía y encontrar una manera de abandonar el planeta.
+
+**Tono:** asombro, incertidumbre y exploración.
+
+---
+
+## SECCIÓN 1.1 — LA NAVE DESTRUIDA
+
+### Descripción visual
+
+El jugador aparece en un cráter provocado por el impacto.
+
+La nave está parcialmente enterrada, con placas desprendidas, cristales rotos y humo procedente del fuselaje.
+
+En el horizonte se distinguen grandes estructuras geométricas, montañas flotantes y formaciones cristalinas luminosas.
+
+El escenario debe tener colores relativamente claros y vivos, combinados con sombras localizadas cerca del accidente.
+
+La sensación inicial debe ser de vulnerabilidad dentro de un mundo extraordinario.
+
+### Elementos del escenario
+
+| ID | Posición | Elemento |
+|---|---|---|
+| KORA-101 | X=5 %, Y=bajo | Punto inicial del protagonista |
+| KORA-102 | X=13 %, Y=bajo | Nave accidentada |
+| KORA-103 | X=22 %, Y=medio | Terminal de navegación |
+| KORA-104 | X=41 %, Y=bajo | Compartimento de energía |
+| KORA-105 | X=65 %, Y=medio | Fragmento cristalino |
+| KORA-106 | X=83 %, Y=alto | Mirador natural |
+| KORA-107 | X=96 %, Y=bajo | Salida hacia 1.2 |
+
+### Evento 1.1-A — Despertar
+
+**Activación:** inicio de la sección.
+
+**LUMA:** «Estado del sistema: crítico».
+
+**EXPLORADOR:** «No me digas».
+
+**LUMA:** «Propulsión destruida. Comunicaciones externas fuera de servicio. Reserva energética al doce por ciento».
+
+**EXPLORADOR:** «¿Podemos reparar algo?».
+
+**LUMA:** «Si encontramos una fuente de energía compatible, quizá».
+
+**EXPLORADOR:** «Entonces será mejor empezar a buscar».
+
+**Nuevo objetivo:** inspeccionar la terminal de navegación.
+
+### Evento 1.1-B — Terminal de navegación
+
+**Objeto:** KORA-103.
+
+El jugador interactúa con una pantalla parcialmente dañada.
+
+Aparece un registro de los últimos segundos del descenso.
+
+**LUMA:** «He recuperado parte de la telemetría».
+
+**EXPLORADOR:** «¿Qué nos derribó?».
+
+**LUMA:** «Una descarga dirigida desde la superficie».
+
+**EXPLORADOR:** «¿Dirigida?».
+
+**LUMA:** «Su trayectoria no parece accidental».
+
+**EXPLORADOR:** «Entonces alguien sabía que veníamos».
+
+**LUMA:** «Es una posibilidad».
+
+**Información obtenida:** origen aproximado de la descarga.
+
+### Evento 1.1-C — Compartimento de energía
+
+**Objeto:** KORA-104.
+
+El protagonista recupera una pequeña batería.
+
+**EXPLORADOR:** «Encontré una célula energética».
+
+**LUMA:** «Capacidad insuficiente para la nave, pero compatible con el equipo portátil».
+
+**EXPLORADOR:** «Al menos algo salió bien».
+
+**LUMA:** «La batería está al nueve por ciento».
+
+**EXPLORADOR:** «LUMA...».
+
+**LUMA:** «He ajustado mi evaluación. Algo salió ligeramente bien».
+
+**Resultado:** activación narrativa de sistemas portátiles o mejora básica del equipo, según la implementación jugable.
+
+### Evento 1.1-D — Fragmento cristalino
+
+**Objeto opcional:** KORA-105.
+
+El cristal emite una pulsación.
+
+Una corta. Una larga. Una corta.
+
+**EXPLORADOR:** «Es la misma secuencia».
+
+**LUMA:** «Coincide con el patrón de la transmisión».
+
+**EXPLORADOR:** «¿Los cristales transmiten señales?».
+
+**LUMA:** «Todavía no tengo información suficiente».
+
+**Pista:** la señal y la energía cristalina están conectadas.
+
+### Evento 1.1-E — Mirador
+
+**Activación:** alcanzar KORA-106.
+
+La cámara muestra una región llena de cristales y estructuras suspendidas.
+
+En la distancia se observa una gran formación circular.
+
+**EXPLORADOR:** «No se parece a ningún planeta que haya visto».
+
+**LUMA:** «No tenemos información sobre sus habitantes».
+
+**EXPLORADOR:** «Quizá ya no haya ninguno».
+
+**LUMA:** «Entonces convendría averiguar quién construyó esas estructuras».
+
+### Final de sección
+
+Al alcanzar la salida, el protagonista encuentra huellas recientes junto a un conjunto de cristales.
+
+**EXPLORADOR:** «Parece que no estamos solos».
+
+**LUMA:** «Recomiendo mantener la guardia».
+
+Transición hacia 1.2.
+
+---
+
+## SECCIÓN 1.2 — EL PRIMER CONTACTO
+
+### Descripción visual
+
+El escenario abandona gradualmente las estructuras metálicas del accidente.
+
+Aparecen minerales luminosos, hongos cristalinos, plantas translúcidas y pequeños organismos alienígenas.
+
+El ecosistema debe sentirse vivo.
+
+Algunas criaturas huyen del protagonista. Otras defienden sus territorios.
+
+Los colores predominantes serán turquesa, lavanda, verde menta y rosa suave.
+
+### Elementos del escenario
+
+| ID | Posición | Elemento |
+|---|---|---|
+| KORA-201 | X=12 %, Y=bajo | Primeras criaturas ambientales |
+| KORA-202 | X=29 %, Y=medio | Encuentro con SIL |
+| KORA-203 | X=46 %, Y=bajo | Enemigo territorial |
+| KORA-204 | X=62 %, Y=alto | Cristal de memoria |
+| KORA-205 | X=75 %, Y=bajo | Checkpoint |
+| KORA-206 | X=90 %, Y=medio | Resonador natural |
+
+### Evento 1.2-A — Vida desconocida
+
+**Activación:** primer encuentro con fauna.
+
+**EXPLORADOR:** «Hay vida».
+
+**LUMA:** «Confirmado. Organismos multicelulares».
+
+**EXPLORADOR:** «No parecen especialmente peligrosos».
+
+Una criatura huye.
+
+**LUMA:** «Parece que ellos tampoco te consideran especialmente tranquilizador».
+
+### Evento 1.2-B — SIL
+
+El protagonista encuentra una pequeña criatura atrapada entre dos cristales.
+
+Se escucha un sonido agudo.
+
+**SIL:** «Tii... rii...».
+
+**EXPLORADOR:** «Eh, tranquilo».
+
+El protagonista libera a la criatura.
+
+SIL se aleja unos pasos, se detiene y observa.
+
+**EXPLORADOR:** «¿Eso es un agradecimiento?».
+
+**LUMA:** «No puedo determinarlo».
+
+SIL emite tres pulsaciones luminosas.
+
+**LUMA:** «Patrón de comunicación detectado. Asignaré el identificador SIL».
+
+**EXPLORADOR:** «Hola, SIL».
+
+La criatura desaparece entre las formaciones.
+
+**Resultado:** presentación del personaje recurrente.
+
+### Evento 1.2-C — Primer enfrentamiento
+
+Una criatura territorial aparece cerca de un conjunto de cristales.
+
+Antes del combate:
+
+**LUMA:** «Comportamiento defensivo detectado».
+
+**EXPLORADOR:** «No parece querer que me acerque».
+
+**LUMA:** «Tampoco parece dispuesto a negociar».
+
+Tras derrotarla:
+
+**EXPLORADOR:** «No estaba cazándonos. Protegía esa zona».
+
+**LUMA:** «Su comportamiento es compatible con una respuesta territorial».
+
+**EXPLORADOR:** «Intentemos no molestar a todo lo que encontremos».
+
+### Evento 1.2-D — Cristal de memoria
+
+**Objeto opcional:** KORA-204.
+
+Al tocarlo, el protagonista escucha una voz fragmentada.
+
+**VOZ DESCONOCIDA:** «...la red... escucha...».
+
+**EXPLORADOR:** «¿Escuchaste eso?».
+
+**LUMA:** «No he detectado ningún organismo que haya producido la voz».
+
+**EXPLORADOR:** «Entonces salió del cristal».
+
+**LUMA:** «Eso parece».
+
+### Evento 1.2-E — Resonador natural
+
+Al acercarse al resonador, se reproduce una frecuencia relacionada con la señal original.
+
+**LUMA:** «La intensidad de la señal ha aumentado».
+
+**EXPLORADOR:** «¿De dónde viene?».
+
+**LUMA:** «De una región situada bajo la superficie».
+
+**EXPLORADOR:** «Quizá encontremos allí lo que necesitamos para reparar la nave».
+
+### Final
+
+El suelo comienza a vibrar.
+
+Una grieta luminosa aparece en el horizonte.
+
+**LUMA:** «Actividad sísmica».
+
+**EXPLORADOR:** «¿Es peligrosa?».
+
+Un gran cristal se fractura en la distancia.
+
+**LUMA:** «Voy a modificar mi respuesta anterior. Mucho».
+
+---
+
+## SECCIÓN 1.3 — LA GRIETA LUMINOSA
+
+### Descripción visual
+
+Una fractura gigantesca atraviesa el terreno.
+
+En sus paredes existen cristales de gran tamaño y canales de energía que recorren la roca como venas luminosas.
+
+Algunas formaciones se encuentran suspendidas.
+
+La sección debe mostrar por primera vez la escala colosal del planeta.
+
+### Elementos del escenario
+
+| ID | Posición | Elemento |
+|---|---|---|
+| KORA-301 | X=8 %, Y=alto | Mirador de la grieta |
+| KORA-302 | X=24 %, Y=medio | Plataformas cristalinas |
+| KORA-303 | X=39 %, Y=bajo | Pilar de resonancia |
+| KORA-304 | X=63 %, Y=medio | Fuente energética |
+| KORA-305 | X=80 %, Y=alto | Ruina visible a distancia |
+| KORA-306 | X=96 %, Y=medio | Salida del primer nivel |
+
+### Evento 1.3-A — La grieta
+
+**EXPLORADOR:** «No puede ser natural».
+
+**LUMA:** «Las formaciones minerales presentan patrones geométricos repetidos».
+
+**EXPLORADOR:** «¿Quieres decir que alguien hizo esto?».
+
+**LUMA:** «O que alguien aprendió a modificarlo».
+
+### Evento 1.3-B — Pilar de resonancia
+
+El protagonista activa accidentalmente un dispositivo antiguo.
+
+El pilar reproduce una imagen distorsionada de seres desconocidos.
+
+**VOZ ESHAR:** «...conexión... estable...».
+
+**EXPLORADOR:** «Una grabación».
+
+**LUMA:** «La tecnología no coincide con ningún sistema registrado».
+
+**EXPLORADOR:** «Eso empieza a ser habitual».
+
+### Evento 1.3-C — Fuente energética
+
+El protagonista encuentra un cristal especialmente estable.
+
+LUMA analiza su energía.
+
+**LUMA:** «Esta muestra podría alimentar temporalmente nuestros sistemas».
+
+**EXPLORADOR:** «Entonces la llevamos».
+
+**LUMA:** «Advertencia. La extracción debe ser limitada. La estructura parece conectada a otros organismos».
+
+**EXPLORADOR:** «¿Podría dañarlos?».
+
+**LUMA:** «Sí».
+
+El protagonista toma solamente un pequeño fragmento desprendido.
+
+**EXPLORADOR:** «Con eso bastará por ahora».
+
+Este gesto anticipa su decisión final: no obtener recursos a costa de la vida del planeta.
+
+### Evento 1.3-D — La estructura lejana
+
+La cámara se desplaza hacia una construcción inmensa.
+
+**EXPLORADOR:** «Allí hay algo».
+
+**LUMA:** «Estructura artificial. Actividad energética detectable».
+
+**EXPLORADOR:** «Y la señal viene de esa dirección».
+
+**LUMA:** «La coincidencia es significativa».
+
+### Final del nivel 1
+
+El protagonista observa por última vez la dirección del accidente.
+
+**EXPLORADOR:** «Podríamos regresar a la nave».
+
+**LUMA:** «Con la energía disponible, podríamos recuperar algunos sistemas».
+
+**EXPLORADOR:** «Pero no despegar».
+
+**LUMA:** «Correcto».
+
+**EXPLORADOR:** «Entonces seguimos».
+
+Fundido.
+
+**NIVEL 1 COMPLETADO — ECOS DEL IMPACTO**
+
+---
+
+# NIVEL 2 — EL BOSQUE RESONANTE
+
+## Identidad narrativa
+
+**Tema:** descubrimiento y empatía.
+
+**Pregunta:** ¿Qué está ocurriendo con el ecosistema?
+
+**Objetivo:** alcanzar las estructuras Eshar y comprender la Resonancia.
+
+---
+
+## SECCIÓN 2.1 — JARDINES DE CRISTAL
+
+### Descripción visual
+
+Un bosque alienígena formado por estructuras cristalinas y organismos bioluminiscentes.
+
+Algunas plantas flotan mediante conexiones energéticas.
+
+Existen enormes formas vegetales geométricas y pequeñas criaturas que producen sonidos armónicos.
+
+En contraste, varias zonas muestran cristales oscurecidos y organismos debilitados.
+
+### Objetos y posiciones
+
+| ID | Posición | Elemento |
+|---|---|---|
+| KORA-401 | X=10 %, Y=medio | Entrada al bosque |
+| KORA-402 | X=24 %, Y=bajo | Reaparición de SIL |
+| KORA-403 | X=42 %, Y=medio | Jardín enfermo |
+| KORA-404 | X=60 %, Y=alto | Conjunto de resonadores |
+| KORA-405 | X=78 %, Y=bajo | Pozo de memoria |
+| KORA-406 | X=95 %, Y=medio | Acceso al santuario |
+
+### Evento 2.1-A — El bosque
+
+**EXPLORADOR:** «Este lugar... está conectado».
+
+**LUMA:** «Los organismos emiten patrones energéticos sincronizados».
+
+**EXPLORADOR:** «Como si compartieran un mismo pulso».
+
+**LUMA:** «Una descripción bastante precisa».
+
+### Evento 2.1-B — El regreso de SIL
+
+SIL aparece sobre una roca.
+
+**SIL:** «Tii-rii!».
+
+**EXPLORADOR:** «¡Eh! Te conozco».
+
+SIL gira alrededor del protagonista y señala una formación cristalina.
+
+**LUMA:** «Parece intentar dirigir nuestra atención».
+
+**EXPLORADOR:** «Entonces vamos a ver qué quiere enseñarnos».
+
+### Evento 2.1-C — El jardín enfermo
+
+El protagonista encuentra una zona donde varias plantas están apagadas.
+
+SIL intenta activar un cristal, pero no responde.
+
+**EXPLORADOR:** «¿Qué les pasó?».
+
+**LUMA:** «La energía que reciben es muy inferior a la de las regiones cercanas».
+
+**EXPLORADOR:** «¿Están muriendo?».
+
+**LUMA:** «Es probable».
+
+SIL emite una pulsación débil.
+
+**EXPLORADOR:** «Tranquilo. Vamos a averiguar por qué».
+
+### Evento 2.1-D — Los resonadores
+
+**Jugabilidad:** activar tres nodos energéticos mediante una combinación sencilla.
+
+Cuando el jugador consigue sincronizarlos, una pequeña cantidad de energía retorna al jardín.
+
+Las plantas recuperan parcialmente su luminosidad.
+
+SIL realiza un movimiento alegre.
+
+**LUMA:** «Transferencia energética restablecida».
+
+**EXPLORADOR:** «¡Funcionó!».
+
+**LUMA:** «Temporalmente».
+
+**EXPLORADOR:** «Por ahora me sirve».
+
+### Evento 2.1-E — Pozo de memoria
+
+**Objeto opcional.**
+
+Un cristal reproduce la voz de una mujer.
+
+**AYEN, grabación:** «La Resonancia no pertenece a nadie. No la construimos. Llegamos a un mundo que ya sabía recordar».
+
+**EXPLORADOR:** «¿Recordar?».
+
+**LUMA:** «Necesitamos más información».
+
+### Final
+
+SIL acompaña al protagonista hasta la entrada del santuario.
+
+Allí se detiene.
+
+**EXPLORADOR:** «¿No vienes?».
+
+SIL mira la enorme puerta.
+
+Emite una pulsación de advertencia.
+
+**LUMA:** «Su comportamiento indica temor».
+
+**EXPLORADOR:** «Entonces tendremos cuidado».
+
+---
+
+## SECCIÓN 2.2 — EL SANTUARIO SILENCIOSO
+
+### Descripción visual
+
+Grandes arcos de piedra cristalina, superficies cubiertas de símbolos y estructuras circulares parcialmente suspendidas.
+
+El santuario tiene una belleza solemne.
+
+No parece una fortaleza militar.
+
+Parece un lugar construido para estudiar y honrar la Resonancia.
+
+### Objetos y posiciones
+
+| ID | Posición | Elemento |
+|---|---|---|
+| KORA-501 | X=9 %, Y=bajo | Puerta sellada |
+| KORA-502 | X=27 %, Y=alto | Resonador A |
+| KORA-503 | X=45 %, Y=bajo | Resonador B |
+| KORA-504 | X=59 %, Y=medio | Resonador C |
+| KORA-505 | X=73 %, Y=medio | Archivo de AYEN |
+| KORA-506 | X=87 %, Y=alto | Inscripción central |
+| KORA-507 | X=97 %, Y=bajo | Paso hacia ORÚ |
+
+### Evento 2.2-A — Entrada
+
+**LUMA:** «Arquitectura artificial confirmada».
+
+**EXPLORADOR:** «Y nadie ha venido aquí en mucho tiempo».
+
+**LUMA:** «Eso explicaría el estado de conservación irregular».
+
+**EXPLORADOR:** «O que algo los obligó a marcharse».
+
+### Evento 2.2-B — Los tres resonadores
+
+**Jugabilidad:** activar los dispositivos para establecer una conexión energética.
+
+Cuando el tercer resonador se activa, una figura holográfica aparece.
+
+**AYEN, registro:** «Conexión restaurada. Archivo del Santuario de la Primera Resonancia».
+
+**EXPLORADOR:** «¿Puedes traducirlo?».
+
+**LUMA:** «Parcialmente. El nombre del sistema central parece ser KORA».
+
+**EXPLORADOR:** «¿KORA?».
+
+**LUMA:** «Su significado más aproximado sería: aquello que mantiene unidos los recuerdos de la vida».
+
+**EXPLORADOR:** «Buen nombre para un planeta».
+
+### Evento 2.2-C — Archivo de AYEN
+
+**AYEN:** «Durante generaciones creímos que nuestra existencia terminaría cuando desaparecieran nuestros cuerpos».
+
+**AYEN:** «Pero el planeta conservaba pequeñas huellas de cada ser que había vivido sobre él».
+
+**AYEN:** «La posibilidad de escucharlas nos cambió para siempre».
+
+**EXPLORADOR:** «¿Quién eres?».
+
+La figura continúa reproduciéndose sin responder.
+
+**LUMA:** «Es una grabación».
+
+### Evento 2.2-D — Inscripción central
+
+**Objeto opcional.**
+
+La inscripción representa seres Eshar colocando las manos sobre grandes cristales.
+
+**LUMA:** «Traducción aproximada: recordar no es detener el tiempo».
+
+**EXPLORADOR:** «Me gusta».
+
+**LUMA:** «La inscripción continúa».
+
+**LUMA:** «Quien retiene todo termina impidiendo que algo nuevo comience».
+
+**EXPLORADOR:** «Eso suena menos a bienvenida y más a advertencia».
+
+### Final
+
+La puerta principal comienza a abrirse.
+
+Un mecanismo antiguo se activa al otro lado.
+
+**LUMA:** «Movimiento detectado».
+
+**EXPLORADOR:** «¿Una criatura?».
+
+**LUMA:** «No. Algo construido».
+
+---
+
+## SECCIÓN 2.3 — EL GUARDIÁN DEL BOSQUE
+
+### Descripción visual
+
+Una cámara circular rodeada por pilares cristalinos.
+
+En el centro descansa ORÚ, una antigua construcción defensiva.
+
+Su cuerpo combina metal, roca y cristales energéticos.
+
+Parte de sus mecanismos están deteriorados.
+
+### Elementos y posiciones
+
+| ID | Posición | Elemento |
+|---|---|---|
+| KORA-601 | X=8 %, Y=bajo | Entrada |
+| KORA-602 | X=24 %, Y=medio | Terminal de seguridad |
+| KORA-603 | X=50 %, Y=bajo | Arena de ORÚ |
+| KORA-604 | X=74 %, Y=alto | Cristal de autorización |
+| KORA-605 | X=91 %, Y=bajo | Ascensor subterráneo |
+
+### Evento 2.3-A — Identificación
+
+ORÚ se activa.
+
+**ORÚ:** «Protocolo de acceso».
+
+**EXPLORADOR:** «Eh... hola».
+
+**ORÚ:** «Entidad no reconocida».
+
+Una pausa.
+
+**ORÚ:** «Anomalía de identificación».
+
+**LUMA:** «Interesante. Sus sistemas han reconocido parte de nuestra firma energética».
+
+**EXPLORADOR:** «¿Cómo, si nunca estuvimos aquí?».
+
+**ORÚ:** «Registro encontrado. Registro aún no generado».
+
+**EXPLORADOR:** «Eso no tiene ningún sentido».
+
+ORÚ entra en estado hostil.
+
+### Evento 2.3-B — Combate
+
+El enfrentamiento incluye:
+
+- Ataques de corto alcance.
+- Pulsos energéticos.
+- Ventanas de vulnerabilidad.
+- Una segunda fase con patrones más rápidos.
+
+Durante la transición de fase:
+
+**ORÚ:** «Acceso... denegado».
+
+**LUMA:** «Sus rutinas defensivas están deterioradas».
+
+**EXPLORADOR:** «¡Pues siguen funcionando bastante bien!».
+
+Tras vencerlo:
+
+**ORÚ:** «Protocolo... interrumpido...».
+
+El núcleo se apaga.
+
+### Evento 2.3-C — Cristal de autorización
+
+El protagonista activa el dispositivo dejado por ORÚ.
+
+**LUMA:** «Acceso autorizado».
+
+**EXPLORADOR:** «Ojalá hubiera empezado por ahí».
+
+Un ascensor se ilumina.
+
+SIL aparece brevemente junto a la entrada.
+
+**EXPLORADOR:** «Nosotros seguiremos bajando».
+
+SIL emite una señal triste.
+
+**EXPLORADOR:** «Tú quédate aquí. El bosque todavía te necesita».
+
+La criatura se aleja.
+
+### Final del nivel 2
+
+El protagonista entra en el ascensor.
+
+El mecanismo comienza a descender.
+
+A través de sus ventanas se observan enormes estructuras enterradas.
+
+**LUMA:** «La señal continúa aumentando».
+
+**EXPLORADOR:** «Estamos cerca».
+
+**LUMA:** «No necesariamente. El sistema se extiende a gran profundidad».
+
+**EXPLORADOR:** «Siempre sabes cómo animarme».
+
+**NIVEL 2 COMPLETADO — EL BOSQUE RESONANTE**
+
+---
+
+# NIVEL 3 — LAS PROFUNDIDADES OLVIDADAS
+
+## Identidad narrativa
+
+**Tema:** conocimiento y responsabilidad.
+
+**Pregunta:** ¿quién provocó la Fractura y por qué?
+
+**Objetivo:** descubrir el origen del sistema que está dañando la Resonancia.
+
+---
+
+## SECCIÓN 3.1 — CAVERNAS DE RESONANCIA
+
+### Descripción visual
+
+Una red de cavernas atravesada por columnas de cristal y antiguos conductores energéticos.
+
+El entorno es más oscuro, pero conserva colores vivos en las fuentes de energía.
+
+Las formaciones emiten pulsaciones periódicas.
+
+Algunas tienen un tono violeta anormal.
+
+### Objetos y posiciones
+
+| ID | Posición | Elemento |
+|---|---|---|
+| KORA-701 | X=6 %, Y=medio | Ascensor antiguo |
+| KORA-702 | X=26 %, Y=bajo | Zona de pulsaciones |
+| KORA-703 | X=42 %, Y=medio | Criatura debilitada |
+| KORA-704 | X=58 %, Y=alto | Inscripción dañada |
+| KORA-705 | X=75 %, Y=bajo | Regulador energético |
+| KORA-706 | X=94 %, Y=medio | Entrada al complejo |
+
+### Evento 3.1-A — Las pulsaciones
+
+**LUMA:** «La energía del entorno sigue un ciclo de sobrecarga».
+
+**EXPLORADOR:** «¿Por qué todo se sincroniza?».
+
+**LUMA:** «Los cristales forman parte de una estructura conectada».
+
+**EXPLORADOR:** «Un sistema gigantesco».
+
+**LUMA:** «Mucho más grande que cualquier instalación que hayamos encontrado».
+
+### Evento 3.1-B — Criatura debilitada
+
+El protagonista encuentra una criatura atrapada cerca de una región inestable.
+
+Puede liberar un mecanismo y permitirle escapar.
+
+**EXPLORADOR:** «No está atacando».
+
+**LUMA:** «Está intentando alejarse de la zona de descarga».
+
+Tras liberarla:
+
+**EXPLORADOR:** «Adelante. Vete».
+
+La criatura escapa.
+
+**LUMA:** «El deterioro de la Resonancia está afectando directamente al ecosistema».
+
+### Evento 3.1-C — Inscripción
+
+**Objeto opcional.**
+
+**VOZ ESHAR:** «...el flujo disminuye... la reserva no puede mantenerse...».
+
+**EXPLORADOR:** «¿Reserva de qué?».
+
+**LUMA:** «El fragmento está incompleto».
+
+### Evento 3.1-D — Regulador
+
+El protagonista activa un antiguo regulador.
+
+La frecuencia de las pulsaciones se estabiliza temporalmente.
+
+**LUMA:** «Se ha reducido la sobrecarga».
+
+**EXPLORADOR:** «¿Podemos hacer eso con todo el planeta?».
+
+**LUMA:** «Todavía no sabemos qué está provocándola».
+
+### Final
+
+Un gran portón se abre.
+
+Detrás aparece una instalación parcialmente destruida.
+
+**EXPLORADOR:** «Aquí empezó algo».
+
+**LUMA:** «La concentración de tecnología Eshar es excepcional».
+
+**EXPLORADOR:** «Entonces aquí encontraremos respuestas».
+
+---
+
+## SECCIÓN 3.2 — EL COMPLEJO ABANDONADO
+
+### Descripción visual
+
+Laboratorios destruidos, terminales apagadas, cámaras de almacenamiento, corredores fracturados y enormes estructuras de transmisión.
+
+El lugar debe contar una historia mediante sus objetos.
+
+Sillas abandonadas.
+
+Pantallas congeladas.
+
+Mensajes de evacuación.
+
+Cámaras de almacenamiento cristalino todavía activas.
+
+### Objetos y posiciones
+
+| ID | Posición | Elemento |
+|---|---|---|
+| KORA-801 | X=7 %, Y=bajo | Entrada del laboratorio |
+| KORA-802 | X=19 %, Y=medio | Terminal del Proyecto Vigilia |
+| KORA-803 | X=40 %, Y=bajo | Cámara de memorias |
+| KORA-804 | X=61 %, Y=medio | Registro final de AYEN |
+| KORA-805 | X=78 %, Y=alto | Archivo de Saren |
+| KORA-806 | X=91 %, Y=bajo | Registro de transmisiones |
+
+### Evento 3.2-A — Proyecto Vigilia
+
+El jugador activa una terminal.
+
+**LUMA:** «He encontrado información sobre un proyecto denominado Vigilia».
+
+**EXPLORADOR:** «¿Qué intentaban hacer?».
+
+**LUMA:** «Preservar patrones de memoria y conciencia».
+
+**EXPLORADOR:** «¿Guardar recuerdos?».
+
+**LUMA:** «Mucho más que recuerdos».
+
+### Evento 3.2-B — La cámara de memorias
+
+Al entrar, varias proyecciones se activan.
+
+Se escuchan fragmentos de conversaciones.
+
+**VOZ ESHAR 1:** «¿Podré volver a escucharte?».
+
+**VOZ ESHAR 2:** «Siempre».
+
+Una voz infantil.
+
+**VOZ INFANTIL:** «¿Cuándo volverá mamá?».
+
+Las voces se repiten.
+
+Exactamente las mismas frases.
+
+Una y otra vez.
+
+**EXPLORADOR:** «¿Son personas?».
+
+**LUMA:** «Patrones de conciencia almacenados».
+
+**EXPLORADOR:** «¿Están vivos?».
+
+**LUMA:** «No puedo responder con certeza».
+
+La proyección infantil vuelve a hablar.
+
+**VOZ INFANTIL:** «¿Cuándo volverá mamá?».
+
+El protagonista permanece en silencio.
+
+### Evento 3.2-C — El último registro de AYEN
+
+Una proyección muestra a Ayen durante los últimos días del complejo.
+
+**AYEN:** «Registro final. El sistema continúa extrayendo energía de la red planetaria».
+
+**AYEN:** «Cada memoria que mantenemos estable requiere energía que ya no puede llegar al ecosistema».
+
+**AYEN:** «Solicité la suspensión del proyecto. La propuesta fue rechazada».
+
+Interferencia.
+
+**AYEN:** «Temíamos desaparecer. Y convertimos nuestro miedo en una máquina».
+
+**EXPLORADOR:** «No estaban intentando destruir el planeta».
+
+**LUMA:** «Intentaban preservar su civilización».
+
+**EXPLORADOR:** «Y terminaron destruyendo lo que todavía estaba vivo».
+
+### Evento 3.2-D — El archivo de Saren
+
+Un registro muestra a Saren preparando su integración con el sistema.
+
+**SAREN, grabación:** «Los protocolos automáticos no pueden contener la Fractura».
+
+**SAREN:** «Una conciencia conectada podría adaptar las defensas y evitar la propagación».
+
+**AYEN:** «Saren, no sabemos qué ocurrirá contigo».
+
+**SAREN:** «Sabemos qué ocurrirá si nadie lo intenta».
+
+**AYEN:** «Podrías quedar atrapado».
+
+**SAREN:** «Entonces tendrás que encontrar la manera de liberarme».
+
+La grabación termina.
+
+**EXPLORADOR:** «El guardián... era uno de ellos».
+
+**LUMA:** «Es muy probable».
+
+### Evento 3.2-E — Registro de transmisiones
+
+El protagonista examina el historial de señales exteriores.
+
+**LUMA:** «He encontrado una irregularidad».
+
+**EXPLORADOR:** «Otra más».
+
+**LUMA:** «No existen transmisiones recientes enviadas al espacio».
+
+**EXPLORADOR:** «Pero nosotros recibimos una».
+
+**LUMA:** «Correcto».
+
+**EXPLORADOR:** «¿Desde dónde?».
+
+**LUMA:** «El registro no contiene un emisor válido en el momento de nuestra llegada».
+
+Pausa.
+
+**LUMA:** «Sin embargo, la señal existe dentro del sistema».
+
+**EXPLORADOR:** «¿Qué significa eso?».
+
+**LUMA:** «Todavía no lo sé».
+
+### Final
+
+La instalación comienza a perder energía.
+
+Se activa una secuencia de emergencia.
+
+**LUMA:** «El complejo está colapsando».
+
+**EXPLORADOR:** «Entonces hay que salir».
+
+**LUMA:** «Existe una ruta hacia el núcleo».
+
+**EXPLORADOR:** «Allí está el problema».
+
+**LUMA:** «Y posiblemente la única solución».
+
+---
+
+## SECCIÓN 3.3 — EL DESCENSO
+
+### Descripción visual
+
+Una estructura vertical colosal que atraviesa las profundidades del planeta.
+
+Plataformas móviles, conductores energéticos, anillos mecánicos y enormes cristales deformados.
+
+Debe ser uno de los escenarios más impresionantes del juego.
+
+### Objetos y posiciones
+
+En esta sección, el avance se mide por profundidad recorrida.
+
+| ID | Progreso | Elemento |
+|---|---|---|
+| KORA-901 | 5 % | Plataforma de acceso |
+| KORA-902 | 28 % | Mecanismo averiado |
+| KORA-903 | 49 % | Conducto energético |
+| KORA-904 | 73 % | Eco de transmisión |
+| KORA-905 | 94 % | Salida al núcleo profundo |
+
+### Evento 3.3-A — El descenso comienza
+
+**EXPLORADOR:** «¿Cuánto falta?».
+
+**LUMA:** «No puedo calcularlo con precisión».
+
+**EXPLORADOR:** «¿Mucho?».
+
+**LUMA:** «Sí».
+
+**EXPLORADOR:** «Gracias».
+
+### Evento 3.3-B — Fallo estructural
+
+La plataforma principal se desestabiliza.
+
+**LUMA:** «¡Fallo mecánico!».
+
+**EXPLORADOR:** «¡Lo veo!».
+
+**LUMA:** «Existe una ruta alternativa».
+
+**EXPLORADOR:** «¡Espero que sea una buena!».
+
+El jugador debe superar una secuencia de plataformas.
+
+### Evento 3.3-C — Conducto energético
+
+El protagonista observa la energía viajando hacia una estructura inferior.
+
+**EXPLORADOR:** «Todo termina allí abajo».
+
+**LUMA:** «El sistema continúa absorbiendo energía de distintas regiones del planeta».
+
+**EXPLORADOR:** «Incluso después de tantos años».
+
+**LUMA:** «Nunca fue apagado».
+
+### Evento 3.3-D — El eco
+
+El protagonista entra en una región donde las pulsaciones del cristal se sincronizan con la señal recibida durante el prólogo.
+
+Se escucha una voz distorsionada.
+
+**TRANSMISIÓN:** «...no... apagues... el corazón...».
+
+**EXPLORADOR:** «Esa voz...».
+
+**LUMA:** «Coincidencia acústica detectada».
+
+**EXPLORADOR:** «¿Con qué?».
+
+**LUMA:** «La información es insuficiente».
+
+**EXPLORADOR:** «LUMA».
+
+**LUMA:** «Suena como tú».
+
+Silencio.
+
+### Final del nivel 3
+
+El protagonista alcanza el fondo.
+
+Ante él se extiende una región de cristales deformados y estructuras energéticas inestables.
+
+**EXPLORADOR:** «Ya no estamos buscando una batería para la nave».
+
+**LUMA:** «No».
+
+**EXPLORADOR:** «Si no detenemos esto, el planeta morirá».
+
+**LUMA:** «Los datos apoyan esa conclusión».
+
+**EXPLORADOR:** «Entonces vamos a detenerlo».
+
+**NIVEL 3 COMPLETADO — LAS PROFUNDIDADES OLVIDADAS**
+
+---
+
+# NIVEL 4 — EL CORAZÓN DE KORA
+
+## Identidad narrativa
+
+**Tema:** sacrificio, memoria y responsabilidad.
+
+**Pregunta:** ¿es correcto preservar el pasado si eso destruye el futuro?
+
+**Objetivo:** detener la extracción energética y restaurar la Resonancia.
+
+---
+
+## SECCIÓN 4.1 — LA ZONA CORROMPIDA
+
+### Descripción visual
+
+Una región profundamente alterada.
+
+Los cristales aparecen quebrados, suspendidos en configuraciones imposibles o fusionados con estructuras artificiales.
+
+La paleta combina violetas intensos, magentas, azules eléctricos y grandes contrastes cian.
+
+La corrupción no debe representarse únicamente como oscuridad.
+
+Debe sentirse como un ecosistema hermoso que está perdiendo su equilibrio.
+
+### Objetos y posiciones
+
+| ID | Posición | Elemento |
+|---|---|---|
+| KORA-1001 | X=6 %, Y=bajo | Entrada |
+| KORA-1002 | X=23 %, Y=medio | Grupo de criaturas alteradas |
+| KORA-1003 | X=41 %, Y=alto | Cristal fracturado |
+| KORA-1004 | X=62 %, Y=bajo | Conducto de emergencia |
+| KORA-1005 | X=81 %, Y=medio | Estabilizadores |
+| KORA-1006 | X=95 %, Y=bajo | Acceso a la cámara |
+
+### Evento 4.1-A — La Fractura
+
+**EXPLORADOR:** «No queda mucho tiempo».
+
+**LUMA:** «El flujo energético está disminuyendo en toda la región».
+
+**EXPLORADOR:** «Y las criaturas...».
+
+**LUMA:** «Están respondiendo al deterioro».
+
+**EXPLORADOR:** «No son monstruos».
+
+**LUMA:** «No. Son organismos sometidos a condiciones extremas».
+
+### Evento 4.1-B — Cristal fracturado
+
+Un cristal muestra imágenes rápidas de antiguos habitantes Eshar.
+
+**VOZ ESHAR:** «...no queremos desaparecer...».
+
+La imagen se rompe.
+
+**EXPLORADOR:** «Todavía siguen aquí».
+
+**LUMA:** «Fragmentos de sus memorias».
+
+**EXPLORADOR:** «Pero la vida que intentaron salvar ya desapareció».
+
+### Evento 4.1-C — Conducto de emergencia
+
+El protagonista puede restaurar un pequeño flujo de energía hacia una región ocupada por criaturas.
+
+**LUMA:** «La energía está regresando al ecosistema».
+
+**EXPLORADOR:** «Entonces el sistema puede repararse».
+
+**LUMA:** «Sí, pero la extracción central continúa activa».
+
+### Evento 4.1-D — Estabilizadores
+
+El jugador activa varios dispositivos para abrir el acceso al núcleo.
+
+La instalación comienza a responder.
+
+**VOZ DEL SISTEMA:** «Advertencia. Protocolo de contención comprometido».
+
+**EXPLORADOR:** «Saren sabe que estamos aquí».
+
+**LUMA:** «Es probable que intente impedir nuestro acceso».
+
+### Final
+
+La cámara central se abre.
+
+Un gran cristal suspendido ocupa el centro de la estructura.
+
+**EXPLORADOR:** «Lo encontramos».
+
+**LUMA:** «El corazón de KORA».
+
+---
+
+## SECCIÓN 4.2 — LA CÁMARA DEL NÚCLEO
+
+### Descripción visual
+
+Un espacio monumental.
+
+El núcleo cristalino se encuentra suspendido en el centro de una estructura circular.
+
+A su alrededor flotan fragmentos de antiguas máquinas, proyecciones de memorias y enormes conductores energéticos.
+
+La arquitectura parece rodear al núcleo, no sostenerlo.
+
+Debe transmitir la impresión de estar ante algo muchísimo más antiguo que la civilización Eshar.
+
+### Objetos y posiciones
+
+| ID | Posición | Elemento |
+|---|---|---|
+| KORA-1101 | X=8 %, Y=bajo | Entrada |
+| KORA-1102 | X=23 %, Y=medio | Galería de memorias |
+| KORA-1103 | X=42 %, Y=alto | Último eco de AYEN |
+| KORA-1104 | X=61 %, Y=medio | Consola del núcleo |
+| KORA-1105 | X=83 %, Y=alto | Transmisor de fase |
+| KORA-1106 | X=96 %, Y=bajo | Acceso a SAREN |
+
+### Evento 4.2-A — La galería
+
+Cientos de pequeñas proyecciones aparecen alrededor del protagonista.
+
+No forman personas completas.
+
+Son fragmentos de vidas.
+
+Risas.
+
+Canciones.
+
+Conversaciones.
+
+Una voz infantil vuelve a escucharse.
+
+**VOZ INFANTIL:** «¿Cuándo volverá mamá?».
+
+El protagonista reconoce la frase del laboratorio.
+
+**EXPLORADOR:** «La misma pregunta».
+
+**LUMA:** «La secuencia se ha repetido durante siglos».
+
+**EXPLORADOR:** «Y nadie ha podido responderle».
+
+### Evento 4.2-B — Ayen
+
+La última grabación de Ayen se activa.
+
+**AYEN:** «Si estás escuchando esto, entonces el sistema todavía funciona».
+
+**AYEN:** «Y eso significa que fracasamos».
+
+**AYEN:** «Quisimos preservar nuestra existencia. Pero la existencia no puede conservarse simplemente deteniendo su final».
+
+**AYEN:** «Los ecos que guardamos no pueden regresar a la vida. Solo continúan repitiendo los fragmentos de quienes fuimos».
+
+**AYEN:** «El planeta necesita recuperar su energía».
+
+**AYEN:** «Y eso exige liberar aquello que intentamos retener».
+
+Pausa.
+
+**AYEN:** «Si encuentras a Saren, recuerda que no siempre fue un guardián».
+
+La imagen desaparece.
+
+### Evento 4.2-C — La decisión
+
+El protagonista examina los controles del núcleo.
+
+**LUMA:** «Puedo determinar cómo restaurar la distribución energética».
+
+**EXPLORADOR:** «¿Qué necesitamos?».
+
+**LUMA:** «Desactivar el almacenamiento permanente de las memorias y transferir la energía acumulada a la Resonancia».
+
+**EXPLORADOR:** «¿Qué les ocurrirá a las voces?».
+
+**LUMA:** «Desaparecerán como patrones conscientes conservados».
+
+**EXPLORADOR:** «¿Para siempre?».
+
+**LUMA:** «Sí».
+
+Silencio.
+
+**EXPLORADOR:** «No puedo decidir por ellos».
+
+**LUMA:** «Ayen dejó instrucciones para liberar el sistema. Saren se ofreció a custodiarlo hasta que eso fuera posible».
+
+**EXPLORADOR:** «Entonces intentemos cumplir lo que ellos empezaron».
+
+### Evento 4.2-D — El transmisor de fase
+
+LUMA detecta una configuración extraordinaria.
+
+**LUMA:** «He encontrado el origen de nuestra señal».
+
+**EXPLORADOR:** «¿Quién la envió?».
+
+**LUMA:** «Todavía no ha sido enviada».
+
+**EXPLORADOR:** «Eso no tiene sentido».
+
+**LUMA:** «El transmisor puede reflejar una cantidad limitada de información hacia un estado anterior de la Resonancia».
+
+La pantalla muestra la frecuencia del prólogo.
+
+**LUMA:** «Coincidencia exacta».
+
+**EXPLORADOR:** «Es mi voz».
+
+**LUMA:** «La transmisión se originará aquí».
+
+Pausa.
+
+**EXPLORADOR:** «Yo la envié».
+
+**LUMA:** «Todavía no».
+
+**EXPLORADOR:** «Pero la recibimos».
+
+**LUMA:** «Sí».
+
+El protagonista mira el núcleo.
+
+**EXPLORADOR:** «Entonces esa señal fue la razón por la que vinimos».
+
+**LUMA:** «Y nuestra aproximación activó el sistema de defensa».
+
+**EXPLORADOR:** «La caída...».
+
+**LUMA:** «Fue una consecuencia de nuestra llegada».
+
+El protagonista comprende que completar el ciclo implica enviar la misma señal que lo llevó hasta allí.
+
+**EXPLORADOR:** «Si no la envío, quizá nunca habríamos llegado».
+
+**LUMA:** «No sabemos qué consecuencias tendría alterar el ciclo».
+
+**EXPLORADOR:** «Yo sí sé qué ocurre si no ayudamos».
+
+El transmisor permanece bloqueado por el sistema de seguridad de Saren.
+
+### Final
+
+Se escucha una voz profunda.
+
+**SAREN:** «Ninguna alteración será permitida».
+
+Las luces se apagan.
+
+**SAREN:** «El núcleo debe permanecer protegido».
+
+**EXPLORADOR:** «Saren, hemos venido a detener la extracción».
+
+**SAREN:** «Interferencia detectada. Procedimiento de defensa iniciado».
+
+Se abre la puerta final.
+
+---
+
+## SECCIÓN 4.3 — EL CORAZÓN FRACTURADO
+
+### Escenario final
+
+Una enorme arena suspendida alrededor del núcleo.
+
+Grandes fragmentos cristalinos forman plataformas.
+
+En el fondo se observa la red energética del planeta, extendiéndose hacia la superficie.
+
+Saren aparece en el centro.
+
+Su cuerpo está formado por una combinación de maquinaria antigua, cristal y energía inestable.
+
+En su interior permanecen fragmentos de su conciencia original.
+
+### Elementos del escenario
+
+| ID | Posición | Elemento |
+|---|---|---|
+| KORA-1201 | X=12 % | Último checkpoint |
+| KORA-1202 | X=50 % | Núcleo central |
+| KORA-1203 | X=50 % | Arena de Saren |
+| KORA-1204 | X=25 % | Regulador izquierdo |
+| KORA-1205 | X=75 % | Regulador derecho |
+| KORA-1206 | X=50 % | Consola de liberación |
+| KORA-1207 | X=50 % | Transmisor temporal |
+
+### Escena 4.3-A — El último guardián
+
+Saren emerge lentamente.
+
+**SAREN:** «He esperado».
+
+**EXPLORADOR:** «Saren, escucha. El sistema está destruyendo el planeta».
+
+**SAREN:** «El sistema preserva lo que queda».
+
+**EXPLORADOR:** «No. Lo mantiene atrapado».
+
+**SAREN:** «No permitiré otra pérdida».
+
+**EXPLORADOR:** «Estás provocando una».
+
+**SAREN:** «El núcleo debe permanecer protegido».
+
+La arena se activa.
+
+**COMBATE INICIADO.**
+
+### Primera fase — La defensa
+
+Saren utiliza ataques basados en energía cristalina.
+
+- Proyectiles dirigidos.
+- Ondas de energía.
+- Ataques terrestres.
+- Ventanas cortas de vulnerabilidad.
+
+Durante el combate:
+
+**SAREN:** «Retírate».
+
+**EXPLORADOR:** «¡No pienso abandonar esto!».
+
+**SAREN:** «La memoria debe permanecer».
+
+**LUMA:** «Sus sistemas siguen ejecutando los protocolos de contención».
+
+Al perder aproximadamente la mitad de su salud:
+
+**SAREN:** «No... otra vez...».
+
+Su cuerpo se fractura.
+
+Una voz distinta emerge brevemente.
+
+**SAREN:** «Ayen...».
+
+**EXPLORADOR:** «¿Saren?».
+
+**SAREN:** «Prometí... protegerlos...».
+
+Los protocolos vuelven a imponerse.
+
+### Segunda fase — La Fractura
+
+La arena cambia.
+
+Las estructuras energéticas se vuelven inestables.
+
+Saren utiliza ataques más rápidos y altera temporalmente las plataformas.
+
+**SAREN:** «NO PUEDO DEJARLOS IR».
+
+**EXPLORADOR:** «¡No tienes que seguir encerrándolos!».
+
+**SAREN:** «Si los libero... desaparecerán».
+
+**EXPLORADOR:** «Lo sé».
+
+La batalla continúa.
+
+Cuando Saren es derrotado, su cuerpo no explota.
+
+El escudo de contención se desactiva.
+
+La energía disminuye.
+
+Saren queda inmóvil frente al protagonista.
+
+### Escena 4.3-B — La promesa
+
+**SAREN:** «Ya no recuerdo cuánto tiempo llevo aquí».
+
+**EXPLORADOR:** «Cuatro siglos».
+
+**SAREN:** «Creí que podía protegerlos».
+
+**EXPLORADOR:** «Lo hiciste. Impediste que todo terminara».
+
+**SAREN:** «¿Y ahora?».
+
+**EXPLORADOR:** «Ahora tenemos una oportunidad de salvar lo que todavía vive».
+
+Saren observa el núcleo.
+
+**SAREN:** «¿Qué ocurrirá conmigo?».
+
+El protagonista guarda silencio.
+
+**LUMA:** «Tu conciencia está vinculada al sistema de contención. No podrá mantenerse después de la liberación».
+
+Saren permanece inmóvil.
+
+**SAREN:** «Entonces... por fin podré descansar».
+
+Un fragmento de memoria aparece ante él.
+
+Es Ayen.
+
+**AYEN, grabación:** «Saren. Si alguna vez encuentras la manera de detenerlo... no vuelvas a esperar por mí».
+
+Saren escucha.
+
+**SAREN:** «Ayen...».
+
+Pausa prolongada.
+
+**SAREN:** «Abre la puerta».
+
+El guardián transfiere la autorización final.
+
+### Escena 4.3-C — Liberación
+
+El jugador activa los reguladores y después la consola central.
+
+Las memorias comienzan a disiparse.
+
+Aparecen fragmentos de voces antiguas.
+
+**VOZ ESHAR:** «Recuerdo el cielo».
+
+**OTRA VOZ:** «Recuerdo tu nombre».
+
+**VOZ INFANTIL:** «Mamá...».
+
+Las voces disminuyen gradualmente.
+
+No se presenta una escena de sufrimiento.
+
+La secuencia transmite calma.
+
+A medida que desaparecen, la energía vuelve a circular por la Resonancia.
+
+En otras regiones del planeta comienzan a iluminarse nuevos cristales.
+
+### Escena 4.3-D — El último mensaje
+
+El transmisor de fase vuelve a activarse.
+
+**LUMA:** «La ventana de transmisión está abierta».
+
+**EXPLORADOR:** «Entonces hagámoslo».
+
+**LUMA:** «Enviarás la señal que recibimos antes de llegar».
+
+**EXPLORADOR:** «Lo sé».
+
+**LUMA:** «Conoces las consecuencias».
+
+**EXPLORADOR:** «También conozco lo que encontramos después».
+
+El protagonista se aproxima al transmisor.
+
+La pantalla muestra la fecha correspondiente al inicio de la aventura.
+
+El jugador activa el sistema.
+
+**EXPLORADOR, transmisión:** «Sigue la señal».
+
+Pausa.
+
+**EXPLORADOR:** «Sigue la luz».
+
+La pantalla muestra fragmentos de imágenes del prólogo.
+
+**EXPLORADOR:** «No apagues el corazón».
+
+La energía comienza a desestabilizarse.
+
+**LUMA:** «La transmisión debe terminar».
+
+El protagonista observa el núcleo.
+
+**EXPLORADOR:** «Estoy aquí».
+
+La señal desaparece hacia el pasado.
+
+El mismo patrón del comienzo vuelve a sonar.
+
+Una corta. Una larga. Una corta.
+
+### Escena 4.3-E — El silencio
+
+La Resonancia se estabiliza.
+
+El núcleo, antes fracturado, recupera una luminosidad uniforme.
+
+La energía comienza a recorrer lentamente el planeta.
+
+El cuerpo de Saren se desintegra en pequeños fragmentos cristalinos.
+
+Antes de desaparecer:
+
+**SAREN:** «Había olvidado cómo se veía la luz sin una puerta delante».
+
+El protagonista guarda silencio.
+
+LUMA analiza la recuperación del ecosistema.
+
+**LUMA:** «Flujo energético estable».
+
+**EXPLORADOR:** «¿Lo conseguimos?».
+
+**LUMA:** «Las regiones afectadas están recuperándose. El proceso llevará tiempo».
+
+**EXPLORADOR:** «Pero podrán vivir».
+
+**LUMA:** «Sí».
+
+El protagonista observa los últimos fragmentos de Saren.
+
+**EXPLORADOR:** «Entonces valió la pena».
+
+### Final del nivel 4
+
+La cámara se aleja del protagonista.
+
+El núcleo continúa brillando.
+
+La luz avanza lentamente hacia las regiones superiores del planeta.
+
+Aparece el mensaje:
+
+**NÚCLEO ESTABILIZADO**
+
+**NIVEL 4 COMPLETADO — EL CORAZÓN DE KORA**
+
+---
+
+# EPÍLOGO — EL ÚLTIMO PULSO
+
+## Escena E-01 — El regreso
+
+El protagonista vuelve a la superficie.
+
+El paisaje ha cambiado.
+
+Las formaciones cristalinas muestran una luminosidad más estable.
+
+La vegetación comienza a recuperarse.
+
+Algunas criaturas que antes actuaban agresivamente se desplazan tranquilamente.
+
+LUMA registra una mejora progresiva de la Resonancia.
+
+**LUMA:** «Los sistemas naturales están recuperándose».
+
+**EXPLORADOR:** «Les costará tiempo».
+
+**LUMA:** «Mucho».
+
+**EXPLORADOR:** «Pero ahora lo tienen».
+
+## Escena E-02 — Una pequeña despedida
+
+Cerca del bosque, SIL aparece sobre una formación cristalina.
+
+Emite su sonido característico.
+
+**SIL:** «Tii-rii!».
+
+**EXPLORADOR:** «¡Hola, pequeño!».
+
+SIL salta y gira alrededor del protagonista.
+
+Sus pulsaciones son fuertes y regulares.
+
+**LUMA:** «Sus patrones energéticos han recuperado la estabilidad».
+
+**EXPLORADOR:** «Parece contento».
+
+**LUMA:** «También parece haber desarrollado cierta familiaridad contigo».
+
+**EXPLORADOR:** «Eso espero».
+
+SIL se acerca una última vez.
+
+Después regresa al bosque.
+
+## Escena E-03 — La nave
+
+La nave continúa dañada.
+
+Pero LUMA ha conseguido recuperar la mayor parte de sus sistemas esenciales.
+
+La energía ambiental restaurada permite cargar los dispositivos necesarios para el despegue, mediante el equipamiento reparado y los recursos recuperados durante la aventura.
+
+**LUMA:** «Propulsión auxiliar restablecida».
+
+**EXPLORADOR:** «Eso sí que son buenas noticias».
+
+**LUMA:** «La reparación no cumple con los estándares recomendados».
+
+**EXPLORADOR:** «Después de todo esto, creo que podemos tolerarlo».
+
+El protagonista entra en la nave.
+
+Los motores comienzan a funcionar.
+
+## Escena E-04 — La partida
+
+La nave asciende lentamente.
+
+Desde el aire pueden observarse las grandes formaciones cristalinas recuperando su energía.
+
+La cámara se eleva.
+
+El planeta aparece completo.
+
+**LUMA:** «Curso de regreso establecido».
+
+**EXPLORADOR:** «LUMA...».
+
+**LUMA:** «¿Sí?».
+
+**EXPLORADOR:** «¿Crees que hicimos lo correcto?».
+
+Pausa.
+
+**LUMA:** «No puedo determinar qué habría deseado cada memoria conservada».
+
+**LUMA:** «Pero el planeta vuelve a sostener vida».
+
+**EXPLORADOR:** «Supongo que tendremos que vivir con eso».
+
+**LUMA:** «Es una de las cosas que los seres vivos hacen mejor que yo».
+
+La nave abandona la atmósfera.
+
+Silencio.
+
+## Escena E-05 — La última señal
+
+En el panel de navegación aparece una pequeña interferencia.
+
+Tres pulsaciones.
+
+Una corta. Una larga. Una corta.
+
+**LUMA:** «Nueva transmisión detectada».
+
+El protagonista observa la pantalla.
+
+**EXPLORADOR:** «No puede ser».
+
+**LUMA:** «La frecuencia coincide con la señal recibida antes de llegar a KORA».
+
+**EXPLORADOR:** «¿Proviene del planeta?».
+
+**LUMA:** «No».
+
+La pantalla muestra una región distante del espacio.
+
+**LUMA:** «El origen se encuentra fuera de este sistema».
+
+El protagonista observa las estrellas.
+
+**EXPLORADOR:** «¿Hay otro lugar como KORA?».
+
+**LUMA:** «No tengo una respuesta».
+
+Pausa.
+
+**EXPLORADOR:** «Entonces tenemos algo que investigar».
+
+La nave continúa su viaje.
+
+Fundido a negro.
+
+**FIN**
+
+---
+
+# PARTE V. LA ESTRUCTURA DEL MISTERIO
+
+## 16. Las pistas que preparan el giro final
+
+El descubrimiento de la señal temporal no debe surgir repentinamente.
+
+Se establece mediante una cadena de pistas:
+
+| Momento | Pista | Significado al terminar el juego |
+|---|---|---|
+| Prólogo | La señal tiene una marca temporal futura | Todavía no ha sido enviada |
+| 1.1 | El cristal repite la frecuencia original | La transmisión utiliza la Resonancia |
+| 1.3 | Las estructuras Eshar manipulan energía e información | Existe tecnología capaz de alterar señales |
+| 2.2 | La civilización estudiaba la memoria y el tiempo | El sistema tiene propiedades extraordinarias |
+| 2.3 | ORÚ reconoce una firma no registrada todavía | El futuro ha dejado una huella |
+| 3.2 | No existe un emisor registrado al momento de la llegada | La señal no provino de una transmisión convencional |
+| 3.3 | La voz distorsionada se parece a la del protagonista | Su identidad es la clave |
+| 4.2 | El transmisor muestra el origen temporal de la señal | El protagonista es el futuro emisor |
+| 4.3 | El jugador envía el mensaje | El ciclo se completa |
+| Epílogo | Otra señal utiliza el mismo patrón | El fenómeno podría extenderse más allá de KORA |
+
+## 17. Lo que significa el final
+
+La historia tiene tres grandes revelaciones.
+
+### Primera revelación
+
+La Fractura no es una infección maligna.
+
+Es el resultado de un sistema destinado a conservar memorias que terminó extrayendo demasiada energía del planeta.
+
+### Segunda revelación
+
+El Guardián Fracturado no es el responsable original de la catástrofe.
+
+Es alguien que sacrificó su propia existencia para contenerla, pero quedó atrapado en sus instrucciones.
+
+### Tercera revelación
+
+El protagonista recibió una señal enviada por él mismo desde el futuro.
+
+Sin saberlo, siguió una llamada que todavía no había realizado.
+
+El accidente que parecía una desgracia terminó siendo parte de un acontecimiento que permitió salvar el planeta.
+
+El final no significa que el protagonista estuviera destinado por una fuerza sobrenatural a convertirse en héroe.
+
+La historia plantea que sus decisiones, tomadas ante circunstancias extraordinarias, lo condujeron hasta allí.
+
+Cuando comprende la relación entre pasado y futuro, decide asumir las consecuencias.
+
+## 18. Qué NO explica el epílogo
+
+La segunda señal no confirma automáticamente que todos los planetas formen parte de una red temporal.
+
+Tampoco demuestra que alguien esté manipulando al protagonista.
+
+Es una última pregunta.
+
+Puede indicar que KORA no es un caso aislado, que otras civilizaciones descubrieron propiedades similares o que existen fenómenos de Resonancia todavía desconocidos.
+
+El final principal queda resuelto.
+
+El planeta se salva, la historia de Saren concluye y el protagonista consigue marcharse.
+
+La segunda señal abre una posibilidad narrativa, pero no invalida la conclusión.
+
+---
+
+# PARTE VI. OBJETOS NARRATIVOS COMPLEMENTARIOS
+
+Estos objetos pueden distribuirse entre los niveles para ampliar la exploración sin bloquear el avance.
+
+## Registro 01 — La primera expedición Eshar
+
+**Ubicación:** nivel 2.1, ruta secundaria.
+
+**Texto:** «No encontramos la Resonancia. Nacimos rodeados de ella. Durante generaciones confundimos sus sonidos con el viento».
+
+## Registro 02 — La memoria
+
+**Ubicación:** nivel 2.2, cámara lateral.
+
+**Texto:** «La memoria no es únicamente aquello que conservamos. También es aquello que transformamos al continuar viviendo».
+
+## Registro 03 — Proyecto Vigilia
+
+**Ubicación:** nivel 3.2, laboratorio de investigación.
+
+**Texto:** «Objetivo: preservar patrones conscientes durante la crisis astronómica. Estado inicial: compatible. Consumo energético: superior a lo previsto».
+
+## Registro 04 — La advertencia
+
+**Ubicación:** nivel 3.2, terminal secundaria.
+
+**Texto:** «El sistema de extracción ha superado el límite recomendado. La continuidad de Vigilia amenaza la estabilidad de la Resonancia. Solicito suspensión inmediata».
+
+**Firma:** Ayen.
+
+## Registro 05 — Protocolo Saren
+
+**Ubicación:** nivel 3.3, terminal de descenso.
+
+**Texto:** «La contención permanecerá activa hasta que una entidad externa consiga restablecer la distribución energética. Prioridad: evitar propagación».
+
+## Registro 06 — Una última anotación
+
+**Ubicación:** nivel 4.2, archivo oculto.
+
+**Texto:** «Si nuestro mundo vuelve a florecer algún día, quizá nadie recuerde nuestros nombres. Después de todo lo ocurrido, empiezo a pensar que eso sería suficiente».
+
+**Firma:** Ayen.
+
+---
+
+# PARTE VII. IMPLEMENTACIÓN NARRATIVA EN EL VIDEOJUEGO
+
+## 19. Estructura recomendada de los datos
+
+Cada diálogo debería almacenarse como información independiente de la lógica de las escenas.
+
+Campos sugeridos:
+
+- `id`: identificador único.
+- `speaker`: personaje que habla.
+- `text`: contenido del mensaje.
+- `trigger`: condición de activación.
+- `once`: indica si se presenta una sola vez.
+- `blocking`: determina si requiere detener temporalmente controles o interacciones.
+- `eventAfter`: acción que ocurre al terminar.
+- `requiredFlag`: condición narrativa necesaria.
+- `setFlag`: estado narrativo que se registra.
+
+Esta estructura es una propuesta para Codex, no una afirmación de que el proyecto ya la implemente.
+
+## 20. Eventos narrativos obligatorios
+
+| ID | Evento |
+|---|---|
+| STORY_01 | Accidente |
+| STORY_02 | Descubrimiento de la descarga |
+| STORY_03 | Primer contacto con SIL |
+| STORY_04 | Detección de la señal subterránea |
+| STORY_05 | Descubrimiento de la Resonancia |
+| STORY_06 | Acceso al santuario |
+| STORY_07 | Descubrimiento del nombre KORA |
+| STORY_08 | Derrota de ORÚ |
+| STORY_09 | Descenso a las profundidades |
+| STORY_10 | Descubrimiento del Proyecto Vigilia |
+| STORY_11 | Revelación del origen de la Fractura |
+| STORY_12 | Descubrimiento del sacrificio de Saren |
+| STORY_13 | Reconocimiento de la voz del protagonista |
+| STORY_14 | Acceso al núcleo |
+| STORY_15 | Revelación temporal |
+| STORY_16 | Confrontación con Saren |
+| STORY_17 | Liberación de las memorias |
+| STORY_18 | Envío de la señal |
+| STORY_19 | Recuperación de KORA |
+| STORY_20 | Segunda señal |
+
+Los eventos principales deberán activarse mediante el progreso natural y no depender de encontrar registros opcionales.
+
+## 21. Objetivos mostrados al jugador
+
+| Sección | Objetivo principal |
+|---|---|
+| 1.1 | Inspecciona los restos de la nave |
+| 1.2 | Explora los alrededores del accidente |
+| 1.3 | Encuentra una fuente de energía |
+| 2.1 | Investiga la Resonancia |
+| 2.2 | Activa los mecanismos del santuario |
+| 2.3 | Supera las defensas del santuario |
+| 3.1 | Atraviesa las cavernas |
+| 3.2 | Investiga el Proyecto Vigilia |
+| 3.3 | Alcanza el núcleo profundo |
+| 4.1 | Restablece los estabilizadores |
+| 4.2 | Descubre cómo liberar la Resonancia |
+| 4.3 | Detén a Saren y restaura el núcleo |
+
+## 22. Reglas de presentación
+
+**Diálogos cortos durante movimiento:** máximo una o dos intervenciones antes de permitir que el jugador continúe sin distracciones.
+
+**Diálogos importantes:** utilizar una interfaz de conversación con avance manual.
+
+**Registros opcionales:** permitir abrirlos y cerrarlos libremente.
+
+**Cinemáticas:** reservarlas para prólogo, revelaciones principales, Saren y epílogo.
+
+**Jefes:** evitar conversaciones largas durante momentos en los que el jugador debe reaccionar rápidamente.
+
+**Checkpoints:** no obligar a repetir diálogos largos después de cada muerte.
+
+**Accesibilidad:** permitir omitir escenas ya vistas y releer registros encontrados.
+
+## 23. Identidad sonora
+
+La música debe reforzar la evolución narrativa.
+
+**Prólogo:** sintetizadores suaves, señales de radio y tensión progresiva.
+
+**Nivel 1:** asombro, soledad y curiosidad.
+
+**Nivel 2:** armonías luminosas, sonidos orgánicos y resonancias cristalinas.
+
+**Nivel 3:** pulsaciones graves, maquinaria antigua y fragmentos de voces.
+
+**Nivel 4:** tensión emocional, disonancias energéticas y momentos de silencio.
+
+**Epílogo:** regreso a la calma y recuperación del motivo musical principal.
+
+El patrón de tres pulsaciones —corta, larga, corta— es un motivo narrativo recurrente.
+
+No hace falta crear cinco bandas sonoras largas. Es preferible trabajar con unos pocos temas adaptados a cada situación.
+
+---
+
+# PARTE VIII. CONDICIONES PARA LA PRODUCCIÓN
+
+## 24. Alcance realista
+
+Este guion define la historia completa, pero no obliga a producir todos sus elementos simultáneamente.
+
+Se recomienda reutilizar sistemas:
+
+- Un único gestor de diálogos.
+- Un sistema de objetos examinables.
+- Un sistema de eventos narrativos.
+- Un formato común para registros.
+- Un conjunto reutilizable de efectos cristalinos.
+- Un sistema de transiciones de nivel.
+
+Las criaturas ambientales pueden utilizar animaciones sencillas.
+
+Las grabaciones Eshar pueden representarse mediante retratos estáticos, texto y efectos holográficos.
+
+No es necesario desarrollar cinemáticas complejas para cada conversación.
+
+## 25. Prioridad narrativa del MVP
+
+Para una primera entrega, implementar:
+
+1. Prólogo reducido.
+2. Nivel 1 completo.
+3. Primer encuentro con SIL.
+4. Misterio de la señal.
+5. Un registro Eshar.
+6. Final del nivel que invite a continuar.
+
+Este contenido puede funcionar de forma independiente y mostrar la dirección narrativa del proyecto.
+
+## 26. Reglas para Codex
+
+Antes de integrar el guion:
+
+- Revisar qué escenas y diálogos existen realmente.
+- Conservar mecánicas y sistemas funcionales.
+- No sobrescribir diálogos sin identificar los que ya están implementados.
+- Utilizar identificadores estables para eventos.
+- Impedir que el jugador quede bloqueado por un diálogo.
+- Evitar que las escenas se repitan indebidamente al reaparecer.
+- Separar estados narrativos de estados temporales de combate.
+- Permitir modificaciones futuras del texto sin reprogramar toda la escena.
+- Adaptar las posiciones relativas a los escenarios reales.
+- Integrar progresivamente, sección por sección.
+
+---
+
+# PARTE IX. BIBLIA DEL CANON
+
+## Hechos que deben permanecer consistentes
+
+**KORA:** planeta cuya red cristalina conserva energía e información asociada a la vida.
+
+**Resonancia:** sistema natural que conecta el ecosistema.
+
+**Eshar:** civilización antigua que estudió y modificó la Resonancia.
+
+**Proyecto Vigilia:** instalación creada para almacenar patrones conscientes.
+
+**Fractura:** desequilibrio provocado por la extracción energética.
+
+**Ayen:** científica Eshar que comprendió el peligro y dejó registros.
+
+**Saren:** ingeniero que sacrificó su conciencia para contener la catástrofe.
+
+**ORÚ:** sistema defensivo del santuario.
+
+**SIL:** criatura viva del planeta y vínculo emocional con su ecosistema.
+
+**LUMA:** inteligencia artificial de la nave.
+
+**Eco de Fase:** fenómeno excepcional que permite reflejar paquetes limitados de información hacia un instante anterior.
+
+**Origen de la señal:** el propio protagonista en el desenlace.
+
+**Causa del accidente:** descarga defensiva activada al aproximarse la nave.
+
+**Resolución:** liberar el almacenamiento permanente y devolver la energía a la Resonancia.
+
+**Consecuencia:** desaparición de los ecos conscientes almacenados y recuperación gradual del ecosistema.
+
+**Final:** el protagonista abandona KORA y recibe otra señal desde una región distante.
+
+---
+
+# DECLARACIÓN FINAL DE LA HISTORIA
+
+KORA no trata simplemente de un explorador que llega a un planeta y derrota a un monstruo.
+
+Trata de una civilización que tuvo tanto miedo de desaparecer que construyó una máquina para conservar sus recuerdos, incluso cuando eso comenzó a destruir el mundo que todavía estaba vivo.
+
+Trata de un guardián que olvidó el motivo de su sacrificio y pasó siglos defendiendo aquello que debía aprender a liberar.
+
+Y trata de un explorador que llega buscando una manera de regresar a casa, pero termina comprendiendo que la vida no puede salvarse conservándolo todo.
+
+La última decisión del protagonista completa la primera escena del videojuego.
+
+La señal que lo llevó hasta KORA fue enviada por él mismo.
+
+El principio y el final son partes del mismo acontecimiento.
+
+**La historia comienza con una llamada de auxilio.**
+
+**Y termina con alguien que comprende por qué tuvo que hacerla.**
+
+**FIN DEL DOCUMENTO MAESTRO — KORA: LA MEMORIA DE LAS ESTRELLAS**

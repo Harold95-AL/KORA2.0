@@ -1,0 +1,10 @@
+# Caché e importaciones regeneradas por Godot.
+.godot/
+# Configuración local del editor y exportaciones.
+.local/
+builds/
+export_credentials.cfg
+*.tmp
+__pycache__/
+*.py[cod]
+
