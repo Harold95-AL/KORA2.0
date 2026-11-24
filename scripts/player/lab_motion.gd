@@ -1,8 +1,8 @@
 extends RefCounted
 ## Traducción del objeto player de lab_reference.html. Sin dependencias de escena.
 ## Orden conservado: entradas → física → colisiones → impactos → estados → reloj.
-const FRAMES := {"idle": 10, "walk": 10, "run": 10, "dash": 9, "design": 1, "jump": 6, "fall": 4, "fall_loop": 3, "combo_1": 9, "combo_2": 9, "combo_3": 9, "combo_1_end": 4}
-const FPS := {"idle": 8.0, "walk": 10.0, "run": 14.0, "dash": 18.0, "design": 1.0, "jump": 12.0, "fall": 12.0, "fall_loop": 10.0, "combo_1": 22.0, "combo_2": 22.0, "combo_3": 20.0, "combo_1_end": 12.0}
+const FRAMES := {"idle": 10, "walk": 10, "run": 10, "hurt": 9, "dash": 9, "design": 1, "jump": 6, "fall": 4, "fall_loop": 3, "combo_1": 9, "combo_2": 9, "combo_3": 9, "combo_1_end": 4}
+const FPS := {"idle": 8.0, "walk": 10.0, "run": 14.0, "hurt": 22.0, "dash": 41.0, "design": 1.0, "jump": 12.0, "fall": 12.0, "fall_loop": 10.0, "combo_1": 22.0, "combo_2": 22.0, "combo_3": 20.0, "combo_1_end": 12.0}
 var walk_speed := 110.0
 var run_speed := 210.0
 var jump_force := 380.0
@@ -60,8 +60,23 @@ func is_attacking() -> bool:
 func rumble(duration: float, weak: float, strong: float) -> void:
 	emit("rumble", {"duration": duration, "weak": weak, "strong": strong})
 
+func hurt(knockback_dir: int = 0) -> void:
+	is_dashing = false
+	dash_timer = 0.0
+	attack_buffered = false
+	combo2_buffered = false
+	combo3_buffered = false
+	attacking_this_step = false
+	jump_buffer = 0.0
+	coyote_timer = 0.0
+	set_state("hurt")
+	vx = knockback_dir * 105.0
+	if grounded:
+		vy = -85.0
+		grounded = false
+
 func dash() -> void:
-	if dash_cooldown > 0.0 or is_dashing:
+	if state == "hurt" or dash_cooldown > 0.0 or is_dashing:
 		return
 	is_dashing = true
 	dash_timer = 0.22
@@ -75,6 +90,7 @@ func dash() -> void:
 	rumble(0.06, 0.4, 0.8)
 
 func attack() -> void:
+	if state == "hurt" or is_dashing: return
 	if state == "combo_1":
 		combo2_buffered = true
 	elif state == "combo_2":
@@ -86,6 +102,7 @@ func attack() -> void:
 		rumble(0.05, 0.4, 0.7)
 
 func heavy_attack() -> void:
+	if state == "hurt" or is_dashing: return
 	if state in ["combo_1", "combo_2"]:
 		combo3_buffered = true
 		rumble(0.06, 0.5, 0.8)
@@ -103,6 +120,10 @@ func force_combo(next: String) -> void:
 
 func before_move(dt: float, input: Dictionary) -> void:
 	if dash_cooldown > 0.0: dash_cooldown -= dt
+	if state == "hurt":
+		vx = move_toward(vx, 0.0, 640.0 * dt)
+		if not grounded: vy += gravity * dt
+		return
 	if input.get("dash_pressed", false): dash()
 	if is_dashing:
 		dash_timer -= dt
@@ -163,6 +184,7 @@ func accept_ground(on_ground: bool) -> void:
 	grounded = on_ground
 
 func choose_state(input: Dictionary) -> void:
+	if state == "hurt": return
 	if force_state != "none":
 		state = force_state
 	elif attacking_this_step:
@@ -233,6 +255,6 @@ func animate(dt: float) -> void:
 			emit("slash", {"pitch": 0.8})
 		else: set_state("combo_1_end")
 	elif state == "combo_3": set_state("idle" if grounded else "fall")
-	elif state == "combo_1_end": set_state("idle" if grounded else "fall")
+	elif state in ["hurt", "combo_1_end"]: set_state("idle" if grounded else "fall")
 	elif state == "fall": set_state("fall_loop")
 	elif state in ["idle", "walk", "run", "fall_loop"]: frame_index = 0

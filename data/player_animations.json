@@ -27,9 +27,15 @@
 	  "loop": true
 	},
 	{
+	  "name": "hurt",
+	  "frames": 9,
+	  "fps": 22,
+	  "loop": false
+	},
+	{
 	  "name": "dash",
 	  "frames": 9,
-	  "fps": 18,
+	  "fps": 41,
 	  "loop": false
 	},
 	{

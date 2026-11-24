@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://v0xbr77fumwk" path="res://assets/sprites/player/male_hero-combo_3.png" id="11"]
 [ext_resource type="Texture2D" uid="uid://cupi0i3gb31bm" path="res://assets/sprites/player/male_hero-combo_1_end.png" id="12"]
 
+[ext_resource type="Texture2D" path="res://assets/sprites/player/male_hero-hurt.png" id="hurt_sheet"]
+
 [sub_resource type="AtlasTexture" id="combo_1_0"]
 atlas = ExtResource("9")
 region = Rect2(0, 0, 128, 128)
@@ -349,6 +351,42 @@ region = Rect2(1024, 0, 128, 128)
 atlas = ExtResource("2")
 region = Rect2(1152, 0, 128, 128)
 
+[sub_resource type="AtlasTexture" id="hurt_0"]
+atlas = ExtResource("hurt_sheet")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="hurt_1"]
+atlas = ExtResource("hurt_sheet")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="hurt_2"]
+atlas = ExtResource("hurt_sheet")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="hurt_3"]
+atlas = ExtResource("hurt_sheet")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="hurt_4"]
+atlas = ExtResource("hurt_sheet")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="hurt_5"]
+atlas = ExtResource("hurt_sheet")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="hurt_6"]
+atlas = ExtResource("hurt_sheet")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="hurt_7"]
+atlas = ExtResource("hurt_sheet")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="hurt_8"]
+atlas = ExtResource("hurt_sheet")
+region = Rect2(256, 256, 128, 128)
+
 [resource]
 animations = [{
 "frames": [{
@@ -494,7 +532,20 @@ animations = [{
 }],
 "loop": 0,
 "name": &"dash",
-"speed": 18.0
+"speed": 41.0
+}, {
+"frames": [{"duration": 1.0, "texture": SubResource("hurt_0")},
+{"duration": 1.0, "texture": SubResource("hurt_1")},
+{"duration": 1.0, "texture": SubResource("hurt_2")},
+{"duration": 1.0, "texture": SubResource("hurt_3")},
+{"duration": 1.0, "texture": SubResource("hurt_4")},
+{"duration": 1.0, "texture": SubResource("hurt_5")},
+{"duration": 1.0, "texture": SubResource("hurt_6")},
+{"duration": 1.0, "texture": SubResource("hurt_7")},
+{"duration": 1.0, "texture": SubResource("hurt_8")}],
+"loop": false,
+"name": &"hurt",
+"speed": 22.0
 }, {
 "frames": [{
 "duration": 1.0,

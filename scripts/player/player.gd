@@ -206,8 +206,12 @@ func force_dash() -> void:
 	motion.dash()
 	velocity = Vector2(motion.vx, motion.vy)
 
-func take_damage(amount: int, _source: Vector2) -> void:
+func take_damage(amount: int, source: Vector2) -> void:
 	if not GameManager.campaign_active or invulnerability > 0.0 or GameManager.transitioning: return
+	var direction := signi(roundi(global_position.x - source.x))
+	motion.hurt(direction if direction != 0 else -motion.facing)
+	velocity = Vector2(motion.vx, motion.vy)
+	_sync_sprite()
 	invulnerability = 0.55
 	camera_shake(0.12, 3.0)
 	GameManager.damage(amount)
@@ -245,9 +249,6 @@ func _draw() -> void:
 	draw_set_transform(Vector2.ZERO, 0, Vector2(1, 0.3125))
 	draw_circle(Vector2.ZERO, 16, Color(0, 0, 0, 0.4))
 	draw_set_transform(Vector2.ZERO, 0, Vector2(motion.facing, 1))
-	if motion.is_dashing:
-		for i in range(4):
-			draw_line(Vector2(-25,-32+i*8),Vector2(-45-randf()*20,-32+i*8),Color("00f0ff"),1.5)
 	draw_set_transform(Vector2.ZERO)
 	if show_body:
 		draw_rect(Rect2(-13,-38,26,38),Color("22c55e"),false,1.5)
