@@ -2,7 +2,7 @@ extends PanelContainer
 ## Texto del escenario en una placa de pantalla, alineada al píxel y con líneas cortas.
 const PLATE_STYLE := preload("res://resources/ui/world_text_plate.tres")
 const KEY_STYLE := preload("res://resources/ui/world_keycap.tres")
-const FONT_SIZE := 6
+const FONT_SIZE := 8
 const MAX_ROW_WIDTH := 144.0
 const KEYS := ["K", "E", "X", "F", "J", "I", "A", "D", "TAB", "ESPACIO", "ENTER"]
 
@@ -64,7 +64,7 @@ func _rebuild_rows() -> void:
 				glyph.text = (" " if index > 0 and word.to_upper() not in KEYS and words[index - 1].to_upper() not in KEYS else "") + word
 				glyph.add_theme_font_size_override("font_size", FONT_SIZE)
 				glyph.set_meta("world_pixel_font", true)
-				_apply_readable_outline(glyph)
+				_apply_pixel_shadow(glyph)
 				if word.to_upper() in KEYS:
 					var cap := PanelContainer.new()
 					cap.add_theme_stylebox_override("panel", KEY_STYLE)
@@ -78,17 +78,22 @@ func _add_plain_row(text: String) -> void:
 	var text_row := Label.new()
 	text_row.text = text
 	text_row.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	text_row.custom_minimum_size.x = MAX_ROW_WIDTH
+	var font := source.get_theme_font("font")
+	var longest := 0.0
+	for line in text.split("\n"):
+		longest = maxf(longest, font.get_string_size(line, HORIZONTAL_ALIGNMENT_LEFT, -1, FONT_SIZE).x)
+	text_row.custom_minimum_size.x = minf(MAX_ROW_WIDTH, ceilf(longest))
 	text_row.horizontal_alignment = source.horizontal_alignment
 	text_row.add_theme_font_size_override("font_size", FONT_SIZE)
 	text_row.set_meta("world_pixel_font", true)
-	text_row.add_theme_constant_override("line_spacing", -3)
-	_apply_readable_outline(text_row)
+	text_row.add_theme_constant_override("line_spacing", 0)
+	_apply_pixel_shadow(text_row)
 	rows.add_child(text_row)
 
-func _apply_readable_outline(label: Label) -> void:
-	label.add_theme_color_override("font_outline_color", Color(0.015, 0.025, 0.06, 0.95))
-	label.add_theme_constant_override("outline_size", 1)
+func _apply_pixel_shadow(label: Label) -> void:
+	label.add_theme_color_override("font_shadow_color", Color(0.015, 0.025, 0.06, 0.95))
+	label.add_theme_constant_override("shadow_offset_x", 0)
+	label.add_theme_constant_override("shadow_offset_y", 1)
 
 func _wrap_words(line: String, font: Font) -> Array[PackedStringArray]:
 	var result: Array[PackedStringArray] = []

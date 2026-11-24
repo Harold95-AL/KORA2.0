@@ -1,5 +1,4 @@
 [gd_scene format=3 uid="uid://qhk3guvlkgs2"]
-[ext_resource type="StyleBox" path="res://resources/ui/world_text_plate.tres" id="WorldPlate"]
 
 [ext_resource type="Texture2D" uid="uid://cx5t885crfbb4" path="res://assets/sprites/tilesets/zona_1/altar.png" id="Altar"]
 [ext_resource type="Texture2D" uid="uid://roqmc5ebjegu" path="res://assets/sprites/backgrounds/kora/level_1_1/ruinas_cristalinas.png" id="BackgroundImage"]
@@ -11,10 +10,11 @@
 [ext_resource type="PackedScene" path="res://scenes/entities/InteractiveTerminal.tscn" id="InteractiveTerminal"]
 [ext_resource type="Script" uid="uid://cydt7lmmw7bmp" path="res://scripts/world/section.gd" id="Level"]
 [ext_resource type="PackedScene" path="res://scenes/entities/LevelExit.tscn" id="LevelExit"]
-[ext_resource type="PackedScene" path="res://levels/PaisajeCristalino.tscn" id="Paisaje"]
+[ext_resource type="PackedScene" uid="uid://caxmyc2hwivnp" path="res://levels/PaisajeCristalino.tscn" id="Paisaje"]
 [ext_resource type="Script" uid="uid://8mkqx3yhv60s" path="res://scripts/world/tiled_platform_visual.gd" id="PlatformVisual"]
 [ext_resource type="PackedScene" uid="uid://pawl4dgsefs3" path="res://scenes/player/player.tscn" id="Player"]
 [ext_resource type="Texture2D" uid="uid://c1oaaamc5h3rc" path="res://assets/sprites/tilesets/zona_1/portal.png" id="Portal"]
+[ext_resource type="StyleBox" path="res://resources/ui/world_text_plate.tres" id="WorldPlate"]
 
 [sub_resource type="RectangleShape2D" id="Shape0"]
 size = Vector2(200, 704)
@@ -70,7 +70,7 @@ layer = -100
 [node name="RuinasCristalinas" type="Sprite2D" parent="BackgroundImage" unique_id=1844416831]
 texture_filter = 1
 position = Vector2(320, 182)
-scale = Vector2(0.40, 0.40)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("BackgroundImage")
 
 [node name="BackgroundArt" type="Node2D" parent="." unique_id=1444099114]
@@ -175,7 +175,7 @@ script = ExtResource("PlatformVisual")
 metadata/route_surface = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block4" unique_id=2142766760]
-position = Vector2(330, 352)
+position = Vector2(436, 345)
 shape = SubResource("Shape4")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block4" unique_id=1670844480]
@@ -498,10 +498,10 @@ text = "01 / CRÁTER
 Restos de la nave"
 
 [node name="Sign1" type="Label" parent="Labels" unique_id=653204713]
-offset_left = 810.0
-offset_top = 120.0
-offset_right = 1160.0
-offset_bottom = 182.0
+offset_left = 756.0
+offset_top = 118.0
+offset_right = 1133.0
+offset_bottom = 187.0
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = ExtResource("WorldPlate")
 text = "02 / RESTOS
@@ -540,8 +540,8 @@ Evita los cristales rojos"
 [node name="Sign5" type="Label" parent="Labels" unique_id=1218591308]
 offset_left = 212.0
 offset_top = 230.0
-offset_right = 562.0
-offset_bottom = 292.0
+offset_right = 513.0
+offset_bottom = 275.0
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = ExtResource("WorldPlate")
 text = "SALTO + DASH → K"
