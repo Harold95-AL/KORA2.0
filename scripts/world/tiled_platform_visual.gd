@@ -29,7 +29,8 @@ func _draw() -> void:
 	# Los extremos usan sus propios PNG con transparencia y un bisel diagonal.
 	# La superficie del medio repite el PNG base a tamaño nativo, sin estirarlo.
 	var cliff := Rect2(bounds.position + Vector2(0, 4), Vector2(bounds.size.x, 1024 - position.y - 4))
-	draw_texture_rect(SUBSOIL, cliff, true)
+	if bounds.size.y >= 48:
+		draw_texture_rect(SUBSOIL, cliff, true)
 	draw_texture_rect(LEFT_CORNER, Rect2(bounds.position, Vector2(16.0, bounds.size.y)), false)
 	draw_texture_rect(
 		PLATFORM_TEXTURE,

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3]
+[gd_scene format=3]
 [ext_resource type="StyleBox" path="res://resources/ui/world_text_plate.tres" id="WorldPlate"]
 
 [ext_resource type="Script" path="res://scripts/world/section.gd" id="Level"]
@@ -10,6 +10,21 @@
 [ext_resource type="PackedScene" path="res://scenes/entities/InteractiveTerminal.tscn" id="InteractiveTerminal"]
 [ext_resource type="PackedScene" path="res://scenes/entities/LevelExit.tscn" id="LevelExit"]
 [ext_resource type="PackedScene" path="res://scenes/entities/MovingPlatform.tscn" id="MovingPlatform"]
+
+[ext_resource type="Script" path="res://scripts/world/tiled_platform_visual.gd" id="Ground"]
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/kora/level_1_1/ruinas_cristalinas.png" id="Sky"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/roca.png" id="roca"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/amatista.png" id="amatista"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/columna.png" id="columna"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/cristal.png" id="cristal"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/arco.png" id="arco"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/pilar.png" id="pilar"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/flores.png" id="flores"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/torre.png" id="torre"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/altar.png" id="altar"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/gema.png" id="gema"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/transporte_azul.png" id="transporte_azul"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/repisa_inestable.png" id="repisa_inestable"]
 
 [sub_resource type="RectangleShape2D" id="Shape0"]
 size = Vector2(200, 48)
@@ -55,6 +70,21 @@ palette = Color(0.40784313725490196, 0.6235294117647059, 0.7803921568627451, 1)
 entry_story = ""
 entry_hint = ""
 
+show_blockout_backdrop = false
+
+[node name="Firmamento" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="Horizonte" type="TextureRect" parent="Firmamento"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture_filter = 1
+expand_mode = 1
+stretch_mode = 6
+mouse_filter = 2
+modulate = Color(0.69, 0.66, 0.84, 1)
+texture = ExtResource("Sky")
+
 [node name="BackgroundArt" type="Node2D" parent="."]
 
 [node name="Geometry" type="Node2D" parent="."]
@@ -71,6 +101,7 @@ z_index = 5
 [node name="Audio" type="Node2D" parent="."]
 
 [node name="Block0" type="StaticBody2D" parent="Geometry"]
+script = ExtResource("Ground")
 position = Vector2(0, 320)
 collision_layer = 1
 collision_mask = 2
@@ -81,15 +112,18 @@ position = Vector2(100.0, 24.0)
 shape = SubResource("Shape0")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block0"]
+visible = false
 polygon = PackedVector2Array(0, 0, 200, 0, 200, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block0"]
+visible = false
 points = PackedVector2Array(0, 0, 200, 0)
 width = 2.0
 default_color = Color(0.40784313725490196, 0.6235294117647059, 0.7803921568627451, 1)
 
 [node name="Block1" type="StaticBody2D" parent="Geometry"]
+script = ExtResource("Ground")
 position = Vector2(392, 320)
 collision_layer = 1
 collision_mask = 2
@@ -100,15 +134,18 @@ position = Vector2(184.0, 24.0)
 shape = SubResource("Shape1")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block1"]
+visible = false
 polygon = PackedVector2Array(0, 0, 368, 0, 368, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block1"]
+visible = false
 points = PackedVector2Array(0, 0, 368, 0)
 width = 2.0
 default_color = Color(0.40784313725490196, 0.6235294117647059, 0.7803921568627451, 1)
 
 [node name="Block2" type="StaticBody2D" parent="Geometry"]
+script = ExtResource("Ground")
 position = Vector2(820, 360)
 collision_layer = 1
 collision_mask = 2
@@ -119,15 +156,18 @@ position = Vector2(290.0, 24.0)
 shape = SubResource("Shape2")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block2"]
+visible = false
 polygon = PackedVector2Array(0, 0, 580, 0, 580, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block2"]
+visible = false
 points = PackedVector2Array(0, 0, 580, 0)
 width = 2.0
 default_color = Color(0.40784313725490196, 0.6235294117647059, 0.7803921568627451, 1)
 
 [node name="Block3" type="StaticBody2D" parent="Geometry"]
+script = ExtResource("Ground")
 position = Vector2(1640, 400)
 collision_layer = 1
 collision_mask = 2
@@ -138,15 +178,18 @@ position = Vector2(300.0, 24.0)
 shape = SubResource("Shape3")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block3"]
+visible = false
 polygon = PackedVector2Array(0, 0, 600, 0, 600, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block3"]
+visible = false
 points = PackedVector2Array(0, 0, 600, 0)
 width = 2.0
 default_color = Color(0.40784313725490196, 0.6235294117647059, 0.7803921568627451, 1)
 
 [node name="Block4" type="StaticBody2D" parent="Geometry"]
+script = ExtResource("Ground")
 position = Vector2(2240, 440)
 collision_layer = 1
 collision_mask = 2
@@ -157,15 +200,18 @@ position = Vector2(250.0, 24.0)
 shape = SubResource("Shape4")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block4"]
+visible = false
 polygon = PackedVector2Array(0, 0, 500, 0, 500, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block4"]
+visible = false
 points = PackedVector2Array(0, 0, 500, 0)
 width = 2.0
 default_color = Color(0.40784313725490196, 0.6235294117647059, 0.7803921568627451, 1)
 
 [node name="Block5" type="StaticBody2D" parent="Geometry"]
+script = ExtResource("Ground")
 position = Vector2(2880, 480)
 collision_layer = 1
 collision_mask = 2
@@ -176,15 +222,18 @@ position = Vector2(60.0, 24.0)
 shape = SubResource("Shape5")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block5"]
+visible = false
 polygon = PackedVector2Array(0, 0, 120, 0, 120, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block5"]
+visible = false
 points = PackedVector2Array(0, 0, 120, 0)
 width = 2.0
 default_color = Color(0.40784313725490196, 0.6235294117647059, 0.7803921568627451, 1)
 
 [node name="Block6" type="StaticBody2D" parent="Geometry"]
+script = ExtResource("Ground")
 position = Vector2(3192, 480)
 collision_layer = 1
 collision_mask = 2
@@ -195,15 +244,18 @@ position = Vector2(154.0, 24.0)
 shape = SubResource("Shape6")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block6"]
+visible = false
 polygon = PackedVector2Array(0, 0, 308, 0, 308, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block6"]
+visible = false
 points = PackedVector2Array(0, 0, 308, 0)
 width = 2.0
 default_color = Color(0.40784313725490196, 0.6235294117647059, 0.7803921568627451, 1)
 
 [node name="Block7" type="StaticBody2D" parent="Geometry"]
+script = ExtResource("Ground")
 position = Vector2(3560, 520)
 collision_layer = 1
 collision_mask = 2
@@ -214,15 +266,18 @@ position = Vector2(290.0, 24.0)
 shape = SubResource("Shape7")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block7"]
+visible = false
 polygon = PackedVector2Array(0, 0, 580, 0, 580, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block7"]
+visible = false
 points = PackedVector2Array(0, 0, 580, 0)
 width = 2.0
 default_color = Color(0.40784313725490196, 0.6235294117647059, 0.7803921568627451, 1)
 
 [node name="Block8" type="StaticBody2D" parent="Geometry"]
+script = ExtResource("Ground")
 position = Vector2(4140, 560)
 collision_layer = 1
 collision_mask = 2
@@ -233,15 +288,18 @@ position = Vector2(60.0, 24.0)
 shape = SubResource("Shape8")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block8"]
+visible = false
 polygon = PackedVector2Array(0, 0, 120, 0, 120, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block8"]
+visible = false
 points = PackedVector2Array(0, 0, 120, 0)
 width = 2.0
 default_color = Color(0.40784313725490196, 0.6235294117647059, 0.7803921568627451, 1)
 
 [node name="Block9" type="StaticBody2D" parent="Geometry"]
+script = ExtResource("Ground")
 position = Vector2(4452, 560)
 collision_layer = 1
 collision_mask = 2
@@ -252,10 +310,12 @@ position = Vector2(274.0, 24.0)
 shape = SubResource("Shape9")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block9"]
+visible = false
 polygon = PackedVector2Array(0, 0, 548, 0, 548, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block9"]
+visible = false
 points = PackedVector2Array(0, 0, 548, 0)
 width = 2.0
 default_color = Color(0.40784313725490196, 0.6235294117647059, 0.7803921568627451, 1)
@@ -297,6 +357,8 @@ width = 2.0
 default_color = Color(0.40784313725490196, 0.6235294117647059, 0.7803921568627451, 1)
 
 [node name="MovingPlatform0" parent="Entities" instance=ExtResource("MovingPlatform")]
+surface_texture = ExtResource("transporte_azul")
+texture_filter = 1
 position = Vector2(1420, 360)
 travel = Vector2(124, 40)
 width = 64.0
@@ -306,6 +368,8 @@ collapse_delay = 0.32
 return_delay = 2.4
 
 [node name="MovingPlatform1" parent="Entities" instance=ExtResource("MovingPlatform")]
+surface_texture = ExtResource("repisa_inestable")
+texture_filter = 1
 position = Vector2(2760, 440)
 travel = Vector2(0, 0)
 width = 64.0
@@ -318,6 +382,8 @@ return_delay = 2.4
 position = Vector2(1860, 400)
 title = "Sintoniza el pilar"
 state_key = "pillar"
+crystal_art = ExtResource("altar")
+crystal_jewel = ExtResource("gema")
 story_id = "STORY_05"
 required_keys = PackedStringArray()
 locked_hint = "Activa primero el mecanismo anterior."
@@ -326,6 +392,8 @@ locked_hint = "Activa primero el mecanismo anterior."
 position = Vector2(3860, 520)
 title = "Extrae una muestra limitada"
 state_key = "sample"
+crystal_art = ExtResource("altar")
+crystal_jewel = ExtResource("gema")
 story_id = "SAMPLE"
 required_keys = PackedStringArray("pillar")
 locked_hint = "Activa primero el mecanismo anterior."
@@ -386,17 +454,98 @@ warning_time = 0.45
 active_time = 1.6
 damage = 2
 
-[node name="Prop0" parent="WorldArt" instance=ExtResource("Decoration")]
-position = Vector2(2330, 690)
-kind = "crystal"
-size = Vector2(150, 250)
-tint = Color(0.40784313725490196, 0.6235294117647059, 0.7803921568627451, 1)
 
-[node name="Prop1" parent="WorldArt" instance=ExtResource("Decoration")]
-position = Vector2(4552.0, 560)
-kind = "ruins"
-size = Vector2(180, 170)
-tint = Color(0.40784313725490196, 0.6235294117647059, 0.7803921568627451, 1)
+
+[node name="roca_0" type="Sprite2D" parent="WorldArt"]
+position = Vector2(145, 320)
+texture_filter = 1
+texture = ExtResource("roca")
+offset = Vector2(0, -20)
+z_index = -1
+
+[node name="amatista_1" type="Sprite2D" parent="WorldArt"]
+position = Vector2(490, 320)
+texture_filter = 1
+texture = ExtResource("amatista")
+offset = Vector2(0, -21)
+z_index = -1
+
+[node name="columna_2" type="Sprite2D" parent="WorldArt"]
+position = Vector2(1010, 360)
+texture_filter = 1
+texture = ExtResource("columna")
+offset = Vector2(0, -36.5)
+z_index = -1
+
+[node name="cristal_3" type="Sprite2D" parent="WorldArt"]
+position = Vector2(1310, 360)
+texture_filter = 1
+texture = ExtResource("cristal")
+offset = Vector2(0, -26)
+z_index = -1
+
+[node name="arco_4" type="Sprite2D" parent="WorldArt"]
+position = Vector2(1750, 400)
+texture_filter = 1
+texture = ExtResource("arco")
+offset = Vector2(0, -39)
+z_index = -1
+
+[node name="roca_5" type="Sprite2D" parent="WorldArt"]
+position = Vector2(2180, 400)
+texture_filter = 1
+texture = ExtResource("roca")
+offset = Vector2(0, -20)
+z_index = -1
+
+[node name="amatista_6" type="Sprite2D" parent="WorldArt"]
+position = Vector2(2390, 440)
+texture_filter = 1
+texture = ExtResource("amatista")
+offset = Vector2(0, -21)
+z_index = -1
+
+[node name="pilar_7" type="Sprite2D" parent="WorldArt"]
+position = Vector2(2650, 440)
+texture_filter = 1
+texture = ExtResource("pilar")
+offset = Vector2(0, -23.5)
+z_index = -1
+
+[node name="cristal_8" type="Sprite2D" parent="WorldArt"]
+position = Vector2(3240, 480)
+texture_filter = 1
+texture = ExtResource("cristal")
+offset = Vector2(0, -26)
+z_index = -1
+
+[node name="flores_9" type="Sprite2D" parent="WorldArt"]
+position = Vector2(3610, 520)
+texture_filter = 1
+texture = ExtResource("flores")
+offset = Vector2(0, -14)
+z_index = -1
+
+[node name="amatista_10" type="Sprite2D" parent="WorldArt"]
+position = Vector2(3930, 520)
+texture_filter = 1
+texture = ExtResource("amatista")
+offset = Vector2(0, -21)
+z_index = -1
+
+[node name="arco_11" type="Sprite2D" parent="WorldArt"]
+position = Vector2(4520, 560)
+texture_filter = 1
+texture = ExtResource("arco")
+offset = Vector2(0, -39)
+z_index = -1
+
+[node name="torre_12" type="Sprite2D" parent="WorldArt"]
+position = Vector2(4760, 560)
+texture_filter = 1
+texture = ExtResource("torre")
+offset = Vector2(0, -39)
+z_index = -1
 
 [node name="Sign0" type="Label" parent="Labels"]
 offset_left = 90.0
