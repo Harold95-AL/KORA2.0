@@ -1,4 +1,5 @@
 extends Area2D
+@export var spike_sheet: Texture2D
 @export var width: float = 56.0
 @export var cycle: bool = true
 @export var phase_offset: float = 0.0
@@ -11,6 +12,7 @@ var time: float = 0.0
 var phase: int = 0
 
 func _ready() -> void:
+	texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	var shape := RectangleShape2D.new()
 	shape.size = Vector2(width, 23)
 	$CollisionShape2D.shape = shape
@@ -31,6 +33,20 @@ func _physics_process(delta: float) -> void:
 	queue_redraw()
 
 func _draw() -> void:
+	if spike_sheet:
+		# La silueta ocupa las filas 56 a 203 de la hoja original.
+		var visible_height: int = [4, 11, 23][phase]
+		var source_height := roundi(148.0 * visible_height / 23.0)
+		var source := Rect2(0, 56, 256, source_height)
+		var tint: Color = [Color("72718e"), Color.WHITE, Color.WHITE][phase]
+		var count := maxi(1, roundi(width / 40.0))
+		for index in count:
+			var left := roundf(index * width / count)
+			var right := roundf((index + 1) * width / count)
+			draw_texture_rect_region(spike_sheet, Rect2(left, -visible_height, right - left, visible_height), source, tint)
+		if phase == 1:
+			draw_rect(Rect2(0, -2, width, 2), Color("ffc96b"))
+		return
 	var color: Color = [Color("314659"), Color("ffc96b"), Color("ff646e")][phase]
 	draw_rect(Rect2(0, -4, width, 4), color)
 	for x in range(0, int(width), 14):

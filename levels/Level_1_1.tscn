@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" path="res://scenes/entities/Checkpoint.tscn" id="Checkpoint"]
 [ext_resource type="PackedScene" path="res://scenes/entities/Decoration.tscn" id="Decoration"]
 [ext_resource type="Texture2D" uid="uid://sqglvm10kcnd" path="res://assets/sprites/tilesets/zona_1/gema.png" id="Gema"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/pinchos.png" id="Pinchos"]
 [ext_resource type="PackedScene" path="res://scenes/entities/Hazard.tscn" id="Hazard"]
 [ext_resource type="PackedScene" path="res://scenes/entities/InteractiveTerminal.tscn" id="InteractiveTerminal"]
 [ext_resource type="Script" uid="uid://cydt7lmmw7bmp" path="res://scripts/world/section.gd" id="Level"]
@@ -175,7 +176,7 @@ script = ExtResource("PlatformVisual")
 metadata/route_surface = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block4" unique_id=2142766760]
-position = Vector2(436, 345)
+position = Vector2(332, 355)
 shape = SubResource("Shape4")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block4" unique_id=1670844480]
@@ -466,12 +467,14 @@ speed = 78.0
 attack_style = "ranged"
 
 [node name="Hazard10" parent="Entities" unique_id=228939458 instance=ExtResource("Hazard")]
+spike_sheet = ExtResource("Pinchos")
 position = Vector2(2164, 320)
 width = 100.0
 phase_offset = 0.8500000000000001
 active_time = 1.6
 
 [node name="Hazard11" parent="Entities" unique_id=220371785 instance=ExtResource("Hazard")]
+spike_sheet = ExtResource("Pinchos")
 position = Vector2(3344, 280)
 width = 100.0
 phase_offset = 0.34

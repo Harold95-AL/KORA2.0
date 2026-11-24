@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" path="res://scenes/entities/BaseEnemy.tscn" id="BaseEnemy"]
 [ext_resource type="PackedScene" path="res://scenes/entities/Checkpoint.tscn" id="Checkpoint"]
 [ext_resource type="PackedScene" path="res://scenes/entities/Decoration.tscn" id="Decoration"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/pinchos.png" id="Pinchos"]
 [ext_resource type="PackedScene" path="res://scenes/entities/Hazard.tscn" id="Hazard"]
 [ext_resource type="PackedScene" path="res://scenes/entities/InteractiveTerminal.tscn" id="InteractiveTerminal"]
 [ext_resource type="PackedScene" path="res://scenes/entities/LevelExit.tscn" id="LevelExit"]
@@ -435,6 +436,7 @@ attack_style = "ranged"
 combo_strikes = 1
 
 [node name="Hazard11" parent="Entities" instance=ExtResource("Hazard")]
+spike_sheet = ExtResource("Pinchos")
 position = Vector2(2080, 400)
 width = 100.0
 cycle = true
@@ -445,6 +447,7 @@ active_time = 1.6
 damage = 2
 
 [node name="Hazard12" parent="Entities" instance=ExtResource("Hazard")]
+spike_sheet = ExtResource("Pinchos")
 position = Vector2(2580, 440)
 width = 100.0
 cycle = true
