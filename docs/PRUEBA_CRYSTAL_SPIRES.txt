@@ -1,0 +1,39 @@
+PRUEBA REVERSIBLE: ALIEN SKIES / 03_CRYSTAL_SPIRES
+
+Ejecutar la prueba
+1. Abre JUGAR_PRUEBA_CRYSTAL_SPIRES.bat.
+2. Usa A/D para recorrer la sección y observar el parallax.
+3. Ejecuta JUGAR_LEVEL_1_1_ORIGINAL.bat para comparar el blockout original.
+
+La prueba usa una escena contenedora separada que instancia Level_1_1.tscn.
+La geometría, las colisiones, el jugador, los enemigos, los mecanismos y el
+HUD provienen de la escena original. Solo se oculta el fondo procedural de
+blockout en esta instancia para que no ensucie la comparación.
+
+Recursos instalados
+assets/sprites/backgrounds/alien_skies/03_crystal_spires/layers_320x180/
+  crystal_spires_0_sky.png
+  crystal_spires_1_far.png
+  crystal_spires_2_mid.png
+  crystal_spires_3_near.png
+
+Cada hoja 320x180 se escala exactamente 2x a 640x360 unidades de mundo,
+igual al campo visible con la cámara a zoom efectivo 3x. Se usa filtrado
+Nearest. Cada grupo horizontal combina una copia normal y una invertida para
+empalmar sus bordes; el grupo de 1280 unidades se repite durante el recorrido.
+El parallax usa velocidades 0.00 (cielo), 0.12 (lejos), 0.32 (medio) y
+0.58 (cerca) en X. En Y son 0.00, 0.04, 0.08 y 0.12.
+
+Las capas 1280x720 son un aumento 4x exacto de las hojas 320x180 (comprobado
+pixel a pixel en cada muestra de la cuadrícula original); no añaden detalle.
+La prueba usa las 320x180 para conservar su densidad nativa. Se recorrieron
+240 fotogramas de cámara, cruzando más de un ciclo de repetición de la capa
+cercana; no hubo bandas vacías ni saltos de cobertura en los fotogramas
+revisados. Vista previa: docs/previews/AlienSkies_CrystalSpires_test.png.
+
+La licencia está en assets/licenses/ALIEN_SKIES_LICENSE.txt.
+
+Para revertir la prueba, elimina la escena contenedora, los dos accesos BAT,
+este informe y la carpeta assets/sprites/backgrounds/alien_skies/03_crystal_spires;
+puedes conservar el archivo de licencia si mantienes recursos de Alien Skies.
+Level_1_1.tscn no se modifica.

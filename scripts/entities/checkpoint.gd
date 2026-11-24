@@ -20,9 +20,16 @@ func _entered(body: Node2D) -> void:
 		GameManager.checkpoint(global_position)
 		queue_redraw()
 
-func _draw() -> void:
-	var color := Color("7bffb3") if active else Color("328b7c")
-	draw_line(Vector2.ZERO, Vector2(0, -54), color, 3)
-	draw_colored_polygon(PackedVector2Array([Vector2(0, -54), Vector2(27, -44), Vector2(0, -34)]), color)
-	draw_circle(Vector2.ZERO, 5, color)
+var pulse_time := 0.0
 
+func _process(delta: float) -> void:
+	if active:
+		pulse_time += delta
+		queue_redraw()
+
+func _draw() -> void:
+	draw_texture(preload("res://assets/sprites/tecnologia/baliza.png"), Vector2(-9,-36))
+	if active:
+		var light := Color("84ffdf").lerp(Color("46c5bd"), 0.5 + 0.5 * sin(pulse_time * 3.0))
+		draw_rect(Rect2(-1,-23,4,6), light)
+		draw_rect(Rect2(0,-24,2,8), light)

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://pawl4dgsefs3"]
 
 [ext_resource type="Script" uid="uid://7x2d8hgqlalb" path="res://scripts/player/player.gd" id="1"]
-[ext_resource type="SpriteFrames" path="res://resources/player/player_frames.tres" id="2"]
+[ext_resource type="SpriteFrames" uid="uid://b0t0blg3fc3bu" path="res://resources/player/player_frames.tres" id="2"]
 
 [sub_resource type="RectangleShape2D" id="Body"]
 size = Vector2(26, 38)
@@ -15,9 +15,7 @@ script = ExtResource("1")
 texture_filter = 1
 position = Vector2(0, -16)
 sprite_frames = ExtResource("2")
-animation = &"idle"
-frame = 0
-frame_progress = 0.0
+animation = &"dash"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1090044199]
 position = Vector2(0, -19)

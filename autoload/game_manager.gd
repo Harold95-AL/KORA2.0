@@ -61,7 +61,7 @@ func damage(amount: int) -> void:
 		return
 	health = maxi(0, health - amount)
 	if health == 0:
-		respawn()
+		GameUI.show_result(false)
 
 func respawn() -> void:
 	if transitioning or section_index < 0:

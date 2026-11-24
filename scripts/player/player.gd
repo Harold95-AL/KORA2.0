@@ -12,7 +12,8 @@ const Effects = preload("res://scripts/player/player_effects.gd")
 @export var respawn_y := 600.0
 @export var reference_collisions := false
 @export var reference_platforms: Array[Dictionary] = []
-@export var visual_scale := 3.0
+@export var visual_scale := 2.0
+@export var camera_target_offset := Vector2(0.0, -40.0)
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 var motion = Motion.new()
 var effects: Node2D
@@ -24,7 +25,6 @@ var previous_keys: Dictionary = {}
 var previous_pad: Dictionary = {}
 var mouse_attack := false
 var mouse_heavy := false
-var combo_label: Label
 var camera_position := Vector2.ZERO
 var camera_initialized := false
 var shake_time := 0.0
@@ -42,16 +42,6 @@ func _ready() -> void:
 	effects.top_level = true
 	effects.global_position = Vector2.ZERO
 	effects.z_index = 2
-	combo_label = Label.new()
-	combo_label.position = Vector2(-220, -63)
-	combo_label.size = Vector2(440, 20)
-	combo_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	combo_label.add_theme_font_size_override("font_size", 10)
-	combo_label.add_theme_color_override("font_color", Color("facc15"))
-	combo_label.add_theme_color_override("font_outline_color", Color.BLACK)
-	combo_label.add_theme_constant_override("outline_size", 3)
-	combo_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	add_child(combo_label)
 	_sync_sprite()
 
 func _physics_process(delta: float) -> void:
@@ -151,7 +141,6 @@ func _sync_sprite() -> void:
 	sprite.frame = motion.frame_index
 	sprite.flip_h = motion.facing < 0
 	sprite.modulate.a = 0.45 if invulnerability > 0.0 and fmod(invulnerability, 0.16) < 0.08 else 1.0
-	combo_label.text = motion.combo_prompt
 
 func _update_camera() -> void:
 	var camera := get_node_or_null("Camera2D") as Camera2D
@@ -159,8 +148,8 @@ func _update_camera() -> void:
 	camera.top_level = true
 	# Mismo campo visible al reducir la ventana; Full HD nativo, sin saltos
 	# de zoom causados por el escalado entero anterior.
-	camera.zoom = Vector2.ONE * visual_scale * 1.5
-	var target := global_position + Vector2(0, -40)
+	camera.zoom = Vector2.ONE * visual_scale * 0.5
+	var target := global_position + camera_target_offset
 	if GameManager.campaign_active and not reference_collisions:
 		# Mostrar el aterrizaje de los huecos de 230 px antes de saltar.
 		target.x += 70.0 * motion.facing

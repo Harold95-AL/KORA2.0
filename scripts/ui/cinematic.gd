@@ -28,7 +28,7 @@ func _show() -> void:
 func _next() -> void:
 	if index + 1 >= pages.size():
 		if epilogue:
-			GameManager.menu()
+			GameUI.show_result(true)
 		else:
 			_finish()
 	else:
@@ -45,6 +45,7 @@ func _finish() -> void:
 		GameManager.goto_section(0)
 
 func _unhandled_input(event: InputEvent) -> void:
+	if GameUI.overlay.visible: return
 	if event.is_action_pressed("interact") or event.is_action_pressed("ui_accept"):
 		_next()
 		get_viewport().set_input_as_handled()
@@ -52,7 +53,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		_finish()
 
 func _draw() -> void:
-	draw_set_transform(Vector2.ZERO,0,Vector2(3,3))
+	draw_set_transform(Vector2.ZERO)
 	draw_rect(Rect2(0, 0, 640, 360), Color("080f1c"))
 	for star in range(60):
 		var pos := Vector2(fmod(star * 137.0, 640.0), fmod(star * 71.0, 170.0))

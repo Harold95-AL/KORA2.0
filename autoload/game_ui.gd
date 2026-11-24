@@ -2,6 +2,7 @@ extends CanvasLayer
 ## Interfaz compartida. Funciona durante pausa, transición y diálogos manuales.
 var hud: Control
 var heading: Label
+var energy_status: Label
 var objective: Label
 var tasks: Label
 var prompt: Label
@@ -23,28 +24,39 @@ var line_time: float = 0.0
 var notice_time: float = 0.0
 var nearest: Node2D
 var dash_status: Label
+var suit := preload("res://scripts/ui/suit_meter.gd").new()
+var banner: Panel
+var notice_duration := 0.0
+var result_open := false
+var last_zone := -1
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	layer = 50
 	hud = Control.new()
 	add_child(hud)
-	var top := _panel(hud, Rect2(0, 0, 640, 72), Color("0c1525"))
-	heading = _label(top, Rect2(14, 5, 610, 20), 13, Color("8ce5dc"))
-	objective = _label(top, Rect2(14, 25, 610, 20), 13)
-	tasks = _label(top, Rect2(14, 46, 610, 24), 11, Color("b1bed3"))
-	dash_status = _label(top,Rect2(420,5,205,20),11,Color("8ce5dc"))
+	var top := _panel(hud, Rect2(6, 6, 108, 34), Color("0c1525"))
+	var mission := _panel(hud, Rect2(122, 6, 286, 39), Color.WHITE)
+	top.add_child(suit)
+	suit.position = Vector2(7,5)
+	heading = _label(mission, Rect2(6, 2, 274, 11), 9, Color("8ce5dc"))
+	energy_status = _label(top, Rect2(4, 21, 48, 11), 9, Color("8ce5dc"))
+	energy_status.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	dash_status = _label(top,Rect2(48,21,54,11),8,Color("8ce5dc"))
 	dash_status.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
-	var bottom := _panel(hud, Rect2(0, 336, 640, 24), Color("0c1525"))
-	controls = _label(bottom, Rect2(10, 1, 625, 22), 10)
-	controls.text = "A/D mover · Espacio salto · J ataque · I fuerte · K/E/X dash · F usar · Tab archivo · Esc pausa · F1 secciones"
-	prompt = _label(hud, Rect2(65, 306, 510, 28), 12, Color("fff0bb"))
+	objective = _label(mission, Rect2(6, 14, 274, 11), 9)
+	tasks = _label(mission, Rect2(6, 26, 274, 11), 7, Color("b1bed3"))
+	var bottom := _panel(hud, Rect2(0, 342, 640, 18), Color("0c1525"))
+	controls = _label(bottom, Rect2(10, 1, 625, 16), 8)
+	controls.text = "A/D mover · Espacio salto · J ataque · I fuerte · K dash · F usar · Tab archivo · Esc pausa · F1 secciones"
+	prompt = _label(hud, Rect2(65, 310, 510, 22), 10, Color("fff0bb"))
 	prompt.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	notice = _label(hud, Rect2(60, 251, 520, 50), 12, Color("aee9ff"))
+	banner = _panel(hud, Rect2(170, 48, 300, 18), Color.WHITE)
+	notice = _label(banner, Rect2(4, 3, 292, 14), 10, Color("aee9ff"))
 	notice.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	boss_bar = ProgressBar.new()
-	boss_bar.position = Vector2(190, 92)
-	boss_bar.size = Vector2(260, 10)
+	boss_bar.position = Vector2(220, 76)
+	boss_bar.size = Vector2(200, 8)
 	boss_bar.show_percentage = false
 	var bar_background := StyleBoxFlat.new()
 	bar_background.bg_color = Color("29374e")
@@ -53,19 +65,21 @@ func _ready() -> void:
 	boss_bar.add_theme_stylebox_override("background", bar_background)
 	boss_bar.add_theme_stylebox_override("fill", bar_fill)
 	hud.add_child(boss_bar)
-	boss_title = _label(hud, Rect2(140, 74, 360, 20), 12, Color("ffbbbf"))
+	boss_title = _label(hud, Rect2(140, 58, 360, 16), 10, Color("ffbbbf"))
 	boss_title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	dialogue_panel = _panel(self, Rect2(18, 188, 604, 144), Color("14253c"))
-	dialogue_title = _label(dialogue_panel, Rect2(14, 8, 575, 21), 14, Color("83e3d7"))
-	dialogue_text = _label(dialogue_panel, Rect2(14, 32, 575, 82), 13)
-	dialogue_hint = _label(dialogue_panel, Rect2(14, 123, 575, 19), 10, Color("acb9d0"))
+	dialogue_panel = _panel(self, Rect2(117, 260, 406, 77), Color("14253c"))
+	dialogue_title = _label(dialogue_panel, Rect2(8, 4, 354, 12), 11, Color("83e3d7"))
+	dialogue_text = _label(dialogue_panel, Rect2(8, 17, 390, 44), 16)
+	dialogue_hint = _label(dialogue_panel, Rect2(8, 62, 390, 12), 8, Color("acb9d0"))
 	dialogue_panel.hide()
 	overlay = Control.new()
+	overlay.size = Vector2(640, 360)
+	overlay.mouse_filter = Control.MOUSE_FILTER_STOP
 	add_child(overlay)
-	_panel(overlay, Rect2(0, 0, 640, 360), Color("0b1424"))
+	_panel(overlay, Rect2(106, 36, 428, 288), Color("0b1424"))
 	var scroll := ScrollContainer.new()
-	scroll.position = Vector2(30, 18)
-	scroll.size = Vector2(580, 324)
+	scroll.position = Vector2(120, 48)
+	scroll.size = Vector2(400, 264)
 	overlay.add_child(scroll)
 	overlay_list = VBoxContainer.new()
 	overlay_list.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -79,14 +93,11 @@ func _ready() -> void:
 	add_child(veil)
 	preload("res://scripts/ui/display_layout.gd").apply(self)
 
-func _panel(parent: Node, rect: Rect2, color: Color) -> Panel:
+func _panel(parent: Node, rect: Rect2, _color: Color) -> Panel:
 	var panel := Panel.new()
 	panel.position = rect.position
 	panel.size = rect.size
 	panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	var style := StyleBoxFlat.new()
-	style.bg_color = color
-	panel.add_theme_stylebox_override("panel", style)
 	parent.add_child(panel)
 	return panel
 
@@ -107,10 +118,15 @@ func _process(delta: float) -> void:
 	if GameManager.campaign_active:
 		var explorer = get_tree().get_first_node_in_group("player")
 		if is_instance_valid(explorer):
-			dash_status.text = "DASH: ATERRIZA" if explorer.air_dash_spent else ("DASH: %.1f s" % maxf(0,explorer.motion.dash_cooldown) if explorer.motion.dash_cooldown>0 else "DASH LISTO")
+			dash_status.text = "A TIERRA" if explorer.air_dash_spent else ("%.1f s" % maxf(0,explorer.motion.dash_cooldown) if explorer.motion.dash_cooldown>0 else "DASH OK")
+			suit.update_meter(delta, 0.0 if explorer.air_dash_spent else 1.0-explorer.motion.dash_cooldown/0.4)
 	if notice_time > 0.0 and not get_tree().paused:
 		notice_time -= delta
 	notice.visible = notice_time > 0.0 and current.is_empty()
+	banner.visible = notice.visible
+	var opacity := clampf(minf(notice_duration-notice_time, notice_time)/0.16, 0, 1)
+	banner.modulate.a = opacity
+	banner.position.y = roundf(48 - 5*(1-opacity))
 	dialogue_panel.visible = not current.is_empty() and not overlay.visible
 	if not current.is_empty() and not bool(current["blocking"]) and not overlay.visible:
 		line_time -= delta
@@ -119,7 +135,11 @@ func _process(delta: float) -> void:
 	if not GameManager.campaign_active or GameManager.section_index < 0:
 		return
 	var section: Dictionary = GameManager.sections[GameManager.section_index]
-	heading.text = "%s  ·  %s                      ENERGÍA %d/%d" % [section["id"], section["title"], GameManager.health, GameManager.MAX_HEALTH]
+	if last_zone != GameManager.section_index:
+		last_zone = GameManager.section_index
+		toast(section["id"] + "  /  " + section["title"], 2.5)
+	heading.text = "%s  ·  %s" % [section["id"], section["title"]]
+	energy_status.text = "PV %d/%d" % [GameManager.health, GameManager.MAX_HEALTH]
 	objective.text = section["objective"]
 	var remaining: Array[String] = []
 	for task in section["tasks"]:
@@ -149,13 +169,31 @@ func _process(delta: float) -> void:
 func toast(text: String, seconds: float = 3.5) -> void:
 	notice.text = text
 	notice_time = seconds
+	notice_duration = seconds
 
 func interact_nearest() -> void:
 	if is_instance_valid(nearest) and not overlay.visible and (current.is_empty() or not bool(current["blocking"])) and not GameManager.transitioning:
 		nearest.interact()
 
 func dialogue(title: String, lines: Array, blocking: bool) -> void:
-	pending.append({"title": title, "lines": lines, "blocking": blocking})
+	var pages: Array[String] = []
+	var font := dialogue_text.get_theme_font("font")
+	for paragraph in lines:
+		var rows: Array[String] = []
+		var row := ""
+		for word in str(paragraph).split(" ", false):
+			var candidate := word if row.is_empty() else row + " " + word
+			if font.get_string_size(candidate, HORIZONTAL_ALIGNMENT_LEFT, -1, 16).x > 386 and not row.is_empty():
+				rows.append(row)
+				row = word
+				if rows.size() == 2:
+					pages.append("\n".join(rows))
+					rows.clear()
+			else:
+				row = candidate
+		rows.append(row)
+		pages.append("\n".join(rows))
+	pending.append({"title": title, "lines": pages, "blocking": blocking})
 	if current.is_empty():
 		_next_dialogue()
 
@@ -196,6 +234,7 @@ func _sync_pause() -> void:
 
 func close_overlay() -> void:
 	overlay.hide()
+	result_open = false
 	_sync_pause()
 
 func _begin_overlay(title: String) -> void:
@@ -204,27 +243,63 @@ func _begin_overlay(title: String) -> void:
 		child.queue_free()
 	var label := Label.new()
 	label.text = title
-	label.add_theme_font_size_override("font_size", 22)
+	label.add_theme_font_size_override("font_size", 18)
 	label.add_theme_color_override("font_color", Color("8ce5dc"))
 	overlay_list.add_child(label)
 	preload("res://scripts/ui/display_layout.gd").apply(label)
 	overlay.show()
+	focus_first.call_deferred()
 	_sync_pause()
 
 func _button(text: String, action: Callable, parent: Node = null) -> Button:
 	var button := Button.new()
 	button.text = text
-	button.custom_minimum_size.y = 27
-	button.add_theme_font_size_override("font_size", 12)
+	button.custom_minimum_size.y = 22
+	button.add_theme_font_size_override("font_size", 10)
 	button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	button.pressed.connect(action)
 	(parent if parent != null else overlay_list).add_child(button)
 	preload("res://scripts/ui/display_layout.gd").apply(button)
 	return button
 
+func focus_first() -> void:
+	var first := overlay_list.find_children("*","Button",true,false)
+	if overlay.visible and not first.is_empty():
+		first[0].grab_focus()
+
+func show_options() -> void:
+	_begin_overlay("OPCIONES")
+	var volume := roundi(db_to_linear(AudioServer.get_bus_volume_db(0))*10)
+	var slider := HSlider.new()
+	slider.max_value = 10
+	slider.step = 1
+	slider.tick_count = 11
+	slider.value = volume
+	var caption := Label.new()
+	caption.text = "VOLUMEN   %d / 10" % volume
+	overlay_list.add_child(caption)
+	overlay_list.add_child(slider)
+	slider.value_changed.connect(func(value: float):
+		AudioServer.set_bus_volume_db(0, linear_to_db(maxf(value/10,0.0001)))
+		caption.text = "VOLUMEN   %d / 10" % int(value))
+	var fullscreen := _button("Pantalla completa",func(): DisplaySettings.toggle_fullscreen())
+	fullscreen.toggle_mode = true
+	fullscreen.button_pressed = get_window().mode == Window.MODE_FULLSCREEN
+	fullscreen.text = "Pantalla completa   ON" if fullscreen.button_pressed else "Pantalla completa   OFF"
+	fullscreen.toggled.connect(func(on: bool): fullscreen.text = "Pantalla completa   ON" if on else "Pantalla completa   OFF")
+	_button("Volver", show_pause if GameManager.campaign_active else close_overlay)
+
+func show_result(won: bool) -> void:
+	_begin_overlay("MISIÓN COMPLETADA" if won else "SEÑAL PERDIDA")
+	result_open = true
+	if not won:
+		_button("Reintentar desde la baliza", func(): close_overlay(); GameManager.respawn())
+	_button("Volver al menú", func(): close_overlay(); GameManager.menu())
+
 func show_pause() -> void:
-	_begin_overlay("KORA / PAUSA")
+	_begin_overlay("VOIDBOUND / PAUSA")
 	_button("Continuar", close_overlay)
+	_button("Opciones", show_options)
 	_button("Reiniciar desde checkpoint", func() -> void: close_overlay(); GameManager.respawn())
 	_button("Registros encontrados", show_records)
 	_button("Selector de secciones · F1", show_selector)
@@ -234,7 +309,7 @@ func show_selector() -> void:
 	_begin_overlay("SECCIONES / PRUEBAS")
 	var hint := Label.new()
 	hint.text = "Entrada limpia a la sección elegida. Se reinician sus mecanismos y checkpoint."
-	hint.add_theme_font_size_override("font_size", 11)
+	hint.add_theme_font_size_override("font_size", 9)
 	overlay_list.add_child(hint)
 	preload("res://scripts/ui/display_layout.gd").apply(hint)
 	var grid := GridContainer.new()
@@ -269,9 +344,9 @@ func show_records() -> void:
 	_button("Volver", close_overlay)
 
 func _unhandled_input(event: InputEvent) -> void:
-	if GameManager.transitioning:
+	if GameManager.transitioning or result_open:
 		return
-	if not current.is_empty() and bool(current["blocking"]):
+	if not current.is_empty() and not overlay.visible:
 		if event.is_action_pressed("interact") or event.is_action_pressed("ui_accept"):
 			advance_dialogue()
 			get_viewport().set_input_as_handled()

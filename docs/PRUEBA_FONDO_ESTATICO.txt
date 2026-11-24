@@ -1,0 +1,20 @@
+PRUEBA REVERSIBLE: FONDO ESTÁTICO DE LEVEL_1_1
+
+Ejecutar la prueba
+1. Abre JUGAR_PRUEBA_FONDO_ESTATICO.bat.
+2. Recorre la sección con A/D y compara con JUGAR_LEVEL_1_1_ORIGINAL.bat.
+
+La imagen se muestra fija a la vista en una CanvasLayer detrás del mundo.
+No se desplaza con la cámara ni forma parte del mundo jugable. Se conserva
+la relación de aspecto original y se recortan unos píxeles arriba y abajo
+para llenar 1920x1080 sin deformarla. Filtrado Nearest.
+
+La prueba instancia Level_1_1.tscn y solo oculta el fondo procedural en esa
+instancia. No modifica la escena original, su geometría, sus colisiones, sus
+entidades ni el HUD.
+
+Imagen fuente: assets/sprites/backgrounds/kora/level_1_1/
+level_1_1_static_landscape.png (2352x1344, PNG opaco).
+
+Para revertir, elimina este informe, el acceso BAT, esta escena y la carpeta
+assets/sprites/backgrounds/kora/level_1_1.

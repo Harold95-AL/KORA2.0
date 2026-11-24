@@ -1,0 +1,329 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/cristal.png" id="cristal"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/amatista.png" id="amatista"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/flor.png" id="flor"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/hongos.png" id="hongos"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/roca.png" id="roca"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/columna.png" id="columna"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/arco.png" id="arco"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/brotes.png" id="brotes"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/faroles.png" id="faroles"]
+
+
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/roca_florida.png" id="roca_florida"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/flores.png" id="flores"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/obelisco.png" id="obelisco"]
+
+
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/soporte.png" id="soporte"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/pilar.png" id="pilar"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/torre.png" id="torre"]
+
+
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/galeria.png" id="galeria"]
+
+[node name="PaisajeCristalino" type="Node2D"]
+z_index = -1
+texture_filter = 1
+
+
+[node name="cristal_1" type="Sprite2D" parent="."]
+position = Vector2(160, 323)
+centered = false
+offset = Vector2(-26, -52)
+texture = ExtResource("cristal")
+
+[node name="cristal_2" type="Sprite2D" parent="."]
+position = Vector2(921, 283)
+centered = false
+offset = Vector2(-26, -52)
+texture = ExtResource("cristal")
+
+[node name="cristal_3" type="Sprite2D" parent="."]
+position = Vector2(1720, 323)
+centered = false
+offset = Vector2(-26, -52)
+texture = ExtResource("cristal")
+
+[node name="cristal_4" type="Sprite2D" parent="."]
+position = Vector2(2930, 243)
+centered = false
+offset = Vector2(-26, -52)
+texture = ExtResource("cristal")
+
+[node name="cristal_5" type="Sprite2D" parent="."]
+position = Vector2(3728, 323)
+centered = false
+offset = Vector2(-26, -52)
+texture = ExtResource("cristal")
+
+[node name="cristal_6" type="Sprite2D" parent="."]
+position = Vector2(4546, 323)
+centered = false
+offset = Vector2(-26, -52)
+texture = ExtResource("cristal")
+
+[node name="amatista_1" type="Sprite2D" parent="."]
+position = Vector2(44, 323)
+centered = false
+offset = Vector2(-22, -42)
+texture = ExtResource("amatista")
+
+[node name="amatista_2" type="Sprite2D" parent="."]
+position = Vector2(655, 323)
+centered = false
+offset = Vector2(-22, -42)
+texture = ExtResource("amatista")
+
+[node name="amatista_3" type="Sprite2D" parent="."]
+position = Vector2(1250, 323)
+centered = false
+offset = Vector2(-22, -42)
+texture = ExtResource("amatista")
+
+[node name="amatista_4" type="Sprite2D" parent="."]
+position = Vector2(2704, 243)
+centered = false
+offset = Vector2(-22, -42)
+texture = ExtResource("amatista")
+
+[node name="amatista_5" type="Sprite2D" parent="."]
+position = Vector2(3760, 323)
+centered = false
+offset = Vector2(-22, -42)
+texture = ExtResource("amatista")
+
+[node name="amatista_6" type="Sprite2D" parent="."]
+position = Vector2(4770, 323)
+centered = false
+offset = Vector2(-22, -42)
+texture = ExtResource("amatista")
+
+[node name="flor_1" type="Sprite2D" parent="."]
+position = Vector2(184, 323)
+centered = false
+offset = Vector2(-16, -51)
+texture = ExtResource("flor")
+
+[node name="flor_2" type="Sprite2D" parent="."]
+position = Vector2(765, 283)
+centered = false
+offset = Vector2(-16, -51)
+texture = ExtResource("flor")
+
+[node name="flor_3" type="Sprite2D" parent="."]
+position = Vector2(1160, 283)
+centered = false
+offset = Vector2(-16, -51)
+texture = ExtResource("flor")
+
+[node name="flor_4" type="Sprite2D" parent="."]
+position = Vector2(1690, 323)
+centered = false
+offset = Vector2(-16, -51)
+texture = ExtResource("flor")
+
+[node name="flor_5" type="Sprite2D" parent="."]
+position = Vector2(2900, 243)
+centered = false
+offset = Vector2(-16, -51)
+texture = ExtResource("flor")
+
+[node name="flor_6" type="Sprite2D" parent="."]
+position = Vector2(4216, 323)
+centered = false
+offset = Vector2(-16, -51)
+texture = ExtResource("flor")
+
+[node name="hongos_1" type="Sprite2D" parent="."]
+position = Vector2(430, 323)
+centered = false
+offset = Vector2(-28, -49)
+texture = ExtResource("hongos")
+
+[node name="hongos_2" type="Sprite2D" parent="."]
+position = Vector2(1280, 323)
+centered = false
+offset = Vector2(-28, -49)
+texture = ExtResource("hongos")
+
+[node name="hongos_3" type="Sprite2D" parent="."]
+position = Vector2(2420, 283)
+centered = false
+offset = Vector2(-28, -49)
+texture = ExtResource("hongos")
+
+[node name="hongos_4" type="Sprite2D" parent="."]
+position = Vector2(3460, 283)
+centered = false
+offset = Vector2(-28, -49)
+texture = ExtResource("hongos")
+
+[node name="hongos_5" type="Sprite2D" parent="."]
+position = Vector2(4160, 323)
+centered = false
+offset = Vector2(-28, -49)
+texture = ExtResource("hongos")
+
+[node name="roca_1" type="Sprite2D" parent="."]
+position = Vector2(45, 323)
+centered = false
+offset = Vector2(-41, -40)
+texture = ExtResource("roca")
+
+[node name="roca_2" type="Sprite2D" parent="."]
+position = Vector2(830, 283)
+centered = false
+offset = Vector2(-41, -40)
+texture = ExtResource("roca")
+
+[node name="roca_3" type="Sprite2D" parent="."]
+position = Vector2(2030, 323)
+centered = false
+offset = Vector2(-41, -40)
+texture = ExtResource("roca")
+
+[node name="roca_4" type="Sprite2D" parent="."]
+position = Vector2(2680, 243)
+centered = false
+offset = Vector2(-41, -40)
+texture = ExtResource("roca")
+
+[node name="roca_5" type="Sprite2D" parent="."]
+position = Vector2(3050, 283)
+centered = false
+offset = Vector2(-41, -40)
+texture = ExtResource("roca")
+
+[node name="roca_6" type="Sprite2D" parent="."]
+position = Vector2(4720, 323)
+centered = false
+offset = Vector2(-41, -40)
+texture = ExtResource("roca")
+
+[node name="columna_1" type="Sprite2D" parent="."]
+position = Vector2(780, 283)
+centered = false
+offset = Vector2(-14, -73)
+texture = ExtResource("columna")
+
+[node name="columna_2" type="Sprite2D" parent="."]
+position = Vector2(2740, 243)
+centered = false
+offset = Vector2(-14, -73)
+texture = ExtResource("columna")
+
+[node name="columna_3" type="Sprite2D" parent="."]
+position = Vector2(4600, 323)
+centered = false
+offset = Vector2(-14, -73)
+texture = ExtResource("columna")
+
+[node name="arco_1" type="Sprite2D" parent="."]
+position = Vector2(3100, 283)
+centered = false
+offset = Vector2(-36, -78)
+texture = ExtResource("arco")
+
+[node name="arco_2" type="Sprite2D" parent="."]
+position = Vector2(1132, 283)
+centered = false
+offset = Vector2(-36, -78)
+texture = ExtResource("arco")
+
+[node name="arco_3" type="Sprite2D" parent="."]
+position = Vector2(1790, 323)
+centered = false
+offset = Vector2(-36, -78)
+texture = ExtResource("arco")
+
+[node name="brotes_1" type="Sprite2D" parent="."]
+position = Vector2(615, 323)
+centered = false
+offset = Vector2(-16, -30)
+texture = ExtResource("brotes")
+
+[node name="brotes_2" type="Sprite2D" parent="."]
+position = Vector2(3480, 283)
+centered = false
+offset = Vector2(-16, -30)
+texture = ExtResource("brotes")
+
+[node name="faroles_1" type="Sprite2D" parent="."]
+position = Vector2(1410, 323)
+centered = false
+offset = Vector2(-17, -59)
+texture = ExtResource("faroles")
+
+[node name="faroles_2" type="Sprite2D" parent="."]
+position = Vector2(2595, 283)
+centered = false
+offset = Vector2(-17, -59)
+texture = ExtResource("faroles")
+
+[node name="roca_florida_1" type="Sprite2D" parent="."]
+position = Vector2(1220, 323)
+centered = false
+offset = Vector2(-24, -42)
+texture = ExtResource("roca_florida")
+
+[node name="roca_florida_2" type="Sprite2D" parent="."]
+position = Vector2(2270, 323)
+centered = false
+offset = Vector2(-24, -42)
+texture = ExtResource("roca_florida")
+
+[node name="flores_1" type="Sprite2D" parent="."]
+position = Vector2(1090, 283)
+centered = false
+offset = Vector2(-17, -28)
+texture = ExtResource("flores")
+
+[node name="flores_2" type="Sprite2D" parent="."]
+position = Vector2(3650, 323)
+centered = false
+offset = Vector2(-17, -28)
+texture = ExtResource("flores")
+
+[node name="obelisco_1" type="Sprite2D" parent="."]
+position = Vector2(2860, 243)
+centered = false
+offset = Vector2(-31, -80)
+texture = ExtResource("obelisco")
+
+[node name="obelisco_2" type="Sprite2D" parent="."]
+position = Vector2(4750, 323)
+centered = false
+offset = Vector2(-31, -80)
+texture = ExtResource("obelisco")
+
+[node name="soporte_1" type="Sprite2D" parent="."]
+position = Vector2(560, 323)
+centered = false
+offset = Vector2(-20, -74)
+texture = ExtResource("soporte")
+
+[node name="pilar_1" type="Sprite2D" parent="."]
+position = Vector2(2070, 323)
+centered = false
+offset = Vector2(-17, -47)
+texture = ExtResource("pilar")
+
+[node name="torre_1" type="Sprite2D" parent="."]
+position = Vector2(1550, 323)
+centered = false
+offset = Vector2(-22, -78)
+texture = ExtResource("torre")
+
+[node name="galeria_1" type="Sprite2D" parent="."]
+position = Vector2(3220, 283)
+centered = false
+offset = Vector2(-30, -48)
+texture = ExtResource("galeria")

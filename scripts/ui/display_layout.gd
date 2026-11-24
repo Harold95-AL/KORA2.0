@@ -1,8 +1,6 @@
 extends RefCounted
-## Convierte las medidas de autoría 640×360 a controles nativos 1920×1080.
-## No escala una textura de baja resolución: fuentes y controles se renderizan
-## en el canvas de la ventana. Godot ajusta ese diseño al tamaño disponible.
-const SCALE := 3.0
+const SCALE := 1.0
+
 const THEME = preload("res://resources/ui/full_hd_theme.tres")
 const CONSTANTS := ["separation","h_separation","v_separation","line_spacing","outline_size"]
 
@@ -14,11 +12,11 @@ static func apply(root: Node) -> void:
 		var control: Control = entry.node
 		control.set_meta("full_hd_layout",true)
 		control.theme = THEME
-		control.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
+		control.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 		control.custom_minimum_size = entry.minimum*SCALE
-		if entry.font > 0: control.add_theme_font_size_override("font_size",entry.font*3)
+		if entry.font > 0: control.add_theme_font_size_override("font_size",maxi(8, roundi(entry.font / 8.0) * 8))
 		for key in entry.constants:
-			control.add_theme_constant_override(key,entry.constants[key]*3)
+			control.add_theme_constant_override(key,entry.constants[key])
 	for entry in controls:
 		var control: Control = entry.node
 		control.offset_left = entry.rect.x*SCALE

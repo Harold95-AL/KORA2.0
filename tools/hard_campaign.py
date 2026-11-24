@@ -40,7 +40,7 @@ def apply(levels, write):
             floors.extend((left, right))
             cuts.append((cut, cut+gap, y))
             routes.append(dict(section=level.index, start=list(left), target=list(right), gap=gap))
-            level.label(cut+12, y-90, 'SALTO + DASH →\nK / E / X en el aire')
+            level.label(cut+12, y-90, 'SALTO + DASH →\nK')
         level.floors = floors
         # El arte provisional no debe aparentar un puente sobre un hueco nuevo.
         decorations = []
@@ -105,7 +105,7 @@ def apply(levels, write):
             for x,y in [(930,600),(440,1200),(930,1800)]:
                 level.add('Hazard',x,y,width=84.0,cycle=True,phase_offset=y/500.0,
                           rest_time=0.45,warning_time=0.45,active_time=1.9,damage=2)
-        level.entry_hint = 'RETO: salto + dash (K/E/X) · 1 dash aéreo por salto · verde: contraataca'
+        level.entry_hint = 'RETO: salto + dash (K) · 1 dash aéreo por salto · verde: contraataca'
         level.labels = [(x,y,t.replace('0,85 s','0,3 s').replace('Dos segundos de reposo antes del aviso','Ventana breve: observa el amarillo y cruza')
                          .replace('J encadena golpes · arco amarillo: aléjate','Amarillo: dash para esquivar · verde: contraataca'))
                         for x,y,t in level.labels]

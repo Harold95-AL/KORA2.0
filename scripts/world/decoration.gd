@@ -13,8 +13,7 @@ func _process(delta: float) -> void:
 func _draw() -> void:
 	match kind:
 		"ship":
-			draw_colored_polygon(PackedVector2Array([Vector2(-size.x / 2, 0), Vector2(-size.x / 3, -size.y), Vector2(size.x / 4, -size.y * 0.7), Vector2(size.x / 2, 0)]), tint)
-			draw_rect(Rect2(-22, -size.y * 0.75, 40, 22), Color("83c2dc"))
+			draw_texture(preload("res://assets/sprites/tecnologia/nave.png"), Vector2(-75, -60))
 		"sil":
 			var bounce := sin(elapsed * 3.0) * 3.0
 			draw_circle(Vector2(0, -12 + bounce), 10, Color("99f2c3"))

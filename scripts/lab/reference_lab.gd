@@ -29,7 +29,7 @@ func _build_ui() -> void:
 	title.modulate = Color("8ce5dc")
 	hud.add_child(title)
 	var controls := Label.new()
-	controls.text = "J/clic: combo · I/U/Y/clic der.: fuerte · K/E/X: dash · B: saco · P: pausa\nA/D: mover · Espacio: salto · F4: ajustes · F1: galería · Tab: menú"
+	controls.text = "J/clic: combo · I/U/Y/clic der.: fuerte · K: dash · B: saco · P: pausa\nA/D: mover · Espacio: salto · F4: ajustes · F1: galería · Tab: menú"
 	controls.position = Vector2(12,31)
 	controls.add_theme_font_size_override("font_size",10)
 	controls.add_theme_constant_override("line_spacing",-2)

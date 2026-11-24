@@ -1,5 +1,7 @@
 extends Node2D
 @export var title: String = "Terminal"
+@export var crystal_art: Texture2D
+@export var crystal_jewel: Texture2D
 @export var state_key: String = ""
 @export var story_id: String = ""
 @export var record_id: String = ""
@@ -45,8 +47,12 @@ func _draw() -> void:
 		color = Color("79eda0")
 	if not record_id.is_empty():
 		color = Color("e0beff")
-	draw_colored_polygon(PackedVector2Array([Vector2(0, -38), Vector2(15, -20), Vector2(0, -3), Vector2(-15, -20)]), color)
-	draw_rect(Rect2(-20, -3, 40, 4), Color("516482"))
+	if crystal_art and crystal_jewel:
+		draw_texture(crystal_art, Vector2(-crystal_art.get_width() * 0.5, -crystal_art.get_height()))
+		draw_texture(crystal_jewel, Vector2(-crystal_jewel.get_width() * 0.5, -crystal_art.get_height() - crystal_jewel.get_height()), color)
+	else:
+		draw_texture(preload("res://assets/sprites/tecnologia/terminal.png"), Vector2(-13,-27))
 	if can_interact():
-		draw_arc(Vector2(0, -20), 24, 0, TAU, 24, Color.WHITE, 1.0)
+		draw_rect(Rect2(-1,-58,2,6), color.lightened(0.4))
+		draw_rect(Rect2(-3,-56,6,2), color.lightened(0.4))
 

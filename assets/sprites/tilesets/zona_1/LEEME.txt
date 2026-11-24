@@ -1,0 +1,24 @@
+TEXTURA EDITABLE DE LA ZONA 1
+
+Archivo que puedes abrir y editar:
+  piso_cristalino_base.png (192 x 48 px)
+  piso_cristalino_esquina_izquierda.png (16 x 48 px)
+  piso_cristalino_esquina_derecha.png (16 x 48 px)
+
+La imagen base se repite a tamaño nativo en el centro de las plataformas. Las
+dos imágenes de esquina, con transparencia, rematan los extremos con un bisel.
+Con el zoom efectivo 3x, cada píxel de la textura ocupa 3 píxeles en pantalla.
+No cambies el tamaño si solo vas a cambiar colores, luces y detalles. Conserva
+el borde luminoso superior en las primeras dos filas de la base y sigue la
+diagonal en las esquinas. El centro de la textura debe cerrar al repetirse.
+
+Flujo de trabajo:
+1. Abre el PNG en Aseprite, Krita, Photoshop, GIMP o Illustrator.
+2. Para pixel art, desactiva suavizado e interpolación. Edita al 100 %.
+3. Guarda el mismo PNG con transparencia donde corresponda.
+4. Godot detecta y reimporta el archivo; si el juego ya está abierto, detén
+   y vuelve a iniciar Level_1_1 para ver la actualización.
+
+Estas imágenes están conectadas a todos los pisos horizontales de Level_1_1.
+La colisión se conserva aparte. Para cambiar una imagen, también está el fondo:
+  assets/sprites/backgrounds/kora/level_1_1/ruinas_cristalinas.png

@@ -27,8 +27,6 @@ var combo_hit_done := false
 var is_dashing := false
 var dash_timer := 0.0
 var dash_cooldown := 0.0
-var combo_prompt := ""
-var prompt_timer := 0.0
 var force_state := "none"
 var events: Array[Dictionary] = []
 var attacking_this_step := false
@@ -59,10 +57,6 @@ func set_state(next: String) -> void:
 func is_attacking() -> bool:
 	return state in ["combo_1", "combo_2", "combo_3", "combo_1_end"]
 
-func prompt(text: String, duration: float) -> void:
-	combo_prompt = text
-	prompt_timer = duration
-
 func rumble(duration: float, weak: float, strong: float) -> void:
 	emit("rumble", {"duration": duration, "weak": weak, "strong": strong})
 
@@ -75,7 +69,6 @@ func dash() -> void:
 	vx = facing * 520.0
 	vy = 0.0
 	set_state("dash")
-	prompt("DASH ASTRAL", 0.45)
 	emit("dash")
 	emit("dust")
 	emit("ghost")
@@ -84,40 +77,31 @@ func dash() -> void:
 func attack() -> void:
 	if state == "combo_1":
 		combo2_buffered = true
-		prompt("SEGUNDO GOLPE PREPARADO", 0.75)
 	elif state == "combo_2":
 		combo3_buffered = true
-		prompt("REMATE PREPARADO", 0.75)
-	elif state not in ["combo_3", "combo_1_end"]:
+	elif state != "combo_3":
 		set_state("combo_1")
 		vx = facing * 120.0
-		prompt("COMBO 1 · J/X: tajo 2 · I/Y: fuerte", 0.75)
 		emit("slash", {"pitch": 1.0})
 		rumble(0.05, 0.4, 0.7)
 
 func heavy_attack() -> void:
 	if state in ["combo_1", "combo_2"]:
 		combo3_buffered = true
-		prompt("GOLPE CONTUNDENTE PREPARADO", 0.85)
 		rumble(0.06, 0.5, 0.8)
 	elif state not in ["combo_3", "combo_1_end"]:
 		set_state("combo_3")
 		vx = facing * 180.0
-		prompt("GOLPE CONTUNDENTE ASTRAL", 0.85)
 		emit("slash", {"pitch": 0.85})
 		rumble(0.08, 0.5, 0.9)
 
 func force_combo(next: String) -> void:
 	set_state(next)
 	vx = facing * {"combo_1": 120.0, "combo_2": 160.0, "combo_3": 180.0, "combo_1_end": 140.0}[next]
-	prompt(next.to_upper(), 0.8)
 	emit("slash", {"pitch": {"combo_1": 1.0, "combo_2": 1.35, "combo_3": 0.85, "combo_1_end": 1.1}[next]})
 	if next == "combo_3": emit("shake", {"duration": 0.25, "intensity": 6.0})
 
 func before_move(dt: float, input: Dictionary) -> void:
-	if prompt_timer > 0.0:
-		prompt_timer -= dt
-		if prompt_timer <= 0.0: combo_prompt = ""
 	if dash_cooldown > 0.0: dash_cooldown -= dt
 	if input.get("dash_pressed", false): dash()
 	if is_dashing:
@@ -216,7 +200,14 @@ func animate(dt: float) -> void:
 	# El HTML avanza como máximo una celda por actualización (sin bucle while).
 	if anim_timer < duration: return
 	anim_timer -= duration
-	if frame_index + 1 < FRAMES[state]:
+	# Permite encadenar el siguiente golpe al terminar su ventana activa,
+	# sin obligar a reproducir los últimos fotogramas de recuperación.
+	var chain_ready := (
+		(state == "combo_1" and combo2_buffered and frame_index >= 6)
+		or (state == "combo_1" and combo3_buffered and frame_index >= 6)
+		or (state == "combo_2" and (combo3_buffered or attack_buffered) and frame_index >= 5)
+	)
+	if frame_index + 1 < FRAMES[state] and not chain_ready:
 		frame_index += 1
 	elif force_state == state:
 		frame_index = 0
@@ -226,13 +217,11 @@ func animate(dt: float) -> void:
 			combo2_buffered = false
 			set_state("combo_3")
 			vx = facing * 180.0
-			prompt("TERCER GOLPE DEMOLEDOR", 0.85)
 			emit("slash", {"pitch": 0.85})
 		elif combo2_buffered:
 			combo2_buffered = false
 			set_state("combo_2")
 			vx = facing * 160.0
-			prompt("COMBO 2 · CORTE ASCENDENTE", 0.75)
 			emit("slash", {"pitch": 1.35})
 		else: set_state("combo_1_end")
 	elif state == "combo_2":
@@ -241,7 +230,6 @@ func animate(dt: float) -> void:
 			attack_buffered = false
 			set_state("combo_3")
 			vx = facing * 200.0
-			prompt("COMBO 3 · REMATE DEMOLEDOR", 0.9)
 			emit("slash", {"pitch": 0.8})
 		else: set_state("combo_1_end")
 	elif state == "combo_3": set_state("idle" if grounded else "fall")

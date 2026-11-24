@@ -1,4 +1,5 @@
 [gd_scene load_steps=23 format=3]
+[ext_resource type="StyleBox" path="res://resources/ui/world_text_plate.tres" id="WorldPlate"]
 
 [ext_resource type="Script" path="res://scripts/world/section.gd" id="Level"]
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="Player"]
@@ -424,7 +425,8 @@ offset_top = 160.0
 offset_right = 430.0
 offset_bottom = 222.0
 text = "01 / RUINAS GEOMÉTRICAS\nUna memoria construida sobre la piedra"
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Sign1" type="Label" parent="Labels"]
 offset_left = 900.0
@@ -432,7 +434,8 @@ offset_top = 160.0
 offset_right = 1250.0
 offset_bottom = 222.0
 text = "02 / LA INSCRIPCIÓN\nExamina la pista antes del ritual"
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Sign2" type="Label" parent="Labels"]
 offset_left = 2120.0
@@ -440,7 +443,8 @@ offset_top = 160.0
 offset_right = 2470.0
 offset_bottom = 222.0
 text = "03 / CÁMARA DE RESONADORES\nORDEN: I → III → II · sin daño al reintentar"
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Sign3" type="Label" parent="Labels"]
 offset_left = 3310.0
@@ -448,7 +452,8 @@ offset_top = 160.0
 offset_right = 3660.0
 offset_bottom = 222.0
 text = "04 / ARCHIVO DE AYEN\nEl nombre del planeta espera tras la puerta"
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Sign4" type="Label" parent="Labels"]
 offset_left = 4200.0
@@ -456,39 +461,44 @@ offset_top = 160.0
 offset_right = 4550.0
 offset_bottom = 222.0
 text = "05 / DEFENSAS ANTIGUAS\nLa autorización requiere superar al guardián"
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Sign5" type="Label" parent="Labels"]
 offset_left = 212.0
 offset_top = 230.0
 offset_right = 562.0
 offset_bottom = 292.0
-text = "SALTO + DASH →\nK / E / X en el aire"
-theme_override_font_sizes/font_size = 12
+text = "SALTO + DASH → K"
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Sign6" type="Label" parent="Labels"]
 offset_left = 1184.0
 offset_top = 230.0
 offset_right = 1534.0
 offset_bottom = 292.0
-text = "SALTO + DASH →\nK / E / X en el aire"
-theme_override_font_sizes/font_size = 12
+text = "SALTO + DASH → K"
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Sign7" type="Label" parent="Labels"]
 offset_left = 3576.0
 offset_top = 230.0
 offset_right = 3926.0
 offset_bottom = 292.0
-text = "SALTO + DASH →\nK / E / X en el aire"
-theme_override_font_sizes/font_size = 12
+text = "SALTO + DASH → K"
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Sign8" type="Label" parent="Labels"]
 offset_left = 4288.0
 offset_top = 230.0
 offset_right = 4638.0
 offset_bottom = 292.0
-text = "SALTO + DASH →\nK / E / X en el aire"
-theme_override_font_sizes/font_size = 12
+text = "SALTO + DASH → K"
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Exit" parent="Entities" instance=ExtResource("LevelExit")]
 position = Vector2(4860, 320)

@@ -1,4 +1,4 @@
-param([switch]$Play, [switch]$Campaign, [switch]$Check)
+param([switch]$Play, [switch]$Campaign, [switch]$Check, [string]$Scene)
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path -Parent $PSScriptRoot
 $pathFile = Join-Path $projectRoot '.local\godot-path.txt'
@@ -32,7 +32,8 @@ if ($Check) {
     exit $LASTEXITCODE
 }
 $arguments = @('--path', ('"' + $projectRoot + '"'))
-if (-not $Play -and -not $Campaign) { $arguments += '--editor' }
+if ($Scene) { $arguments += $Scene }
+elseif (-not $Play -and -not $Campaign) { $arguments += '--editor' }
 if ($Play) { $arguments += 'res://scenes/lab/reference_lab.tscn' }
 # Ventana interactiva solicitada al usar los accesos de este proyecto.
 Start-Process -FilePath $enginePath -ArgumentList $arguments -WorkingDirectory $projectRoot

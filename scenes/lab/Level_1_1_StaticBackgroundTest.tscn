@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://levels/Level_1_1.tscn" id="1_level"]
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/kora/level_1_1/level_1_1_static_landscape.png" id="2_background"]
+
+[node name="Level_1_1_StaticBackgroundTest" type="Node2D"]
+
+[node name="StaticBackground" type="CanvasLayer" parent="."]
+layer = -100
+
+[node name="Landscape" type="Sprite2D" parent="StaticBackground"]
+texture_filter = 1
+position = Vector2(320, 182)
+texture = ExtResource("2_background")
+scale = Vector2(0.28, 0.28)
+
+[node name="Level_1_1" parent="." instance=ExtResource("1_level")]
+show_blockout_backdrop = false

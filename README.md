@@ -28,7 +28,7 @@ Resolución base **1920 × 1080**, con renderizado nativo e interfaz adaptable h
 | Espacio / W / flecha arriba | Saltar; mantener para el salto completo |
 | J / clic izquierdo | Atacar; otra pulsación durante el golpe encadena hasta tres |
 | I / U / Y / clic derecho | Golpe fuerte independiente o remate del combo |
-| K / E / X | Dash; en campaña, uno aéreo por salto, recargado al aterrizar |
+| K | Dash; en campaña, uno aéreo por salto, recargado al aterrizar |
 | F | Usar el objeto cercano / avanzar una conversación |
 | Enter | Avanzar una conversación o cinemática |
 | Esc | Pausa; cerrar conversación; omitir prólogo |

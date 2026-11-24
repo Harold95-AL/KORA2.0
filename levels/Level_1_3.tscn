@@ -1,4 +1,5 @@
 [gd_scene load_steps=22 format=3]
+[ext_resource type="StyleBox" path="res://resources/ui/world_text_plate.tres" id="WorldPlate"]
 
 [ext_resource type="Script" path="res://scripts/world/section.gd" id="Level"]
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="Player"]
@@ -403,7 +404,8 @@ offset_top = 160.0
 offset_right = 440.0
 offset_bottom = 222.0
 text = "01 / BORDE DE LA GRIETA\nDesciende por las repisas"
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Sign1" type="Label" parent="Labels"]
 offset_left = 1050.0
@@ -411,7 +413,8 @@ offset_top = 200.0
 offset_right = 1400.0
 offset_bottom = 262.0
 text = "02 / PLATAFORMA MÓVIL\nEspera el transporte azul en el borde"
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Sign2" type="Label" parent="Labels"]
 offset_left = 2280.0
@@ -419,7 +422,8 @@ offset_top = 280.0
 offset_right = 2630.0
 offset_bottom = 342.0
 text = "03 / PASO INESTABLE\nLa plataforma violeta cede en 0,3 s y reaparece"
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Sign3" type="Label" parent="Labels"]
 offset_left = 3660.0
@@ -427,7 +431,8 @@ offset_top = 360.0
 offset_right = 4010.0
 offset_bottom = 422.0
 text = "04 / FUENTE ENERGÉTICA\nToma solo lo necesario"
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Sign4" type="Label" parent="Labels"]
 offset_left = 4300.0
@@ -435,31 +440,35 @@ offset_top = 400.0
 offset_right = 4650.0
 offset_bottom = 462.0
 text = "05 / EL SANTUARIO LEJANO\nCruza hacia el bosque resonante"
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Sign5" type="Label" parent="Labels"]
 offset_left = 212.0
 offset_top = 230.0
 offset_right = 562.0
 offset_bottom = 292.0
-text = "SALTO + DASH →\nK / E / X en el aire"
-theme_override_font_sizes/font_size = 12
+text = "SALTO + DASH → K"
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Sign6" type="Label" parent="Labels"]
 offset_left = 3012.0
 offset_top = 390.0
 offset_right = 3362.0
 offset_bottom = 452.0
-text = "SALTO + DASH →\nK / E / X en el aire"
-theme_override_font_sizes/font_size = 12
+text = "SALTO + DASH → K"
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Sign7" type="Label" parent="Labels"]
 offset_left = 4272.0
 offset_top = 470.0
 offset_right = 4622.0
 offset_bottom = 532.0
-text = "SALTO + DASH →\nK / E / X en el aire"
-theme_override_font_sizes/font_size = 12
+text = "SALTO + DASH → K"
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Exit" parent="Entities" instance=ExtResource("LevelExit")]
 position = Vector2(4860, 560)

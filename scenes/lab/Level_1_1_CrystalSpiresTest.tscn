@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="PackedScene" path="res://levels/Level_1_1.tscn" id="1_level"]
+[ext_resource type="Script" path="res://scenes/lab/crystal_spires_test.gd" id="6_driver"]
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/alien_skies/03_crystal_spires/layers_320x180/crystal_spires_0_sky.png" id="2_sky"]
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/alien_skies/03_crystal_spires/layers_320x180/crystal_spires_1_far.png" id="3_far"]
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/alien_skies/03_crystal_spires/layers_320x180/crystal_spires_2_mid.png" id="4_mid"]
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/alien_skies/03_crystal_spires/layers_320x180/crystal_spires_3_near.png" id="5_near"]
+
+[node name="CrystalSpiresComparison" type="Node2D"]
+script = ExtResource("6_driver")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = -100
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="SkySprite" type="Sprite2D" parent="ParallaxBackground/Sky"]
+centered = false
+texture_filter = 1
+texture = ExtResource("2_sky")
+scale = Vector2(2, 2)
+
+[node name="SkyMirror" type="Sprite2D" parent="ParallaxBackground/Sky"]
+position = Vector2(1280, 0)
+centered = false
+texture_filter = 1
+texture = ExtResource("2_sky")
+scale = Vector2(-2, 2)
+
+[node name="Far" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.12, 0.04)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="FarSprite" type="Sprite2D" parent="ParallaxBackground/Far"]
+centered = false
+texture_filter = 1
+texture = ExtResource("3_far")
+scale = Vector2(2, 2)
+
+[node name="FarMirror" type="Sprite2D" parent="ParallaxBackground/Far"]
+position = Vector2(1280, 0)
+centered = false
+texture_filter = 1
+texture = ExtResource("3_far")
+scale = Vector2(-2, 2)
+
+[node name="Mid" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.32, 0.08)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="MidSprite" type="Sprite2D" parent="ParallaxBackground/Mid"]
+centered = false
+texture_filter = 1
+texture = ExtResource("4_mid")
+scale = Vector2(2, 2)
+
+[node name="MidMirror" type="Sprite2D" parent="ParallaxBackground/Mid"]
+position = Vector2(1280, 0)
+centered = false
+texture_filter = 1
+texture = ExtResource("4_mid")
+scale = Vector2(-2, 2)
+
+[node name="Near" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.58, 0.12)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="NearSprite" type="Sprite2D" parent="ParallaxBackground/Near"]
+centered = false
+texture_filter = 1
+texture = ExtResource("5_near")
+scale = Vector2(2, 2)
+
+[node name="NearMirror" type="Sprite2D" parent="ParallaxBackground/Near"]
+position = Vector2(1280, 0)
+centered = false
+texture_filter = 1
+texture = ExtResource("5_near")
+scale = Vector2(-2, 2)
+
+[node name="Level_1_1" parent="." instance=ExtResource("1_level")]
+show_blockout_backdrop = false

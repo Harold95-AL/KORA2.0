@@ -1,49 +1,56 @@
-[gd_scene load_steps=23 format=3]
+[gd_scene format=3 uid="uid://qhk3guvlkgs2"]
+[ext_resource type="StyleBox" path="res://resources/ui/world_text_plate.tres" id="WorldPlate"]
 
-[ext_resource type="Script" path="res://scripts/world/section.gd" id="Level"]
-[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="Player"]
+[ext_resource type="Texture2D" uid="uid://cx5t885crfbb4" path="res://assets/sprites/tilesets/zona_1/altar.png" id="Altar"]
+[ext_resource type="Texture2D" uid="uid://roqmc5ebjegu" path="res://assets/sprites/backgrounds/kora/level_1_1/ruinas_cristalinas.png" id="BackgroundImage"]
 [ext_resource type="PackedScene" path="res://scenes/entities/BaseEnemy.tscn" id="BaseEnemy"]
 [ext_resource type="PackedScene" path="res://scenes/entities/Checkpoint.tscn" id="Checkpoint"]
 [ext_resource type="PackedScene" path="res://scenes/entities/Decoration.tscn" id="Decoration"]
+[ext_resource type="Texture2D" uid="uid://sqglvm10kcnd" path="res://assets/sprites/tilesets/zona_1/gema.png" id="Gema"]
 [ext_resource type="PackedScene" path="res://scenes/entities/Hazard.tscn" id="Hazard"]
 [ext_resource type="PackedScene" path="res://scenes/entities/InteractiveTerminal.tscn" id="InteractiveTerminal"]
+[ext_resource type="Script" uid="uid://cydt7lmmw7bmp" path="res://scripts/world/section.gd" id="Level"]
 [ext_resource type="PackedScene" path="res://scenes/entities/LevelExit.tscn" id="LevelExit"]
+[ext_resource type="PackedScene" path="res://levels/PaisajeCristalino.tscn" id="Paisaje"]
+[ext_resource type="Script" uid="uid://8mkqx3yhv60s" path="res://scripts/world/tiled_platform_visual.gd" id="PlatformVisual"]
+[ext_resource type="PackedScene" uid="uid://pawl4dgsefs3" path="res://scenes/player/player.tscn" id="Player"]
+[ext_resource type="Texture2D" uid="uid://c1oaaamc5h3rc" path="res://assets/sprites/tilesets/zona_1/portal.png" id="Portal"]
 
 [sub_resource type="RectangleShape2D" id="Shape0"]
-size = Vector2(200, 48)
+size = Vector2(200, 704)
 
 [sub_resource type="RectangleShape2D" id="Shape1"]
-size = Vector2(348, 48)
+size = Vector2(348, 704)
 
 [sub_resource type="RectangleShape2D" id="Shape2"]
-size = Vector2(440, 48)
+size = Vector2(440, 744)
 
 [sub_resource type="RectangleShape2D" id="Shape3"]
-size = Vector2(420, 48)
+size = Vector2(420, 704)
 
 [sub_resource type="RectangleShape2D" id="Shape4"]
-size = Vector2(660, 48)
+size = Vector2(660, 704)
 
 [sub_resource type="RectangleShape2D" id="Shape5"]
-size = Vector2(300, 48)
+size = Vector2(300, 744)
 
 [sub_resource type="RectangleShape2D" id="Shape6"]
-size = Vector2(360, 48)
+size = Vector2(360, 784)
 
 [sub_resource type="RectangleShape2D" id="Shape7"]
-size = Vector2(520, 48)
+size = Vector2(520, 744)
 
 [sub_resource type="RectangleShape2D" id="Shape8"]
-size = Vector2(216, 48)
+size = Vector2(216, 704)
 
 [sub_resource type="RectangleShape2D" id="Shape9"]
-size = Vector2(224, 48)
+size = Vector2(224, 704)
 
 [sub_resource type="RectangleShape2D" id="Shape10"]
-size = Vector2(120, 48)
+size = Vector2(120, 704)
 
 [sub_resource type="RectangleShape2D" id="Shape11"]
-size = Vector2(288, 48)
+size = Vector2(288, 704)
 
 [sub_resource type="RectangleShape2D" id="Shape12"]
 size = Vector2(24, 820)
@@ -51,464 +58,520 @@ size = Vector2(24, 820)
 [sub_resource type="RectangleShape2D" id="Shape13"]
 size = Vector2(24, 820)
 
-[node name="Level_1_1" type="Node2D"]
+[node name="Level_1_1" type="Node2D" unique_id=801997701]
 script = ExtResource("Level")
-section_index = 0
-bounds = Rect2(0, 0, 4800, 720)
-palette = Color(0.29411764705882354, 0.5333333333333333, 0.6274509803921569, 1)
-entry_story = ""
+palette = Color(0.29411766, 0.53333336, 0.627451, 1)
 entry_hint = "A/D correr · Espacio saltar · F examinar · F1 selector de secciones"
+show_blockout_backdrop = false
 
-[node name="BackgroundArt" type="Node2D" parent="."]
+[node name="BackgroundImage" type="CanvasLayer" parent="." unique_id=581813592]
+layer = -100
 
-[node name="Geometry" type="Node2D" parent="."]
+[node name="RuinasCristalinas" type="Sprite2D" parent="BackgroundImage" unique_id=1844416831]
+texture_filter = 1
+position = Vector2(320, 182)
+scale = Vector2(0.40, 0.40)
+texture = ExtResource("BackgroundImage")
 
-[node name="WorldArt" type="Node2D" parent="."]
+[node name="BackgroundArt" type="Node2D" parent="." unique_id=1444099114]
 
-[node name="Entities" type="Node2D" parent="."]
+[node name="PaisajeCristalino" parent="BackgroundArt" unique_id=2137379399 instance=ExtResource("Paisaje")]
 
-[node name="Labels" type="Node2D" parent="."]
+[node name="Geometry" type="Node2D" parent="." unique_id=1903470498]
 
-[node name="ForegroundArt" type="Node2D" parent="."]
-z_index = 5
-
-[node name="Audio" type="Node2D" parent="."]
-
-[node name="Block0" type="StaticBody2D" parent="Geometry"]
+[node name="Block0" type="StaticBody2D" parent="Geometry" unique_id=1649959924]
+texture_filter = 1
 position = Vector2(0, 320)
-collision_layer = 1
 collision_mask = 2
+script = ExtResource("PlatformVisual")
 metadata/route_surface = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block0"]
-position = Vector2(100.0, 24.0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block0" unique_id=609255666]
+position = Vector2(100, 352)
 shape = SubResource("Shape0")
 
-[node name="Blockout" type="Polygon2D" parent="Geometry/Block0"]
-polygon = PackedVector2Array(0, 0, 200, 0, 200, 48, 0, 48)
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block0" unique_id=2127762600]
+visible = false
 color = Color(0.13, 0.22, 0.29, 1)
+polygon = PackedVector2Array(0, 0, 200, 0, 200, 48, 0, 48)
 
-[node name="Surface" type="Line2D" parent="Geometry/Block0"]
-points = PackedVector2Array(0, 0, 200, 0)
+[node name="Surface" type="Line2D" parent="Geometry/Block0" unique_id=1962016112]
+visible = false
+points = PackedVector2Array(0, 8, 8, 0, 192, 0, 200, 8)
 width = 2.0
-default_color = Color(0.29411764705882354, 0.5333333333333333, 0.6274509803921569, 1)
+default_color = Color(0.29411766, 0.53333336, 0.627451, 1)
 
-[node name="Block1" type="StaticBody2D" parent="Geometry"]
+[node name="Block1" type="StaticBody2D" parent="Geometry" unique_id=1002101992]
+texture_filter = 1
 position = Vector2(392, 320)
-collision_layer = 1
 collision_mask = 2
+script = ExtResource("PlatformVisual")
 metadata/route_surface = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block1"]
-position = Vector2(174.0, 24.0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block1" unique_id=1200305957]
+position = Vector2(174, 352)
 shape = SubResource("Shape1")
 
-[node name="Blockout" type="Polygon2D" parent="Geometry/Block1"]
-polygon = PackedVector2Array(0, 0, 348, 0, 348, 48, 0, 48)
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block1" unique_id=1673206706]
+visible = false
 color = Color(0.13, 0.22, 0.29, 1)
+polygon = PackedVector2Array(0, 0, 348, 0, 348, 48, 0, 48)
 
-[node name="Surface" type="Line2D" parent="Geometry/Block1"]
-points = PackedVector2Array(0, 0, 348, 0)
+[node name="Surface" type="Line2D" parent="Geometry/Block1" unique_id=1335422292]
+visible = false
+points = PackedVector2Array(0, 8, 8, 0, 340, 0, 348, 8)
 width = 2.0
-default_color = Color(0.29411764705882354, 0.5333333333333333, 0.6274509803921569, 1)
+default_color = Color(0.29411766, 0.53333336, 0.627451, 1)
 
-[node name="Block2" type="StaticBody2D" parent="Geometry"]
+[node name="Block2" type="StaticBody2D" parent="Geometry" unique_id=2102928745]
+texture_filter = 1
 position = Vector2(740, 280)
-collision_layer = 1
 collision_mask = 2
+script = ExtResource("PlatformVisual")
 metadata/route_surface = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block2"]
-position = Vector2(220.0, 24.0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block2" unique_id=734203488]
+position = Vector2(220, 372)
 shape = SubResource("Shape2")
 
-[node name="Blockout" type="Polygon2D" parent="Geometry/Block2"]
-polygon = PackedVector2Array(0, 0, 440, 0, 440, 48, 0, 48)
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block2" unique_id=1836113868]
+visible = false
 color = Color(0.13, 0.22, 0.29, 1)
+polygon = PackedVector2Array(0, 0, 440, 0, 440, 48, 0, 48)
 
-[node name="Surface" type="Line2D" parent="Geometry/Block2"]
-points = PackedVector2Array(0, 0, 440, 0)
+[node name="Surface" type="Line2D" parent="Geometry/Block2" unique_id=1123523644]
+visible = false
+points = PackedVector2Array(0, 8, 8, 0, 432, 0, 440, 8)
 width = 2.0
-default_color = Color(0.29411764705882354, 0.5333333333333333, 0.6274509803921569, 1)
+default_color = Color(0.29411766, 0.53333336, 0.627451, 1)
 
-[node name="Block3" type="StaticBody2D" parent="Geometry"]
+[node name="Block3" type="StaticBody2D" parent="Geometry" unique_id=118298330]
+texture_filter = 1
 position = Vector2(1180, 320)
-collision_layer = 1
 collision_mask = 2
+script = ExtResource("PlatformVisual")
 metadata/route_surface = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block3"]
-position = Vector2(210.0, 24.0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block3" unique_id=1377310471]
+position = Vector2(210, 352)
 shape = SubResource("Shape3")
 
-[node name="Blockout" type="Polygon2D" parent="Geometry/Block3"]
-polygon = PackedVector2Array(0, 0, 420, 0, 420, 48, 0, 48)
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block3" unique_id=1920472135]
+visible = false
 color = Color(0.13, 0.22, 0.29, 1)
+polygon = PackedVector2Array(0, 0, 420, 0, 420, 48, 0, 48)
 
-[node name="Surface" type="Line2D" parent="Geometry/Block3"]
-points = PackedVector2Array(0, 0, 420, 0)
+[node name="Surface" type="Line2D" parent="Geometry/Block3" unique_id=611460464]
+visible = false
+points = PackedVector2Array(0, 8, 8, 0, 412, 0, 420, 8)
 width = 2.0
-default_color = Color(0.29411764705882354, 0.5333333333333333, 0.6274509803921569, 1)
+default_color = Color(0.29411766, 0.53333336, 0.627451, 1)
 
-[node name="Block4" type="StaticBody2D" parent="Geometry"]
+[node name="Block4" type="StaticBody2D" parent="Geometry" unique_id=1011182632]
+texture_filter = 1
 position = Vector2(1664, 320)
-collision_layer = 1
 collision_mask = 2
+script = ExtResource("PlatformVisual")
 metadata/route_surface = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block4"]
-position = Vector2(330.0, 24.0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block4" unique_id=2142766760]
+position = Vector2(330, 352)
 shape = SubResource("Shape4")
 
-[node name="Blockout" type="Polygon2D" parent="Geometry/Block4"]
-polygon = PackedVector2Array(0, 0, 660, 0, 660, 48, 0, 48)
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block4" unique_id=1670844480]
+visible = false
 color = Color(0.13, 0.22, 0.29, 1)
+polygon = PackedVector2Array(0, 0, 660, 0, 660, 48, 0, 48)
 
-[node name="Surface" type="Line2D" parent="Geometry/Block4"]
-points = PackedVector2Array(0, 0, 660, 0)
+[node name="Surface" type="Line2D" parent="Geometry/Block4" unique_id=637146279]
+visible = false
+points = PackedVector2Array(0, 8, 8, 0, 652, 0, 660, 8)
 width = 2.0
-default_color = Color(0.29411764705882354, 0.5333333333333333, 0.6274509803921569, 1)
+default_color = Color(0.29411766, 0.53333336, 0.627451, 1)
 
-[node name="Block5" type="StaticBody2D" parent="Geometry"]
+[node name="Block5" type="StaticBody2D" parent="Geometry" unique_id=1197025552]
+texture_filter = 1
 position = Vector2(2324, 280)
-collision_layer = 1
 collision_mask = 2
+script = ExtResource("PlatformVisual")
 metadata/route_surface = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block5"]
-position = Vector2(150.0, 24.0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block5" unique_id=795660240]
+position = Vector2(150, 372)
 shape = SubResource("Shape5")
 
-[node name="Blockout" type="Polygon2D" parent="Geometry/Block5"]
-polygon = PackedVector2Array(0, 0, 300, 0, 300, 48, 0, 48)
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block5" unique_id=867748064]
+visible = false
 color = Color(0.13, 0.22, 0.29, 1)
+polygon = PackedVector2Array(0, 0, 300, 0, 300, 48, 0, 48)
 
-[node name="Surface" type="Line2D" parent="Geometry/Block5"]
-points = PackedVector2Array(0, 0, 300, 0)
+[node name="Surface" type="Line2D" parent="Geometry/Block5" unique_id=295373034]
+visible = false
+points = PackedVector2Array(0, 8, 8, 0, 292, 0, 300, 8)
 width = 2.0
-default_color = Color(0.29411764705882354, 0.5333333333333333, 0.6274509803921569, 1)
+default_color = Color(0.29411766, 0.53333336, 0.627451, 1)
 
-[node name="Block6" type="StaticBody2D" parent="Geometry"]
+[node name="Block6" type="StaticBody2D" parent="Geometry" unique_id=512403149]
+texture_filter = 1
 position = Vector2(2624, 240)
-collision_layer = 1
 collision_mask = 2
+script = ExtResource("PlatformVisual")
 metadata/route_surface = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block6"]
-position = Vector2(180.0, 24.0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block6" unique_id=465298874]
+position = Vector2(180, 392)
 shape = SubResource("Shape6")
 
-[node name="Blockout" type="Polygon2D" parent="Geometry/Block6"]
-polygon = PackedVector2Array(0, 0, 360, 0, 360, 48, 0, 48)
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block6" unique_id=1571883760]
+visible = false
 color = Color(0.13, 0.22, 0.29, 1)
+polygon = PackedVector2Array(0, 0, 360, 0, 360, 48, 0, 48)
 
-[node name="Surface" type="Line2D" parent="Geometry/Block6"]
-points = PackedVector2Array(0, 0, 360, 0)
+[node name="Surface" type="Line2D" parent="Geometry/Block6" unique_id=78088581]
+visible = false
+points = PackedVector2Array(0, 8, 8, 0, 352, 0, 360, 8)
 width = 2.0
-default_color = Color(0.29411764705882354, 0.5333333333333333, 0.6274509803921569, 1)
+default_color = Color(0.29411766, 0.53333336, 0.627451, 1)
 
-[node name="Block7" type="StaticBody2D" parent="Geometry"]
+[node name="Block7" type="StaticBody2D" parent="Geometry" unique_id=777971460]
+texture_filter = 1
 position = Vector2(2984, 280)
-collision_layer = 1
 collision_mask = 2
+script = ExtResource("PlatformVisual")
 metadata/route_surface = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block7"]
-position = Vector2(260.0, 24.0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block7" unique_id=312264874]
+position = Vector2(260, 372)
 shape = SubResource("Shape7")
 
-[node name="Blockout" type="Polygon2D" parent="Geometry/Block7"]
-polygon = PackedVector2Array(0, 0, 520, 0, 520, 48, 0, 48)
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block7" unique_id=806498277]
+visible = false
 color = Color(0.13, 0.22, 0.29, 1)
+polygon = PackedVector2Array(0, 0, 520, 0, 520, 48, 0, 48)
 
-[node name="Surface" type="Line2D" parent="Geometry/Block7"]
-points = PackedVector2Array(0, 0, 520, 0)
+[node name="Surface" type="Line2D" parent="Geometry/Block7" unique_id=1800072524]
+visible = false
+points = PackedVector2Array(0, 8, 8, 0, 512, 0, 520, 8)
 width = 2.0
-default_color = Color(0.29411764705882354, 0.5333333333333333, 0.6274509803921569, 1)
+default_color = Color(0.29411766, 0.53333336, 0.627451, 1)
 
-[node name="Block8" type="StaticBody2D" parent="Geometry"]
+[node name="Block8" type="StaticBody2D" parent="Geometry" unique_id=1981487097]
+texture_filter = 1
 position = Vector2(3568, 320)
-collision_layer = 1
 collision_mask = 2
+script = ExtResource("PlatformVisual")
 metadata/route_surface = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block8"]
-position = Vector2(108.0, 24.0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block8" unique_id=555618616]
+position = Vector2(108, 352)
 shape = SubResource("Shape8")
 
-[node name="Blockout" type="Polygon2D" parent="Geometry/Block8"]
-polygon = PackedVector2Array(0, 0, 216, 0, 216, 48, 0, 48)
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block8" unique_id=1142294474]
+visible = false
 color = Color(0.13, 0.22, 0.29, 1)
+polygon = PackedVector2Array(0, 0, 216, 0, 216, 48, 0, 48)
 
-[node name="Surface" type="Line2D" parent="Geometry/Block8"]
-points = PackedVector2Array(0, 0, 216, 0)
+[node name="Surface" type="Line2D" parent="Geometry/Block8" unique_id=1123370111]
+visible = false
+points = PackedVector2Array(0, 8, 8, 0, 208, 0, 216, 8)
 width = 2.0
-default_color = Color(0.29411764705882354, 0.5333333333333333, 0.6274509803921569, 1)
+default_color = Color(0.29411766, 0.53333336, 0.627451, 1)
 
-[node name="Block9" type="StaticBody2D" parent="Geometry"]
+[node name="Block9" type="StaticBody2D" parent="Geometry" unique_id=1189820402]
+texture_filter = 1
 position = Vector2(3976, 320)
-collision_layer = 1
 collision_mask = 2
+script = ExtResource("PlatformVisual")
 metadata/route_surface = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block9"]
-position = Vector2(112.0, 24.0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block9" unique_id=2114293246]
+position = Vector2(112, 352)
 shape = SubResource("Shape9")
 
-[node name="Blockout" type="Polygon2D" parent="Geometry/Block9"]
-polygon = PackedVector2Array(0, 0, 224, 0, 224, 48, 0, 48)
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block9" unique_id=494447809]
+visible = false
 color = Color(0.13, 0.22, 0.29, 1)
+polygon = PackedVector2Array(0, 0, 224, 0, 224, 48, 0, 48)
 
-[node name="Surface" type="Line2D" parent="Geometry/Block9"]
-points = PackedVector2Array(0, 0, 224, 0)
+[node name="Surface" type="Line2D" parent="Geometry/Block9" unique_id=1303447390]
+visible = false
+points = PackedVector2Array(0, 8, 8, 0, 216, 0, 224, 8)
 width = 2.0
-default_color = Color(0.29411764705882354, 0.5333333333333333, 0.6274509803921569, 1)
+default_color = Color(0.29411766, 0.53333336, 0.627451, 1)
 
-[node name="Block10" type="StaticBody2D" parent="Geometry"]
+[node name="Block10" type="StaticBody2D" parent="Geometry" unique_id=171219566]
+texture_filter = 1
 position = Vector2(4200, 320)
-collision_layer = 1
 collision_mask = 2
+script = ExtResource("PlatformVisual")
 metadata/route_surface = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block10"]
-position = Vector2(60.0, 24.0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block10" unique_id=1455804954]
+position = Vector2(60, 352)
 shape = SubResource("Shape10")
 
-[node name="Blockout" type="Polygon2D" parent="Geometry/Block10"]
-polygon = PackedVector2Array(0, 0, 120, 0, 120, 48, 0, 48)
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block10" unique_id=1764126518]
+visible = false
 color = Color(0.13, 0.22, 0.29, 1)
+polygon = PackedVector2Array(0, 0, 120, 0, 120, 48, 0, 48)
 
-[node name="Surface" type="Line2D" parent="Geometry/Block10"]
-points = PackedVector2Array(0, 0, 120, 0)
+[node name="Surface" type="Line2D" parent="Geometry/Block10" unique_id=1598034927]
+visible = false
+points = PackedVector2Array(0, 8, 8, 0, 112, 0, 120, 8)
 width = 2.0
-default_color = Color(0.29411764705882354, 0.5333333333333333, 0.6274509803921569, 1)
+default_color = Color(0.29411766, 0.53333336, 0.627451, 1)
 
-[node name="Block11" type="StaticBody2D" parent="Geometry"]
+[node name="Block11" type="StaticBody2D" parent="Geometry" unique_id=1341489614]
+texture_filter = 1
 position = Vector2(4512, 320)
-collision_layer = 1
 collision_mask = 2
+script = ExtResource("PlatformVisual")
 metadata/route_surface = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block11"]
-position = Vector2(144.0, 24.0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block11" unique_id=1022983606]
+position = Vector2(144, 352)
 shape = SubResource("Shape11")
 
-[node name="Blockout" type="Polygon2D" parent="Geometry/Block11"]
-polygon = PackedVector2Array(0, 0, 288, 0, 288, 48, 0, 48)
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block11" unique_id=1156792421]
+visible = false
 color = Color(0.13, 0.22, 0.29, 1)
+polygon = PackedVector2Array(0, 0, 288, 0, 288, 48, 0, 48)
 
-[node name="Surface" type="Line2D" parent="Geometry/Block11"]
-points = PackedVector2Array(0, 0, 288, 0)
+[node name="Surface" type="Line2D" parent="Geometry/Block11" unique_id=1593467513]
+visible = false
+points = PackedVector2Array(0, 8, 8, 0, 280, 0, 288, 8)
 width = 2.0
-default_color = Color(0.29411764705882354, 0.5333333333333333, 0.6274509803921569, 1)
+default_color = Color(0.29411766, 0.53333336, 0.627451, 1)
 
-[node name="Block12" type="StaticBody2D" parent="Geometry"]
+[node name="Block12" type="StaticBody2D" parent="Geometry" unique_id=1110719424]
 position = Vector2(-24, 0)
-collision_layer = 1
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block12"]
-position = Vector2(12.0, 410.0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block12" unique_id=1610618691]
+position = Vector2(12, 410)
 shape = SubResource("Shape12")
 
-[node name="Blockout" type="Polygon2D" parent="Geometry/Block12"]
-polygon = PackedVector2Array(0, 0, 24, 0, 24, 820, 0, 820)
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block12" unique_id=1287446581]
 color = Color(0.13, 0.22, 0.29, 1)
+polygon = PackedVector2Array(0, 0, 24, 0, 24, 820, 0, 820)
 
-[node name="Surface" type="Line2D" parent="Geometry/Block12"]
+[node name="Surface" type="Line2D" parent="Geometry/Block12" unique_id=1198366662]
+visible = false
 points = PackedVector2Array(0, 0, 24, 0)
 width = 2.0
-default_color = Color(0.29411764705882354, 0.5333333333333333, 0.6274509803921569, 1)
+default_color = Color(0.29411766, 0.53333336, 0.627451, 1)
 
-[node name="Block13" type="StaticBody2D" parent="Geometry"]
+[node name="Block13" type="StaticBody2D" parent="Geometry" unique_id=805637923]
 position = Vector2(4800, 0)
-collision_layer = 1
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block13"]
-position = Vector2(12.0, 410.0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Geometry/Block13" unique_id=757662968]
+position = Vector2(12, 410)
 shape = SubResource("Shape13")
 
-[node name="Blockout" type="Polygon2D" parent="Geometry/Block13"]
-polygon = PackedVector2Array(0, 0, 24, 0, 24, 820, 0, 820)
+[node name="Blockout" type="Polygon2D" parent="Geometry/Block13" unique_id=1305123905]
 color = Color(0.13, 0.22, 0.29, 1)
+polygon = PackedVector2Array(0, 0, 24, 0, 24, 820, 0, 820)
 
-[node name="Surface" type="Line2D" parent="Geometry/Block13"]
+[node name="Surface" type="Line2D" parent="Geometry/Block13" unique_id=1526036889]
+visible = false
 points = PackedVector2Array(0, 0, 24, 0)
 width = 2.0
-default_color = Color(0.29411764705882354, 0.5333333333333333, 0.6274509803921569, 1)
+default_color = Color(0.29411766, 0.53333336, 0.627451, 1)
 
-[node name="InteractiveTerminal0" parent="Entities" instance=ExtResource("InteractiveTerminal")]
+[node name="WorldArt" type="Node2D" parent="." unique_id=1480017930]
+
+[node name="Prop0" parent="WorldArt" unique_id=1734104470 instance=ExtResource("Decoration")]
+position = Vector2(517, 320)
+kind = "ship"
+tint = Color(0.29411766, 0.53333336, 0.627451, 1)
+size = Vector2(230, 90)
+
+[node name="Prop1" parent="WorldArt" unique_id=1282366279 instance=ExtResource("Decoration")]
+visible = false
+position = Vector2(920, 280)
+tint = Color(0.29411766, 0.53333336, 0.627451, 1)
+size = Vector2(64, 100)
+
+[node name="Prop2" parent="WorldArt" unique_id=198660575 instance=ExtResource("Decoration")]
+visible = false
+position = Vector2(3100, 280)
+kind = "ruins"
+tint = Color(0.29411766, 0.53333336, 0.627451, 1)
+size = Vector2(150, 120)
+
+[node name="Entities" type="Node2D" parent="." unique_id=1018925068]
+
+[node name="InteractiveTerminal0" parent="Entities" unique_id=2106517647 instance=ExtResource("InteractiveTerminal")]
 position = Vector2(500, 320)
 title = "Recupera la telemetría"
+crystal_art = ExtResource("Altar")
+crystal_jewel = ExtResource("Gema")
 state_key = "telemetry"
 story_id = "STORY_02"
-required_keys = PackedStringArray()
 locked_hint = "Activa primero el mecanismo anterior."
 
-[node name="InteractiveTerminal1" parent="Entities" instance=ExtResource("InteractiveTerminal")]
+[node name="InteractiveTerminal1" parent="Entities" unique_id=118938660 instance=ExtResource("InteractiveTerminal")]
 position = Vector2(1980, 320)
 title = "Recupera la célula"
+crystal_art = ExtResource("Altar")
+crystal_jewel = ExtResource("Gema")
 state_key = "cell"
 story_id = "CELL"
-required_keys = PackedStringArray("telemetry")
 locked_hint = "Activa primero el mecanismo anterior."
 
-[node name="InteractiveTerminal2" parent="Entities" instance=ExtResource("InteractiveTerminal")]
+[node name="InteractiveTerminal2" parent="Entities" unique_id=117365686 instance=ExtResource("InteractiveTerminal")]
 position = Vector2(2810, 240)
 title = "Examina el mirador"
+crystal_art = ExtResource("Altar")
+crystal_jewel = ExtResource("Gema")
 state_key = "lookout"
 story_id = "LOOKOUT"
-required_keys = PackedStringArray("cell")
 locked_hint = "Activa primero el mecanismo anterior."
 
-[node name="Checkpoint3" parent="Entities" instance=ExtResource("Checkpoint")]
+[node name="Checkpoint3" parent="Entities" unique_id=125293803 instance=ExtResource("Checkpoint")]
 position = Vector2(100, 320)
 
-[node name="Checkpoint4" parent="Entities" instance=ExtResource("Checkpoint")]
+[node name="Checkpoint4" parent="Entities" unique_id=550921005 instance=ExtResource("Checkpoint")]
 position = Vector2(1780, 320)
 
-[node name="Checkpoint5" parent="Entities" instance=ExtResource("Checkpoint")]
+[node name="Checkpoint5" parent="Entities" unique_id=1689815547 instance=ExtResource("Checkpoint")]
 position = Vector2(3700, 320)
 
-[node name="InteractiveTerminal6" parent="Entities" instance=ExtResource("InteractiveTerminal")]
+[node name="InteractiveTerminal6" parent="Entities" unique_id=390415306 instance=ExtResource("InteractiveTerminal")]
 position = Vector2(1030, 280)
 title = "Fragmento cristalino"
+crystal_art = ExtResource("Altar")
+crystal_jewel = ExtResource("Gema")
 record_id = "REG_SIGNAL"
 
-[node name="BaseEnemy7" parent="Entities" instance=ExtResource("BaseEnemy")]
+[node name="BaseEnemy7" parent="Entities" unique_id=258433255 instance=ExtResource("BaseEnemy")]
 position = Vector2(1440.4, 320)
 max_health = 95
 patrol_distance = 42.0
 speed = 78.0
 attack_style = "ranged"
-combo_strikes = 1
 
-[node name="BaseEnemy8" parent="Entities" instance=ExtResource("BaseEnemy")]
-position = Vector2(2510.0, 280)
+[node name="BaseEnemy8" parent="Entities" unique_id=714375961 instance=ExtResource("BaseEnemy")]
+position = Vector2(2510, 280)
 max_health = 95
 patrol_distance = 42.0
 speed = 78.0
-attack_style = "duelist"
-combo_strikes = 1
 
-[node name="BaseEnemy9" parent="Entities" instance=ExtResource("BaseEnemy")]
+[node name="BaseEnemy9" parent="Entities" unique_id=1392784827 instance=ExtResource("BaseEnemy")]
 position = Vector2(3306.4, 280)
 max_health = 95
 patrol_distance = 42.0
 speed = 78.0
 attack_style = "ranged"
-combo_strikes = 1
 
-[node name="Hazard10" parent="Entities" instance=ExtResource("Hazard")]
+[node name="Hazard10" parent="Entities" unique_id=228939458 instance=ExtResource("Hazard")]
 position = Vector2(2164, 320)
 width = 100.0
-cycle = true
 phase_offset = 0.8500000000000001
-rest_time = 0.65
-warning_time = 0.45
 active_time = 1.6
-damage = 2
 
-[node name="Hazard11" parent="Entities" instance=ExtResource("Hazard")]
+[node name="Hazard11" parent="Entities" unique_id=220371785 instance=ExtResource("Hazard")]
 position = Vector2(3344, 280)
 width = 100.0
-cycle = true
 phase_offset = 0.34
-rest_time = 0.65
-warning_time = 0.45
 active_time = 1.6
-damage = 2
 
-[node name="Prop0" parent="WorldArt" instance=ExtResource("Decoration")]
-position = Vector2(517.0, 320)
-kind = "ship"
-size = Vector2(230, 90)
-tint = Color(0.29411764705882354, 0.5333333333333333, 0.6274509803921569, 1)
+[node name="Exit" parent="Entities" unique_id=1369319443 instance=ExtResource("LevelExit")]
+position = Vector2(4660, 320)
 
-[node name="Prop1" parent="WorldArt" instance=ExtResource("Decoration")]
-position = Vector2(920, 280)
-kind = "crystal"
-size = Vector2(64, 100)
-tint = Color(0.29411764705882354, 0.5333333333333333, 0.6274509803921569, 1)
+[node name="AnilloCristalino" type="Sprite2D" parent="Entities/Exit" unique_id=2081368823]
+texture_filter = 1
+position = Vector2(0, -21)
+texture = ExtResource("Portal")
 
-[node name="Prop2" parent="WorldArt" instance=ExtResource("Decoration")]
-position = Vector2(3100, 280)
-kind = "ruins"
-size = Vector2(150, 120)
-tint = Color(0.29411764705882354, 0.5333333333333333, 0.6274509803921569, 1)
+[node name="Labels" type="Node2D" parent="." unique_id=552143228]
 
-[node name="Sign0" type="Label" parent="Labels"]
-offset_left = 90.0
+[node name="Sign0" type="Label" parent="Labels" unique_id=36016857]
+offset_left = 80.0
 offset_top = 160.0
-offset_right = 440.0
+offset_right = 430.0
 offset_bottom = 222.0
-text = "01 / CRÁTER\nBusca la terminal junto a la nave"
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
+text = "01 / CRÁTER
+Restos de la nave"
 
-[node name="Sign1" type="Label" parent="Labels"]
+[node name="Sign1" type="Label" parent="Labels" unique_id=653204713]
 offset_left = 810.0
 offset_top = 120.0
 offset_right = 1160.0
 offset_bottom = 182.0
-text = "02 / RESTOS\nSalta los desniveles · los cristales violetas son opcionales"
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
+text = "02 / RESTOS
+Salta los desniveles"
 
-[node name="Sign2" type="Label" parent="Labels"]
+[node name="Sign2" type="Label" parent="Labels" unique_id=747886868]
 offset_left = 1700.0
 offset_top = 160.0
 offset_right = 2050.0
 offset_bottom = 222.0
-text = "03 / RESERVA\nRecupera una célula para el equipo portátil"
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
+text = "03 / RESERVA
+Busca una célula"
 
-[node name="Sign3" type="Label" parent="Labels"]
+[node name="Sign3" type="Label" parent="Labels" unique_id=1122911409]
 offset_left = 2670.0
 offset_top = 80.0
 offset_right = 3020.0
 offset_bottom = 142.0
-text = "04 / MIRADOR\nEl camino continúa hacia las estructuras"
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
+text = "04 / MIRADOR
+Sigue la ruta"
 
-[node name="Sign4" type="Label" parent="Labels"]
+[node name="Sign4" type="Label" parent="Labels" unique_id=431919154]
 offset_left = 3710.0
 offset_top = 160.0
 offset_right = 4060.0
 offset_bottom = 222.0
-text = "05 / SALIDA DEL CRÁTER\nSalta los fragmentos rojos"
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
+text = "05 / SALIDA DEL CRÁTER
+Evita los cristales rojos"
 
-[node name="Sign5" type="Label" parent="Labels"]
+[node name="Sign5" type="Label" parent="Labels" unique_id=1218591308]
 offset_left = 212.0
 offset_top = 230.0
 offset_right = 562.0
 offset_bottom = 292.0
-text = "SALTO + DASH →\nK / E / X en el aire"
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
+text = "SALTO + DASH → K"
 
-[node name="Sign6" type="Label" parent="Labels"]
+[node name="Sign6" type="Label" parent="Labels" unique_id=445555425]
 offset_left = 3796.0
 offset_top = 230.0
 offset_right = 4146.0
 offset_bottom = 292.0
-text = "SALTO + DASH →\nK / E / X en el aire"
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
+text = "SALTO + DASH → K"
 
-[node name="Sign7" type="Label" parent="Labels"]
+[node name="Sign7" type="Label" parent="Labels" unique_id=1684927747]
 offset_left = 4332.0
 offset_top = 230.0
 offset_right = 4682.0
 offset_bottom = 292.0
-text = "SALTO + DASH →\nK / E / X en el aire"
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
+text = "SALTO + DASH → K"
 
-[node name="Exit" parent="Entities" instance=ExtResource("LevelExit")]
-position = Vector2(4660, 320)
-required_keys = PackedStringArray("telemetry", "cell", "lookout")
+[node name="ForegroundArt" type="Node2D" parent="." unique_id=1732881924]
+z_index = 5
 
-[node name="Player" parent="." instance=ExtResource("Player")]
+[node name="Audio" type="Node2D" parent="." unique_id=2033351464]
+
+[node name="Player" parent="." unique_id=2068418530 instance=ExtResource("Player")]
 position = Vector2(100, 320)
+camera_target_offset = Vector2(0, -105)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=204854807]
 position = Vector2(35, -70)
-position_smoothing_enabled = false

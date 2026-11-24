@@ -1,4 +1,5 @@
 [gd_scene load_steps=27 format=3]
+[ext_resource type="StyleBox" path="res://resources/ui/world_text_plate.tres" id="WorldPlate"]
 
 [ext_resource type="Script" path="res://scripts/world/section.gd" id="Level"]
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="Player"]
@@ -550,7 +551,8 @@ offset_top = 160.0
 offset_right = 430.0
 offset_bottom = 222.0
 text = "01 / VIDA DESCONOCIDA\nSigue los pulsos de la criatura"
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Sign1" type="Label" parent="Labels"]
 offset_left = 980.0
@@ -558,7 +560,8 @@ offset_top = 200.0
 offset_right = 1330.0
 offset_bottom = 262.0
 text = "02 / SENDERO ALTO\nDesvío opcional: una voz en el cristal"
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Sign2" type="Label" parent="Labels"]
 offset_left = 2180.0
@@ -566,7 +569,8 @@ offset_top = 160.0
 offset_right = 2530.0
 offset_bottom = 222.0
 text = "03 / TERRITORIO\nAmarillo: dash para esquivar · verde: contraataca"
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Sign3" type="Label" parent="Labels"]
 offset_left = 3650.0
@@ -574,47 +578,53 @@ offset_top = 120.0
 offset_right = 4000.0
 offset_bottom = 182.0
 text = "04 / ECO PROFUNDO\nCruza los fragmentos y examina el resonador"
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Sign4" type="Label" parent="Labels"]
 offset_left = 212.0
 offset_top = 230.0
 offset_right = 562.0
 offset_bottom = 292.0
-text = "SALTO + DASH →\nK / E / X en el aire"
-theme_override_font_sizes/font_size = 12
+text = "SALTO + DASH → K"
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Sign5" type="Label" parent="Labels"]
 offset_left = 1812.0
 offset_top = 270.0
 offset_right = 2162.0
 offset_bottom = 332.0
-text = "SALTO + DASH →\nK / E / X en el aire"
-theme_override_font_sizes/font_size = 12
+text = "SALTO + DASH → K"
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Sign6" type="Label" parent="Labels"]
 offset_left = 2252.0
 offset_top = 230.0
 offset_right = 2602.0
 offset_bottom = 292.0
-text = "SALTO + DASH →\nK / E / X en el aire"
-theme_override_font_sizes/font_size = 12
+text = "SALTO + DASH → K"
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Sign7" type="Label" parent="Labels"]
 offset_left = 2972.0
 offset_top = 230.0
 offset_right = 3322.0
 offset_bottom = 292.0
-text = "SALTO + DASH →\nK / E / X en el aire"
-theme_override_font_sizes/font_size = 12
+text = "SALTO + DASH → K"
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Sign8" type="Label" parent="Labels"]
 offset_left = 4052.0
 offset_top = 230.0
 offset_right = 4402.0
 offset_bottom = 292.0
-text = "SALTO + DASH →\nK / E / X en el aire"
-theme_override_font_sizes/font_size = 12
+text = "SALTO + DASH → K"
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Exit" parent="Entities" instance=ExtResource("LevelExit")]
 position = Vector2(5060, 320)
