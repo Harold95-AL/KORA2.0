@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3]
+[gd_scene format=3]
 [ext_resource type="StyleBox" path="res://resources/ui/world_text_plate.tres" id="WorldPlate"]
 
 [ext_resource type="Script" path="res://scripts/world/section.gd" id="Level"]
@@ -11,6 +11,25 @@
 [ext_resource type="PackedScene" path="res://scenes/entities/InteractiveTerminal.tscn" id="InteractiveTerminal"]
 [ext_resource type="PackedScene" path="res://scenes/entities/LevelExit.tscn" id="LevelExit"]
 [ext_resource type="PackedScene" path="res://scenes/entities/MovingPlatform.tscn" id="MovingPlatform"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/kora/seccion_2/valle.png" id="valle"]
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/kora/seccion_2/terrazas_de_jade.png" id="TerrazasDeJade"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_2/muro_jardin.png" id="muro_jardin"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_2/cornisa_jardin.png" id="cornisa_jardin"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_2/pilar_eshar.png" id="pilar_eshar"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_2/brote_apagado.png" id="brote_apagado"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_2/umbral.png" id="umbral"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_2/helecho_luz.png" id="helecho_luz"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_2/repisa.png" id="repisa"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_2/resonador.png" id="resonador"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_2/pedestal.png" id="pedestal"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_2/gema.png" id="gema"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_2/sello.png" id="sello"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_2/arbol_jade.png" id="arbol_jade"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_1/pinchos.png" id="pinchos"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_2/rampa.png" id="Rampa"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_2/canto.png" id="Canto"]
 
 [sub_resource type="RectangleShape2D" id="Shape0"]
 size = Vector2(200, 48)
@@ -59,6 +78,8 @@ size = Vector2(24, 820)
 
 [node name="Level_2_1" type="Node2D"]
 script = ExtResource("Level")
+texture_filter = 1
+show_blockout_backdrop = false
 section_index = 3
 bounds = Rect2(0, 0, 5600, 720)
 palette = Color(0.403921568627451, 0.7215686274509804, 0.6196078431372549, 1)
@@ -66,6 +87,37 @@ entry_story = ""
 entry_hint = ""
 
 [node name="BackgroundArt" type="Node2D" parent="."]
+
+[node name="Horizonte0" type="Parallax2D" parent="BackgroundArt"]
+z_index = -30
+scroll_scale = Vector2(0.025, 0)
+repeat_size = Vector2(1280, 0)
+repeat_times = 3
+
+[node name="valle" type="Sprite2D" parent="BackgroundArt/Horizonte0"]
+position = Vector2(0, 0)
+texture = ExtResource("valle")
+centered = false
+modulate = Color(0.80,0.85,0.91,1)
+
+[node name="Reflejo" type="Sprite2D" parent="BackgroundArt/Horizonte0"]
+position = Vector2(640, 0)
+texture = ExtResource("valle")
+centered = false
+flip_h = true
+modulate = Color(0.80,0.85,0.91,1)
+
+[node name="Horizonte1" type="Parallax2D" parent="BackgroundArt"]
+z_index = -29
+scroll_scale = Vector2(0.22, 0)
+repeat_size = Vector2(1536, 0)
+repeat_times = 3
+
+[node name="TerrazasDeJade" type="Sprite2D" parent="BackgroundArt/Horizonte1"]
+position = Vector2(0, 132)
+texture_filter = 1
+texture = ExtResource("TerrazasDeJade")
+centered = false
 
 [node name="Geometry" type="Node2D" parent="."]
 
@@ -91,10 +143,12 @@ position = Vector2(100.0, 24.0)
 shape = SubResource("Shape0")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block0"]
+visible = false
 polygon = PackedVector2Array(0, 0, 200, 0, 200, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block0"]
+visible = false
 points = PackedVector2Array(0, 0, 200, 0)
 width = 2.0
 default_color = Color(0.403921568627451, 0.7215686274509804, 0.6196078431372549, 1)
@@ -110,10 +164,12 @@ position = Vector2(236.0, 24.0)
 shape = SubResource("Shape1")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block1"]
+visible = false
 polygon = PackedVector2Array(0, 0, 472, 0, 472, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block1"]
+visible = false
 points = PackedVector2Array(0, 0, 472, 0)
 width = 2.0
 default_color = Color(0.403921568627451, 0.7215686274509804, 0.6196078431372549, 1)
@@ -129,10 +185,12 @@ position = Vector2(60.0, 24.0)
 shape = SubResource("Shape2")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block2"]
+visible = false
 polygon = PackedVector2Array(0, 0, 120, 0, 120, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block2"]
+visible = false
 points = PackedVector2Array(0, 0, 120, 0)
 width = 2.0
 default_color = Color(0.403921568627451, 0.7215686274509804, 0.6196078431372549, 1)
@@ -148,10 +206,12 @@ position = Vector2(176.0, 24.0)
 shape = SubResource("Shape3")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block3"]
+visible = false
 polygon = PackedVector2Array(0, 0, 352, 0, 352, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block3"]
+visible = false
 points = PackedVector2Array(0, 0, 352, 0)
 width = 2.0
 default_color = Color(0.403921568627451, 0.7215686274509804, 0.6196078431372549, 1)
@@ -167,10 +227,12 @@ position = Vector2(180.0, 24.0)
 shape = SubResource("Shape4")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block4"]
+visible = false
 polygon = PackedVector2Array(0, 0, 360, 0, 360, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block4"]
+visible = false
 points = PackedVector2Array(0, 0, 360, 0)
 width = 2.0
 default_color = Color(0.403921568627451, 0.7215686274509804, 0.6196078431372549, 1)
@@ -186,10 +248,12 @@ position = Vector2(300.0, 24.0)
 shape = SubResource("Shape5")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block5"]
+visible = false
 polygon = PackedVector2Array(0, 0, 600, 0, 600, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block5"]
+visible = false
 points = PackedVector2Array(0, 0, 600, 0)
 width = 2.0
 default_color = Color(0.403921568627451, 0.7215686274509804, 0.6196078431372549, 1)
@@ -205,10 +269,12 @@ position = Vector2(330.0, 24.0)
 shape = SubResource("Shape6")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block6"]
+visible = false
 polygon = PackedVector2Array(0, 0, 660, 0, 660, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block6"]
+visible = false
 points = PackedVector2Array(0, 0, 660, 0)
 width = 2.0
 default_color = Color(0.403921568627451, 0.7215686274509804, 0.6196078431372549, 1)
@@ -224,10 +290,12 @@ position = Vector2(200.0, 24.0)
 shape = SubResource("Shape7")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block7"]
+visible = false
 polygon = PackedVector2Array(0, 0, 400, 0, 400, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block7"]
+visible = false
 points = PackedVector2Array(0, 0, 400, 0)
 width = 2.0
 default_color = Color(0.403921568627451, 0.7215686274509804, 0.6196078431372549, 1)
@@ -243,10 +311,12 @@ position = Vector2(164.0, 24.0)
 shape = SubResource("Shape8")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block8"]
+visible = false
 polygon = PackedVector2Array(0, 0, 328, 0, 328, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block8"]
+visible = false
 points = PackedVector2Array(0, 0, 328, 0)
 width = 2.0
 default_color = Color(0.403921568627451, 0.7215686274509804, 0.6196078431372549, 1)
@@ -262,10 +332,12 @@ position = Vector2(82.0, 24.0)
 shape = SubResource("Shape9")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block9"]
+visible = false
 polygon = PackedVector2Array(0, 0, 164, 0, 164, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block9"]
+visible = false
 points = PackedVector2Array(0, 0, 164, 0)
 width = 2.0
 default_color = Color(0.403921568627451, 0.7215686274509804, 0.6196078431372549, 1)
@@ -281,10 +353,12 @@ position = Vector2(420.0, 24.0)
 shape = SubResource("Shape10")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block10"]
+visible = false
 polygon = PackedVector2Array(0, 0, 840, 0, 840, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block10"]
+visible = false
 points = PackedVector2Array(0, 0, 840, 0)
 width = 2.0
 default_color = Color(0.403921568627451, 0.7215686274509804, 0.6196078431372549, 1)
@@ -299,10 +373,12 @@ position = Vector2(40.0, 6.0)
 shape = SubResource("Shape11")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block11"]
+visible = false
 polygon = PackedVector2Array(0, 0, 80, 0, 80, 12, 0, 12)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block11"]
+visible = false
 points = PackedVector2Array(0, 0, 80, 0)
 width = 2.0
 default_color = Color(0.403921568627451, 0.7215686274509804, 0.6196078431372549, 1)
@@ -317,10 +393,12 @@ position = Vector2(50.0, 6.0)
 shape = SubResource("Shape12")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block12"]
+visible = false
 polygon = PackedVector2Array(0, 0, 100, 0, 100, 12, 0, 12)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block12"]
+visible = false
 points = PackedVector2Array(0, 0, 100, 0)
 width = 2.0
 default_color = Color(0.403921568627451, 0.7215686274509804, 0.6196078431372549, 1)
@@ -362,6 +440,7 @@ width = 2.0
 default_color = Color(0.403921568627451, 0.7215686274509804, 0.6196078431372549, 1)
 
 [node name="MovingPlatform0" parent="Entities" instance=ExtResource("MovingPlatform")]
+surface_texture = ExtResource("repisa")
 position = Vector2(2620, 320)
 travel = Vector2(124, 0)
 width = 64.0
@@ -371,6 +450,8 @@ collapse_delay = 0.295
 return_delay = 2.4
 
 [node name="InteractiveTerminal1" parent="Entities" instance=ExtResource("InteractiveTerminal")]
+crystal_art = ExtResource("pedestal")
+crystal_jewel = ExtResource("gema")
 position = Vector2(640, 320)
 title = "Sigue a SIL"
 state_key = "sil"
@@ -379,6 +460,8 @@ required_keys = PackedStringArray()
 locked_hint = "Activa primero el mecanismo anterior."
 
 [node name="InteractiveTerminal2" parent="Entities" instance=ExtResource("InteractiveTerminal")]
+crystal_art = ExtResource("pedestal")
+crystal_jewel = ExtResource("gema")
 position = Vector2(1420, 320)
 title = "Activa el jardín oeste"
 state_key = "garden_a"
@@ -387,6 +470,8 @@ required_keys = PackedStringArray("sil")
 locked_hint = "Activa primero el mecanismo anterior."
 
 [node name="InteractiveTerminal3" parent="Entities" instance=ExtResource("InteractiveTerminal")]
+crystal_art = ExtResource("pedestal")
+crystal_jewel = ExtResource("gema")
 position = Vector2(3240, 320)
 title = "Activa el jardín este"
 state_key = "garden_b"
@@ -395,6 +480,8 @@ required_keys = PackedStringArray("garden_a")
 locked_hint = "Activa primero el mecanismo anterior."
 
 [node name="InteractiveTerminal4" parent="Entities" instance=ExtResource("InteractiveTerminal")]
+crystal_art = ExtResource("pedestal")
+crystal_jewel = ExtResource("gema")
 position = Vector2(5040, 320)
 title = "Abre el santuario"
 state_key = "sanctuary"
@@ -403,6 +490,7 @@ required_keys = PackedStringArray("garden_a", "garden_b")
 locked_hint = "Activa primero el mecanismo anterior."
 
 [node name="EnergyDoor5" parent="Entities" instance=ExtResource("EnergyDoor")]
+seal_texture = ExtResource("sello")
 position = Vector2(5240, 320)
 required_keys = PackedStringArray("sanctuary")
 
@@ -416,11 +504,14 @@ position = Vector2(2220, 320)
 position = Vector2(4220, 320)
 
 [node name="InteractiveTerminal9" parent="Entities" instance=ExtResource("InteractiveTerminal")]
+crystal_art = ExtResource("pedestal")
+crystal_jewel = ExtResource("gema")
 position = Vector2(1910, 200)
 title = "Memoria opcional"
 record_id = "REG_01"
 
 [node name="Hazard10" parent="Entities" instance=ExtResource("Hazard")]
+spike_sheet = ExtResource("pinchos")
 position = Vector2(3010, 320)
 width = 81.2
 cycle = true
@@ -464,6 +555,7 @@ attack_style = "ranged"
 combo_strikes = 2
 
 [node name="Hazard15" parent="Entities" instance=ExtResource("Hazard")]
+spike_sheet = ExtResource("pinchos")
 position = Vector2(2440, 320)
 width = 100.0
 cycle = true
@@ -473,35 +565,10 @@ warning_time = 0.45
 active_time = 1.8
 damage = 2
 
-[node name="Prop0" parent="WorldArt" instance=ExtResource("Decoration")]
-position = Vector2(140.0, 320)
-kind = "tree"
-size = Vector2(100, 130)
-tint = Color(0.403921568627451, 0.7215686274509804, 0.6196078431372549, 1)
 
-[node name="Prop1" parent="WorldArt" instance=ExtResource("Decoration")]
-position = Vector2(1020.0, 320)
-kind = "tree"
-size = Vector2(100, 130)
-tint = Color(0.403921568627451, 0.7215686274509804, 0.6196078431372549, 1)
 
-[node name="Prop2" parent="WorldArt" instance=ExtResource("Decoration")]
-position = Vector2(2320, 320)
-kind = "tree"
-size = Vector2(100, 130)
-tint = Color(0.403921568627451, 0.7215686274509804, 0.6196078431372549, 1)
 
-[node name="Prop3" parent="WorldArt" instance=ExtResource("Decoration")]
-position = Vector2(3610, 280)
-kind = "tree"
-size = Vector2(100, 130)
-tint = Color(0.403921568627451, 0.7215686274509804, 0.6196078431372549, 1)
 
-[node name="Prop4" parent="WorldArt" instance=ExtResource("Decoration")]
-position = Vector2(4850, 320)
-kind = "tree"
-size = Vector2(100, 130)
-tint = Color(0.403921568627451, 0.7215686274509804, 0.6196078431372549, 1)
 
 [node name="Prop5" parent="WorldArt" instance=ExtResource("Decoration")]
 position = Vector2(690, 320)
@@ -582,8 +649,532 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Exit" parent="Entities" instance=ExtResource("LevelExit")]
+arch_texture = ExtResource("umbral")
 position = Vector2(5460, 320)
 required_keys = PackedStringArray("sil", "garden_a", "garden_b", "sanctuary")
+
+[node name="muro_jardin" type="Sprite2D" parent="Geometry/Block0"]
+position = Vector2(0,5)
+texture = ExtResource("muro_jardin")
+centered = false
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(0,0,200,480)
+
+[node name="cornisa_jardin" type="Sprite2D" parent="Geometry/Block0"]
+position = Vector2(0,0)
+texture = ExtResource("cornisa_jardin")
+centered = false
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(0,0,200,16)
+
+[node name="arbol_jade1" type="Sprite2D" parent="WorldArt"]
+position = Vector2(145,320)
+offset = Vector2(0,-49.5)
+z_index = -2
+modulate = Color(0.78,0.85,0.83,1)
+texture = ExtResource("arbol_jade")
+
+[node name="muro_jardin" type="Sprite2D" parent="Geometry/Block1"]
+position = Vector2(0,5)
+texture = ExtResource("muro_jardin")
+centered = false
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(32,0,472,480)
+
+[node name="cornisa_jardin" type="Sprite2D" parent="Geometry/Block1"]
+position = Vector2(0,0)
+texture = ExtResource("cornisa_jardin")
+centered = false
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(32,0,472,16)
+
+[node name="helecho_luz2" type="Sprite2D" parent="WorldArt"]
+position = Vector2(493,320)
+offset = Vector2(0,-14)
+z_index = -2
+modulate = Color(0.78,0.85,0.83,1)
+texture = ExtResource("helecho_luz")
+
+[node name="brote_apagado3" type="Sprite2D" parent="WorldArt"]
+position = Vector2(677,320)
+offset = Vector2(0,-20.5)
+z_index = -2
+modulate = Color(0.78,0.85,0.83,1)
+texture = ExtResource("brote_apagado")
+
+[node name="muro_jardin" type="Sprite2D" parent="Geometry/Block2"]
+position = Vector2(0,5)
+texture = ExtResource("muro_jardin")
+centered = false
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(64,0,120,480)
+
+[node name="cornisa_jardin" type="Sprite2D" parent="Geometry/Block2"]
+position = Vector2(0,0)
+texture = ExtResource("cornisa_jardin")
+centered = false
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(64,0,120,16)
+
+[node name="helecho_luz4" type="Sprite2D" parent="WorldArt"]
+position = Vector2(1045,320)
+offset = Vector2(0,-14)
+z_index = -2
+modulate = Color(0.78,0.85,0.83,1)
+texture = ExtResource("helecho_luz")
+
+[node name="muro_jardin" type="Sprite2D" parent="Geometry/Block3"]
+position = Vector2(0,5)
+texture = ExtResource("muro_jardin")
+centered = false
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(96,0,352,480)
+
+[node name="cornisa_jardin" type="Sprite2D" parent="Geometry/Block3"]
+position = Vector2(0,0)
+texture = ExtResource("cornisa_jardin")
+centered = false
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(96,0,352,16)
+
+[node name="arbol_jade5" type="Sprite2D" parent="WorldArt"]
+position = Vector2(1373,320)
+offset = Vector2(0,-49.5)
+z_index = -2
+modulate = Color(0.78,0.85,0.83,1)
+texture = ExtResource("arbol_jade")
+
+[node name="helecho_luz6" type="Sprite2D" parent="WorldArt"]
+position = Vector2(1535,320)
+offset = Vector2(0,-14)
+z_index = -2
+modulate = Color(0.78,0.85,0.83,1)
+texture = ExtResource("helecho_luz")
+
+[node name="muro_jardin" type="Sprite2D" parent="Geometry/Block4"]
+position = Vector2(0,5)
+texture = ExtResource("muro_jardin")
+centered = false
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(128,0,360,520)
+
+[node name="cornisa_jardin" type="Sprite2D" parent="Geometry/Block4"]
+position = Vector2(0,0)
+texture = ExtResource("cornisa_jardin")
+centered = false
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(128,0,360,16)
+
+[node name="brote_apagado7" type="Sprite2D" parent="WorldArt"]
+position = Vector2(1725,280)
+offset = Vector2(0,-20.5)
+z_index = -2
+modulate = Color(0.78,0.85,0.83,1)
+texture = ExtResource("brote_apagado")
+
+[node name="helecho_luz8" type="Sprite2D" parent="WorldArt"]
+position = Vector2(1921,280)
+offset = Vector2(0,-14)
+z_index = -2
+modulate = Color(0.78,0.85,0.83,1)
+texture = ExtResource("helecho_luz")
+
+[node name="muro_jardin" type="Sprite2D" parent="Geometry/Block5"]
+position = Vector2(0,5)
+texture = ExtResource("muro_jardin")
+centered = false
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(0,0,600,480)
+
+[node name="cornisa_jardin" type="Sprite2D" parent="Geometry/Block5"]
+position = Vector2(0,0)
+texture = ExtResource("cornisa_jardin")
+centered = false
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(0,0,600,16)
+
+[node name="arbol_jade9" type="Sprite2D" parent="WorldArt"]
+position = Vector2(2085,320)
+offset = Vector2(0,-49.5)
+z_index = -2
+modulate = Color(0.78,0.85,0.83,1)
+texture = ExtResource("arbol_jade")
+
+[node name="helecho_luz10" type="Sprite2D" parent="WorldArt"]
+position = Vector2(2242,320)
+offset = Vector2(0,-14)
+z_index = -2
+modulate = Color(0.78,0.85,0.83,1)
+texture = ExtResource("helecho_luz")
+
+[node name="brote_apagado11" type="Sprite2D" parent="WorldArt"]
+position = Vector2(2416,320)
+offset = Vector2(0,-20.5)
+z_index = -2
+modulate = Color(0.78,0.85,0.83,1)
+texture = ExtResource("brote_apagado")
+
+[node name="muro_jardin" type="Sprite2D" parent="Geometry/Block6"]
+position = Vector2(0,5)
+texture = ExtResource("muro_jardin")
+centered = false
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(32,0,660,480)
+
+[node name="cornisa_jardin" type="Sprite2D" parent="Geometry/Block6"]
+position = Vector2(0,0)
+texture = ExtResource("cornisa_jardin")
+centered = false
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(32,0,660,16)
+
+[node name="helecho_luz12" type="Sprite2D" parent="WorldArt"]
+position = Vector2(2925,320)
+offset = Vector2(0,-14)
+z_index = -2
+modulate = Color(0.78,0.85,0.83,1)
+texture = ExtResource("helecho_luz")
+
+[node name="arbol_jade13" type="Sprite2D" parent="WorldArt"]
+position = Vector2(3133,320)
+offset = Vector2(0,-49.5)
+z_index = -2
+modulate = Color(0.78,0.85,0.83,1)
+texture = ExtResource("arbol_jade")
+
+[node name="helecho_luz14" type="Sprite2D" parent="WorldArt"]
+position = Vector2(3285,320)
+offset = Vector2(0,-14)
+z_index = -2
+modulate = Color(0.78,0.85,0.83,1)
+texture = ExtResource("helecho_luz")
+
+[node name="brote_apagado15" type="Sprite2D" parent="WorldArt"]
+position = Vector2(3454,320)
+offset = Vector2(0,-20.5)
+z_index = -2
+modulate = Color(0.78,0.85,0.83,1)
+texture = ExtResource("brote_apagado")
+
+[node name="muro_jardin" type="Sprite2D" parent="Geometry/Block7"]
+position = Vector2(0,5)
+texture = ExtResource("muro_jardin")
+centered = false
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(64,0,400,520)
+
+[node name="cornisa_jardin" type="Sprite2D" parent="Geometry/Block7"]
+position = Vector2(0,0)
+texture = ExtResource("cornisa_jardin")
+centered = false
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(64,0,400,16)
+
+[node name="helecho_luz16" type="Sprite2D" parent="WorldArt"]
+position = Vector2(3585,280)
+offset = Vector2(0,-14)
+z_index = -2
+modulate = Color(0.78,0.85,0.83,1)
+texture = ExtResource("helecho_luz")
+
+[node name="arbol_jade17" type="Sprite2D" parent="WorldArt"]
+position = Vector2(3788,280)
+offset = Vector2(0,-49.5)
+z_index = -2
+modulate = Color(0.78,0.85,0.83,1)
+texture = ExtResource("arbol_jade")
+
+[node name="muro_jardin" type="Sprite2D" parent="Geometry/Block8"]
+position = Vector2(0,5)
+texture = ExtResource("muro_jardin")
+centered = false
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(96,0,328,480)
+
+[node name="cornisa_jardin" type="Sprite2D" parent="Geometry/Block8"]
+position = Vector2(0,0)
+texture = ExtResource("cornisa_jardin")
+centered = false
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(96,0,328,16)
+
+[node name="helecho_luz18" type="Sprite2D" parent="WorldArt"]
+position = Vector2(4065,320)
+offset = Vector2(0,-14)
+z_index = -2
+modulate = Color(0.78,0.85,0.83,1)
+texture = ExtResource("helecho_luz")
+
+[node name="brote_apagado19" type="Sprite2D" parent="WorldArt"]
+position = Vector2(4229,320)
+offset = Vector2(0,-20.5)
+z_index = -2
+modulate = Color(0.78,0.85,0.83,1)
+texture = ExtResource("brote_apagado")
+
+[node name="muro_jardin" type="Sprite2D" parent="Geometry/Block9"]
+position = Vector2(0,5)
+texture = ExtResource("muro_jardin")
+centered = false
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(128,0,164,480)
+
+[node name="cornisa_jardin" type="Sprite2D" parent="Geometry/Block9"]
+position = Vector2(0,0)
+texture = ExtResource("cornisa_jardin")
+centered = false
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(128,0,164,16)
+
+[node name="helecho_luz20" type="Sprite2D" parent="WorldArt"]
+position = Vector2(4601,320)
+offset = Vector2(0,-14)
+z_index = -2
+modulate = Color(0.78,0.85,0.83,1)
+texture = ExtResource("helecho_luz")
+
+[node name="muro_jardin" type="Sprite2D" parent="Geometry/Block10"]
+position = Vector2(0,5)
+texture = ExtResource("muro_jardin")
+centered = false
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(0,0,840,480)
+
+[node name="cornisa_jardin" type="Sprite2D" parent="Geometry/Block10"]
+position = Vector2(0,0)
+texture = ExtResource("cornisa_jardin")
+centered = false
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(0,0,840,16)
+
+[node name="arbol_jade21" type="Sprite2D" parent="WorldArt"]
+position = Vector2(4845,320)
+offset = Vector2(0,-49.5)
+z_index = -2
+modulate = Color(0.78,0.85,0.83,1)
+texture = ExtResource("arbol_jade")
+
+[node name="helecho_luz22" type="Sprite2D" parent="WorldArt"]
+position = Vector2(5060,320)
+offset = Vector2(0,-14)
+z_index = -2
+modulate = Color(0.78,0.85,0.83,1)
+texture = ExtResource("helecho_luz")
+
+[node name="brote_apagado23" type="Sprite2D" parent="WorldArt"]
+position = Vector2(5219,320)
+offset = Vector2(0,-20.5)
+z_index = -2
+modulate = Color(0.78,0.85,0.83,1)
+texture = ExtResource("brote_apagado")
+
+[node name="helecho_luz24" type="Sprite2D" parent="WorldArt"]
+position = Vector2(5395,320)
+offset = Vector2(0,-14)
+z_index = -2
+modulate = Color(0.78,0.85,0.83,1)
+texture = ExtResource("helecho_luz")
+
+[node name="repisa" type="Sprite2D" parent="Geometry/Block11"]
+position = Vector2(0,0)
+texture = ExtResource("repisa")
+centered = false
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(32,0,80,12)
+
+[node name="repisa" type="Sprite2D" parent="Geometry/Block12"]
+position = Vector2(0,0)
+texture = ExtResource("repisa")
+centered = false
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(64,0,100,12)
+
+[node name="Esporas" type="CPUParticles2D" parent="WorldArt"]
+z_index = -1
+position = Vector2(2400, 220)
+amount = 110
+lifetime = 5.0
+preprocess = 4.0
+emission_shape = 3
+emission_rect_extents = Vector2(3200, 110)
+gravity = Vector2(0, -2)
+color = Color(0.63,0.95,0.73,0.65)
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block0"]
+centered = false
+texture = ExtResource("Canto")
+position = Vector2(0,0)
+flip_h = false
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block0"]
+centered = false
+texture = ExtResource("Canto")
+position = Vector2(195,0)
+flip_h = true
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block1"]
+centered = false
+texture = ExtResource("Canto")
+position = Vector2(0,0)
+flip_h = false
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block1"]
+centered = false
+texture = ExtResource("Canto")
+position = Vector2(467,0)
+flip_h = true
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block2"]
+centered = false
+texture = ExtResource("Canto")
+position = Vector2(0,0)
+flip_h = false
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block2"]
+centered = false
+texture = ExtResource("Canto")
+position = Vector2(115,0)
+flip_h = true
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block3"]
+centered = false
+texture = ExtResource("Canto")
+position = Vector2(0,0)
+flip_h = false
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block3"]
+centered = false
+texture = ExtResource("Canto")
+position = Vector2(347,0)
+flip_h = true
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block4"]
+centered = false
+texture = ExtResource("Canto")
+position = Vector2(0,0)
+flip_h = false
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block4"]
+centered = false
+texture = ExtResource("Canto")
+position = Vector2(355,0)
+flip_h = true
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block5"]
+centered = false
+texture = ExtResource("Canto")
+position = Vector2(0,0)
+flip_h = false
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block5"]
+centered = false
+texture = ExtResource("Canto")
+position = Vector2(595,0)
+flip_h = true
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block6"]
+centered = false
+texture = ExtResource("Canto")
+position = Vector2(0,0)
+flip_h = false
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block6"]
+centered = false
+texture = ExtResource("Canto")
+position = Vector2(655,0)
+flip_h = true
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block7"]
+centered = false
+texture = ExtResource("Canto")
+position = Vector2(0,0)
+flip_h = false
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block7"]
+centered = false
+texture = ExtResource("Canto")
+position = Vector2(395,0)
+flip_h = true
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block8"]
+centered = false
+texture = ExtResource("Canto")
+position = Vector2(0,0)
+flip_h = false
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block8"]
+centered = false
+texture = ExtResource("Canto")
+position = Vector2(323,0)
+flip_h = true
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block9"]
+centered = false
+texture = ExtResource("Canto")
+position = Vector2(0,0)
+flip_h = false
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block9"]
+centered = false
+texture = ExtResource("Canto")
+position = Vector2(159,0)
+flip_h = true
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block10"]
+centered = false
+texture = ExtResource("Canto")
+position = Vector2(0,0)
+flip_h = false
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block10"]
+centered = false
+texture = ExtResource("Canto")
+position = Vector2(835,0)
+flip_h = true
+
+[node name="LomoDePiedra" type="StaticBody2D" parent="Geometry/Block5"]
+position = Vector2(70,0)
+collision_layer = 1
+collision_mask = 2
+
+[node name="Perfil" type="CollisionPolygon2D" parent="Geometry/Block5/LomoDePiedra"]
+polygon = PackedVector2Array(0,0,32,-16,64,0)
+
+[node name="Rampa0" type="Sprite2D" parent="Geometry/Block5/LomoDePiedra"]
+position = Vector2(0,-16)
+centered = false
+texture = ExtResource("Rampa")
+flip_h = false
+
+[node name="Rampa1" type="Sprite2D" parent="Geometry/Block5/LomoDePiedra"]
+position = Vector2(32,-16)
+centered = false
+texture = ExtResource("Rampa")
+flip_h = true
 
 [node name="Player" parent="." instance=ExtResource("Player")]
 position = Vector2(100, 320)

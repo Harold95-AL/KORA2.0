@@ -18,6 +18,7 @@ const Effects = preload("res://scripts/player/player_effects.gd")
 var motion = Motion.new()
 var effects: Node2D
 var spawn_position := Vector2.ZERO
+var death_hold := 0.0
 var invulnerability := 0.0
 var show_body := false
 var show_sprite_box := false
@@ -46,6 +47,13 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if GameManager.campaign_active and GameManager.transitioning: return
+	if motion.state == "death":
+		step_motion(minf(delta, 0.1), {})
+		if motion.frame_index == Motion.FRAMES["death"] - 1:
+			death_hold += delta
+			if death_hold >= 1.0 / Motion.FPS["death"] + 0.25:
+				respawn()
+		return
 	if Input.is_action_just_pressed("restart") or (not reference_collisions and global_position.y > respawn_y):
 		respawn()
 		return
@@ -170,6 +178,7 @@ func camera_shake(duration: float, intensity: float) -> void:
 	shake_intensity = intensity
 
 func _unhandled_input(event: InputEvent) -> void:
+	if motion.state == "death": return
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT: mouse_attack = true
 		if event.button_index == MOUSE_BUTTON_RIGHT: mouse_heavy = true
@@ -209,12 +218,17 @@ func force_dash() -> void:
 func take_damage(amount: int, source: Vector2) -> void:
 	if not GameManager.campaign_active or invulnerability > 0.0 or GameManager.transitioning: return
 	var direction := signi(roundi(global_position.x - source.x))
-	motion.hurt(direction if direction != 0 else -motion.facing)
+	if motion.state == "death": return
+	GameManager.damage(amount)
+	if direction == 0: direction = -motion.facing
+	if GameManager.health == 0:
+		motion.die(direction)
+	else:
+		motion.hurt(direction)
+		invulnerability = 0.55
 	velocity = Vector2(motion.vx, motion.vy)
 	_sync_sprite()
-	invulnerability = 0.55
 	camera_shake(0.12, 3.0)
-	GameManager.damage(amount)
 
 func respawn() -> void:
 	if GameManager.campaign_active:

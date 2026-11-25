@@ -27,6 +27,12 @@
 	  "loop": true
 	},
 	{
+	  "name": "death",
+	  "frames": 9,
+	  "fps": 14,
+	  "loop": false
+	},
+	{
 	  "name": "hurt",
 	  "frames": 9,
 	  "fps": 22,

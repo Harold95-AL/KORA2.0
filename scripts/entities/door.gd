@@ -1,4 +1,5 @@
 extends StaticBody2D
+@export var seal_texture: Texture2D
 @export var required_keys: PackedStringArray = []
 @export var arena_lock: bool = false
 @export var boss_key: String = "boss"
@@ -24,6 +25,8 @@ func _physics_process(_delta: float) -> void:
 func _draw() -> void:
 	if opened:
 		draw_rect(Rect2(0, -5, width, 5), Color("79eda0"))
+	elif seal_texture:
+		draw_texture_rect(seal_texture, Rect2(0, -height, width, height), true)
 	else:
 		draw_rect(Rect2(0, -height, width, height), Color("8f79cc"))
 		for y in range(8, int(height), 16):

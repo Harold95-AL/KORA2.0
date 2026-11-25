@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://v0xbr77fumwk" path="res://assets/sprites/player/male_hero-combo_3.png" id="11"]
 [ext_resource type="Texture2D" uid="uid://cupi0i3gb31bm" path="res://assets/sprites/player/male_hero-combo_1_end.png" id="12"]
 
+[ext_resource type="Texture2D" path="res://assets/sprites/player/male_hero-death.png" id="death_sheet"]
 [ext_resource type="Texture2D" path="res://assets/sprites/player/male_hero-hurt.png" id="hurt_sheet"]
 
 [sub_resource type="AtlasTexture" id="combo_1_0"]
@@ -387,8 +388,52 @@ region = Rect2(128, 256, 128, 128)
 atlas = ExtResource("hurt_sheet")
 region = Rect2(256, 256, 128, 128)
 
+[sub_resource type="AtlasTexture" id="death_0"]
+atlas = ExtResource("death_sheet")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="death_1"]
+atlas = ExtResource("death_sheet")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="death_2"]
+atlas = ExtResource("death_sheet")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="death_3"]
+atlas = ExtResource("death_sheet")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="death_4"]
+atlas = ExtResource("death_sheet")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="death_5"]
+atlas = ExtResource("death_sheet")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="death_6"]
+atlas = ExtResource("death_sheet")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="death_7"]
+atlas = ExtResource("death_sheet")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="death_8"]
+atlas = ExtResource("death_sheet")
+region = Rect2(256, 256, 128, 128)
+
 [resource]
-animations = [{
+animations = [{"frames": [{"duration": 1.0, "texture": SubResource("death_0")},
+{"duration": 1.0, "texture": SubResource("death_1")},
+{"duration": 1.0, "texture": SubResource("death_2")},
+{"duration": 1.0, "texture": SubResource("death_3")},
+{"duration": 1.0, "texture": SubResource("death_4")},
+{"duration": 1.0, "texture": SubResource("death_5")},
+{"duration": 1.0, "texture": SubResource("death_6")},
+{"duration": 1.0, "texture": SubResource("death_7")},
+{"duration": 1.0, "texture": SubResource("death_8")}], "loop": false, "name": &"death", "speed": 14.0}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("combo_1_0")
