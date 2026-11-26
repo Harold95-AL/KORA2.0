@@ -12,8 +12,8 @@
 [ext_resource type="PackedScene" path="res://scenes/entities/LevelExit.tscn" id="LevelExit"]
 
 [ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/kora/seccion_2/claustro.png" id="valle"]
-[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/kora/seccion_2/medio_santuario.png" id="medio_santuario"]
-[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/kora/seccion_2/cercano_santuario.png" id="cercano_santuario"]
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/kora/seccion_2/arco-parallax.png" id="medio_santuario"]
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/kora/seccion_2/pilar-parallax.png" id="cercano_santuario"]
 [ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_2/muro_santuario.png" id="muro_santuario"]
 [ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_2/cornisa_santuario.png" id="cornisa_santuario"]
 [ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_2/pilar_eshar.png" id="pilar_eshar"]
@@ -28,6 +28,9 @@
 
 [ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_2/rampa.png" id="Rampa"]
 [ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_2/canto.png" id="Canto"]
+
+
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/kora/seccion_2/terrazas_de_jade.png" id="TerrazasDeJade"]
 
 [sub_resource type="RectangleShape2D" id="Shape0"]
 size = Vector2(200, 48)
@@ -79,6 +82,7 @@ entry_story = ""
 entry_hint = ""
 
 [node name="BackgroundArt" type="Node2D" parent="."]
+texture_filter = 1
 
 [node name="Horizonte0" type="Parallax2D" parent="BackgroundArt"]
 z_index = -30
@@ -87,41 +91,46 @@ repeat_size = Vector2(1280, 0)
 repeat_times = 3
 
 [node name="valle" type="Sprite2D" parent="BackgroundArt/Horizonte0"]
+centered = false
+texture_filter = 1
+texture = ExtResource("valle")
 position = Vector2(0, 0)
-texture = ExtResource("valle")
-centered = false
-modulate = Color(0.63,0.69,0.80,1)
+scale = Vector2(0.3827751196172249, 0.3827751196172249)
+modulate = Color(0.80,0.85,0.91,1)
+flip_h = false
 
-[node name="Reflejo" type="Sprite2D" parent="BackgroundArt/Horizonte0"]
-position = Vector2(640, 0)
-texture = ExtResource("valle")
+[node name="Retorno" type="Sprite2D" parent="BackgroundArt/Horizonte0"]
 centered = false
+texture_filter = 1
+texture = ExtResource("valle")
+position = Vector2(640, 0)
+scale = Vector2(0.3827751196172249, 0.3827751196172249)
+modulate = Color(0.80,0.85,0.91,1)
 flip_h = true
-modulate = Color(0.63,0.69,0.80,1)
 
 [node name="Horizonte1" type="Parallax2D" parent="BackgroundArt"]
 z_index = -29
-scroll_scale = Vector2(0.15, 0)
-repeat_size = Vector2(512, 0)
+scroll_scale = Vector2(0.22, 0)
+repeat_size = Vector2(1536, 0)
 repeat_times = 3
 
-[node name="medio_santuario" type="Sprite2D" parent="BackgroundArt/Horizonte1"]
-position = Vector2(0, 160)
-texture = ExtResource("medio_santuario")
+[node name="Arte" type="Sprite2D" parent="BackgroundArt/Horizonte1"]
 centered = false
-modulate = Color(0.63,0.69,0.80,1)
+texture_filter = 1
+texture = ExtResource("TerrazasDeJade")
+position = Vector2(0, 132)
+scale = Vector2(0.35359116022099446, 0.35359116022099446)
+modulate = Color(0.60,0.65,0.73,1)
+flip_h = false
 
-[node name="Horizonte2" type="Parallax2D" parent="BackgroundArt"]
-z_index = -28
-scroll_scale = Vector2(0.34, 0)
-repeat_size = Vector2(512, 0)
-repeat_times = 3
-
-[node name="cercano_santuario" type="Sprite2D" parent="BackgroundArt/Horizonte2"]
-position = Vector2(0, 260)
-texture = ExtResource("cercano_santuario")
+[node name="Retorno" type="Sprite2D" parent="BackgroundArt/Horizonte1"]
 centered = false
-modulate = Color(0.63,0.69,0.80,1)
+texture_filter = 1
+texture = ExtResource("TerrazasDeJade")
+position = Vector2(768, 132)
+scale = Vector2(0.35359116022099446, 0.35359116022099446)
+modulate = Color(0.60,0.65,0.73,1)
+flip_h = true
 
 [node name="Geometry" type="Node2D" parent="."]
 

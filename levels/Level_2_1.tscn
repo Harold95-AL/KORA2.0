@@ -87,6 +87,7 @@ entry_story = ""
 entry_hint = ""
 
 [node name="BackgroundArt" type="Node2D" parent="."]
+texture_filter = 1
 
 [node name="Horizonte0" type="Parallax2D" parent="BackgroundArt"]
 z_index = -30
@@ -95,12 +96,14 @@ repeat_size = Vector2(1280, 0)
 repeat_times = 3
 
 [node name="valle" type="Sprite2D" parent="BackgroundArt/Horizonte0"]
+scale = Vector2(0.3827751196172249, 0.3827751196172249)
 position = Vector2(0, 0)
 texture = ExtResource("valle")
 centered = false
 modulate = Color(0.80,0.85,0.91,1)
 
 [node name="Reflejo" type="Sprite2D" parent="BackgroundArt/Horizonte0"]
+scale = Vector2(0.3827751196172249, 0.3827751196172249)
 position = Vector2(640, 0)
 texture = ExtResource("valle")
 centered = false
@@ -115,8 +118,15 @@ repeat_times = 3
 
 [node name="TerrazasDeJade" type="Sprite2D" parent="BackgroundArt/Horizonte1"]
 position = Vector2(0, 132)
-texture_filter = 1
+scale = Vector2(0.35359116022099446,0.35359116022099446)
 texture = ExtResource("TerrazasDeJade")
+centered = false
+
+[node name="RetornoJade" type="Sprite2D" parent="BackgroundArt/Horizonte1"]
+position = Vector2(768, 132)
+scale = Vector2(0.35359116022099446,0.35359116022099446)
+texture = ExtResource("TerrazasDeJade")
+flip_h = true
 centered = false
 
 [node name="Geometry" type="Node2D" parent="."]

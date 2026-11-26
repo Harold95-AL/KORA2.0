@@ -1,4 +1,12 @@
 {
+  "ECO_FRACTURADO": {
+    "title": "Cristal fracturado",
+    "lines": [
+      "VOZ ESHAR: …no queremos desaparecer…",
+      "LUMA: Fragmentos de sus memorias."
+    ],
+    "blocking": false
+  },
   "STORY_01": {
     "title": "Después del impacto",
     "lines": [

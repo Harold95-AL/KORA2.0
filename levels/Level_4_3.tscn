@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3]
+[gd_scene format=3]
 [ext_resource type="StyleBox" path="res://resources/ui/world_text_plate.tres" id="WorldPlate"]
 
 [ext_resource type="Script" path="res://scripts/world/section.gd" id="Level"]
@@ -6,11 +6,41 @@
 [ext_resource type="PackedScene" path="res://scenes/entities/BaseEnemy.tscn" id="BaseEnemy"]
 [ext_resource type="PackedScene" path="res://scenes/entities/Boss.tscn" id="Boss"]
 [ext_resource type="PackedScene" path="res://scenes/entities/Checkpoint.tscn" id="Checkpoint"]
-[ext_resource type="PackedScene" path="res://scenes/entities/Decoration.tscn" id="Decoration"]
 [ext_resource type="PackedScene" path="res://scenes/entities/EnergyDoor.tscn" id="EnergyDoor"]
 [ext_resource type="PackedScene" path="res://scenes/entities/InteractiveTerminal.tscn" id="InteractiveTerminal"]
 [ext_resource type="PackedScene" path="res://scenes/entities/LevelExit.tscn" id="LevelExit"]
 [ext_resource type="PackedScene" path="res://scenes/entities/MovingPlatform.tscn" id="MovingPlatform"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/kora/seccion_4/corazon.png" id="art_corazon"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/nucleo.png" id="art_nucleo"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/muro_corazon.png" id="art_muro_corazon"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/borde_corazon.png" id="art_borde_corazon"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/canto_corazon.png" id="art_canto_corazon"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/arbotante.png" id="art_arbotante"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/fragmento.png" id="art_fragmento"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/transmisor.png" id="art_transmisor"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/prisma_fusionado.png" id="art_prisma_fusionado"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/compuerta.png" id="art_compuerta"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/ascensor.png" id="art_ascensor"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/regulador.png" id="art_regulador"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/testigo.png" id="art_testigo"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/portal.png" id="art_portal"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/losa_fracturada.png" id="art_losa"]
+
+
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/kora/seccion_4/medio_corazon.png" id="art_medio_corazon"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/kora/seccion_4/techo_corazon.png" id="techo_corazon"]
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/kora/seccion_4/silencio.png" id="silencio"]
+[ext_resource type="Script" path="res://scripts/world/el_silencio.gd" id="el_silencio"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/archivo_memorias.png" id="archivo_memorias"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/transmisor_fase.png" id="transmisor_fase"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/pedestal_resonancia.png" id="pedestal_resonancia"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/pedestal_resonancia_activo.png" id="pedestal_resonancia_activo"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/repisa_fisurada.png" id="repisa_fisurada"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/losa_en_colapso.png" id="losa_en_colapso"]
+[ext_resource type="Script" path="res://scripts/world/luz_resonancia.gd" id="luz_resonancia"]
 
 [sub_resource type="RectangleShape2D" id="Shape0"]
 size = Vector2(200, 48)
@@ -38,6 +68,8 @@ size = Vector2(24, 820)
 
 [node name="Level_4_3" type="Node2D"]
 script = ExtResource("Level")
+texture_filter = 1
+show_blockout_backdrop = false
 section_index = 11
 bounds = Rect2(0, 0, 5400, 720)
 palette = Color(0.7333333333333333, 0.5411764705882353, 0.7725490196078432, 1)
@@ -45,6 +77,99 @@ entry_story = ""
 entry_hint = ""
 
 [node name="BackgroundArt" type="Node2D" parent="."]
+
+[node name="Plano0" type="Parallax2D" parent="BackgroundArt"]
+z_index = -30
+scroll_scale = Vector2(0.025, 0)
+repeat_size = Vector2(1280, 0)
+repeat_times = 3
+
+[node name="Arte" type="Sprite2D" parent="BackgroundArt/Plano0"]
+centered = false
+texture_filter = 1
+texture = ExtResource("art_corazon")
+position = Vector2(0, 0)
+scale = Vector2(0.3827751196172249, 0.3827751196172249)
+modulate = Color(0.80,0.85,0.91,1)
+flip_h = false
+
+[node name="Retorno" type="Sprite2D" parent="BackgroundArt/Plano0"]
+centered = false
+texture_filter = 1
+texture = ExtResource("art_corazon")
+position = Vector2(640, 0)
+scale = Vector2(0.3827751196172249, 0.3827751196172249)
+modulate = Color(0.80,0.85,0.91,1)
+flip_h = true
+
+[node name="Plano1" type="Parallax2D" parent="BackgroundArt"]
+z_index = -29
+scroll_scale = Vector2(0.22, 0)
+repeat_size = Vector2(1536, 0)
+repeat_times = 3
+
+[node name="Arte" type="Sprite2D" parent="BackgroundArt/Plano1"]
+centered = false
+texture_filter = 1
+texture = ExtResource("art_medio_corazon")
+position = Vector2(0, 245)
+scale = Vector2(0.35359116022099446, 0.35359116022099446)
+modulate = Color(0.60,0.65,0.73,1)
+flip_h = false
+
+[node name="Retorno" type="Sprite2D" parent="BackgroundArt/Plano1"]
+centered = false
+texture_filter = 1
+texture = ExtResource("art_medio_corazon")
+position = Vector2(768, 245)
+scale = Vector2(0.35359116022099446, 0.35359116022099446)
+modulate = Color(0.60,0.65,0.73,1)
+flip_h = true
+
+[node name="PrimerPlano" type="Parallax2D" parent="BackgroundArt"]
+z_index = -27
+texture_filter = 1
+scroll_scale = Vector2(0.38, 0)
+repeat_size = Vector2(1536, 0)
+repeat_times = 3
+modulate = Color(0.54, 0.59, 0.68, 1)
+
+[node name="Arte" type="Sprite2D" parent="BackgroundArt/PrimerPlano"]
+texture = ExtResource("techo_corazon")
+centered = false
+scale = Vector2(1, 1)
+position = Vector2(0, -9)
+flip_h = false
+
+[node name="Retorno" type="Sprite2D" parent="BackgroundArt/PrimerPlano"]
+texture = ExtResource("techo_corazon")
+centered = false
+scale = Vector2(1, 1)
+position = Vector2(768, -9)
+flip_h = true
+
+[node name="ElSilencio" type="Parallax2D" parent="BackgroundArt"]
+z_index = -28
+texture_filter = 1
+scroll_scale = Vector2(0.025, 0)
+repeat_size = Vector2(1280, 0)
+repeat_times = 3
+script = ExtResource("el_silencio")
+modulate = Color(0.8, 0.87, 0.91, 0)
+
+[node name="Arte" type="Sprite2D" parent="BackgroundArt/ElSilencio"]
+texture = ExtResource("silencio")
+centered = false
+scale = Vector2(0.3827751196172249, 0.3827751196172249)
+position = Vector2(0, 0)
+flip_h = false
+
+[node name="Retorno" type="Sprite2D" parent="BackgroundArt/ElSilencio"]
+texture = ExtResource("silencio")
+centered = false
+scale = Vector2(0.3827751196172249, 0.3827751196172249)
+position = Vector2(640, 0)
+flip_h = true
 
 [node name="Geometry" type="Node2D" parent="."]
 
@@ -70,10 +195,12 @@ position = Vector2(100.0, 24.0)
 shape = SubResource("Shape0")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block0"]
+visible = false
 polygon = PackedVector2Array(0, 0, 200, 0, 200, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block0"]
+visible = false
 points = PackedVector2Array(0, 0, 200, 0)
 width = 2.0
 default_color = Color(0.7333333333333333, 0.5411764705882353, 0.7725490196078432, 1)
@@ -89,10 +216,12 @@ position = Vector2(185.0, 24.0)
 shape = SubResource("Shape1")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block1"]
+visible = false
 polygon = PackedVector2Array(0, 0, 370, 0, 370, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block1"]
+visible = false
 points = PackedVector2Array(0, 0, 370, 0)
 width = 2.0
 default_color = Color(0.7333333333333333, 0.5411764705882353, 0.7725490196078432, 1)
@@ -108,10 +237,12 @@ position = Vector2(60.0, 24.0)
 shape = SubResource("Shape2")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block2"]
+visible = false
 polygon = PackedVector2Array(0, 0, 120, 0, 120, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block2"]
+visible = false
 points = PackedVector2Array(0, 0, 120, 0)
 width = 2.0
 default_color = Color(0.7333333333333333, 0.5411764705882353, 0.7725490196078432, 1)
@@ -127,10 +258,12 @@ position = Vector2(150.0, 24.0)
 shape = SubResource("Shape3")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block3"]
+visible = false
 polygon = PackedVector2Array(0, 0, 300, 0, 300, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block3"]
+visible = false
 points = PackedVector2Array(0, 0, 300, 0)
 width = 2.0
 default_color = Color(0.7333333333333333, 0.5411764705882353, 0.7725490196078432, 1)
@@ -146,10 +279,12 @@ position = Vector2(180.0, 24.0)
 shape = SubResource("Shape4")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block4"]
+visible = false
 polygon = PackedVector2Array(0, 0, 360, 0, 360, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block4"]
+visible = false
 points = PackedVector2Array(0, 0, 360, 0)
 width = 2.0
 default_color = Color(0.7333333333333333, 0.5411764705882353, 0.7725490196078432, 1)
@@ -165,10 +300,12 @@ position = Vector2(1763.0, 24.0)
 shape = SubResource("Shape5")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block5"]
+visible = false
 polygon = PackedVector2Array(0, 0, 3526, 0, 3526, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block5"]
+visible = false
 points = PackedVector2Array(0, 0, 3526, 0)
 width = 2.0
 default_color = Color(0.7333333333333333, 0.5411764705882353, 0.7725490196078432, 1)
@@ -183,10 +320,12 @@ position = Vector2(12.0, 410.0)
 shape = SubResource("Shape6")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block6"]
+visible = false
 polygon = PackedVector2Array(0, 0, 24, 0, 24, 820, 0, 820)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block6"]
+visible = false
 points = PackedVector2Array(0, 0, 24, 0)
 width = 2.0
 default_color = Color(0.7333333333333333, 0.5411764705882353, 0.7725490196078432, 1)
@@ -201,10 +340,12 @@ position = Vector2(12.0, 410.0)
 shape = SubResource("Shape7")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block7"]
+visible = false
 polygon = PackedVector2Array(0, 0, 24, 0, 24, 820, 0, 820)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block7"]
+visible = false
 points = PackedVector2Array(0, 0, 24, 0)
 width = 2.0
 default_color = Color(0.7333333333333333, 0.5411764705882353, 0.7725490196078432, 1)
@@ -226,15 +367,20 @@ victory_story = "SAREN_DEFEAT"
 intro_story = "STORY_16"
 
 [node name="EnergyDoor3" parent="Entities" instance=ExtResource("EnergyDoor")]
+seal_texture = ExtResource("art_compuerta")
 position = Vector2(2350, 320)
 arena_lock = true
 height = 230.0
 
 [node name="EnergyDoor4" parent="Entities" instance=ExtResource("EnergyDoor")]
+seal_texture = ExtResource("art_compuerta")
 position = Vector2(3680, 320)
 required_keys = PackedStringArray("boss")
 
 [node name="MovingPlatform5" parent="Entities" groups=["arena_platforms"] instance=ExtResource("MovingPlatform")]
+surface_texture = ExtResource("art_ascensor")
+fractured_texture = ExtResource("repisa_fisurada")
+collapsing_texture = ExtResource("losa_en_colapso")
 position = Vector2(2550, 278)
 travel = Vector2(0, 0)
 width = 56.0
@@ -244,6 +390,9 @@ collapse_delay = 0.245
 return_delay = 2.4
 
 [node name="MovingPlatform6" parent="Entities" groups=["arena_platforms"] instance=ExtResource("MovingPlatform")]
+surface_texture = ExtResource("art_ascensor")
+fractured_texture = ExtResource("repisa_fisurada")
+collapsing_texture = ExtResource("losa_en_colapso")
 position = Vector2(3340, 278)
 travel = Vector2(0, 0)
 width = 56.0
@@ -253,6 +402,8 @@ collapse_delay = 0.245
 return_delay = 2.4
 
 [node name="InteractiveTerminal7" parent="Entities" instance=ExtResource("InteractiveTerminal")]
+crystal_art = ExtResource("archivo_memorias")
+crystal_jewel = ExtResource("art_testigo")
 position = Vector2(3920, 320)
 title = "Libera las memorias"
 state_key = "release"
@@ -261,6 +412,8 @@ required_keys = PackedStringArray("boss")
 locked_hint = "Activa primero el mecanismo anterior."
 
 [node name="InteractiveTerminal8" parent="Entities" instance=ExtResource("InteractiveTerminal")]
+crystal_art = ExtResource("transmisor_fase")
+crystal_jewel = ExtResource("art_testigo")
 position = Vector2(4450, 320)
 title = "Envía la señal al pasado"
 state_key = "signal"
@@ -269,6 +422,9 @@ required_keys = PackedStringArray("release")
 locked_hint = "Primero libera el almacenamiento permanente."
 
 [node name="InteractiveTerminal9" parent="Entities" instance=ExtResource("InteractiveTerminal")]
+crystal_art = ExtResource("pedestal_resonancia")
+energized_art = ExtResource("pedestal_resonancia_activo")
+crystal_jewel = ExtResource("art_testigo")
 position = Vector2(4920, 320)
 title = "Estabiliza el núcleo"
 state_key = "restore"
@@ -300,11 +456,6 @@ speed = 102.0
 attack_style = "ranged"
 combo_strikes = 2
 
-[node name="Prop0" parent="WorldArt" instance=ExtResource("Decoration")]
-position = Vector2(3000, 320)
-kind = "core"
-size = Vector2(380, 300)
-tint = Color(0.7333333333333333, 0.5411764705882353, 0.7725490196078432, 1)
 
 [node name="Sign0" type="Label" parent="Labels"]
 offset_left = 80.0
@@ -379,8 +530,402 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Exit" parent="Entities" instance=ExtResource("LevelExit")]
+arch_texture = ExtResource("art_portal")
 position = Vector2(5260, 320)
 required_keys = PackedStringArray("boss", "release", "signal", "restore")
+
+[node name="NucleoSuspendido" type="Sprite2D" parent="WorldArt"]
+script = ExtResource("luz_resonancia")
+mecanismo = "restore"
+apagado = Color(0.9,0.70,0.90,1)
+encendido = Color(0.72,1,0.93,1)
+texture = ExtResource("art_nucleo")
+centered = false
+position = Vector2(2938, 98)
+z_index = -3
+
+[node name="Estrato" type="Sprite2D" parent="Geometry/Block0"]
+texture = ExtResource("art_muro_corazon")
+centered = false
+position = Vector2(0, 4)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(0, 0, 200, 44)
+
+[node name="FracturaInferior" type="Sprite2D" parent="Geometry/Block0"]
+texture = ExtResource("art_losa")
+centered = false
+position = Vector2(0, 48)
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(0, 0, 200, 34)
+
+[node name="Superficie" type="Sprite2D" parent="Geometry/Block0"]
+texture = ExtResource("art_borde_corazon")
+centered = false
+position = Vector2(0, 0)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(0, 0, 200, 8)
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block0"]
+texture = ExtResource("art_canto_corazon")
+centered = false
+position = Vector2(0, 0)
+
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block0"]
+texture = ExtResource("art_canto_corazon")
+centered = false
+position = Vector2(194, 0)
+flip_h = true
+
+[node name="Detalle0" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_arbotante")
+centered = false
+position = Vector2(126, 241)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+
+[node name="Estrato" type="Sprite2D" parent="Geometry/Block1"]
+texture = ExtResource("art_muro_corazon")
+centered = false
+position = Vector2(0, 4)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(32, 0, 370, 44)
+
+[node name="FracturaInferior" type="Sprite2D" parent="Geometry/Block1"]
+texture = ExtResource("art_losa")
+centered = false
+position = Vector2(0, 48)
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(32, 0, 370, 34)
+
+[node name="Superficie" type="Sprite2D" parent="Geometry/Block1"]
+texture = ExtResource("art_borde_corazon")
+centered = false
+position = Vector2(0, 0)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(0, 0, 370, 8)
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block1"]
+texture = ExtResource("art_canto_corazon")
+centered = false
+position = Vector2(0, 0)
+
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block1"]
+texture = ExtResource("art_canto_corazon")
+centered = false
+position = Vector2(364, 0)
+flip_h = true
+
+[node name="Detalle1" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_fragmento")
+centered = false
+position = Vector2(472, 264)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+
+[node name="Estrato" type="Sprite2D" parent="Geometry/Block2"]
+texture = ExtResource("art_muro_corazon")
+centered = false
+position = Vector2(0, 4)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(64, 0, 120, 44)
+
+[node name="FracturaInferior" type="Sprite2D" parent="Geometry/Block2"]
+texture = ExtResource("art_losa")
+centered = false
+position = Vector2(0, 48)
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(64, 0, 120, 34)
+
+[node name="Superficie" type="Sprite2D" parent="Geometry/Block2"]
+texture = ExtResource("art_borde_corazon")
+centered = false
+position = Vector2(0, 0)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(0, 0, 120, 8)
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block2"]
+texture = ExtResource("art_canto_corazon")
+centered = false
+position = Vector2(0, 0)
+
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block2"]
+texture = ExtResource("art_canto_corazon")
+centered = false
+position = Vector2(114, 0)
+flip_h = true
+
+[node name="Detalle2" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_transmisor")
+centered = false
+position = Vector2(902, 268)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+
+[node name="Estrato" type="Sprite2D" parent="Geometry/Block3"]
+texture = ExtResource("art_muro_corazon")
+centered = false
+position = Vector2(0, 4)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(96, 0, 300, 44)
+
+[node name="FracturaInferior" type="Sprite2D" parent="Geometry/Block3"]
+texture = ExtResource("art_losa")
+centered = false
+position = Vector2(0, 48)
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(96, 0, 300, 34)
+
+[node name="Superficie" type="Sprite2D" parent="Geometry/Block3"]
+texture = ExtResource("art_borde_corazon")
+centered = false
+position = Vector2(0, 0)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(0, 0, 300, 8)
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block3"]
+texture = ExtResource("art_canto_corazon")
+centered = false
+position = Vector2(0, 0)
+
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block3"]
+texture = ExtResource("art_canto_corazon")
+centered = false
+position = Vector2(294, 0)
+flip_h = true
+
+[node name="Detalle3" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_prisma_fusionado")
+centered = false
+position = Vector2(1252, 263)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+
+[node name="Estrato" type="Sprite2D" parent="Geometry/Block4"]
+texture = ExtResource("art_muro_corazon")
+centered = false
+position = Vector2(0, 4)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(128, 0, 360, 44)
+
+[node name="FracturaInferior" type="Sprite2D" parent="Geometry/Block4"]
+texture = ExtResource("art_losa")
+centered = false
+position = Vector2(0, 48)
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(128, 0, 360, 34)
+
+[node name="Superficie" type="Sprite2D" parent="Geometry/Block4"]
+texture = ExtResource("art_borde_corazon")
+centered = false
+position = Vector2(0, 0)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(0, 0, 360, 8)
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block4"]
+texture = ExtResource("art_canto_corazon")
+centered = false
+position = Vector2(0, 0)
+
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block4"]
+texture = ExtResource("art_canto_corazon")
+centered = false
+position = Vector2(354, 0)
+flip_h = true
+
+[node name="Detalle4" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_arbotante")
+centered = false
+position = Vector2(1549, 201)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+
+[node name="Estrato" type="Sprite2D" parent="Geometry/Block5"]
+texture = ExtResource("art_muro_corazon")
+centered = false
+position = Vector2(0, 4)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(160, 0, 3526, 44)
+
+[node name="FracturaInferior" type="Sprite2D" parent="Geometry/Block5"]
+texture = ExtResource("art_losa")
+centered = false
+position = Vector2(0, 48)
+texture_repeat = 2
+region_enabled = true
+region_rect = Rect2(160, 0, 3526, 34)
+
+[node name="Superficie" type="Sprite2D" parent="Geometry/Block5"]
+texture = ExtResource("art_borde_corazon")
+centered = false
+position = Vector2(0, 0)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(0, 0, 3526, 8)
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block5"]
+texture = ExtResource("art_canto_corazon")
+centered = false
+position = Vector2(0, 0)
+
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block5"]
+texture = ExtResource("art_canto_corazon")
+centered = false
+position = Vector2(3520, 0)
+flip_h = true
+
+[node name="Detalle5" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_fragmento")
+centered = false
+position = Vector2(1916, 264)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+
+[node name="Detalle6" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_arbotante")
+centered = false
+position = Vector2(2467, 241)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+
+[node name="Detalle7" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_fragmento")
+centered = false
+position = Vector2(2660, 264)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+
+[node name="Detalle8" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_transmisor")
+centered = false
+position = Vector2(2842, 268)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+
+[node name="Detalle9" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_prisma_fusionado")
+centered = false
+position = Vector2(3028, 263)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+
+[node name="Detalle10" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_fragmento")
+centered = false
+position = Vector2(3218, 264)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+
+[node name="Detalle11" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_transmisor")
+centered = false
+position = Vector2(3400, 268)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+
+[node name="Detalle12" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_prisma_fusionado")
+centered = false
+position = Vector2(3586, 263)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+
+[node name="Detalle13" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_arbotante")
+centered = false
+position = Vector2(3769, 241)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+
+[node name="Detalle14" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_fragmento")
+centered = false
+position = Vector2(3962, 264)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+
+[node name="Detalle15" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_transmisor")
+centered = false
+position = Vector2(4144, 268)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+
+[node name="Detalle16" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_prisma_fusionado")
+centered = false
+position = Vector2(4330, 263)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+
+[node name="Detalle17" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_arbotante")
+centered = false
+position = Vector2(4513, 241)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+
+[node name="Detalle18" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_fragmento")
+centered = false
+position = Vector2(4706, 264)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+
+[node name="Detalle19" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_prisma_fusionado")
+centered = false
+position = Vector2(5074, 263)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+
+[node name="Pared" type="Sprite2D" parent="Geometry/Block6"]
+texture = ExtResource("art_muro_corazon")
+centered = false
+position = Vector2(0, 0)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(0, 0, 24, 820)
+
+[node name="Pared" type="Sprite2D" parent="Geometry/Block7"]
+texture = ExtResource("art_muro_corazon")
+centered = false
+position = Vector2(0, 0)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(0, 0, 24, 820)
+
+[node name="Motas" type="CPUParticles2D" parent="WorldArt"]
+z_index = -1
+position = Vector2(2700,360)
+amount = 160
+lifetime = 5.0
+preprocess = 3.0
+emission_shape = 3
+emission_rect_extents = Vector2(2700,360)
+gravity = Vector2(1,-3)
+color = Color(0.73,0.65,0.96,0.48)
 
 [node name="Player" parent="." instance=ExtResource("Player")]
 position = Vector2(100, 320)

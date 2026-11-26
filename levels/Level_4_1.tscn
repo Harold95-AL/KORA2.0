@@ -1,16 +1,49 @@
-[gd_scene load_steps=25 format=3]
+[gd_scene format=3]
 [ext_resource type="StyleBox" path="res://resources/ui/world_text_plate.tres" id="WorldPlate"]
 
 [ext_resource type="Script" path="res://scripts/world/section.gd" id="Level"]
 [ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="Player"]
 [ext_resource type="PackedScene" path="res://scenes/entities/BaseEnemy.tscn" id="BaseEnemy"]
 [ext_resource type="PackedScene" path="res://scenes/entities/Checkpoint.tscn" id="Checkpoint"]
-[ext_resource type="PackedScene" path="res://scenes/entities/Decoration.tscn" id="Decoration"]
 [ext_resource type="PackedScene" path="res://scenes/entities/EnergyDoor.tscn" id="EnergyDoor"]
 [ext_resource type="PackedScene" path="res://scenes/entities/Hazard.tscn" id="Hazard"]
 [ext_resource type="PackedScene" path="res://scenes/entities/InteractiveTerminal.tscn" id="InteractiveTerminal"]
 [ext_resource type="PackedScene" path="res://scenes/entities/LevelExit.tscn" id="LevelExit"]
 [ext_resource type="PackedScene" path="res://scenes/entities/MovingPlatform.tscn" id="MovingPlatform"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/kora/seccion_4/corrupcion.png" id="art_corrupcion"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/muro_corrupcion.png" id="art_muro_corrupcion"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/borde_corrupcion.png" id="art_borde_corrupcion"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/canto_corrupcion.png" id="art_canto_corrupcion"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/flor_geoda.png" id="art_flor_geoda"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/fragmento.png" id="art_fragmento"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/prisma_fusionado.png" id="art_prisma_fusionado"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/repisa_fisurada.png" id="art_repisa_fisurada"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/ascensor.png" id="art_ascensor"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/regulador.png" id="art_regulador"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/testigo.png" id="art_testigo"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/pinchos_eshar.png" id="art_pinchos"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/compuerta.png" id="art_compuerta"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/portal.png" id="art_portal"]
+
+
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/kora/seccion_4/medio_corrupcion.png" id="art_medio_corrupcion"]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/kora/seccion_4/techo_corrupcion.png" id="techo_corrupcion"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/conducto_emergencia.png" id="conducto_emergencia"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/estabilizador.png" id="estabilizador"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/estabilizador_activo.png" id="estabilizador_activo"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/losa_en_colapso.png" id="losa_en_colapso"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/eco_quebrado.png" id="eco_quebrado"]
+[ext_resource type="Script" path="res://scripts/world/luz_resonancia.gd" id="luz_resonancia"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/tuberia_en_flor.png" id="tuberia_en_flor"]
+[ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_4/losa_fracturada.png" id="losa_fracturada"]
+
+[sub_resource type="Shader" id="LuzMineral"]
+code = "shader_type canvas_item;\nvoid fragment(){float m=smoothstep(0.14,0.47,max(COLOR.b,COLOR.g)-COLOR.r); COLOR.rgb *= 1.0+m*0.20*sin(TIME*2.6+UV.y*2.0);}"
+
+[sub_resource type="ShaderMaterial" id="Pulso"]
+shader = SubResource("LuzMineral")
 
 [sub_resource type="RectangleShape2D" id="Shape0"]
 size = Vector2(200, 48)
@@ -56,6 +89,8 @@ size = Vector2(24, 900)
 
 [node name="Level_4_1" type="Node2D"]
 script = ExtResource("Level")
+texture_filter = 1
+show_blockout_backdrop = false
 section_index = 9
 bounds = Rect2(0, 0, 6200, 800)
 palette = Color(0.7176470588235294, 0.49019607843137253, 0.6, 1)
@@ -63,6 +98,76 @@ entry_story = ""
 entry_hint = ""
 
 [node name="BackgroundArt" type="Node2D" parent="."]
+
+[node name="Plano0" type="Parallax2D" parent="BackgroundArt"]
+z_index = -30
+scroll_scale = Vector2(0.025, 0)
+repeat_size = Vector2(1280, 0)
+repeat_times = 3
+
+[node name="Arte" type="Sprite2D" parent="BackgroundArt/Plano0"]
+centered = false
+texture_filter = 1
+texture = ExtResource("art_corrupcion")
+position = Vector2(0, 0)
+scale = Vector2(0.3827751196172249, 0.3827751196172249)
+modulate = Color(0.80,0.85,0.91,1)
+flip_h = false
+
+[node name="Retorno" type="Sprite2D" parent="BackgroundArt/Plano0"]
+centered = false
+texture_filter = 1
+texture = ExtResource("art_corrupcion")
+position = Vector2(640, 0)
+scale = Vector2(0.3827751196172249, 0.3827751196172249)
+modulate = Color(0.80,0.85,0.91,1)
+flip_h = true
+
+[node name="Plano1" type="Parallax2D" parent="BackgroundArt"]
+z_index = -29
+scroll_scale = Vector2(0.22, 0)
+repeat_size = Vector2(1536, 0)
+repeat_times = 3
+
+[node name="Arte" type="Sprite2D" parent="BackgroundArt/Plano1"]
+centered = false
+texture_filter = 1
+texture = ExtResource("art_medio_corrupcion")
+position = Vector2(0, 288)
+scale = Vector2(0.35359116022099446, 0.35359116022099446)
+modulate = Color(0.60,0.65,0.73,1)
+flip_h = false
+
+[node name="Retorno" type="Sprite2D" parent="BackgroundArt/Plano1"]
+centered = false
+texture_filter = 1
+texture = ExtResource("art_medio_corrupcion")
+position = Vector2(768, 288)
+scale = Vector2(0.35359116022099446, 0.35359116022099446)
+modulate = Color(0.60,0.65,0.73,1)
+flip_h = true
+
+[node name="PrimerPlano" type="Parallax2D" parent="BackgroundArt"]
+z_index = -27
+texture_filter = 1
+scroll_scale = Vector2(0.38, 0)
+repeat_size = Vector2(1536, 0)
+repeat_times = 3
+modulate = Color(0.54, 0.59, 0.68, 1)
+
+[node name="Arte" type="Sprite2D" parent="BackgroundArt/PrimerPlano"]
+texture = ExtResource("techo_corrupcion")
+centered = false
+scale = Vector2(1, 1)
+position = Vector2(0, -9)
+flip_h = false
+
+[node name="Retorno" type="Sprite2D" parent="BackgroundArt/PrimerPlano"]
+texture = ExtResource("techo_corrupcion")
+centered = false
+scale = Vector2(1, 1)
+position = Vector2(768, -9)
+flip_h = true
 
 [node name="Geometry" type="Node2D" parent="."]
 
@@ -88,10 +193,12 @@ position = Vector2(100.0, 24.0)
 shape = SubResource("Shape0")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block0"]
+visible = false
 polygon = PackedVector2Array(0, 0, 200, 0, 200, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block0"]
+visible = false
 points = PackedVector2Array(0, 0, 200, 0)
 width = 2.0
 default_color = Color(0.7176470588235294, 0.49019607843137253, 0.6, 1)
@@ -107,10 +214,12 @@ position = Vector2(165.0, 24.0)
 shape = SubResource("Shape1")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block1"]
+visible = false
 polygon = PackedVector2Array(0, 0, 330, 0, 330, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block1"]
+visible = false
 points = PackedVector2Array(0, 0, 330, 0)
 width = 2.0
 default_color = Color(0.7176470588235294, 0.49019607843137253, 0.6, 1)
@@ -126,10 +235,12 @@ position = Vector2(300.0, 24.0)
 shape = SubResource("Shape2")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block2"]
+visible = false
 polygon = PackedVector2Array(0, 0, 600, 0, 600, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block2"]
+visible = false
 points = PackedVector2Array(0, 0, 600, 0)
 width = 2.0
 default_color = Color(0.7176470588235294, 0.49019607843137253, 0.6, 1)
@@ -145,10 +256,12 @@ position = Vector2(310.0, 24.0)
 shape = SubResource("Shape3")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block3"]
+visible = false
 polygon = PackedVector2Array(0, 0, 620, 0, 620, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block3"]
+visible = false
 points = PackedVector2Array(0, 0, 620, 0)
 width = 2.0
 default_color = Color(0.7176470588235294, 0.49019607843137253, 0.6, 1)
@@ -164,10 +277,12 @@ position = Vector2(84.0, 24.0)
 shape = SubResource("Shape4")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block4"]
+visible = false
 polygon = PackedVector2Array(0, 0, 168, 0, 168, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block4"]
+visible = false
 points = PackedVector2Array(0, 0, 168, 0)
 width = 2.0
 default_color = Color(0.7176470588235294, 0.49019607843137253, 0.6, 1)
@@ -183,10 +298,12 @@ position = Vector2(151.0, 24.0)
 shape = SubResource("Shape5")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block5"]
+visible = false
 polygon = PackedVector2Array(0, 0, 302, 0, 302, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block5"]
+visible = false
 points = PackedVector2Array(0, 0, 302, 0)
 width = 2.0
 default_color = Color(0.7176470588235294, 0.49019607843137253, 0.6, 1)
@@ -202,10 +319,12 @@ position = Vector2(320.0, 24.0)
 shape = SubResource("Shape6")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block6"]
+visible = false
 polygon = PackedVector2Array(0, 0, 640, 0, 640, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block6"]
+visible = false
 points = PackedVector2Array(0, 0, 640, 0)
 width = 2.0
 default_color = Color(0.7176470588235294, 0.49019607843137253, 0.6, 1)
@@ -221,10 +340,12 @@ position = Vector2(60.0, 24.0)
 shape = SubResource("Shape7")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block7"]
+visible = false
 polygon = PackedVector2Array(0, 0, 120, 0, 120, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block7"]
+visible = false
 points = PackedVector2Array(0, 0, 120, 0)
 width = 2.0
 default_color = Color(0.7176470588235294, 0.49019607843137253, 0.6, 1)
@@ -240,10 +361,12 @@ position = Vector2(165.0, 24.0)
 shape = SubResource("Shape8")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block8"]
+visible = false
 polygon = PackedVector2Array(0, 0, 330, 0, 330, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block8"]
+visible = false
 points = PackedVector2Array(0, 0, 330, 0)
 width = 2.0
 default_color = Color(0.7176470588235294, 0.49019607843137253, 0.6, 1)
@@ -259,10 +382,12 @@ position = Vector2(108.0, 24.0)
 shape = SubResource("Shape9")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block9"]
+visible = false
 polygon = PackedVector2Array(0, 0, 216, 0, 216, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block9"]
+visible = false
 points = PackedVector2Array(0, 0, 216, 0)
 width = 2.0
 default_color = Color(0.7176470588235294, 0.49019607843137253, 0.6, 1)
@@ -278,10 +403,12 @@ position = Vector2(107.0, 24.0)
 shape = SubResource("Shape10")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block10"]
+visible = false
 polygon = PackedVector2Array(0, 0, 214, 0, 214, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block10"]
+visible = false
 points = PackedVector2Array(0, 0, 214, 0)
 width = 2.0
 default_color = Color(0.7176470588235294, 0.49019607843137253, 0.6, 1)
@@ -297,10 +424,12 @@ position = Vector2(420.0, 24.0)
 shape = SubResource("Shape11")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block11"]
+visible = false
 polygon = PackedVector2Array(0, 0, 840, 0, 840, 48, 0, 48)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block11"]
+visible = false
 points = PackedVector2Array(0, 0, 840, 0)
 width = 2.0
 default_color = Color(0.7176470588235294, 0.49019607843137253, 0.6, 1)
@@ -315,10 +444,12 @@ position = Vector2(12.0, 450.0)
 shape = SubResource("Shape12")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block12"]
+visible = false
 polygon = PackedVector2Array(0, 0, 24, 0, 24, 900, 0, 900)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block12"]
+visible = false
 points = PackedVector2Array(0, 0, 24, 0)
 width = 2.0
 default_color = Color(0.7176470588235294, 0.49019607843137253, 0.6, 1)
@@ -333,15 +464,20 @@ position = Vector2(12.0, 450.0)
 shape = SubResource("Shape13")
 
 [node name="Blockout" type="Polygon2D" parent="Geometry/Block13"]
+visible = false
 polygon = PackedVector2Array(0, 0, 24, 0, 24, 900, 0, 900)
 color = Color(0.13, 0.22, 0.29, 1)
 
 [node name="Surface" type="Line2D" parent="Geometry/Block13"]
+visible = false
 points = PackedVector2Array(0, 0, 24, 0)
 width = 2.0
 default_color = Color(0.7176470588235294, 0.49019607843137253, 0.6, 1)
 
 [node name="MovingPlatform0" parent="Entities" instance=ExtResource("MovingPlatform")]
+surface_texture = ExtResource("art_repisa_fisurada")
+fractured_texture = ExtResource("art_repisa_fisurada")
+collapsing_texture = ExtResource("losa_en_colapso")
 position = Vector2(2128, 320)
 travel = Vector2(0, 0)
 width = 56.0
@@ -351,6 +487,7 @@ collapse_delay = 0.245
 return_delay = 2.4
 
 [node name="MovingPlatform1" parent="Entities" instance=ExtResource("MovingPlatform")]
+surface_texture = ExtResource("art_ascensor")
 position = Vector2(3676, 320)
 travel = Vector2(120, 40)
 width = 56.0
@@ -360,6 +497,8 @@ collapse_delay = 0.245
 return_delay = 2.4
 
 [node name="InteractiveTerminal2" parent="Entities" instance=ExtResource("InteractiveTerminal")]
+crystal_art = ExtResource("conducto_emergencia")
+crystal_jewel = ExtResource("art_testigo")
 position = Vector2(1130, 360)
 title = "Abre el conducto de emergencia"
 state_key = "conduit"
@@ -368,6 +507,9 @@ required_keys = PackedStringArray()
 locked_hint = "Activa primero el mecanismo anterior."
 
 [node name="InteractiveTerminal3" parent="Entities" instance=ExtResource("InteractiveTerminal")]
+crystal_art = ExtResource("estabilizador")
+energized_art = ExtResource("estabilizador_activo")
+crystal_jewel = ExtResource("art_testigo")
 position = Vector2(1840, 320)
 title = "Activa estabilizador A"
 state_key = "stabilizer_a"
@@ -376,6 +518,9 @@ required_keys = PackedStringArray("conduit")
 locked_hint = "Activa primero el mecanismo anterior."
 
 [node name="InteractiveTerminal4" parent="Entities" instance=ExtResource("InteractiveTerminal")]
+crystal_art = ExtResource("estabilizador")
+energized_art = ExtResource("estabilizador_activo")
+crystal_jewel = ExtResource("art_testigo")
 position = Vector2(3370, 320)
 title = "Activa estabilizador B"
 state_key = "stabilizer_b"
@@ -384,6 +529,9 @@ required_keys = PackedStringArray("stabilizer_a")
 locked_hint = "Activa primero el mecanismo anterior."
 
 [node name="InteractiveTerminal5" parent="Entities" instance=ExtResource("InteractiveTerminal")]
+crystal_art = ExtResource("estabilizador")
+energized_art = ExtResource("estabilizador_activo")
+crystal_jewel = ExtResource("art_testigo")
 position = Vector2(5780, 360)
 title = "Activa estabilizador C"
 state_key = "stabilizer_c"
@@ -401,6 +549,7 @@ position = Vector2(2330, 360)
 position = Vector2(4760, 320)
 
 [node name="Hazard9" parent="Entities" instance=ExtResource("Hazard")]
+spike_sheet = ExtResource("art_pinchos")
 position = Vector2(960, 360)
 width = 81.2
 cycle = true
@@ -412,6 +561,7 @@ active_time = 1.99
 damage = 2
 
 [node name="Hazard10" parent="Entities" instance=ExtResource("Hazard")]
+spike_sheet = ExtResource("art_pinchos")
 position = Vector2(1600, 320)
 width = 81.2
 cycle = true
@@ -423,6 +573,7 @@ active_time = 1.99
 damage = 2
 
 [node name="Hazard11" parent="Entities" instance=ExtResource("Hazard")]
+spike_sheet = ExtResource("art_pinchos")
 position = Vector2(3220, 320)
 width = 81.2
 cycle = true
@@ -434,6 +585,7 @@ active_time = 1.99
 damage = 2
 
 [node name="Hazard12" parent="Entities" instance=ExtResource("Hazard")]
+spike_sheet = ExtResource("art_pinchos")
 position = Vector2(5510, 360)
 width = 81.2
 cycle = true
@@ -469,6 +621,7 @@ attack_style = "brute"
 combo_strikes = 2
 
 [node name="EnergyDoor16" parent="Entities" instance=ExtResource("EnergyDoor")]
+seal_texture = ExtResource("art_compuerta")
 position = Vector2(5980, 360)
 required_keys = PackedStringArray("stabilizer_a", "stabilizer_b", "stabilizer_c")
 
@@ -481,6 +634,7 @@ attack_style = "ranged"
 combo_strikes = 2
 
 [node name="Hazard18" parent="Entities" instance=ExtResource("Hazard")]
+spike_sheet = ExtResource("art_pinchos")
 position = Vector2(1264, 360)
 width = 100.0
 cycle = true
@@ -490,29 +644,9 @@ warning_time = 0.45
 active_time = 2.2
 damage = 2
 
-[node name="Prop0" parent="WorldArt" instance=ExtResource("Decoration")]
-position = Vector2(530, 320)
-kind = "crystal"
-size = Vector2(85, 130)
-tint = Color(0.7176470588235294, 0.49019607843137253, 0.6, 1)
 
-[node name="Prop1" parent="WorldArt" instance=ExtResource("Decoration")]
-position = Vector2(2810, 360)
-kind = "crystal"
-size = Vector2(85, 130)
-tint = Color(0.7176470588235294, 0.49019607843137253, 0.6, 1)
 
-[node name="Prop2" parent="WorldArt" instance=ExtResource("Decoration")]
-position = Vector2(3530, 320)
-kind = "crystal"
-size = Vector2(85, 130)
-tint = Color(0.7176470588235294, 0.49019607843137253, 0.6, 1)
 
-[node name="Prop3" parent="WorldArt" instance=ExtResource("Decoration")]
-position = Vector2(5960, 360)
-kind = "crystal"
-size = Vector2(85, 130)
-tint = Color(0.7176470588235294, 0.49019607843137253, 0.6, 1)
 
 [node name="Sign0" type="Label" parent="Labels"]
 offset_left = 80.0
@@ -596,8 +730,546 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = ExtResource("WorldPlate")
 
 [node name="Exit" parent="Entities" instance=ExtResource("LevelExit")]
+arch_texture = ExtResource("art_portal")
 position = Vector2(6060, 360)
 required_keys = PackedStringArray("conduit", "stabilizer_a", "stabilizer_b", "stabilizer_c")
+
+[node name="Estrato" type="Sprite2D" parent="Geometry/Block0"]
+texture = ExtResource("art_muro_corrupcion")
+centered = false
+position = Vector2(0, 4)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(0, 0, 200, 516)
+
+[node name="Superficie" type="Sprite2D" parent="Geometry/Block0"]
+texture = ExtResource("art_borde_corrupcion")
+centered = false
+position = Vector2(0, 0)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(0, 0, 200, 8)
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block0"]
+texture = ExtResource("art_canto_corrupcion")
+centered = false
+position = Vector2(0, 0)
+
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block0"]
+texture = ExtResource("art_canto_corrupcion")
+centered = false
+position = Vector2(194, 0)
+flip_h = true
+
+[node name="Detalle0" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_flor_geoda")
+centered = false
+position = Vector2(124, 265)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+material = SubResource("Pulso")
+
+[node name="Estrato" type="Sprite2D" parent="Geometry/Block1"]
+texture = ExtResource("art_muro_corrupcion")
+centered = false
+position = Vector2(0, 4)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(32, 0, 330, 516)
+
+[node name="Superficie" type="Sprite2D" parent="Geometry/Block1"]
+texture = ExtResource("art_borde_corrupcion")
+centered = false
+position = Vector2(0, 0)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(0, 0, 330, 8)
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block1"]
+texture = ExtResource("art_canto_corrupcion")
+centered = false
+position = Vector2(0, 0)
+
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block1"]
+texture = ExtResource("art_canto_corrupcion")
+centered = false
+position = Vector2(324, 0)
+flip_h = true
+
+[node name="Detalle1" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_fragmento")
+centered = false
+position = Vector2(472, 264)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+
+[node name="Estrato" type="Sprite2D" parent="Geometry/Block2"]
+texture = ExtResource("art_muro_corrupcion")
+centered = false
+position = Vector2(0, 4)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(64, 0, 600, 476)
+
+[node name="Superficie" type="Sprite2D" parent="Geometry/Block2"]
+texture = ExtResource("art_borde_corrupcion")
+centered = false
+position = Vector2(0, 0)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(0, 0, 600, 8)
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block2"]
+texture = ExtResource("art_canto_corrupcion")
+centered = false
+position = Vector2(0, 0)
+
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block2"]
+texture = ExtResource("art_canto_corrupcion")
+centered = false
+position = Vector2(594, 0)
+flip_h = true
+
+[node name="Detalle2" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_prisma_fusionado")
+centered = false
+position = Vector2(862, 303)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+material = SubResource("Pulso")
+
+[node name="Estrato" type="Sprite2D" parent="Geometry/Block3"]
+texture = ExtResource("art_muro_corrupcion")
+centered = false
+position = Vector2(0, 4)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(96, 0, 620, 516)
+
+[node name="Superficie" type="Sprite2D" parent="Geometry/Block3"]
+texture = ExtResource("art_borde_corrupcion")
+centered = false
+position = Vector2(0, 0)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(0, 0, 620, 8)
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block3"]
+texture = ExtResource("art_canto_corrupcion")
+centered = false
+position = Vector2(0, 0)
+
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block3"]
+texture = ExtResource("art_canto_corrupcion")
+centered = false
+position = Vector2(614, 0)
+flip_h = true
+
+[node name="Detalle3" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_prisma_fusionado")
+centered = false
+position = Vector2(1738, 263)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+material = SubResource("Pulso")
+
+[node name="Detalle4" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_flor_geoda")
+centered = false
+position = Vector2(1945, 265)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+material = SubResource("Pulso")
+
+[node name="Estrato" type="Sprite2D" parent="Geometry/Block4"]
+texture = ExtResource("art_muro_corrupcion")
+centered = false
+position = Vector2(0, 4)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(128, 0, 168, 44)
+
+[node name="Fractura" type="Sprite2D" parent="Geometry/Block4"]
+texture = ExtResource("losa_fracturada")
+centered = false
+position = Vector2(0,48)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(128, 0, 168, 34)
+
+[node name="Superficie" type="Sprite2D" parent="Geometry/Block4"]
+texture = ExtResource("art_borde_corrupcion")
+centered = false
+position = Vector2(0, 0)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(0, 0, 168, 8)
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block4"]
+texture = ExtResource("art_canto_corrupcion")
+centered = false
+position = Vector2(0, 0)
+
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block4"]
+texture = ExtResource("art_canto_corrupcion")
+centered = false
+position = Vector2(162, 0)
+flip_h = true
+
+[node name="Estrato" type="Sprite2D" parent="Geometry/Block5"]
+texture = ExtResource("art_muro_corrupcion")
+centered = false
+position = Vector2(0, 4)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(160, 0, 302, 476)
+
+[node name="Superficie" type="Sprite2D" parent="Geometry/Block5"]
+texture = ExtResource("art_borde_corrupcion")
+centered = false
+position = Vector2(0, 0)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(0, 0, 302, 8)
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block5"]
+texture = ExtResource("art_canto_corrupcion")
+centered = false
+position = Vector2(0, 0)
+
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block5"]
+texture = ExtResource("art_canto_corrupcion")
+centered = false
+position = Vector2(296, 0)
+flip_h = true
+
+[node name="Detalle5" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_fragmento")
+centered = false
+position = Vector2(2874, 304)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+
+[node name="Estrato" type="Sprite2D" parent="Geometry/Block6"]
+texture = ExtResource("art_muro_corrupcion")
+centered = false
+position = Vector2(0, 4)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(192, 0, 640, 516)
+
+[node name="Superficie" type="Sprite2D" parent="Geometry/Block6"]
+texture = ExtResource("art_borde_corrupcion")
+centered = false
+position = Vector2(0, 0)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(0, 0, 640, 8)
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block6"]
+texture = ExtResource("art_canto_corrupcion")
+centered = false
+position = Vector2(0, 0)
+
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block6"]
+texture = ExtResource("art_canto_corrupcion")
+centered = false
+position = Vector2(634, 0)
+flip_h = true
+
+[node name="Detalle6" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_fragmento")
+centered = false
+position = Vector2(3054, 264)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+
+[node name="Detalle7" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_prisma_fusionado")
+centered = false
+position = Vector2(3249, 263)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+material = SubResource("Pulso")
+
+[node name="Detalle8" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_flor_geoda")
+centered = false
+position = Vector2(3443, 265)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+material = SubResource("Pulso")
+
+[node name="Estrato" type="Sprite2D" parent="Geometry/Block7"]
+texture = ExtResource("art_muro_corrupcion")
+centered = false
+position = Vector2(0, 4)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(224, 0, 120, 44)
+
+[node name="Fractura" type="Sprite2D" parent="Geometry/Block7"]
+texture = ExtResource("losa_fracturada")
+centered = false
+position = Vector2(0,48)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(224, 0, 120, 34)
+
+[node name="Superficie" type="Sprite2D" parent="Geometry/Block7"]
+texture = ExtResource("art_borde_corrupcion")
+centered = false
+position = Vector2(0, 0)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(0, 0, 120, 8)
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block7"]
+texture = ExtResource("art_canto_corrupcion")
+centered = false
+position = Vector2(0, 0)
+
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block7"]
+texture = ExtResource("art_canto_corrupcion")
+centered = false
+position = Vector2(114, 0)
+flip_h = true
+
+[node name="Detalle9" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_prisma_fusionado")
+centered = false
+position = Vector2(3930, 303)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+material = SubResource("Pulso")
+
+[node name="Estrato" type="Sprite2D" parent="Geometry/Block8"]
+texture = ExtResource("art_muro_corrupcion")
+centered = false
+position = Vector2(0, 4)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(256, 0, 330, 476)
+
+[node name="Superficie" type="Sprite2D" parent="Geometry/Block8"]
+texture = ExtResource("art_borde_corrupcion")
+centered = false
+position = Vector2(0, 0)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(0, 0, 330, 8)
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block8"]
+texture = ExtResource("art_canto_corrupcion")
+centered = false
+position = Vector2(0, 0)
+
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block8"]
+texture = ExtResource("art_canto_corrupcion")
+centered = false
+position = Vector2(324, 0)
+flip_h = true
+
+[node name="Detalle10" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_flor_geoda")
+centered = false
+position = Vector2(4275, 305)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+material = SubResource("Pulso")
+
+[node name="Detalle11" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_prisma_fusionado")
+centered = false
+position = Vector2(4453, 303)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+material = SubResource("Pulso")
+
+[node name="Estrato" type="Sprite2D" parent="Geometry/Block9"]
+texture = ExtResource("art_muro_corrupcion")
+centered = false
+position = Vector2(0, 4)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(0, 0, 216, 516)
+
+[node name="Superficie" type="Sprite2D" parent="Geometry/Block9"]
+texture = ExtResource("art_borde_corrupcion")
+centered = false
+position = Vector2(0, 0)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(0, 0, 216, 8)
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block9"]
+texture = ExtResource("art_canto_corrupcion")
+centered = false
+position = Vector2(0, 0)
+
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block9"]
+texture = ExtResource("art_canto_corrupcion")
+centered = false
+position = Vector2(210, 0)
+flip_h = true
+
+[node name="Detalle12" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_prisma_fusionado")
+centered = false
+position = Vector2(4674, 263)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+material = SubResource("Pulso")
+
+[node name="Estrato" type="Sprite2D" parent="Geometry/Block10"]
+texture = ExtResource("art_muro_corrupcion")
+centered = false
+position = Vector2(0, 4)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(32, 0, 214, 516)
+
+[node name="Superficie" type="Sprite2D" parent="Geometry/Block10"]
+texture = ExtResource("art_borde_corrupcion")
+centered = false
+position = Vector2(0, 0)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(0, 0, 214, 8)
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block10"]
+texture = ExtResource("art_canto_corrupcion")
+centered = false
+position = Vector2(0, 0)
+
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block10"]
+texture = ExtResource("art_canto_corrupcion")
+centered = false
+position = Vector2(208, 0)
+flip_h = true
+
+[node name="Estrato" type="Sprite2D" parent="Geometry/Block11"]
+texture = ExtResource("art_muro_corrupcion")
+centered = false
+position = Vector2(0, 4)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(64, 0, 840, 476)
+
+[node name="Superficie" type="Sprite2D" parent="Geometry/Block11"]
+texture = ExtResource("art_borde_corrupcion")
+centered = false
+position = Vector2(0, 0)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(0, 0, 840, 8)
+
+[node name="CantoIzq" type="Sprite2D" parent="Geometry/Block11"]
+texture = ExtResource("art_canto_corrupcion")
+centered = false
+position = Vector2(0, 0)
+
+
+[node name="CantoDer" type="Sprite2D" parent="Geometry/Block11"]
+texture = ExtResource("art_canto_corrupcion")
+centered = false
+position = Vector2(834, 0)
+flip_h = true
+
+[node name="Detalle13" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_fragmento")
+centered = false
+position = Vector2(5402, 304)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+
+[node name="Detalle14" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_prisma_fusionado")
+centered = false
+position = Vector2(5610, 303)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+material = SubResource("Pulso")
+
+[node name="Detalle15" type="Sprite2D" parent="WorldArt"]
+texture = ExtResource("art_flor_geoda")
+centered = false
+position = Vector2(5817, 305)
+z_index = -2
+modulate = Color(0.75,0.79,0.82,1)
+material = SubResource("Pulso")
+
+[node name="Pared" type="Sprite2D" parent="Geometry/Block12"]
+texture = ExtResource("art_muro_corrupcion")
+centered = false
+position = Vector2(0, 0)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(0, 0, 24, 900)
+
+[node name="Pared" type="Sprite2D" parent="Geometry/Block13"]
+texture = ExtResource("art_muro_corrupcion")
+centered = false
+position = Vector2(0, 0)
+region_enabled = true
+texture_repeat = 2
+region_rect = Rect2(0, 0, 24, 900)
+
+[node name="Motas" type="CPUParticles2D" parent="WorldArt"]
+z_index = -1
+position = Vector2(3100,400)
+amount = 160
+lifetime = 5.0
+preprocess = 3.0
+emission_shape = 3
+emission_rect_extents = Vector2(3100,400)
+gravity = Vector2(1,-3)
+color = Color(0.73,0.65,0.96,0.48)
+
+[node name="CristalDelEco" parent="Entities" instance=ExtResource("InteractiveTerminal")]
+position = Vector2(2758, 360)
+title = "Escucha el cristal"
+state_key = "eco_eshar"
+story_id = "ECO_FRACTURADO"
+crystal_art = ExtResource("eco_quebrado")
+crystal_jewel = ExtResource("art_testigo")
+
+[node name="JardinRecuperado" type="Node2D" parent="WorldArt"]
+z_index = -2
+modulate = Color(0.47,0.40,0.55,1)
+script = ExtResource("luz_resonancia")
+mecanismo = "conduit"
+
+[node name="Brote0" type="Sprite2D" parent="WorldArt/JardinRecuperado"]
+centered = false
+position = Vector2(1030, 325)
+texture = ExtResource("tuberia_en_flor")
+
+[node name="Brote1" type="Sprite2D" parent="WorldArt/JardinRecuperado"]
+centered = false
+position = Vector2(1214, 325)
+texture = ExtResource("tuberia_en_flor")
+
+[node name="Brote2" type="Sprite2D" parent="WorldArt/JardinRecuperado"]
+centered = false
+position = Vector2(1665, 285)
+texture = ExtResource("tuberia_en_flor")
+
+[node name="Brote3" type="Sprite2D" parent="WorldArt/JardinRecuperado"]
+centered = false
+position = Vector2(3280, 285)
+texture = ExtResource("tuberia_en_flor")
 
 [node name="Player" parent="." instance=ExtResource("Player")]
 position = Vector2(100, 320)

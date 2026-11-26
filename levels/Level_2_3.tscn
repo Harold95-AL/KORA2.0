@@ -12,8 +12,8 @@
 [ext_resource type="PackedScene" path="res://scenes/entities/LevelExit.tscn" id="LevelExit"]
 
 [ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/kora/seccion_2/cupula.png" id="valle"]
-[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/kora/seccion_2/medio_camara.png" id="medio_camara"]
-[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/kora/seccion_2/cercano_camara.png" id="cercano_camara"]
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/kora/seccion_2/arco-parallax.png" id="medio_camara"]
+[ext_resource type="Texture2D" path="res://assets/sprites/backgrounds/kora/seccion_2/pilar-parallax.png" id="cercano_camara"]
 [ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_2/muro_camara.png" id="muro_camara"]
 [ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_2/cornisa_camara.png" id="cornisa_camara"]
 [ext_resource type="Texture2D" path="res://assets/sprites/tilesets/zona_2/pilar_eshar.png" id="pilar_eshar"]
@@ -70,6 +70,7 @@ entry_story = ""
 entry_hint = ""
 
 [node name="BackgroundArt" type="Node2D" parent="."]
+texture_filter = 1
 
 [node name="Horizonte0" type="Parallax2D" parent="BackgroundArt"]
 z_index = -30
@@ -97,7 +98,8 @@ repeat_size = Vector2(512, 0)
 repeat_times = 3
 
 [node name="medio_camara" type="Sprite2D" parent="BackgroundArt/Horizonte1"]
-position = Vector2(0, 160)
+scale = Vector2(0.34,0.34)
+position = Vector2(270, 206)
 texture = ExtResource("medio_camara")
 centered = false
 modulate = Color(0.47,0.52,0.67,1)
@@ -109,7 +111,8 @@ repeat_size = Vector2(512, 0)
 repeat_times = 3
 
 [node name="cercano_camara" type="Sprite2D" parent="BackgroundArt/Horizonte2"]
-position = Vector2(0, 260)
+scale = Vector2(0.48,0.48)
+position = Vector2(396, 147)
 texture = ExtResource("cercano_camara")
 centered = false
 modulate = Color(0.47,0.52,0.67,1)

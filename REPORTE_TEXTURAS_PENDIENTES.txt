@@ -1,268 +1,96 @@
-KORA: LA MEMORIA DE LAS ESTRELLAS
-REPORTE DE TEXTURAS Y SPRITES
-Inventario del boceto jugable actual
+KORA · INVENTARIO DE ARTE PENDIENTE · 25 de noviembre de 2026
 
-OBJETIVO
-Este documento separa las imágenes que ya están integradas de las que faltan
-para reemplazar el arte provisional del juego. El proyecto tiene menú, prólogo,
-12 secciones conectadas y epílogo. Las plataformas y entidades jugables ya
-existen; la mayor parte del arte ambiental todavía es blockout geométrico.
+Alcance: 12 niveles, prólogo y epílogo. Los números junto a cada enemigo son
+instancias del nivel. Una hoja sirve para todas las instancias del mismo tipo.
+La lista identifica dibujos provisionales y necesidades de producción; los
+estados visuales propuestos pueden compartir fotogramas.
 
-============================================================
-1. RECURSOS DEL JUGADOR QUE YA ESTÁN INTEGRADOS
-============================================================
+PAQUETES COMPARTIDOS QUE HAY QUE DIBUJAR
+[ ] Duelista: reposo/patrulla, anticipación, acometida, cadena de golpes,
+    recuperación vulnerable, impacto y derrota.
+[ ] Tirador: reposo/patrulla, fijar dirección, disparo, recuperación, impacto
+    y derrota. Efectos: pulso energético, estela y disipación al impactar.
+[ ] Bruto/blindado: patrulla, preparación del golpe pesado, golpe, recuperación,
+    reacción al daño y derrota. Diferenciar su silueta y alcance del duelista.
+[ ] SIL: reposo, movimiento, reacción/debilidad y despedida. Una sola base
+    reutilizable en las apariciones del personaje.
+[ ] ORÚ: guardia, anticipación y ejecución de sus ataques, reposo vulnerable,
+    daño, cambio de fase y derrota. Efectos de onda, marcado de área y energía.
+[ ] Saren: guardián íntegro y guardián fracturado, avisos y ataques por fase,
+    vulnerabilidad, daño, pérdida del escudo y reposo tras la liberación.
+    Efectos de barrido, pulso, descarga marcada, fractura y disipación.
+Las señales de combate y proyectiles ya funcionan por código; conservar su
+tamaño, tiempo de aviso y contraste al sustituirlos por arte.
 
-Ubicación: assets/sprites/player/
-Tamaño de celda: 128 x 128 px. Filtro pixel art: Nearest.
+SECCIÓN 1 · ACCIDENTE Y PRIMER CONTACTO
+1.1 · La nave destruida
+    Enemigos: 1 duelista, 2 tiradores. Efectos: pulso de tirador.
+    Escenario: nave estrellada, fondo, terreno y pinchos ya tienen PNG.
+1.2 · El primer contacto
+    Enemigos: 3 duelistas, 2 tiradores. Personaje ambiental: SIL.
+    Escenario: reutilizar terreno y props de zona_1.
+1.3 · La grieta luminosa
+    Enemigos: 1 duelista, 2 tiradores. Efectos: disparo y aviso de ataque.
+    Escenario: ya existen transporte azul, repisa inestable y pinchos.
+    Acabado común de salidas: zona_1 ya tiene portal.png. Revisar su montaje
+    con el indicador de salida procedural antes de encargar otro portal.
 
-  [EXISTE] male_hero-idle.png        10 cuadros, reposo
-  [EXISTE] male_hero-walk.png        10 cuadros, caminar analógico
-  [EXISTE] male_hero-run.png         10 cuadros, correr
-  [EXISTE] male_hero-dash.png         9 cuadros, dash
-  [EXISTE] male_hero-jump.png         6 cuadros, salto
-  [EXISTE] male_hero-fall.png         4 cuadros, inicio de caída
-  [EXISTE] male_hero-fall_loop.png    3 cuadros, caída continua
-  [EXISTE] male_hero-combo_1.png      9 cuadros, primer golpe
-  [EXISTE] male_hero-combo_2.png      9 cuadros, segundo golpe
-  [EXISTE] male_hero-combo_3.png      9 cuadros, tercer golpe/remate
-  [EXISTE] male_hero-combo_1_end.png  4 cuadros, final de combo
-  [EXISTE] male_hero-design.png       1 cuadro, pose de referencia
+SECCIÓN 2 · BOSQUE RESONANTE
+2.1 · Jardines de Cristal
+    Enemigos: 2 duelistas, 2 tiradores. Personaje ambiental: SIL.
+    Escenario: jardines, terrazas y parallax ya integrados; referencia visual.
+2.2 · El santuario silencioso
+    Enemigos: 2 tiradores, 1 duelista.
+    Escenario: claustro, arcos, pilares y mecanismos del santuario ya integrados.
+2.3 · El guardián del bosque
+    Enemigos: 2 duelistas, 1 tirador. Jefe: paquete completo de ORÚ.
+    Efectos: avisos, ataques y final del encuentro. Escenario de arena existente.
 
-Las animaciones jugables se ensamblan en resources/player/player_frames.tres.
-No hace falta volver a crear estas hojas. Conviene conservar transparencia,
-márgenes y alineación de los pies si se sustituyen.
+SECCIÓN 3 · CAVERNAS, COMPLEJO Y DESCENSO
+3.1 · Cavernas de resonancia
+    Enemigos: 2 tiradores, 1 duelista. Criatura debilitada: el prototipo usa
+    la representación de SIL; prever pose atrapada y liberación.
+    Escenario: geodas, conducto, inscripción y planos de caverna ya integrados.
+3.2 · El complejo abandonado
+    Enemigos: 1 bruto, 1 tirador, 1 duelista.
+    Narrativa opcional: holograma de Ayen para ilustrar los registros.
+    Escenario: laboratorio, cápsulas, monitores y pasarelas ya integrados.
+3.3 · El descenso
+    Enemigos: 6 tiradores, 5 duelistas. Efectos de disparo compartidos.
+    Escenario: pozo, anillos, rieles, ascensores y bobina ya integrados.
 
-============================================================
-2. ESPECIFICACIONES Y ORGANIZACIÓN RECOMENDADAS
-============================================================
+SECCIÓN 4 · EL NÚCLEO
+4.1 · La zona corrompida
+    Enemigos: 3 brutos, 1 tirador. Variantes del bioma: cristal fracturado,
+    vetas violetas y energía inestable sobre las dos siluetas base.
+    Escenario: conducto, eco Eshar, estabilizadores apagados/energizados,
+    brotes recuperados, pinchos y losa en colapso ya integrados.
+4.2 · La cámara del núcleo
+    Enemigos: 2 duelistas, 2 tiradores.
+    Narrativa opcional: reutilizar el holograma de Ayen para la última grabación.
+    Escenario: núcleo, galería, grabadora, consola y transmisor ya integrados.
+4.3 · El corazón fracturado / El silencio
+    Enemigos: 2 duelistas, 1 tirador. Jefe: paquete completo de Saren.
+    Efectos: transición entre fases, ruptura del escudo y liberación.
+    Escenario: losas, plataformas fracturadas, interfaz de memorias, pedestal
+    restaurado y fondo de El silencio ya integrados.
 
-• Estilo: pixel art consistente con el personaje; PNG con canal alfa para
-  sprites, objetos, enemigos y efectos. Evitar fondos negros incrustados.
-• Mantener el filtro Nearest y bordes limpios. No aplicar blur ni suavizado.
-• Fondos: preparar capas separadas (cielo/fondo lejano, plano medio y frente)
-  para permitir parallax. Crear versiones que puedan repetirse horizontalmente
-  donde la cámara recorre distancias largas.
-• Tile sets: crear piezas modulares: centro, bordes, esquinas interiores y
-  exteriores, extremos, paredes, columnas, plataformas y variantes dañadas.
-  Mantener un tamaño de tile común dentro de cada bioma; confirmar el tamaño
-  final en Godot antes de dibujar grandes cantidades de piezas.
-• Hojas animadas: usar celdas uniformes, orden de lectura izquierda a derecha y
-  luego arriba abajo. Entregar una hoja por animación o indicar claramente
-  columnas, filas y cuadros vacíos. El jugador usa celdas de 128 x 128 px; los
-  demás personajes pueden usar otro tamaño si la hoja mantiene una cuadrícula.
-• Los tamaños de abajo son guías de producción, no límites del motor. Importar
-  una muestra y comprobarla en una escena antes de producir una hoja completa.
-• Mantener intactas las claves de objetivos e interacciones: el arte reemplaza
-  Blockout/Surface o se agrega como hijo de la entidad; no sustituye colisiones.
+CINEMÁTICAS
+Prólogo: ilustraciones de la cabina y sus instrumentos, nave en vuelo y bajo
+impacto, aproximación al planeta. Efectos de señal, descarga e interferencia.
+Epílogo: paisaje recuperado/refugio, despedida de SIL, nave reparada,
+despegue, cielo final y señal distante para el cierre/créditos.
+Las secuencias tienen presentación funcional. Estas son piezas para su acabado.
 
-Rutas sugeridas (se pueden cambiar):
-  assets/sprites/environment/<bioma>/
-  assets/sprites/characters/<personaje>/
-  assets/sprites/enemies/<tipo>/
-  assets/sprites/props/<bioma>/
-  assets/sprites/vfx/
+JUGADOR, UI Y ARTE REUTILIZABLE
+El protagonista ya tiene movimiento, combos, dash, daño y muerte. La baliza
+astral cuenta con reposo y activación. HUD, diálogos y controles tienen diseño
+pixel art. Las barras, marcas y flechas funcionales pueden seguir dibujándose
+en Godot. Retratos, polvo de pasos y variaciones cosméticas son opcionales.
+Entrega de sprites: PNG transparente, Nearest, cuadrícula uniforme por hoja,
+pivote estable en los pies. Hacer coincidir los contactos con los avisos del
+juego. Las celdas de 128 × 128 del protagonista son una referencia; ajustar
+las de ORÚ y Saren a su silueta y al espacio de sus animaciones.
 
-============================================================
-3. PAQUETES VISUALES COMPARTIDOS (USAR EN VARIAS SECCIONES)
-============================================================
-
-A. TERRENO Y PLATAFORMAS — PENDIENTE
-  [ ] Tile set de suelo y plataformas por bioma: superficie superior,
-      laterales, base, bordes, esquinas y formas de acantilado.
-  [ ] Variantes de terreno intacto, agrietado, destruido y con vegetación,
-      cristal o corrupción, según el bioma.
-  [ ] Plataformas móviles: carcasa, centro luminoso, anclajes y variante
-      ascensor Eshar. La colisión y el movimiento ya están implementados.
-  [ ] Plataformas inestables: estados normal, aviso, agrietado, caída y
-      reconstrucción. La lógica ya está implementada.
-  [ ] Bordes y paredes para arenas de jefe y límites visuales del escenario.
-
-B. INTERACTUABLES Y OBJETOS — PENDIENTES
-  [ ] Terminal/estación: apagada, activa, usando y dañada.
-  [ ] Checkpoint/bandera: inactivo, activo y pulso de activación.
-  [ ] Interruptor/cristal resonador: apagado, activándose y encendido.
-  [ ] Resonador antiguo y sus tres símbolos/pedestales de secuencia.
-  [ ] Puerta energética: cerrada, desbloqueada, abriéndose y abierta.
-  [ ] Salida/portal: inactivo, listo y transición.
-  [ ] Coleccionable de energía/célula y fragmento de memoria opcional.
-  [ ] Reguladores, estabilizadores y consola de núcleo: apagado/activo.
-  [ ] Cajas, restos de nave, maquinaria, cables, tubos, señales y restos
-      pequeños para vestir las plataformas.
-
-C. PERSONAJES, CRIATURAS Y ENEMIGOS — PENDIENTES
-  [ ] SIL: reposo, desplazamiento/acompañamiento, reacción y despedida.
-      Añadir retrato para diálogos/cinemáticas si se desea.
-  [ ] Ayen: retrato u holograma, aparición/activación y desaparición.
-  [ ] Fauna alienígena ambiental y criatura atrapada de 3.1.
-  [ ] Enemigo duelista: reposo, patrulla, aviso, ataque, recuperación, daño
-      y derrota.
-  [ ] Enemigo tirador: reposo, apuntado, disparo, daño y derrota; incluir
-      proyectil si no se dibuja mediante efectos del motor.
-  [ ] Enemigo blindado: guardia, aviso, ataque, guardia rota, daño y derrota.
-  [ ] Variantes resistentes/corruptas para 4.1.
-  [ ] ORÚ y Saren como hojas de jefe independientes: reposo, telegraph/aviso,
-      cada ataque, recuperación vulnerable, daño y derrota. Para Saren, separar
-      estados de fase 1 y fase 2.
-  [ ] Proyectiles y ondas de jefe, salvo que se prefieran dibujados por código.
-
-D. EFECTOS VISUALES — PENDIENTES O PROVISIONALES
-  [ ] Polvo de despegue/aterrizaje y pequeñas partículas de pasos.
-  [ ] Estela/afterimage del dash (el dash del jugador ya existe).
-  [ ] Destellos de impacto, chispas de espada y ondas de combo.
-  [ ] Impacto al recibir daño, escudo/invulnerabilidad y derrota de enemigo.
-  [ ] Descarga eléctrica: aviso, arco/descarga y disipación.
-  [ ] Energía/resonancia: pulso, activación, conexión entre circuitos y
-      apagado. Variantes turquesa/violeta según el mecanismo.
-  [ ] Corrupción del núcleo: partículas, grietas y transición de estabilización.
-  [ ] Brillo de checkpoint, puerta, portal y objetos recogibles.
-
-============================================================
-4. TEXTURAS POR SECCIÓN
-============================================================
-
-PRÓLOGO — INTERIOR DE LA NAVE Y ACCIDENTE
-  [ ] Fondo espacial con estrellas y planeta; capas separadas para parallax.
-  [ ] Interior/cabina o panel de instrumentos para planos narrativos.
-  [ ] Nave exterior: vista general, daño/impacto y restos.
-  [ ] Destello de descarga, interferencia/señal y efecto del impacto.
-  Nota: la secuencia y los diálogos ya existen; el arte puede ser ilustración
-  estática o capas reutilizables, no requiere sprites animados complejos.
-
-1.1 — LA NAVE DESTRUIDA
-  [ ] Bioma de cráter: suelo, roca, arena/polvo y silueta del paisaje lejano.
-  [ ] Restos de nave, casco abierto, paneles y piezas pequeñas.
-  [ ] Telemetría/panel, célula energética y equipo recuperable.
-  [ ] Rocas/peligros, polvo de caída y fragmento de memoria opcional.
-
-1.2 — EL PRIMER CONTACTO
-  [ ] Suelo rocoso con vegetación alienígena y camino alto.
-  [ ] SIL: hoja de personaje y/o retrato para conversación.
-  [ ] Fauna local pasiva y criatura/enemigo del primer territorio.
-  [ ] Entrada de cueva o resonador subterráneo; cristales y fragmento opcional.
-
-1.3 — LA GRIETA LUMINOSA
-  [ ] Fondo de abismo/grieta profunda con parallax vertical y horizontal.
-  [ ] Paredes, repisas y cristales energéticos.
-  [ ] Ascensor/plataforma Eshar, con versión activa y apagada.
-  [ ] Pilar de Resonancia y paso inestable.
-  [ ] Partículas de energía, descarga cíclica y estructura del santuario distante.
-
-2.1 — JARDINES DE CRISTAL
-  [ ] Tile set de jardín alienígena, plantas y árboles cristalinos.
-  [ ] Variantes apagada y encendida para jardín oeste y jardín este.
-  [ ] Circuito/cauce resonante, agua o energía móvil y conexiones luminosas.
-  [ ] Umbral/puerta Eshar y fragmentos de memoria.
-  [ ] SIL en recorrido o escena de reencuentro (reutilizar hoja de 1.2).
-
-2.2 — EL SANTUARIO SILENCIOSO
-  [ ] Tile set de ruinas: bloques, columnas, arcos, suelos y ornamentos.
-  [ ] Inscripciones, símbolos I/II/III y pedestales de resonador.
-  [ ] Puerta energética y sala del archivo.
-  [ ] Retrato/holograma de Ayen y elementos visuales del archivo.
-  [ ] Memoria lateral/coleccionable opcional.
-
-2.3 — EL GUARDIÁN DEL BOSQUE
-  [ ] Arena de jefe y barreras/puertas de cierre.
-  [ ] ORÚ: hoja animada completa (reposo, avisos, ataques, recuperación,
-      daño y derrota); idealmente una hoja por ataque para ajustar tiempos.
-  [ ] Efectos de sus golpes/ondas y señal visual de ventana vulnerable.
-  [ ] Símbolo/objeto de autorización y transición hacia el descenso.
-
-3.1 — CAVERNAS DE RESONANCIA
-  [ ] Tile set de caverna: roca, cristales, paredes y plataformas escalonadas.
-  [ ] Descargas eléctricas y dispositivos que anuncian sus ciclos.
-  [ ] Criatura atrapada: estado atrapado, debilitado y animación de liberación.
-  [ ] Transporte/plataforma móvil, regulador y señalización de peligro.
-  [ ] Inscripción lateral y registro opcional.
-
-3.2 — EL COMPLEJO ABANDONADO
-  [ ] Tile set industrial/laboratorio: paneles, puertas, tubos, cables y luces.
-  [ ] Cámaras de memoria y cápsulas de contención.
-  [ ] Terminales y hologramas de Proyecto Vigilia, Ayen y Saren.
-  [ ] Archivos holográficos, pantallas y registros opcionales.
-  [ ] Red eléctrica, fuente de emergencia y elementos de redirección.
-
-3.3 — EL DESCENSO
-  [ ] Capas de fondo verticales para el conducto, cavernas y profundidad.
-  [ ] Paredes/repisa vertical, plataformas, ascensores laterales y anclajes.
-  [ ] Elementos desprendidos/derrumbes y polvo/piedras en caída.
-  [ ] Conducto, registro de Saren y efecto visual del eco de la voz.
-  Nota: preparar fondos que cubran el recorrido vertical de la cámara; evitar
-  depender de una sola imagen horizontal repetida.
-
-4.1 — LA ZONA CORROMPIDA
-  [ ] Tile set de núcleo/caverna corrompida, cristales quebrados y suelo dañado.
-  [ ] Corrupción energética como overlay o piezas modulares transparentes.
-  [ ] Fauna resistente/corrupta (reutilizar enemigos con variantes de color solo
-      si se leen bien; si no, crear hojas diferenciadas).
-  [ ] Tres estabilizadores, cada uno apagado, activándose y estable.
-  [ ] Plataformas móviles/inestables con grietas y descargas.
-
-4.2 — LA CÁMARA DEL NÚCLEO
-  [ ] Gran sala del núcleo: fondo monumental y capas de ecos/memorias.
-  [ ] Núcleo visible en estados latente, inestable y liberado.
-  [ ] Ayen/holograma de última grabación (reutilizar retrato de 2.2).
-  [ ] Consola central, transmisor de fase y nota oculta.
-  [ ] Galería de ecos, pulso turquesa/violeta y último descanso/checkpoint.
-
-4.3 — EL CORAZÓN FRACTURADO
-  [ ] Arena final, puerta y transición al combate.
-  [ ] Saren: hoja de jefe con fase 1 y fase 2, ataques, telegráficos, ventanas
-      vulnerables, daño y derrota.
-  [ ] Proyectiles/marcas terrestres, ondas, explosiones y efectos de energía.
-  [ ] Liberación de ecos/memorias y secuencia de envío de señal.
-  [ ] Núcleo estabilizado, variante final del escenario y luz de cierre.
-
-EPÍLOGO
-  [ ] Fondo de recuperación/refugio y capa de paisaje del planeta.
-  [ ] SIL para despedida (reutilizar personaje y retrato).
-  [ ] Nave reparada: piezas/estado inicial y secuencia de despegue.
-  [ ] Cielo/espacio con señal distante y fondo para créditos.
-
-============================================================
-5. PRIORIDAD RECOMENDADA DE PRODUCCIÓN
-============================================================
-
-PRIORIDAD 1 — IDENTIDAD Y LECTURA DEL JUEGO
-  1. SIL, Ayen, ORÚ y Saren.
-  2. Tile sets base de cráter, jardín/cristal, santuario, caverna, laboratorio
-     y zona corrompida.
-  3. Plataformas, peligros, checkpoints, resonadores, puertas y estabilizadores.
-  4. Efectos de ataque, dash, daño, descarga y activación.
-
-PRIORIDAD 2 — NARRATIVA Y RECONOCIMIENTO DE LUGARES
-  5. Nave/restos, archivo holográfico, conducto vertical, transmisor y núcleo.
-  6. Fauna, criatura liberable, enemigos duelista/tirador/blindado y jefes.
-  7. Fondos de cada bioma y capas de parallax.
-
-PRIORIDAD 3 — PULIDO
-  8. Decoración pequeña, variantes de daño/encendido, partículas y overlays.
-  9. Retratos de diálogo, pantallas holográficas y detalles del epílogo.
-
-============================================================
-6. RESUMEN DE LO QUE FALTA
-============================================================
-
-YA EXISTE: las 12 animaciones/poses listadas del jugador, escenas conectadas,
-colisiones, plataformas, enemigos/jefes funcionales, objetos interactivos,
-HUD/menú y efectos provisionales. El interfaz actual se dibuja principalmente
-con controles de Godot; no necesita una hoja de sprites para funcionar.
-
-FALTA CREAR/CONSEGUIR: arte final para los 12 biomas/secciones, fondos y
-parallax, tilesets de terreno, personajes secundarios, hojas de enemigos y
-jefes, props narrativos e interactivos, y efectos visuales definitivos.
-
-NO SON TEXTURAS: música, sonidos, voces, tipografías y diálogos. El proyecto ya
-contiene sonidos provisionales del jugador; la música y el ambiente quedan para
-una lista de producción separada.
-
-PUNTOS DE INTEGRACIÓN EN LAS ESCENAS:
-  BackgroundArt: fondos y parallax.
-  WorldArt: decoración y elementos ambientales.
-  ForegroundArt: plantas/rocas que pasan delante del jugador.
-  Geometry / Blockout / Surface: reemplazar visualmente manteniendo colisiones.
-  Entities: añadir arte como hijo de cada entidad reutilizable.
-  Player: sprite compartido en scenes/player/player.tscn.
-
-Antes de dibujar un lote grande, importar una textura de prueba en Godot y
-confirmar escala, transparencia, filtro Nearest y anclaje en el nivel real.
+Fuentes del inventario: levels/Level_*.tscn, scripts/entities/, scripts/world/,
+scripts/ui/cinematic.gd, data/sections.json y assets/sprites/.

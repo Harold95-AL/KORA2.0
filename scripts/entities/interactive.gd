@@ -1,6 +1,7 @@
 extends Node2D
 @export var title: String = "Terminal"
 @export var crystal_art: Texture2D
+@export var energized_art: Texture2D
 @export var crystal_jewel: Texture2D
 @export var state_key: String = ""
 @export var story_id: String = ""
@@ -43,13 +44,15 @@ func _process(_delta: float) -> void:
 
 func _draw() -> void:
 	var color := tint
-	if not state_key.is_empty() and GameManager.has_key(state_key):
+	var energized := not state_key.is_empty() and GameManager.has_key(state_key)
+	if energized:
 		color = Color("79eda0")
 	if not record_id.is_empty():
 		color = Color("e0beff")
 	if crystal_art and crystal_jewel:
-		draw_texture(crystal_art, Vector2(-crystal_art.get_width() * 0.5, -crystal_art.get_height()))
-		draw_texture(crystal_jewel, Vector2(-crystal_jewel.get_width() * 0.5, -crystal_art.get_height() - crystal_jewel.get_height()), color)
+		var art := energized_art if energized and energized_art else crystal_art
+		draw_texture(art, Vector2(-art.get_width() * 0.5, -art.get_height()))
+		draw_texture(crystal_jewel, Vector2(-crystal_jewel.get_width() * 0.5, -art.get_height() - crystal_jewel.get_height()), color)
 	else:
 		draw_texture(preload("res://assets/sprites/tecnologia/terminal.png"), Vector2(-13,-27))
 	if can_interact():

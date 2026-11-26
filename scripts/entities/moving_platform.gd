@@ -4,6 +4,8 @@ extends AnimatableBody2D
 @export var unstable := false
 @export var width: float = 96.0
 @export var surface_texture: Texture2D
+@export var fractured_texture: Texture2D
+@export var collapsing_texture: Texture2D
 @export var collapse_delay := 0.30
 @export var return_delay := 2.4
 var origin := Vector2.ZERO
@@ -40,7 +42,10 @@ func _draw() -> void:
 	if collapse_timer >= 0.0:
 		color = Color("ffc96b")
 	if surface_texture:
-		draw_texture_rect(surface_texture, Rect2(0, 0, width, 12), false)
+		var art := fractured_texture if unstable and fractured_texture else surface_texture
+		if collapse_timer >= 0.0 and collapsing_texture:
+			art = collapsing_texture
+		draw_texture_rect(art, Rect2(0, 0, width, 12), false)
 	else:
 		draw_rect(Rect2(0, 0, width, 12), color)
 		for x in range(8, int(width) - 4, 16):
